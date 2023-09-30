@@ -1,11 +1,13 @@
 import React from 'react';
+import Header from './components/Header';
 
-const App = () => {
+function App() {
   return (
-    <div className="bg-blue-500 p-4 rounded-lg">
-      <h1 className="text-white">Mi Componente React con Tailwind CSS</h1>
+    <div className="App">
+      <Header />
+      {/* Aquí puedes agregar el contenido de tu aplicación */}
     </div>
   );
-};
+}
 
 export default App;
