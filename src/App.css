@@ -1,0 +1,22 @@
+/* componente valle de uco */
+
+.texto-valle-uco-1 {
+color: #4737FF;
+text-align: center;
+font-family: Fira Sans;
+font-size: 60px;
+font-style: normal;
+font-weight: 700;
+line-height: 70px; /* 116.667% */
+letter-spacing: -1px;
+}
+
+.texto-valle-uco-2 {
+    color: #4737FF;
+text-align: center;
+font-family: Fira Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 155.556% */
+}
