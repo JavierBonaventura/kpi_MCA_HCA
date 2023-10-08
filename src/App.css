@@ -1,22 +1,95 @@
 /* componente valle de uco */
 
 .texto-valle-uco-1 {
-color: #4737FF;
-text-align: center;
-font-family: Fira Sans;
-font-size: 60px;
-font-style: normal;
-font-weight: 700;
-line-height: 70px; /* 116.667% */
-letter-spacing: -1px;
+    color: #FFF;
+    text-align: center;
+    font-family: Gotham Black;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70px; /* 116.667% */
+    letter-spacing: -1px;
 }
 
 .texto-valle-uco-2 {
-    color: #4737FF;
-text-align: center;
-font-family: Fira Sans;
-font-size: 18px;
+    color: #FFF;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 155.556% */
+}
+
+
+/* componente Header */
+
+.text-header {
+color: #FFF;
+font-family: Gotham;
+font-size: 12px;
 font-style: normal;
 font-weight: 400;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
+.text-header-idiomas {
+    color: #FFF;
+font-family: Gotham;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
+
+/* componete vinos */
+
+.texto-vinos {
+    color: #FFF;
+font-family: Gotham Black;
+font-size: 56px;
+font-style: normal;
+font-weight: 500;
+line-height: 50px; /* 89.286% */
+}
+
+
+/* componente bodega */
+
+.texto-bodega {
+    color: #FFF;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
 line-height: 28px; /* 155.556% */
+}
+
+.boton-ver-mas {
+    
+background: #460377;
+display: flex;
+width: 220px;
+height: 40px;
+
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+}
+
+.boton-ver-mas-texto{
+color: var(--White, #FFF);
+text-align: center;
+font-family: Gotham;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
 }

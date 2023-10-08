@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './components/Header';
 import ValleDeUco from './components/ValleDeUco';
-import "./App.css";
 import NuestrosVinos from './components/NuestrosVinos';
+import Bodega from "./components/Bodega"
+import "./App.css";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <ValleDeUco />
       <NuestrosVinos />
+      <Bodega />
     </div>
   );
 }
