@@ -29,8 +29,8 @@ function NuestrosVinos() {
         </div>
       </div>
       <div className="flex justify-between">
-        <div className="relative left-[100px]">
-          <div className="z-10 h-14 w-14 bg-[#460377] rounded-full flex items-center justify-center absolute top-1/3  ">
+        <div className="relative">
+          <div className="z-10 h-14 w-14 bg-blue-500 rounded-full flex items-center justify-center absolute top-1/3  ">
             <img
               src={flechaIzquierda}
               alt="Flecha Izquierda"
@@ -38,25 +38,20 @@ function NuestrosVinos() {
             />
           </div>
         </div>
-        <div className="z-10 flex justify-center items-center"></div>
-        <div className="z-10 flex flex-col items-center mt-48">
-          <img className="h-1/3" src={vino1} alt="Vino 1" />
-          <p className=" mt-16 texto-vinos-botellas">malbec</p>
+        <div className="mx-2 z-10 mt-64">
+          <img className="h-1/2 " src={vino1} alt="Vino 1" />
+          <p>vino1</p>
         </div>
-
-        <div className="z-10 flex flex-col items-center mt-32">
+        <div className="mx-2 z-10 mt-64">
           <img className="h-1/2" src={vino2} alt="Vino 2" />
-          <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
-            <p className=" mt-16 texto-vinos-botellas">cabernet sauvignon</p>
-          </div>
+          <p>vino2</p>
         </div>
-        <div className="z-10 flex flex-col items-center mt-48">
-          <img className="h-1/3" src={vino3} alt="Vino 3" />
-          <p className=" mt-16 texto-vinos-botellas">malbec</p>
+        <div className="mx-2 z-10 mt-64">
+          <img className="h-1/2" src={vino3} alt="Vino 3" />
+          <p>vino3</p>
         </div>
-        <div className="z-10 flex justify-center items-center"></div>
-        <div className="relative right-[165px]">
-          <div className="z-10 h-14 w-14 bg-[#460377] rounded-full flex items-center justify-center absolute top-1/3  ">
+        <div className="mr-16">
+          <div className="z-10 h-14 w-14 bg-blue-500 rounded-full flex items-center justify-center absolute top-1/2  ">
             <img
               src={flechaDerecha}
               alt="Flecha Izquierda"
@@ -65,12 +60,6 @@ function NuestrosVinos() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="ml-8 flex justify-center items-center z-10 w-[220px] h-[40px] flex-shrink-0 border border-white relative top-[-390px] flex flex-col items-center">
-          <p className="text-ver-mas">ver mas</p>
-        </div>
-      </div>
-
       <div className="z-0" style={overlayStyle}></div>
     </div>
   );

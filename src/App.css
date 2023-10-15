@@ -58,6 +58,30 @@ font-weight: 500;
 line-height: 50px; /* 89.286% */
 }
 
+.texto-vinos-botellas {
+    color: #FFF;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.text-ver-mas {
+    color: #FFF;
+text-align: center;
+font-family: Gotham;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
 
 /* componente bodega */
 
@@ -93,3 +117,87 @@ line-height: normal;
 letter-spacing: 4px;
 text-transform: uppercase;
 }
+
+
+/* componente pampa */
+
+.texto-pampa {
+    color: #FFF;
+text-align: center;
+font-family: Gotham Black;
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 50px; /* 125% */
+}
+
+.texto-vinedos {
+    color: #FFF;
+font-family: Gotham;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
+.texto-ver-mas-pampa {
+    color: #FFF;
+text-align: center;
+font-family: Gotham;
+font-size: 11px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
+
+/* componente vision */
+
+.texto-vision {
+    color: #FFF;
+font-family: Gotham Black;
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 50px; /* 125% */
+text-transform: uppercase;
+}
+
+.texto-vision-segundo-texto {
+    color: #FFF;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 155.556% */
+}
+
+
+.boton-ver-mas-vision {
+    
+    border-radius: 5px;
+    border: 1px solid #FFF;
+    display: flex;
+    width: 220px;
+    height: 50px;
+    
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    }
+    
+    .boton-ver-mas-texto-vision {
+        color: var(--White, #FFF);
+        text-align: center;
+        font-family: Gotham;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }

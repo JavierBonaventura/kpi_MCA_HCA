@@ -24,7 +24,7 @@ function ValleDeUco() {
 
   return (
     <div
-      className="w-full h-[841px] flex items-center justify-center bg-cover bg-center relative"
+      className="w-full h-[742px] flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${valleUco})` }}
     >
       <div className="text-center relative  z-10">

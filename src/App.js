@@ -3,6 +3,8 @@ import Header from './components/Header';
 import ValleDeUco from './components/ValleDeUco';
 import NuestrosVinos from './components/NuestrosVinos';
 import Bodega from "./components/Bodega"
+import Pampa from "./components/Pampa"
+import Vision from "./components/Vision"
 import "./App.css";
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
       <ValleDeUco />
       <NuestrosVinos />
       <Bodega />
+      <Pampa />
+      <Vision />
     </div>
   );
 }

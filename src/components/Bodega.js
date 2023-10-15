@@ -16,7 +16,7 @@ function Bodega() {
       className="w-full h-[979px]  bg-cover bg-center relative"
       style={{ backgroundImage: `url(${fondoBodega})` }}
     >
-      <div className="text-center relative z-10 top-[94px] left-[145px]">
+      <div className="text-center relative z-10 top-[94px] mx-32">
         <div className="w-[615px] h-[50px]">
           <h1 className="mb-4 texto-vinos text-black font-black absolute ">
             BODEGA
