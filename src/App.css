@@ -201,3 +201,27 @@ line-height: 28px; /* 155.556% */
         letter-spacing: 4px;
         text-transform: uppercase;
     }
+
+
+    /* componente nueva linea */
+
+    .texto-nueva-linea-secundario {
+        color: #FFF;
+text-align: center;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 155.556% */
+    }
+
+
+    .texto-nueva-linea {
+    color: #FFF;
+text-align: center;
+font-family: Gotham Black;
+font-size: 60px;
+font-style: normal;
+font-weight: 500;
+line-height: 70px; /* 116.667% */
+letter-spacing: -1px;}
