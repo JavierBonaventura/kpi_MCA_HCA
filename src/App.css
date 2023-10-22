@@ -225,3 +225,38 @@ font-style: normal;
 font-weight: 500;
 line-height: 70px; /* 116.667% */
 letter-spacing: -1px;}
+
+
+
+/* componente footer */
+
+.text-footer-titulos {
+    color: #FFF;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
+.text-footer-sub-titulos{
+    color: #FFF;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 122.222% */
+}
+
+.text-footer-sub-titulos-footer {
+    color: #FFF;
+font-family: Gotham;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
