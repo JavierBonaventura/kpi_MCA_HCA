@@ -96,7 +96,7 @@ function NuestrosVinos() {
 
   return (
     <div
-      className="w-full h-[879px]  bg-cover bg-center relative"
+      className="w-full h-[879px]  bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url(${fondoVinos})` }}
     >
       <div className="text-center relative z-10 top-[78px] mx-32">
@@ -118,7 +118,7 @@ function NuestrosVinos() {
           </div>
         </div>
       {/* <div className="z-10 flex justify-center items-center"></div> */}
-      <div className="flex justify-between w-full h-[700px]" id="caja">
+      <div className="flex justify-between w-full h-[700px] " id="caja">
         <div className="ml-48 z-10 flex flex-col items-center mt-48" style={imageStyle1}>
         <img className="h-1/3" src={vino1} alt="Vino 1" style={{ height: mainImage === 1 ? "400px" : "300px", transition: "height 0.5s ease-in-out" }} />
           <p className=" mt-16 texto-vinos-botellas">malbec</p>
