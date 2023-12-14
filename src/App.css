@@ -94,6 +94,16 @@ font-weight: 500;
 line-height: 28px; /* 155.556% */
 }
 
+.texto-bodega-titulo {
+    color: #FFF;
+
+    font-family: Gotham Black;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px; /* 125% */
+}
+
 .boton-ver-mas {
     
 background: #460377;

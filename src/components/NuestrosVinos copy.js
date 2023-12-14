@@ -81,7 +81,7 @@ function NuestrosVinos() {
 
   return (
     <div
-      className="w-full h-[979px]  bg-cover bg-center relative overflow-hidden"
+      className="w-full h-[879px]  bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url(${fondoVinos})` }}
     >
       <div className="text-center relative z-10 top-[78px] mx-32">
@@ -106,9 +106,9 @@ function NuestrosVinos() {
             />
           </div>
         </div>
-        <div className="flex justify-between w-6/12 h-[700px]  " id="caja">
+        <div className="flex justify-between w-full h-[700px] " id="caja">
           <div
-            className="  z-10 flex flex-col items-center mt-48 "
+            className=" ml-48 z-10 flex flex-col items-center mt-48"
             style={imageStyle1} id="div1"  ref={div1Ref}
           >
             <img
@@ -116,16 +116,15 @@ function NuestrosVinos() {
               src={vino1}
               alt="Vino 1"
               style={{
-                height: mainImage === 1 ? "489px" : "417px",
-                marginTop: mainImage === 1 ? "-40px" : "0",
-                transition: "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                height: mainImage === 1 ? "400px" : "300px",
+                transition: "height 0.5s ease-in-out",
               }}
             />
             <p className=" mt-16 texto-vinos-botellas">malbec</p>
           </div>
 
           <div
-            className=" z-10 flex flex-col items-center mt-48 "
+            className=" z-10 flex flex-col items-center mt-48"
             style={imageStyle2} id="div2" ref={div2Ref}
           >
             <img
@@ -133,9 +132,8 @@ function NuestrosVinos() {
               src={vino2}
               alt="Vino 2"
               style={{
-                height: mainImage === 2 ? "489px" : "417px",
-                marginTop: mainImage === 2 ? "-40px" : "0",
-                transition: "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                height: mainImage === 2 ? "400px" : "300px",
+                transition: "height 0.5s ease-in-out",
               }}
             />
             <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
@@ -143,7 +141,7 @@ function NuestrosVinos() {
             </div>
           </div>
           <div
-            className="  z-10 flex flex-col items-center mt-48 "
+            className=" mr-48 z-10 flex flex-col items-center mt-48"
             style={imageStyle3} id="div3" ref={div3Ref}
           >
             <img
@@ -151,9 +149,8 @@ function NuestrosVinos() {
               src={vino3}
               alt="Vino 3"
               style={{
-                height: mainImage === 3 ? "489px" : "417px",
-                marginTop: mainImage === 3 ? "-40px" : "0",
-                transition: "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                height: mainImage === 3 ? "400px" : "300px",
+                transition: "height 0.5s ease-in-out",
               }}
             />
             <p className=" mt-16 texto-vinos-botellas">malbec</p>
@@ -174,9 +171,9 @@ function NuestrosVinos() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center mt-28">
+      <div className="flex justify-center">
         <div className="flex justify-center items-center z-10 w-[220px] h-[40px] flex-shrink-0 border border-white relative  flex flex-col items-center">
-          <p className="text-ver-mas">ver más</p>
+          <p className="text-ver-mas">ver mas</p>
         </div>
       </div>
 

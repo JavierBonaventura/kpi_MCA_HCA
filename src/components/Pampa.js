@@ -18,7 +18,7 @@ function Pampa() {
 
   return (
     <div
-      className="w-full h-[718px]  bg-cover bg-center relative"
+      className="w-full h-[624px]  bg-cover bg-center relative"
       style={{ backgroundImage: `url(${fondoVinos})` }}
     >
             <div className="text-center relative z-10 top-[78px] flex justify-center">
@@ -31,7 +31,7 @@ function Pampa() {
       <div className="text-center relative z-10 top-[85px] flex justify-center">
         <div className="w-[397px] h-[50px]">
           <h1 className="mb-4 texto-pampa text-black font-black absolute ">
-          PAMPA EL CEPILLO
+          PAMPA ÉL CEPILLO.
           </h1>
         </div>
       </div>
@@ -59,7 +59,7 @@ function Pampa() {
       </div>
       <div className="flex justify-center">
         <div className=" flex justify-center items-center z-10 w-[124px] h-[33px] flex-shrink-0 border border-white relative flex flex-col items-center  top-[100px] ">
-          <p className="texto-ver-mas-pampa">ver mas</p>
+          <p className="texto-ver-mas-pampa">ver más</p>
         </div>
       </div>
 
