@@ -27,29 +27,27 @@ function Bodega() {
             Nuestros vinos nacen de la experiencia, la atención al detalle y una
             exhaustiva selección de viñedos que se ha ido haciendo a lo largo de
             casi dos décadas. Trabajamos en torno a 3 pilares fundamentales:
-            </p>
-            <p className="texto-bodega text-left pt-2">
+          </p>
+          <p className="texto-bodega text-left pt-2">
             Naturaleza. El vino comienza en el viñedo. Cada parte del ecosistema
             que rodea nuestra bodega en Vista Flores es prioritaria. Desde el
             búho blanco del valle, imagen de nuestra marca, hasta la flora
-            alrededor de la finca. 
-            </p>
-            <p className="texto-bodega text-left pt-2">
-            Innovación. Trabajamos cada día con la mirada
-            puesta en los procesos y nuevos productos.
-            </p>
-            <p className="texto-bodega text-left pt-2">
-             Sostenibilidad. Cuidamos
-            no solo de los viñedos, sino del entorno paisajístico y de la fauna
-            que rodea nuestra bodega.{" "}
+            alrededor de la finca.
           </p>
-
+          <p className="texto-bodega text-left pt-2">
+            Innovación. Trabajamos cada día con la mirada puesta en los procesos
+            y nuevos productos.
+          </p>
+          <p className="texto-bodega text-left pt-2">
+            Sostenibilidad. Cuidamos no solo de los viñedos, sino del entorno
+            paisajístico y de la fauna que rodea nuestra bodega.{" "}
+          </p>
         </div>
         <div className="boton-ver-mas mt-28 ">
           <p className="boton-ver-mas-texto">VER MáS</p>
         </div>
       </div>
-      
+
       <div className="z-0" style={overlayStyle}></div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 import gualtallary from "../images/Gualtallary.png";
 import iconoMap from "../images/iconoMap.png";
-import iconoSuelo from "../images/iconoSuelo.png"
-import iconoUvas from "../images/iconoUvas.png"
+import iconoSuelo from "../images/iconoSuelo.png";
+import iconoUvas from "../images/iconoUvas.png";
 
 function Gualtallary() {
   const firaSans = {
@@ -37,19 +37,32 @@ function Gualtallary() {
         <div className="w-[470px] h-[280px] flex items-center ml-24">
           <div className="mt-11">
             <p className="texto-guantallary-sub">
-              <img src={iconoMap} alt="Icono Map" className="inline-block mr-2" />
+              <img
+                src={iconoMap}
+                alt="Icono Map"
+                className="inline-block mr-2"
+              />
               Tupungato, 1.280 msnm
             </p>
             <p className="texto-guantallary-sub mt-6">
-              Ubicada en uno de los lugares más extremos y apasionantes para el vino argentino.
+              Ubicada en uno de los lugares más extremos y apasionantes para el
+              vino argentino.
             </p>
             <p className="texto-guantallary-sub mt-6">
-            <img src={iconoSuelo} alt="Icono Map" className="inline-block mr-2" />
-              SUELO: Formado de manera biológica, interviniendo bacterias, plantas y rocas en su composición.
+              <img
+                src={iconoSuelo}
+                alt="Icono Map"
+                className="inline-block mr-2"
+              />
+              SUELO: Formado de manera biológica, interviniendo bacterias,
+              plantas y rocas en su composición.
             </p>
             <p className="texto-guantallary-sub mt-6 ">
-            <img src={iconoUvas} alt="Icono Map" className="inline-block mr-2" />
-
+              <img
+                src={iconoUvas}
+                alt="Icono Map"
+                className="inline-block mr-2"
+              />
               VARIEDADES: Malbec y Chardonnay
             </p>
           </div>

@@ -15,27 +15,32 @@ function NuestrosVinos() {
 
   const [distancia, setDistancia] = useState(0);
   const [distancia2, setDistancia2] = useState(0);
-  
+
   const div1Ref = useRef(null);
   const div2Ref = useRef(null);
   const div3Ref = useRef(null);
   let distanciaEntre1y2 = 0;
   let distanciaEntre2y3 = 0;
-  
+
   useEffect(() => {
     const div1Rect = div1Ref.current.getBoundingClientRect();
     const div2Rect = div2Ref.current.getBoundingClientRect();
     const div3Rect = div3Ref.current.getBoundingClientRect();
-  
-    distanciaEntre1y2 = (div2Rect.left + div2Rect.width / 2) - (div1Rect.right - div1Rect.width / 2);
-    distanciaEntre2y3 = (div3Rect.left + div3Rect.width / 2) - (div2Rect.right - div2Rect.width / 2);
-  
+
+    distanciaEntre1y2 =
+      div2Rect.left +
+      div2Rect.width / 2 -
+      (div1Rect.right - div1Rect.width / 2);
+    distanciaEntre2y3 =
+      div3Rect.left +
+      div3Rect.width / 2 -
+      (div2Rect.right - div2Rect.width / 2);
+
     setDistancia(distanciaEntre1y2);
     setDistancia2(distanciaEntre2y3);
-  
-  }, []); 
-  
-  const offsetChange = distancia2 -5
+  }, []);
+
+  const offsetChange = distancia2 - 5;
 
   const moveLeft = () => {
     if (mainImage < 3) {
@@ -87,7 +92,7 @@ function NuestrosVinos() {
       <div className="text-center relative z-10 top-[78px] mx-32">
         <div className="w-[682px] h-[50px]">
           <h1 className="mb-4 texto-vinos text-black font-black absolute ">
-           VINOS
+            VINOS
           </h1>
         </div>
       </div>
@@ -109,7 +114,9 @@ function NuestrosVinos() {
         <div className="flex justify-between w-6/12 h-[700px]  " id="caja">
           <div
             className="  z-10 flex flex-col items-center mt-48 "
-            style={imageStyle1} id="div1"  ref={div1Ref}
+            style={imageStyle1}
+            id="div1"
+            ref={div1Ref}
           >
             <img
               className="h-1/3"
@@ -118,7 +125,8 @@ function NuestrosVinos() {
               style={{
                 height: mainImage === 1 ? "489px" : "417px",
                 marginTop: mainImage === 1 ? "-40px" : "0",
-                transition: "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                transition:
+                  "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
               }}
             />
             <p className=" mt-16 texto-vinos-botellas">malbec</p>
@@ -126,7 +134,9 @@ function NuestrosVinos() {
 
           <div
             className=" z-10 flex flex-col items-center mt-48 "
-            style={imageStyle2} id="div2" ref={div2Ref}
+            style={imageStyle2}
+            id="div2"
+            ref={div2Ref}
           >
             <img
               className="h-1/3"
@@ -135,7 +145,8 @@ function NuestrosVinos() {
               style={{
                 height: mainImage === 2 ? "489px" : "417px",
                 marginTop: mainImage === 2 ? "-40px" : "0",
-                transition: "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                transition:
+                  "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
               }}
             />
             <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
@@ -144,7 +155,9 @@ function NuestrosVinos() {
           </div>
           <div
             className="  z-10 flex flex-col items-center mt-48 "
-            style={imageStyle3} id="div3" ref={div3Ref}
+            style={imageStyle3}
+            id="div3"
+            ref={div3Ref}
           >
             <img
               className="h-1/3"
@@ -153,7 +166,8 @@ function NuestrosVinos() {
               style={{
                 height: mainImage === 3 ? "489px" : "417px",
                 marginTop: mainImage === 3 ? "-40px" : "0",
-                transition: "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                transition:
+                  "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
               }}
             />
             <p className=" mt-16 texto-vinos-botellas">malbec</p>
@@ -164,7 +178,7 @@ function NuestrosVinos() {
             className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${
               mainImage === 1 ? "bg-[#555555]" : "bg-[#460377]"
             } transition-background duration-500`}
-            onClick={moveRight} 
+            onClick={moveRight}
           >
             <img
               src={flechaDerecha}
@@ -175,8 +189,8 @@ function NuestrosVinos() {
         </div>
       </div>
       <div className="flex justify-center mt-28">
-        <div className="flex justify-center items-center z-10 w-[220px] h-[40px] flex-shrink-0 border border-white relative  flex flex-col items-center">
-          <p className="text-ver-mas">ver más</p>
+        <div className="flex justify-center items-center z-10 w-[220px] h-[40px] flex-shrink-0 border border-white relative  flex flex-col items-center hover:bg-[#460377] hover:cursor-pointer rounded">
+          <p className="text-ver-mas ">ver más</p>
         </div>
       </div>
 

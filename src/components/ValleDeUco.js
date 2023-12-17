@@ -8,10 +8,8 @@ function ValleDeUco() {
 
   const gothamBlack = {
     fontFamily: "Gotham Black",
-  }
+  };
 
-
-  
   const overlayStyle = {
     position: "absolute",
     top: 0,
@@ -19,7 +17,6 @@ function ValleDeUco() {
     width: "100%",
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.46)",
-   
   };
 
   return (
@@ -35,7 +32,8 @@ function ValleDeUco() {
         </div>
         <div className="w-[534px] mx-auto ">
           <p className="text-center texto-valle-uco-2" style={firaSans}>
-          La expresión de Vista Flores, la frescura de Pampa el Cepillo, la fineza de Gualtallary y la textura de Paraje Altamira
+            La expresión de Vista Flores, la frescura de Pampa el Cepillo, la
+            fineza de Gualtallary y la textura de Paraje Altamira
           </p>
         </div>
       </div>

@@ -8,10 +8,8 @@ function NuestrosVinedos() {
 
   const gothamBlack = {
     fontFamily: "Gotham Black",
-  }
+  };
 
-
-  
   const overlayStyle = {
     position: "absolute",
     top: 0,
@@ -19,7 +17,6 @@ function NuestrosVinedos() {
     width: "100%",
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.46)",
-   
   };
 
   return (
@@ -30,10 +27,9 @@ function NuestrosVinedos() {
       <div className="text-center relative  z-10">
         <div className="w-[719px] mx-auto">
           <h1 className="mb-4 texto-valle-uco-1" style={gothamBlack}>
-          NUESTROS VIÑEDOS
+            NUESTROS VIÑEDOS
           </h1>
         </div>
-
       </div>
       <div className="z-0" style={overlayStyle}></div>
     </div>

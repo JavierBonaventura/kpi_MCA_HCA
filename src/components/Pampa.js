@@ -21,17 +21,17 @@ function Pampa() {
       className="w-full h-[624px]  bg-cover bg-center relative"
       style={{ backgroundImage: `url(${fondoVinos})` }}
     >
-            <div className="text-center relative z-10 top-[78px] flex justify-center">
+      <div className="text-center relative z-10 top-[78px] flex justify-center">
         <div className="w-[278px] h-[14px]">
           <h1 className="mb-4 texto-vinedos text-black font-black absolute ">
-          VIÑEDOS - VALLE DE UCO
+            VIÑEDOS - VALLE DE UCO
           </h1>
         </div>
       </div>
       <div className="text-center relative z-10 top-[85px] flex justify-center">
         <div className="w-[397px] h-[50px]">
           <h1 className="mb-4 texto-pampa text-black font-black absolute ">
-          PAMPA ÉL CEPILLO.
+            PAMPA ÉL CEPILLO.
           </h1>
         </div>
       </div>
@@ -45,7 +45,7 @@ function Pampa() {
             />
           </div>
         </div>
-        
+
         <div className="z-10 flex justify-center items-center"></div>
         <div className="relative right-[165px]">
           <div className="z-10 h-14 w-14 bg-[#460377] rounded-full flex items-center justify-center absolute   ">
@@ -58,7 +58,7 @@ function Pampa() {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className=" flex justify-center items-center z-10 w-[124px] h-[33px] flex-shrink-0 border border-white relative flex flex-col items-center  top-[100px] ">
+        <div className=" flex justify-center items-center z-10 w-[124px] h-[33px] flex-shrink-0 border border-white relative flex flex-col items-center  top-[100px] border-white relative  flex flex-col items-center hover:bg-[#460377] hover:cursor-pointer rounded">
           <p className="texto-ver-mas-pampa">ver más</p>
         </div>
       </div>

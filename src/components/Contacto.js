@@ -12,7 +12,6 @@ function Contacto() {
     fontFamily: "Gotham Black",
   };
 
-
   return (
     <div className="w-full h-[488px] flex  justify-center bg-[#252323]">
       <div className="text-center relative mt-32 z-10">
