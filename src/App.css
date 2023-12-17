@@ -270,3 +270,50 @@ line-height: normal;
 letter-spacing: 4px;
 text-transform: uppercase;
 }
+
+
+
+/* Componente Guantallary */
+
+.texto-guantallary {
+color: #FFF;
+font-family: Gotham Black;
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 50px; /* 125% */
+}
+
+.texto-guantallary-sub {
+color: #FFF;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 155.556% */
+}
+
+
+/* Componente contacto */
+
+.text-contacto-sub {
+color: #FFF;
+text-align: center;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 155.556% */
+}
+
+/* componente FomrContacto */
+.texto-formulario {
+color: #FFF;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px; /* 155.556% */
+letter-spacing: 4px;
+text-transform: uppercase;
+}

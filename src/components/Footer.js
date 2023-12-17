@@ -1,5 +1,7 @@
 import React from "react";
-import logo_footer from "../images/logo_footer.png";
+// import logo_footer from "../images/logo_footer.png";
+import logo_footer from "../images/logoConCalidad.png";
+
 import instagram from "../images/instagram.png";
 import google from "../images/google.png";
 import facebook from "../images/facebook.png";
@@ -7,7 +9,7 @@ import facebook from "../images/facebook.png";
 function Footer() {
   return (
     <div>
-    <div className="w-full h-[600px] bg-[#252323] flex justify-between">
+    <div className="w-full h-[450px] bg-[#252323] flex justify-between">
     <div className="w-1/4 flex flex-col justify-center items-center mb-32">
           <img className="w-[194px]" src={logo_footer} alt="Logo" />
           <div className="mt-4 flex">
@@ -16,7 +18,7 @@ function Footer() {
             <img src={facebook} alt="facebook" className="w-6 h-6" />
           </div>
         </div>
-      <div className="w-1/4 flex flex-col justify-center items-left mb-24">
+      <div className="w-1/4 flex flex-col justify-center items-left mb-24 ">
         <div className="align-middle">
           <p className="text-footer-titulos">CONTACTO</p>
         </div>
@@ -32,7 +34,7 @@ function Footer() {
           <p className="text-footer-sub-titulos">alexei@getcraftwork.com</p>
         </div>
       </div>
-      <div className="w-1/4 flex flex-col justify-center items-left mb-20">
+      <div className="w-1/4 flex flex-col justify-center items-left mb-20 ml-24">
         <div className="align-middle">
           <p className="text-footer-titulos">LINKS</p>
         </div>
@@ -52,30 +54,30 @@ function Footer() {
           <p className="text-footer-sub-titulos">Contacto</p>
         </div>
       </div>
-      <div className="w-1/4 flex flex-col justify-center items-left">
+      <div className="w-1/4 flex flex-col justify-center items-left mb-32 mr-16">
         <div className="align-middle">
           <p className="text-footer-titulos">Nuestros vinos</p>
         </div>
         <div className="flex">
-          <div id="columna1">
-            <div className="w-[85px] h-[37px] py-12 align-middle">
+          <div id="columna1" className=" w-40">
+            <div className="h-[37px] pt-2 mt-10 align-middle">
               <p className="text-footer-sub-titulos">Iluminado</p>
             </div>
-            <div className="w-[85px] py-2 align-middle">
+            <div className=" py-2 align-middle">
               <p className="text-footer-sub-titulos">Gran Callejón</p>
             </div>
-            <div className="w-[85px] py-2 align-middle">
+            <div className="py-2 align-middle">
               <p className="text-footer-sub-titulos">Single Vineyard</p>
             </div>
-            <div className="w-[85px] py-2 align-middle">
+            <div className=" py-2 align-middle">
               <p className="text-footer-sub-titulos">Blend de Terroir</p>
             </div>
-            <div className="w-[85px] py-2 align-middle">
+            <div className="py-2 align-middle">
               <p className="text-footer-sub-titulos">Gran Reserva</p>
             </div>
           </div>
           <div className="px-16" id="columna2">
-            <div className="w-[85px] h-[37px] py-12 align-middle">
+            <div className="w-[85px] h-[37px]  pt-2 mt-10 align-middle">
               <p className="text-footer-sub-titulos">Relatos</p>
             </div>
             <div className="w-[85px] py-2 align-middle">

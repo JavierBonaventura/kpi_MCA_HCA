@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
 import fondoVinos from "../images/fondoVinos.png";
 import vino1 from "../images/vino1.png";
 import vino2 from "../images/vino2.png";
@@ -10,80 +11,64 @@ function NuestrosVinos() {
   const [offset1, setOffset1] = useState(0);
   const [offset2, setOffset2] = useState(0);
   const [offset3, setOffset3] = useState(0);
-  const [offset4, setOffset4] = useState(0);
-  const [offset5, setOffset5] = useState(0);
-  const [offset6, setOffset6] = useState(0);
-  const [offset7, setOffset7] = useState(0);
   const [mainImage, setMainImage] = useState(2);
+
+  const [distancia, setDistancia] = useState(0);
+  const [distancia2, setDistancia2] = useState(0);
+  
+  const div1Ref = useRef(null);
+  const div2Ref = useRef(null);
+  const div3Ref = useRef(null);
+  let distanciaEntre1y2 = 0;
+  let distanciaEntre2y3 = 0;
+  
+  useEffect(() => {
+    const div1Rect = div1Ref.current.getBoundingClientRect();
+    const div2Rect = div2Ref.current.getBoundingClientRect();
+    const div3Rect = div3Ref.current.getBoundingClientRect();
+  
+    distanciaEntre1y2 = (div2Rect.left + div2Rect.width / 2) - (div1Rect.right - div1Rect.width / 2);
+    distanciaEntre2y3 = (div3Rect.left + div3Rect.width / 2) - (div2Rect.right - div2Rect.width / 2);
+  
+    setDistancia(distanciaEntre1y2);
+    setDistancia2(distanciaEntre2y3);
+  
+  }, []); 
+  
+  const offsetChange = distancia2 -5
 
   const moveLeft = () => {
     if (mainImage < 3) {
-      setOffset1(offset1 - 425);
-      setOffset2(offset2 - 425);
-      setOffset3(offset3 - 425);
-      setOffset4(offset4 - 425);
-      setOffset5(offset5 - 425);
-      setOffset6(offset6 - 425);
-      setOffset7(offset7 - 425);
-  
+      setOffset1(offset1 - offsetChange);
+      setOffset2(offset2 - offsetChange);
+      setOffset3(offset3 - offsetChange);
       setMainImage(mainImage + 1);
     }
   };
-  
+
   const moveRight = () => {
     if (mainImage > 1) {
-      setOffset1(offset1 + 425);
-      setOffset2(offset2 + 425);
-      setOffset3(offset3 + 425);
-      setOffset4(offset4 + 425);
-      setOffset5(offset5 + 425);
-      setOffset6(offset6 + 425);
-      setOffset7(offset7 + 425);  
+      setOffset1(offset1 + offsetChange);
+      setOffset2(offset2 + offsetChange);
+      setOffset3(offset3 + offsetChange);
       setMainImage(mainImage - 1);
     }
   };
-  
 
   const imageStyle1 = {
     transform: `translateX(${offset1}px)`,
-    transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out", 
-    // height: mainImage === 1 ? "250px" : "200px",
+    transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
-  
 
   const imageStyle2 = {
-    transform: `translateX(${offset1}px)`,
-    transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out", 
-    // height: mainImage === 2 ? "250px" : "200px",
+    transform: `translateX(${offset2}px)`,
+    transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
 
   const imageStyle3 = {
     transform: `translateX(${offset3}px)`,
-    transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out", 
-    // height: mainImage === 3 ? "250px" : "200px",
+    transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
-
-  // const imageStyle4 = {
-  //   transform: `translateX(${offset4}px)`,
-  //   transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out", 
-  //   height: mainImage === 0 ? "250px" : "200px",
-  // };
-
-  // const imageStyle5 = {
-  //   transform: `translateX(${offset5}px)`,
-  //   transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out", 
-  //   height: mainImage === 4 ? "250px" : "200px",
-  // };
-  // const imageStyle6 = {
-  //   transform: `translateX(${offset6}px)`,
-  //   transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out", 
-  //   height: mainImage === -1 ? "250px" : "200px",
-  // };
-  // const imageStyle7 = {
-  //   transform: `translateX(${offset7}px)`,
-  //   transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out", 
-  //   height: mainImage === 5 ? "250px" : "200px",
-  // };
 
   const overlayStyle = {
     position: "absolute",
@@ -102,48 +87,88 @@ function NuestrosVinos() {
       <div className="text-center relative z-10 top-[78px] mx-32">
         <div className="w-[682px] h-[50px]">
           <h1 className="mb-4 texto-vinos text-black font-black absolute ">
-            VINOS
+           VINOS
           </h1>
         </div>
       </div>
-      <div className="flex justify-between">
-        <div className="relative left-[100px]">
-          <div className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${mainImage === 3 ? 'bg-[#555555]' : 'bg-[#460377]'} transition-background duration-500`} onClick={moveLeft}>
+      <div className=" flex justify-between">
+        <div className=" relative left-[100px]">
+          <div
+            className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${
+              mainImage === 3 ? "bg-[#555555]" : "bg-[#460377]"
+            } transition-background duration-500`}
+            onClick={moveLeft}
+          >
             <img
               src={flechaIzquierda}
               alt="Flecha Izquierda"
               className="h-6 w-3.5"
-              
             />
           </div>
         </div>
-      {/* <div className="z-10 flex justify-center items-center"></div> */}
-      <div className="flex justify-between w-full h-[700px] " id="caja">
-        <div className="ml-48 z-10 flex flex-col items-center mt-48" style={imageStyle1}>
-        <img className="h-1/3" src={vino1} alt="Vino 1" style={{ height: mainImage === 1 ? "400px" : "300px", transition: "height 0.5s ease-in-out" }} />
-          <p className=" mt-16 texto-vinos-botellas">malbec</p>
-        </div>
+        <div className="flex justify-between w-full h-[700px] " id="caja">
+          <div
+            className=" ml-48 z-10 flex flex-col items-center mt-48"
+            style={imageStyle1} id="div1"  ref={div1Ref}
+          >
+            <img
+              className="h-1/3"
+              src={vino1}
+              alt="Vino 1"
+              style={{
+                height: mainImage === 1 ? "400px" : "300px",
+                transition: "height 0.5s ease-in-out",
+              }}
+            />
+            <p className=" mt-16 texto-vinos-botellas">malbec</p>
+          </div>
 
-        <div className="z-10 flex flex-col items-center mt-48" style={imageStyle2}>
-          <img className="h-1/3" src={vino2} alt="Vino 2" style={{ height: mainImage === 2 ? "400px" : "300px", transition: "height 0.5s ease-in-out" }}/>
-          <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
-            <p className=" mt-16 texto-vinos-botellas">cabernet sauvignon</p>
+          <div
+            className=" z-10 flex flex-col items-center mt-48"
+            style={imageStyle2} id="div2" ref={div2Ref}
+          >
+            <img
+              className="h-1/3"
+              src={vino2}
+              alt="Vino 2"
+              style={{
+                height: mainImage === 2 ? "400px" : "300px",
+                transition: "height 0.5s ease-in-out",
+              }}
+            />
+            <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
+              <p className=" mt-16 texto-vinos-botellas">cabernet sauvignon</p>
+            </div>
+          </div>
+          <div
+            className=" mr-48 z-10 flex flex-col items-center mt-48"
+            style={imageStyle3} id="div3" ref={div3Ref}
+          >
+            <img
+              className="h-1/3"
+              src={vino3}
+              alt="Vino 3"
+              style={{
+                height: mainImage === 3 ? "400px" : "300px",
+                transition: "height 0.5s ease-in-out",
+              }}
+            />
+            <p className=" mt-16 texto-vinos-botellas">malbec</p>
           </div>
         </div>
-        <div className="mr-48 z-10 flex flex-col items-center mt-48" style={imageStyle3}>
-          <img className="h-1/3" src={vino3} alt="Vino 3" style={{ height: mainImage === 3 ? "400px" : "300px", transition: "height 0.5s ease-in-out" }}/>
-          <p className=" mt-16 texto-vinos-botellas">malbec</p>
-        </div>
-        </div>
-        {/* <div className="z-10 flex justify-center items-center"></div> */}
-        <div className="relative right-[165px]">
-        <div className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${mainImage === 1 ? 'bg-[#555555]' : 'bg-[#460377]'} transition-background duration-500`} onClick={moveRight}>
-  <img
-    src={flechaDerecha}
-    alt="Flecha Izquierda"
-    className="h-6 w-3.5"             
-  />
-</div>
+        <div className=" relative right-[156px]">
+          <div
+            className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${
+              mainImage === 1 ? "bg-[#555555]" : "bg-[#460377]"
+            } transition-background duration-500`}
+            onClick={moveRight} 
+          >
+            <img
+              src={flechaDerecha}
+              alt="Flecha Izquierda"
+              className="h-6 w-3.5"
+            />
+          </div>
         </div>
       </div>
       <div className="flex justify-center">
