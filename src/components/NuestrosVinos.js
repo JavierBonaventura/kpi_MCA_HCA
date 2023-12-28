@@ -43,21 +43,83 @@ function NuestrosVinos() {
   const offsetChange = distancia2 - 5;
 
   const moveLeft = () => {
-    if (mainImage < 3) {
-      setOffset1(offset1 - offsetChange);
+    if (mainImage == 2) {
+      setOffset3(offset3 - offsetChange );
       setOffset2(offset2 - offsetChange);
-      setOffset3(offset3 - offsetChange);
-      setMainImage(mainImage + 1);
+      setOffset1(offset1 + offsetChange * 2);
+
     }
+    if (mainImage == 1) {
+      setOffset3(offset3 + offsetChange *2 );
+      setOffset2(offset2 - offsetChange );
+      setOffset1(offset1 - offsetChange);
+
+
+    }
+    if (mainImage == 3) {
+      setOffset3(offset3 - offsetChange );
+      setOffset1(offset1 - offsetChange);
+      setOffset2(offset2 + offsetChange *2);
+
+
+    }
+    
+
+    switch (mainImage) {
+      case 2:
+          setMainImage(3);
+          break;
+      case 1:
+          setMainImage(2);
+          break;
+      case 3:
+          setMainImage(1);
+          break;
+      default:
+          // Puedes manejar el caso en que mainImage no sea 1, 2 o 3, si es necesario.
+          break;
+  }
+
   };
 
   const moveRight = () => {
-    if (mainImage > 1) {
-      setOffset1(offset1 + offsetChange);
+    
+    if (mainImage == 2) {
+      setOffset3(offset3 - offsetChange * 2);
       setOffset2(offset2 + offsetChange);
-      setOffset3(offset3 + offsetChange);
-      setMainImage(mainImage - 1);
+      setOffset1(offset1 + offsetChange);
+
     }
+    if (mainImage == 1) {
+      setOffset3(offset3 + offsetChange );
+      setOffset2(offset2 - offsetChange * 2);
+      setOffset1(offset1 + offsetChange);
+
+
+    }
+    if (mainImage == 3) {
+      setOffset3(offset3 + offsetChange );
+      setOffset1(offset1 - offsetChange * 2);
+      setOffset2(offset2 + offsetChange);
+
+
+    }
+    
+
+    switch (mainImage) {
+      case 2:
+          setMainImage(1);
+          break;
+      case 1:
+          setMainImage(3);
+          break;
+      case 3:
+          setMainImage(2);
+          break;
+      default:
+          // Puedes manejar el caso en que mainImage no sea 1, 2 o 3, si es necesario.
+          break;
+  }
   };
 
   const imageStyle1 = {
@@ -100,7 +162,7 @@ function NuestrosVinos() {
         <div className=" relative left-[100px]">
           <div
             className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${
-              mainImage === 3 ? "bg-[#555555]" : "bg-[#460377]"
+              mainImage === 3 ? "bg-[#460377]" : "bg-[#460377]"
             } transition-background duration-500`}
             onClick={moveLeft}
           >
@@ -113,7 +175,7 @@ function NuestrosVinos() {
         </div>
         <div className="flex justify-between w-6/12 h-[700px]  " id="caja">
           <div
-            className="  z-10 flex flex-col items-center mt-48 "
+            className={`z-${mainImage === 1 || mainImage === 3 ? "40" : "10"} flex flex-col items-center mt-48`}
             style={imageStyle1}
             id="div1"
             ref={div1Ref}
@@ -127,13 +189,14 @@ function NuestrosVinos() {
                 marginTop: mainImage === 1 ? "-40px" : "0",
                 transition:
                   "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                  
               }}
             />
             <p className=" mt-16 texto-vinos-botellas">malbec</p>
           </div>
 
           <div
-            className=" z-10 flex flex-col items-center mt-48 "
+            className={`z-${mainImage === 1 || mainImage === 2 ? "40" : "10"} flex flex-col items-center mt-48`}
             style={imageStyle2}
             id="div2"
             ref={div2Ref}
@@ -154,7 +217,7 @@ function NuestrosVinos() {
             </div>
           </div>
           <div
-            className="  z-10 flex flex-col items-center mt-48 "
+            className={`z-${mainImage === 2 || mainImage === 3 ? "40" : "10"} flex flex-col items-center mt-48`}
             style={imageStyle3}
             id="div3"
             ref={div3Ref}
@@ -176,7 +239,7 @@ function NuestrosVinos() {
         <div className=" relative right-[156px]">
           <div
             className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${
-              mainImage === 1 ? "bg-[#555555]" : "bg-[#460377]"
+              mainImage === 1 ? "bg-[#460377]" : "bg-[#460377]"
             } transition-background duration-500`}
             onClick={moveRight}
           >
