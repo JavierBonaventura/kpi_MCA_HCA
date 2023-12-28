@@ -175,7 +175,7 @@ function NuestrosVinos() {
         </div>
         <div className="flex justify-between w-6/12 h-[700px]  " id="caja">
           <div
-            className={`z-${mainImage === 1 || mainImage === 3 ? "40" : "10"} flex flex-col items-center mt-48`}
+            className="  z-10 flex flex-col items-center mt-48 "
             style={imageStyle1}
             id="div1"
             ref={div1Ref}
@@ -196,7 +196,7 @@ function NuestrosVinos() {
           </div>
 
           <div
-            className={`z-${mainImage === 1 || mainImage === 2 ? "40" : "10"} flex flex-col items-center mt-48`}
+            className=" z-10 flex flex-col items-center mt-48 "
             style={imageStyle2}
             id="div2"
             ref={div2Ref}
@@ -217,7 +217,7 @@ function NuestrosVinos() {
             </div>
           </div>
           <div
-            className={`z-${mainImage === 2 || mainImage === 3 ? "40" : "10"} flex flex-col items-center mt-48`}
+            className="  z-10 flex flex-col items-center mt-48 "
             style={imageStyle3}
             id="div3"
             ref={div3Ref}
