@@ -317,3 +317,41 @@ line-height: 28px; /* 155.556% */
 letter-spacing: 4px;
 text-transform: uppercase;
 }
+
+
+/* componente bodega 2 */
+.text-bodega-comp2 {
+    color: #FFF;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px; /* 150% */
+    }
+
+    /* componente bodega 4 */
+.text-bodega-comp4 {
+    color: #FFF;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 155.556% */
+    }
+
+        /* componente bodega 5 */
+.text-bodega-comp5 {
+    color: #FFF;
+    text-align: center;
+    font-family: Gotham Black;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70px; /* 116.667% */
+    letter-spacing: -1px;
+    }
+
+
+    

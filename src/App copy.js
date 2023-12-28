@@ -17,12 +17,6 @@ import PampaElCielo from "./components/PampaElCielo";
 import ParajeAltamira from "./components/ParajeAltamira";
 import Contacto from "./components/Contacto";
 import FormContacto from "./components/FormContacto";
-import BodegaComponente1 from "./components/Bodega/BodegaComponente1";
-import BodegaComponente2 from "./components/Bodega/BodegaComponente2";
-import BodegaComponente3 from "./components/Bodega/BodegaComponente3";
-import BodegaComponente4 from "./components/Bodega/BodegaComponente4";
-import BodegaComponente5 from "./components/Bodega/BodegaComponente5";
-
 
 function App() {
   return (

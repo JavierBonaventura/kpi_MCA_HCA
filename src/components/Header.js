@@ -10,9 +10,12 @@ function Header() {
     <header>
       <div className="w-full h-[100px] flex justify-between bg-[#252323] text-header items-center pl-20 pr-8">
         <div className="h-full flex items-center text-[#252323]">BODEGA</div>
-        <div className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer">
-          BODEGA
-        </div>
+        <Link
+          to="/bodega"
+          className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer"
+        >
+          <div>BODEGA</div>
+        </Link>
         <Link
           to="/nuestrosVinedos"
           className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer"
