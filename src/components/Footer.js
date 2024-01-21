@@ -14,7 +14,6 @@ function Footer() {
           <img className="w-[194px]" src={logo_footer} alt="Logo" />
           <div className="mt-4 flex">
             <img src={instagram} alt="instagram" className="w-6 h-6 mr-2" />
-            <img src={google} alt="google" className="w-6 h-6 mr-2" />
             <img src={facebook} alt="facebook" className="w-6 h-6" />
           </div>
         </div>
@@ -33,7 +32,7 @@ function Footer() {
             </p>
           </div>
           <div className="w-[270px] py-6 align-middle">
-            <p className="text-footer-sub-titulos">alexei@getcraftwork.com</p>
+            <p className="text-footer-sub-titulos">info@vinosdelaluz.com</p>
           </div>
         </div>
         <div className="w-1/4 flex flex-col justify-center items-left mb-20 ml-24 mt-12">

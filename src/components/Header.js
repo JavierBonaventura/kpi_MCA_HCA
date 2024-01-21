@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logoConCalidad.png";
 import instagram from "../images/instagram.png";
-import google from "../images/google.png";
 import facebook from "../images/facebook.png";
 
 function Header() {
@@ -23,18 +22,24 @@ function Header() {
           <div>VIÑEDOS</div>
         </Link>
 
-        <div className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer pr-8 pl-8">
-          VINOS
-        </div>
+        <Link
+          to="/vinos"
+          className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer"
+        >
+          <div>VINOS</div>
+        </Link>
         <div className="h-full flex items-center text-[#252323]"></div>
         <div className="h-full flex items-center">
           <Link to="/">
             <img src={logo} alt="Logo" className="w-28 flex-shrink-0" />
           </Link>
         </div>
-        <div className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer">
-          NOSOTROS
-        </div>
+        <Link
+          to="/nosotros"
+          className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer"
+        >
+          <div>NOSOTROS</div>
+        </Link>
         <div className="h-full flex items-center px-2 hover:bg-[#460377] hover:cursor-pointer">
           PRESS KIT
         </div>

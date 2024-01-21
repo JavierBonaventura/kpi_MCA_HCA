@@ -355,3 +355,107 @@ text-transform: uppercase;
 
 
     
+/* componente nosotros */
+
+.text-nosotros-comp2 {
+    color: #FFF;
+text-align: center;
+font-family: Gotham;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 36px; /* 150% */
+}
+
+.text-nosotros-comp3 {
+    color: #FFF;
+text-align: center;
+font-family: "Gotham Black";
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 50px; /* 125% */
+text-transform: uppercase;
+}
+
+.text-nosotros-comp3-chico{
+    color: #FFF;
+text-align: center;
+font-family: Gotham;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 116.667% */
+}
+
+.text-nosotros-comp4{
+    color: #FFF;
+font-family: Gotham;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 155.556% */
+}
+
+
+/* componente vinos */
+
+
+.text-vinos-comp2{
+    color: #FFF;
+text-align: center;
+font-family: Gotham;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 36px; /* 150% */
+}
+
+.text-vinos-comp3-titulo{
+color: #FFF;
+font-family: "Gotham Black";
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 50px; /* 125% */
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
+.text-vinos-comp3{
+    color: #FFF;
+    font-family: Gotham;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 155.556% */
+}
+
+.boton-vinos-ver-mas-comp3{
+    width: 154px;
+height: 40px;
+flex-shrink: 0;
+border-radius: 5px;
+border: 2px solid #FFF;
+background: rgba(245, 244, 255, 0.00);
+display: flex;  
+align-items: center;
+} 
+
+.texto-boton-vinos-ver-mas-comp3{
+    color: #FFF;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: flex;
+    width: 154px;
+    height: 16px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+} 

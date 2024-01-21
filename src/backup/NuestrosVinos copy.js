@@ -79,10 +79,7 @@ function NuestrosVinos() {
           // Puedes manejar el caso en que mainImage no sea 1, 2 o 3, si es necesario.
           break;
   }
-    // setOffset1(offset1 - offsetChange);
-    // setOffset2(offset2 - offsetChange);
-    // setOffset3(offset3 - offsetChange);
-    // setMainImage(mainImage + 1);
+
   };
 
   const moveRight = () => {

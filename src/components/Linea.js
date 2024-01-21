@@ -20,7 +20,7 @@ function Linea() {
 
   return (
     <div
-      className="w-full h-[718px]  bg-cover bg-center relative"
+      className="w-full h-[656px]  bg-cover bg-center relative"
       style={{ backgroundImage: `url(${fondoLinea})` }}
     >
       <div className="text-center relative z-10 top-[240px] flex justify-center">
