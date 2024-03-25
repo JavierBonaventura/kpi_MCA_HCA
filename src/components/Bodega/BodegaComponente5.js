@@ -1,5 +1,5 @@
 import React from "react";
-import bodegaFoto3 from "../../images/bodegaFoto3.png";
+import bodegaFoto3 from "../../images/banner-bodega.png";
 
 function BodegaComponente5() {
   const firaSans = {
@@ -25,24 +25,15 @@ function BodegaComponente5() {
 
   return (
     <div
-      className="w-full h-[440px] flex items-center justify-center bg-cover bg-center relative"
+      className="w-full py-24 lg:py-56 flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bodegaFoto3})` }}
     >
-      <div className="text-center relative  z-10">
-        <div className="w-[810x] mx-auto">
-          <h1 className="mb-4 text-bodega-comp5" style={gothamBlack}>
-          BLOQUE CALL TO ACTION          </h1>
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-center relative  z-10">
+        <div className="flex justify-center ">
+          <div className="flex justify-center items-center z-10 px-10 py-4 flex-shrink-0 border border-white relative  flex-col hover:bg-[#460377] hover:cursor-pointer transition-all ease-in-out duration-300 ">
+            <p className="text-ver-mas ">VER VINOS</p>
+          </div>
         </div>
-        <div className="w-[712px] mx-auto ">
-          <p className="text-center texto-valle-uco-2" style={gothamMedium}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet faucibus ante. Sed lobortis pellentesque nulla, ut semper quam. Phasellus ac justo iaculis,
-          </p>
-        </div>
-        <div className="flex justify-center mt-28">
-        <div className="flex justify-center items-center z-10 w-[208px] h-[50px] flex-shrink-0 border border-white relative  flex flex-col items-center hover:bg-[#460377] hover:cursor-pointer rounded">
-          <p className="text-ver-mas ">VER VINOS</p>
-        </div>
-      </div>
       </div>
       <div className="z-0" style={overlayStyle}></div>
     </div>

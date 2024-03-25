@@ -1,5 +1,5 @@
 import React from "react";
-import referentes from "../../images/referentes.png";
+import referentes from "../../images/nosotros-vinedo.png";
 
 function NosotrosComponente3() {
   const firaSans = {
@@ -10,7 +10,6 @@ function NosotrosComponente3() {
     fontFamily: "Gotham Black",
   };
 
-  
   const gothamMedium = {
     fontFamily: "Gotham Medium",
   };
@@ -26,24 +25,32 @@ function NosotrosComponente3() {
 
   return (
     <div
-      className="w-full h-[673px] flex items-center justify-center bg-cover bg-center relative"
+      className="w-full  flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${referentes})` }}
     >
-      <div className="text-center relative  z-10">
-        <div className="w-[616px] h-[50px] mx-auto">
-          <h1 className="mb-4 text-nosotros-comp3" style={gothamBlack}>
-            NUESTROS REFERENTES
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-16 lg:!py-44">
+        <div className="text-center relative z-10 space-y-10 text-white">
+          <h1 className="text-lg lg:text-[3rem]" style={gothamBlack}>
+            NUESTROS ORÍGENES
           </h1>
-        </div>
-        <div className="w-[739px] mx-auto pt-6">
-          <p className="text-center text-nosotros-comp3-chico w-[739px] h-[84px] mx-auto" style={gothamMedium}>
-          Cosmos solves today’s hardest blockchain problems.
-          <p>
-Join the most customizable ecosystem the of connected
-</p>
-<p>
- blockchain.
- </p>
+
+          <p className="text-sm lg:text-lg" style={gothamMedium}>
+            El origen de la tradición vitícola de la familia Fernández Núñez se
+            remonta a principios del siglo XX, cuando en 1910, los emigrantes
+            gallegos Serafín Fernández y María Núñez, partieron a Argentina en
+            busca de trabajo. <br />
+            <br /> Estos dos españoles aportaron su saber hacer como
+            trabajadores jornaleros de siembras, podas y cosechas hasta
+            asentarse en Mendoza, en 1919, donde las tierras fiscales de acceso
+            gratuito de la pre-cordillera de los Andes, necesitaban mano de obra
+            en los límites con Chile. <br />
+            <br /> El lugar era el Valle de Uco, donde se sembró por primera
+            vez, el origen de Vinos de LA LUZ y donde actualmente está ubicada
+            nuestra bodega argentina. <br />
+            <br /> El lugar era el Valle de Uco, donde se sembró por primera vez
+            el origen de Vinos de la Luz. Ahí actualmente está ubicada nuestra
+            bodega argentina bajo la dirección técnica del enólogo Pablo
+            Navarrete.
           </p>
         </div>
       </div>

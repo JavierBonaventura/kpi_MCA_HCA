@@ -44,82 +44,68 @@ function NuestrosVinos() {
 
   const moveLeft = () => {
     if (mainImage == 2) {
-      setOffset3(offset3 - offsetChange );
+      setOffset3(offset3 - offsetChange);
       setOffset2(offset2 - offsetChange);
       setOffset1(offset1 + offsetChange * 2);
-
     }
     if (mainImage == 1) {
-      setOffset3(offset3 + offsetChange *2 );
-      setOffset2(offset2 - offsetChange );
+      setOffset3(offset3 + offsetChange * 2);
+      setOffset2(offset2 - offsetChange);
       setOffset1(offset1 - offsetChange);
-
-
     }
     if (mainImage == 3) {
-      setOffset3(offset3 - offsetChange );
+      setOffset3(offset3 - offsetChange);
       setOffset1(offset1 - offsetChange);
-      setOffset2(offset2 + offsetChange *2);
-
-
+      setOffset2(offset2 + offsetChange * 2);
     }
-    
 
     switch (mainImage) {
       case 2:
-          setMainImage(3);
-          break;
+        setMainImage(3);
+        break;
       case 1:
-          setMainImage(2);
-          break;
+        setMainImage(2);
+        break;
       case 3:
-          setMainImage(1);
-          break;
+        setMainImage(1);
+        break;
       default:
-          // Puedes manejar el caso en que mainImage no sea 1, 2 o 3, si es necesario.
-          break;
-  }
-
+        // Puedes manejar el caso en que mainImage no sea 1, 2 o 3, si es necesario.
+        break;
+    }
   };
 
   const moveRight = () => {
-    
     if (mainImage == 2) {
       setOffset3(offset3 - offsetChange * 2);
       setOffset2(offset2 + offsetChange);
       setOffset1(offset1 + offsetChange);
-
     }
     if (mainImage == 1) {
-      setOffset3(offset3 + offsetChange );
+      setOffset3(offset3 + offsetChange);
       setOffset2(offset2 - offsetChange * 2);
       setOffset1(offset1 + offsetChange);
-
-
     }
     if (mainImage == 3) {
-      setOffset3(offset3 + offsetChange );
+      setOffset3(offset3 + offsetChange);
       setOffset1(offset1 - offsetChange * 2);
       setOffset2(offset2 + offsetChange);
-
-
     }
-    
 
     switch (mainImage) {
       case 2:
-          setMainImage(1);
-          break;
+        setMainImage(1);
+        break;
       case 1:
-          setMainImage(3);
-          break;
+        setMainImage(3);
+        break;
       case 3:
-          setMainImage(2);
-          break;
+        setMainImage(2);
+        break;
       default:
-          // Puedes manejar el caso en que mainImage no sea 1, 2 o 3, si es necesario.
-          break;
-  }
+        // Puedes manejar el caso en que mainImage no sea 1, 2 o 3, si es necesario.
+        break;
+    }
   };
 
   const imageStyle1 = {
@@ -148,115 +134,117 @@ function NuestrosVinos() {
 
   return (
     <div
-      className="w-full h-[979px]  bg-cover bg-center relative overflow-hidden"
+      className="hidden lg:block w-full  bg-cover bg-center relative overflow-hidden "
       style={{ backgroundImage: `url(${fondoVinos})` }}
     >
-      <div className="text-center relative z-10 top-[78px] mx-32">
-        <div className="w-[682px] h-[50px]">
-          <h1 className="mb-4 texto-vinos text-black font-black absolute ">
-            VINOS
-          </h1>
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-16">
+        <div className="relative z-10 ">
+          <h1 className="texto-vinos text-black font-black ">VINOS</h1>
         </div>
-      </div>
-      <div className=" flex justify-between">
-        <div className=" relative left-[100px]">
-          <div
-            className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${
-              mainImage === 3 ? "bg-[#460377]" : "bg-[#460377]"
-            } transition-background duration-500`}
-            onClick={moveLeft}
-          >
-            <img
-              src={flechaIzquierda}
-              alt="Flecha Izquierda"
-              className="h-6 w-3.5"
-            />
-          </div>
-        </div>
-        <div className="flex justify-between w-6/12 h-[700px]  " id="caja">
-          <div
-            className="  z-10 flex flex-col items-center mt-48 "
-            style={imageStyle1}
-            id="div1"
-            ref={div1Ref}
-          >
-            <img
-              className="h-1/3"
-              src={vino1}
-              alt="Vino 1"
-              style={{
-                height: mainImage === 1 ? "489px" : "417px",
-                marginTop: mainImage === 1 ? "-40px" : "0",
-                transition:
-                  "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
-                  
-              }}
-            />
-            <p className=" mt-16 texto-vinos-botellas">malbec</p>
-          </div>
-
-          <div
-            className=" z-10 flex flex-col items-center mt-48 "
-            style={imageStyle2}
-            id="div2"
-            ref={div2Ref}
-          >
-            <img
-              className="h-1/3"
-              src={vino2}
-              alt="Vino 2"
-              style={{
-                height: mainImage === 2 ? "489px" : "417px",
-                marginTop: mainImage === 2 ? "-40px" : "0",
-                transition:
-                  "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
-              }}
-            />
-            <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
-              <p className=" mt-16 texto-vinos-botellas">cabernet sauvignon</p>
+        <div className="flex justify-between">
+          <div className=" relative ">
+            <div
+              className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/2  hover:bg-[#460377] ${
+                mainImage === 3 ? "bg-transparent" : "bg-transparent"
+              } transition-background duration-500`}
+              onClick={moveLeft}
+            >
+              <img
+                src={flechaIzquierda}
+                alt="Flecha Izquierda"
+                className="h-6 w-3.5"
+              />
             </div>
           </div>
           <div
-            className="  z-10 flex flex-col items-center mt-48 "
-            style={imageStyle3}
-            id="div3"
-            ref={div3Ref}
+            className="flex justify-between w-7/12 h-[650px] py-24  "
+            id="caja"
           >
-            <img
-              className="h-1/3"
-              src={vino3}
-              alt="Vino 3"
-              style={{
-                height: mainImage === 3 ? "489px" : "417px",
-                marginTop: mainImage === 3 ? "-40px" : "0",
-                transition:
-                  "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
-              }}
-            />
-            <p className=" mt-16 texto-vinos-botellas">malbec</p>
-          </div>
-        </div>
-        <div className=" relative right-[156px]">
-          <div
-            className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/3 ${
-              mainImage === 1 ? "bg-[#460377]" : "bg-[#460377]"
-            } transition-background duration-500`}
-            onClick={moveRight}
-          >
-            <img
-              src={flechaDerecha}
-              alt="Flecha Izquierda"
-              className="h-6 w-3.5"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center mt-28">
-        <div className="flex justify-center items-center z-10 w-[220px] h-[40px] flex-shrink-0 border border-white relative  flex flex-col items-center hover:bg-[#460377] hover:cursor-pointer rounded">
-          <p className="text-ver-mas ">ver más</p>
-        </div>
-      </div>
+            <div
+              className="  z-10 flex flex-col items-center  "
+              style={imageStyle1}
+              id="div1"
+              ref={div1Ref}
+            >
+              <img
+                className="h-1/3"
+                src={vino1}
+                alt="Vino 1"
+                style={{
+                  height: mainImage === 1 ? "489px" : "417px",
+                  marginTop: mainImage === 1 ? "-40px" : "0",
+                  transition:
+                    "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                }}
+              />
+              <p className=" mt-16 texto-vinos-botellas">malbec</p>
+            </div>
 
+            <div
+              className=" z-10 flex flex-col items-center "
+              style={imageStyle2}
+              id="div2"
+              ref={div2Ref}
+            >
+              <img
+                className="h-1/3"
+                src={vino2}
+                alt="Vino 2"
+                style={{
+                  height: mainImage === 2 ? "489px" : "417px",
+                  marginTop: mainImage === 2 ? "-40px" : "0",
+                  transition:
+                    "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                }}
+              />
+              <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
+                <p className=" mt-16 texto-vinos-botellas">
+                  cabernet sauvignon
+                </p>
+              </div>
+            </div>
+            <div
+              className="  z-10 flex flex-col items-center "
+              style={imageStyle3}
+              id="div3"
+              ref={div3Ref}
+            >
+              <img
+                className="h-1/3"
+                src={vino3}
+                alt="Vino 3"
+                style={{
+                  height: mainImage === 3 ? "489px" : "417px",
+                  marginTop: mainImage === 3 ? "-40px" : "0",
+                  transition:
+                    "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
+                }}
+              />
+              <p className=" mt-16 texto-vinos-botellas">malbec</p>
+            </div>
+          </div>
+          <div className="relative ">
+            <div
+              className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/2 right-0 hover:bg-[#460377] ${
+                mainImage === 1 ? "bg-transparent" : "bg-transparent"
+              } transition-background duration-500`}
+              onClick={moveRight}
+            >
+              <img
+                src={flechaDerecha}
+                alt="Flecha Izquierda"
+                className="h-6 w-3.5"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <div className="flex justify-center items-center z-10  flex-shrink-0 border border-white relative flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
+            <p className="text-ver-mas ">ver más</p>
+          </div>
+        </div>
+      </div>
       <div className="z-0" style={overlayStyle}></div>
     </div>
   );

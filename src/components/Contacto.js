@@ -1,5 +1,5 @@
 import React from "react";
-import valleUco from "../images/valleUco.png";
+import map from "../images/map-contacto.png";
 import celular from "../images/celular.png";
 import correo from "../images/correo.png";
 
@@ -13,34 +13,30 @@ function Contacto() {
   };
 
   return (
-    <div className="w-full h-[488px] flex  justify-center bg-[#252323]">
-      <div className="text-center relative mt-32 z-10">
-        <div className="w-[351px] mx-auto">
-          <h1 className="texto-valle-uco-1" style={gothamBlack}>
+    <div className=" bg-[#252323] py-10 lg:py-0 ">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col lg:flex-row gap-y-5 lg:gap-y-0">
+        <div className="w-full lg:w-1/2 text-white space-y-8 flex flex-col justify-center">
+          <h1 className="text-3xl lg:text-6xl" style={gothamBlack}>
             CONTACTO
           </h1>
+          <div className="text-sm lg:text-lg space-y-2 ">
+            <p style={firaSans}>
+              Armani, s/n Villa Seca, Tunuyan, <br /> Valle de Uco (5563)
+              Mendoza, <br />
+              Argentina
+            </p>
+            <div className="space-x-2" style={firaSans}>
+              <img src={celular} alt="Icono Map" className="inline-block w-5" />
+              <span> (+ 54 11)4328.4868/3883</span>
+            </div>
+            <div className="space-x-2" style={firaSans}>
+              <img src={correo} alt="Icono Map" className="inline-block w-5" />
+              <span> info@vinosdelaluz.com</span>
+            </div>
+          </div>
         </div>
-        <div className="w-[734px] mx-auto ">
-          <p className="text-center text-contacto-sub mt-16" style={firaSans}>
-            Armani, s/n Villa Seca, Tunuyan, Valle de Uco (5563) Mendoza,
-            Argentina
-          </p>
-          <p className="text-center text-contacto-sub mt-4" style={firaSans}>
-            <img
-              src={celular}
-              alt="Icono Map"
-              className="inline-block mr-2 w-5"
-            />
-            (+ 54 11)4328.4868/3883
-          </p>
-          <p className="text-center text-contacto-sub mt-2" style={firaSans}>
-            <img
-              src={correo}
-              alt="Icono Map"
-              className="inline-block mr-2 w-5"
-            />
-            info@vinosdelaluz.com
-          </p>
+        <div className="w-full lg:w-1/2">
+          <img src={map} alt="" className="w-full" />
         </div>
       </div>
     </div>

@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 import Header from "./components/Header";
 import ValleDeUco from "./components/ValleDeUco";
 import NuestrosVinos from "./components/NuestrosVinos";
+import NuestrosVinosMob from "./components/NuestrosVinosMob";
 import Bodega from "./components/Bodega";
 import Pampa from "./components/Pampa";
 import Vision from "./components/Vision";
@@ -10,7 +12,6 @@ import Linea from "./components/Linea";
 import Footer from "./components/Footer";
 import NuestrosVinedos from "./components/NuestrosVinedos";
 import MapaVinedos from "./components/MapaVinedos";
-import "./App.css";
 import Gualtallary from "./components/Gualtallary";
 import VistaFlores from "./components/VistaFlores";
 import PampaElCielo from "./components/PampaElCielo";
@@ -38,6 +39,10 @@ import VinosComponente8 from "./components/Vinos/VinosComponente8";
 import VinosComponente9 from "./components/Vinos/VinosComponente9";
 import VinosComponente10 from "./components/Vinos/VinosComponente10";
 
+import HeroPress from "./components/press/hero";
+import Files from "./components/press/files";
+import HeroVino from "./components/singleVinos/hero";
+
 function App() {
   return (
     <>
@@ -45,12 +50,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-           
             element={
               <>
                 <Header />
                 <ValleDeUco />
                 <NuestrosVinos />
+                <NuestrosVinosMob />
                 <Bodega />
                 <Pampa />
                 <Vision />
@@ -58,8 +63,6 @@ function App() {
                 <Footer />
               </>
             }
-
-
           />
           <Route
             path="/nuestrosVinedos"
@@ -82,7 +85,6 @@ function App() {
               <>
                 <Header />
                 <Contacto />
-                <MapaVinedos />
                 <FormContacto />
                 <Footer />
               </>
@@ -110,31 +112,51 @@ function App() {
                 <NosotrosComponente1 />
                 <NosotrosComponente2 />
                 <NosotrosComponente3 />
-                <NosotrosComponente4 />
-                <NosotrosComponente5 />
+                <Linea />
                 <Footer />
               </>
             }
           />
-                    <Route
+          <Route
             path="/vinos"
             element={
               <>
                 <Header />
                 <VinosComponente1 />
                 <VinosComponente2 />
+                <VinosComponente6 />
+                <VinosComponente9 />
+                <VinosComponente7 />
+                <VinosComponente8 />
+                <VinosComponente10 />
                 <VinosComponente3 />
                 <VinosComponente4 />
                 <VinosComponente5 />
-                <VinosComponente6 />
-                <VinosComponente7 />
-                <VinosComponente8 />
-                <VinosComponente9 />
-                <VinosComponente10 />
+
                 <Footer />
               </>
             }
-
+          />
+          <Route
+            path="/press"
+            element={
+              <>
+                <Header />
+                <HeroPress />
+                <Files />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/vino-detalle"
+            element={
+              <>
+                <Header />
+                <HeroVino />
+                <Footer />
+              </>
+            }
           />
         </Routes>
       </BrowserRouter>

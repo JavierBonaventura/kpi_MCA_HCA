@@ -1,6 +1,5 @@
 import React from "react";
-import bodegaFoto1 from "../../images/bodegaFoto1.png";
-
+import bodegaFoto1 from "../../images/hero-bodega.png";
 
 function BodegaComponente1() {
   const firaSans = {
@@ -22,15 +21,17 @@ function BodegaComponente1() {
 
   return (
     <div
-      className="w-full h-[435px] flex items-center justify-center bg-cover bg-center relative"
+      className="w-full py-32 lg:py-56 flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bodegaFoto1})` }}
     >
-      <div className="text-center relative  z-10">
-        <div className="w-[584px] mx-auto">
-          <h1 className="mb-4 texto-valle-uco-1" style={gothamBlack}>
-BODEGA          </h1>
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
+        <div className="text-center relative  z-10">
+          <div className=" mx-auto">
+            <h1 className=" texto-valle-uco-1" style={gothamBlack}>
+              BODEGA
+            </h1>
+          </div>
         </div>
-
       </div>
       <div className="z-0" style={overlayStyle}></div>
     </div>

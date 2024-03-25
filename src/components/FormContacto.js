@@ -12,61 +12,100 @@ function FormContacto() {
 
   return (
     <div
-      className="w-full h-[742px] flex items-center justify-center bg-center relative bg-[#252323]"
+      className="bg-[#252323]"
       style={{
         backgroundImage: `url(${fondoContacto})`,
-        backgroundSize: "63%",
+        backgroundSize: "40%",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "left",
       }}
     >
-      <div className="mt-10">
-        <div className="flex flex-row items-center text-white">
-          <div className="mr-4 flex flex-col texto-formulario">
-            <label htmlFor="name" style={gothamBlack}>
-              Your Name
-            </label>
-            <input type="text" id="name" className="rounded w-72 h-12  mt-1" />
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
+        <form className="max-w-md mx-auto p-8  rounded shadow-md">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="name" className="block text-white font-bold mb-2">
+                Nombre
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-white font-bold mb-2"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="service"
+                className="block text-white font-bold mb-2"
+              >
+                Servicio
+              </label>
+              <select
+                id="service"
+                name="service"
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option value="" disabled selected hidden>
+                  ver
+                </option>
+                <option value="Servicio 1">Servicio 1</option>
+                <option value="Servicio 2">Servicio 2</option>
+                <option value="Servicio 3">Servicio 3</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="phone"
+                className="block text-white font-bold mb-2"
+              >
+                Teléfono
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div className="col-span-2">
+              <label
+                htmlFor="message"
+                className="block text-white font-bold mb-2"
+              >
+                Mensaje
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              ></textarea>
+            </div>
+            <div className="col-span-2 flex justify-center">
+              <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              >
+                Enviar
+              </button>
+            </div>
           </div>
-
-          <div className="mr-4 flex flex-col texto-formulario ml-6">
-            <label htmlFor="email" style={gothamBlack}>
-              Your Email
-            </label>
-            <input type="email" id="email" className="rounded w-72 h-12 mt-1" />
-          </div>
-        </div>
-        <div className="flex flex-row items-center text-white mt-10">
-          <div className="mr-4 flex flex-col texto-formulario">
-            <label htmlFor="name" style={gothamBlack}>
-              Service
-            </label>
-            <input type="text" id="name" className="rounded w-72 h-12  mt-1" />
-          </div>
-
-          <div className="mr-4 flex flex-col texto-formulario ml-6 ">
-            <label htmlFor="email" style={gothamBlack}>
-              Your phone number
-            </label>
-            <input type="email" id="email" className="rounded w-72 h-12 mt-1" />
-          </div>
-        </div>
-
-        <div className="flex flex-row items-center text-white mt-10">
-          <div className="mr-4 flex flex-col texto-formulario">
-            <label htmlFor="name" style={gothamBlack}>
-              Message
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="rounded w-160 w-[618px] h-[136px]   mt-1"
-            />
-          </div>
-        </div>
-        <div className="boton-ver-mas-vision mt-24">
-          <p className="boton-ver-mas-texto-vision">send message</p>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import vinosFoto3 from "../../images/vinosFoto3.png";
+import Imagen from "../../images/vinosFoto3.png";
 
 function VinosComponente5() {
   const firaSans = {
@@ -19,32 +19,28 @@ function VinosComponente5() {
   };
 
   return (
-    <div className="w-full h-[415px] flex items-center justify-center bg-cover bg-center relative">
-      <div className="w-1/2 bg-gray-300">
-        <img src={vinosFoto3} alt="Gualtallary" className="w-full h-[415px]" />
-      </div>
+    <div className="flex flex-col lg:flex-row-reverse ">
+      <div
+        className="w-full lg:w-1/2 py-32 lg:py-80 bg-cover bg-center"
+        style={{ backgroundImage: `url(${Imagen})` }}
+      ></div>
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 ">
+        <h1 className=" texto-guantallary" style={gothamBlack}>
+          BLEND DE TERROIR
+        </h1>
 
-      <div className="w-1/2 bg-[#252323] h-full">
-        <div className="w-[595px]">
-          <h1
-            className="mt-16 ml-24 text-vinos-comp3-titulo"
-            style={gothamBlack}
-          >
-            SINGLE VINEYARD Y BLEND DE TERROIR
-          </h1>
-        </div>
-
-        <div className="w-[500px]  flex items-center ml-24">
-          <div className="mt-8">
-            <p className="text-vinos-comp3">
-              Es la línea que mejor representa nuestra diversidad geográfica.
-              Exhibe nuestro compromiso para poner en valor y comunicar la
-              riqueza de terruños y expresiones que nos regala el Valle de Uco.
-            </p>
+        <div>
+          <h1 className="texto-guantallary-sub"></h1>
+          <p className="texto-guantallary-sub mt-6">
+            Es la línea que mejor representa nuestra diversidad geográfica.
+            Exhibe nuestro compromiso para poner en valor y comunicar la riqueza
+            de terruños y expresiones que nos regala el Valle de Uco.
+          </p>
+          <div className=" inline-block mt-10">
+            <div className="flex justify-center items-center z-10  flex-shrink-0 border border-white relative flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
+              <p className="text-ver-mas ">ver más</p>
+            </div>
           </div>
-        </div>
-        <div className="boton-vinos-ver-mas-comp3 mt-8  ml-24">
-          <p className="texto-boton-vinos-ver-mas-comp3">ver más</p>
         </div>
       </div>
     </div>

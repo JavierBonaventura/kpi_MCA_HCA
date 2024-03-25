@@ -1,5 +1,5 @@
 import React from "react";
-import vinosFoto6 from "../../images/vinosFoto6.png";
+import Imagen from "../../images/vinosFoto6.png";
 
 function VinosComponente8() {
   const firaSans = {
@@ -19,33 +19,30 @@ function VinosComponente8() {
   };
 
   return (
-    <div className="w-full h-[415px] flex items-center justify-center bg-cover bg-center relative">
-      <div className="w-1/2 bg-[#252323] h-full">
-        <div className="w-[560px]">
-          <h1
-            className="mt-16 ml-32 text-vinos-comp3-titulo"
-            style={gothamBlack}
-          >
-            PERLAS DEL CALLEJÓN
-          </h1>
-        </div>
+    <div className="flex flex-col-reverse lg:flex-row ">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 ">
+        <h1 className=" texto-guantallary" style={gothamBlack}>
+          PERLAS DEL CALLEJÓN
+        </h1>
 
-        <div className="w-[400px]  flex items-center ml-32">
-          <div className="mt-8">
-            <p className="text-vinos-comp3">
-              Son vinos que reflejan nuestra memoria y compromiso con el pasado,
-              al mismo tiempo que representan nuestro espíritu aventurero e
-              innovador.
-            </p>
+        <div>
+          <h1 className="texto-guantallary-sub"></h1>
+          <p className="texto-guantallary-sub mt-6">
+            Son vinos que reflejan nuestra memoria y compromiso con el pasado,
+            al mismo tiempo que representan nuestro espíritu aventurero e
+            innovador.
+          </p>
+          <div className=" inline-block mt-10">
+            <div className="flex justify-center items-center z-10  flex-shrink-0 border border-white relative flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
+              <p className="text-ver-mas ">ver más</p>
+            </div>
           </div>
         </div>
-        <div className="boton-vinos-ver-mas-comp3 mt-8  ml-32">
-          <p className="texto-boton-vinos-ver-mas-comp3">ver más</p>
-        </div>
       </div>
-      <div className="w-1/2 bg-gray-300">
-        <img src={vinosFoto6} alt="Gualtallary" className="w-full h-[415px]" />
-      </div>
+      <div
+        className="w-full lg:w-1/2 py-32 lg:py-80 bg-cover bg-center"
+        style={{ backgroundImage: `url(${Imagen})` }}
+      ></div>
     </div>
   );
 }

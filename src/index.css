@@ -4,27 +4,57 @@
 
 @font-face {
   font-family: "Fira Sans";
-  src: url("../src/fonts/Fira_Sans/FiraSans-Regular.ttf")
-    format("truetype");
+  src: url("../src/fonts/Fira_Sans/FiraSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Gotham";
-  src: url("../src/fonts/Gotham-Font/GothamLight.ttf")
-    format("truetype");
+  src: url("../src/fonts/Gotham-Font/GothamLight.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Gotham Medium";
-  src: url("../src/fonts/Gotham-Font/GothamMedium.ttf")
-    format("truetype");
+  src: url("../src/fonts/Gotham-Font/GothamMedium.ttf") format("truetype");
 }
-
 
 @font-face {
   font-family: "Gotham Black";
-  src: url("../src/fonts/Gotham-Font/GothamBold.ttf")
-    format("truetype");
+  src: url("../src/fonts/Gotham-Font/GothamBold.ttf") format("truetype");
+}
+
+.container {
+  width: 100%;
+  padding: 0 1rem;
+}
+@media (min-width: 640px) {
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 1540px) {
+  .container {
+    max-width: 1536px;
+    padding: 0;
+  }
 }
 
 body {

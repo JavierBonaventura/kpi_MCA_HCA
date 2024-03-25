@@ -14,14 +14,12 @@ function BodegaComponente4() {
   };
 
   return (
-    <div className="w-full h-[250px] flex  justify-center bg-[#252323]">
-      <div className="text-center relative mt-24 z-10">
-
-        <div className="w-[630px] mx-auto ">
-          <p className="text-center text-bodega-comp4" style={gothamMedium}>
-          Somos una de las primeras bodegas construidas en la región, con algunos de los viñedos más antiguos en el Valle de Uco.          </p>
-         
-        </div>
+    <div className="w-full  flex  justify-center bg-[#252323]">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl relative  z-10 !py-10 lg:!py-20">
+        <p className="text-center text-bodega-comp4" style={gothamMedium}>
+          Somos una de las primeras bodegas construidas en la región, con
+          algunos de los viñedos más antiguos en el Valle de Uco.
+        </p>
       </div>
     </div>
   );

@@ -13,38 +13,26 @@ function Bodega() {
 
   return (
     <div
-      className="w-full h-[880px]  bg-cover bg-center relative"
+      className="w-full  bg-cover bg-center relative py-24"
       style={{ backgroundImage: `url(${fondoBodega})` }}
     >
-      <div className="text-center relative z-10 top-[94px] ml-36">
-        <div className="w-[615px] h-[50px]">
-          <h1 className="mb-4 texto-bodega-titulo text-black font-black absolute ">
-            BODEGA
-          </h1>
-        </div>
-        <div className="w-[495px] pt-20">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col gap-y-20 relative  z-10">
+        <h1 className="texto-bodega-titulo text-black font-black  text-start">
+          BODEGA
+        </h1>
+
+        <div className="w-full lg:w-2/5">
           <p className="texto-bodega text-left">
             Nuestros vinos nacen de la experiencia, la atención al detalle y una
             exhaustiva selección de viñedos que se ha ido haciendo a lo largo de
-            casi dos décadas. Trabajamos en torno a 3 pilares fundamentales:
-          </p>
-          <p className="texto-bodega text-left pt-2">
-            Naturaleza. El vino comienza en el viñedo. Cada parte del ecosistema
-            que rodea nuestra bodega en Vista Flores es prioritaria. Desde el
-            búho blanco del valle, imagen de nuestra marca, hasta la flora
-            alrededor de la finca.
-          </p>
-          <p className="texto-bodega text-left pt-2">
-            Innovación. Trabajamos cada día con la mirada puesta en los procesos
-            y nuevos productos.
-          </p>
-          <p className="texto-bodega text-left pt-2">
-            Sostenibilidad. Cuidamos no solo de los viñedos, sino del entorno
-            paisajístico y de la fauna que rodea nuestra bodega.{" "}
+            casi dos décadas. <br /> <br /> Trabajamos en torno a 3 pilares
+            fundamentales: Naturaleza, Innovacion y Sostenibilidad.
           </p>
         </div>
-        <div className="boton-ver-mas mt-28 ">
-          <p className="boton-ver-mas-texto">VER MáS</p>
+        <div className="flex">
+          <div className="flex relative  z-10  flex-shrink-0 border border-white  flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
+            <p className="text-ver-mas ">ver más</p>
+          </div>
         </div>
       </div>
 
