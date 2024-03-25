@@ -31,7 +31,7 @@ function BodegaComponente5() {
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-center relative  z-10">
         <div className="flex justify-center ">
           <div className="flex justify-center items-center z-10 px-10 py-4 flex-shrink-0 border border-white relative  flex-col hover:bg-[#460377] hover:cursor-pointer transition-all ease-in-out duration-300 ">
-            <p className="text-ver-mas ">VER VINOS</p>
+            <p className="text-ver-mas  text-white">VER VINOS</p>
           </div>
         </div>
       </div>

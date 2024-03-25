@@ -229,7 +229,7 @@ function NuestrosVinos() {
 
         <div className="flex justify-center mt-10">
           <div className="flex justify-center items-center z-10  flex-shrink-0 border border-white relative flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
-            <p className="text-ver-mas ">ver más</p>
+            <p className="text-ver-mas  text-white">ver más</p>
           </div>
         </div>
       </div>

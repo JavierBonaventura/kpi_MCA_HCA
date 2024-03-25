@@ -59,7 +59,7 @@ function Pampa() {
       </div>
       <div className="flex justify-center">
         <div className=" flex justify-center items-center z-10 w-[124px] h-[33px] flex-shrink-0 border border-white relative flex flex-col items-center  top-[100px] border-white relative  flex flex-col items-center hover:bg-[#460377] hover:cursor-pointer rounded">
-          <p className="texto-ver-mas-pampa">ver más</p>
+          <p className="texto-ver-mas-pampa  text-white">ver más</p>
         </div>
       </div>
 
