@@ -20,7 +20,7 @@ export default function App() {
             }
 
             .swiper-button-next {
-                background: transparent;
+                background: #460377;
                 border-radius: 9999px;
                 padding: 1.7rem 1.7rem;
                 transition-property: all;
@@ -30,8 +30,7 @@ export default function App() {
             }
 
             .swiper-button-next:hover {
-                background: #460377;
-                border-radius: 9999px;
+              opacity: 0.7;
             }
 
 
@@ -41,7 +40,7 @@ export default function App() {
             }
 
             .swiper-button-prev {
-                background: transparent;
+                background: #460377;
                 border-radius: 9999px;
                 padding: 1.7rem 1.7rem;
                 transition-property: all;
@@ -51,8 +50,7 @@ export default function App() {
             }
 
             .swiper-button-prev:hover {
-                background: #460377;
-                border-radius: 9999px;
+              opacity: 0.7;
             }
           `}</style>
       <Swiper

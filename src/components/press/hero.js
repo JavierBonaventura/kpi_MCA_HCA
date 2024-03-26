@@ -19,14 +19,10 @@ function Hero() {
     backgroundColor: "rgba(0, 0, 0, 0.46)",
   };
 
-  const screenCustomStyle = {
-    height: "calc(100vh - 86.77px)",
-  };
-
   return (
     <div
-      className="w-full  flex items-center justify-center bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${valleUco})`, ...screenCustomStyle }}
+      className="w-full py-32 lg:py-40  flex items-center justify-center bg-cover bg-center relative"
+      style={{ backgroundImage: `url(${valleUco})` }}
     >
       <div className="z-10 space-y-8 ">
         <h1 className="texto-valle-uco-1 uppercase" style={gothamBlack}>

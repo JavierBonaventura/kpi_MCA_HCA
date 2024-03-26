@@ -21,7 +21,7 @@ function VinosComponente1() {
 
   return (
     <div
-      className="w-full py-24 lg:py-60 flex items-center justify-center bg-cover bg-center relative"
+      className="w-full py-32 lg:py-56 flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${botellas})` }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-center relative  z-10">

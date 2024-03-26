@@ -24,18 +24,18 @@ function Footer() {
                 <img src={linkedin} alt="instagram" className="w-7" />
               </a>
               <a
-                href=""
-                target="_blank"
-                className="hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-                <img src={instagram} alt="instagram" className="w-7" />
-              </a>
-              <a
-                href=""
+                href="https://www.facebook.com/callejoncrimen"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
                 <img src={facebook} alt="facebook" className="w-7" />
+              </a>
+              <a
+                href="https://www.instagram.com/callejoncrimen/"
+                target="_blank"
+                className="hover:bg-[#460377] transition-all ease-in-out duration-300"
+              >
+                <img src={instagram} alt="instagram" className="w-7" />
               </a>
             </div>
           </div>

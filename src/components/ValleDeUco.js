@@ -19,28 +19,38 @@ function HeroValle() {
     backgroundColor: "rgba(0, 0, 0, 0.46)",
   };
 
-  const screenCustomStyle = {
-    height: "calc(100vh - 86.77px)",
-  };
-
   return (
-    <div
-      className="w-full  flex items-center justify-center bg-cover bg-center relative"
-      style={{ backgroundImage: `url(${valleUco})`, ...screenCustomStyle }}
-    >
-      <div className="z-10 space-y-8 ">
-        <h1 className="texto-valle-uco-1 uppercase" style={gothamBlack}>
-          VALLE DE UCO
-        </h1>
-        <div className="w-1/2 mx-auto">
-          <p className="text-center texto-valle-uco-2" style={firaSans}>
-            La expresión de Vista Flores, la frescura de Pampa el Cepillo, la
-            fineza de Gualtallary y la textura de Paraje Altamira
-          </p>
+    <>
+      <style>{`
+
+          .screenCustomStyle {
+            padding: 8rem 0;
+          }
+            @media (min-width: 1024px) {
+              .screenCustomStyle {
+                height: calc(100vh - 86.77px);
+                padding: 0;
+              }
+            }
+          `}</style>
+      <div
+        className="w-full screenCustomStyle flex items-center justify-center bg-cover bg-center relative"
+        style={{ backgroundImage: `url(${valleUco})` }}
+      >
+        <div className="z-10 space-y-8 ">
+          <h1 className="texto-valle-uco-1 uppercase" style={gothamBlack}>
+            VALLE DE UCO
+          </h1>
+          <div className="w-1/2 mx-auto">
+            <p className="text-center texto-valle-uco-2" style={firaSans}>
+              La expresión de Vista Flores, la frescura de Pampa el Cepillo, la
+              fineza de Gualtallary y la textura de Paraje Altamira
+            </p>
+          </div>
         </div>
+        <div className="z-0" style={overlayStyle}></div>
       </div>
-      <div className="z-0" style={overlayStyle}></div>
-    </div>
+    </>
   );
 }
 

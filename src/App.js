@@ -44,6 +44,10 @@ import HeroVino from "./components/singleVinos/hero";
 import SliderHome from "./components/slider-home";
 import SliderBodega from "./components/Bodega/slider-bodega";
 import Wa from "./components/whatsapp";
+import Wine1 from "./components/singleVinos/Wine1";
+import Wine2 from "./components/singleVinos/Wine2";
+import Wine3 from "./components/singleVinos/Wine3";
+import NosotrosContent from "./components/Nosotros/content";
 
 function App() {
   return (
@@ -55,7 +59,6 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
                 <ValleDeUco />
                 <NuestrosVinos />
                 <NuestrosVinosMob />
@@ -72,7 +75,7 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
+
                 <NuestrosVinedos />
                 <MapaVinedos />
                 <Gualtallary />
@@ -88,7 +91,7 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
+
                 <Contacto />
                 <FormContacto />
                 <Footer />
@@ -100,7 +103,7 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
+
                 <BodegaComponente1 />
                 <BodegaComponente2 />
                 <SliderBodega />
@@ -115,10 +118,10 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
                 <NosotrosComponente1 />
-                <NosotrosComponente2 />
+                <NosotrosContent />
                 <NosotrosComponente3 />
+
                 <Linea />
                 <Footer />
               </>
@@ -129,7 +132,7 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
+
                 <VinosComponente1 />
                 <VinosComponente2 />
                 <VinosComponente6 />
@@ -140,7 +143,6 @@ function App() {
                 <VinosComponente3 />
                 <VinosComponente4 />
                 <VinosComponente5 />
-
                 <Footer />
               </>
             }
@@ -150,7 +152,6 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
                 <HeroPress />
                 <Files />
                 <Footer />
@@ -162,8 +163,11 @@ function App() {
             element={
               <>
                 <Header />
-                <Wa />
+
                 <HeroVino />
+                <Wine1 />
+                <Wine2 />
+                <Wine3 />
                 <Footer />
               </>
             }

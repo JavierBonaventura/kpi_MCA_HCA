@@ -20,18 +20,17 @@ export default function App() {
             }
 
             .swiper-button-next {
-                background: transparent;
+                background: #460377;
                 border-radius: 9999px;
                 padding: 1.7rem 1.7rem;
                 transition-property: all;
                 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
                 transition-duration: 300ms;
-                right: 150px;
+                right: 10px;
             }
 
             .swiper-button-next:hover {
-                background: #460377;
-                border-radius: 9999px;
+              opacity: 0.7;
             }
 
 
@@ -41,18 +40,27 @@ export default function App() {
             }
 
             .swiper-button-prev {
-                background: transparent;
+                background: #460377;
                 border-radius: 9999px;
                 padding: 1.7rem 1.7rem;
                 transition-property: all;
                 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
                 transition-duration: 300ms;
-                left: 150px;
+                left: 10px;
             }
 
             .swiper-button-prev:hover {
-                background: #460377;
-                border-radius: 9999px;
+              opacity: 0.7;
+            }
+
+            @media (min-width: 1024px) {
+              .swiper-button-next{
+                right: 150px;
+              }
+
+              .swiper-button-prev {
+                left: 150px;
+              }
             }
           `}</style>
       <Swiper
@@ -60,8 +68,8 @@ export default function App() {
         modules={[Navigation]}
         className="mySwiper  h-[70vh]"
       >
-        <SwiperSlide className="relative">
-          <div className="absolute text-white flex justify-center items-center flex-col w-full z-50 top-16 gap-y-3">
+        <SwiperSlide className="relative ">
+          <div className="absolute text-white flex justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
             <span className="texto-vinedos font-black ">
               VIÑEDOS - VALLE DE UCO
             </span>
@@ -82,7 +90,7 @@ export default function App() {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="absolute text-white flex justify-center items-center flex-col w-full z-50 top-16 gap-y-3">
+          <div className="absolute text-white flex justify-center items-center flex-col w-full z-50 h-full gap-y-3">
             <span className="texto-vinedos text-black font-black ">
               VIÑEDOS - VALLE DE UCO 1
             </span>
@@ -103,7 +111,7 @@ export default function App() {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="absolute text-white flex justify-center items-center flex-col w-full z-50 top-16 gap-y-3">
+          <div className="absolute text-white flex justify-center items-center flex-col w-full z-50 h-full  gap-y-3">
             <span className="texto-vinedos text-black font-black ">
               VIÑEDOS - VALLE DE UCO 2
             </span>
