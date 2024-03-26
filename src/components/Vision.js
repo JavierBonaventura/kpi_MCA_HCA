@@ -19,7 +19,7 @@ function Vision() {
           </p>
           <a
             href=""
-            className="boton-ver-mas-vision !rounded-none border-white relative  flex flex-col items-center hover:bg-[#460377] transition-all ease-in-out duration-300"
+            className="text-white rounded-none border-white relative  flex flex-col items-center hover:bg-[#460377] transition-all ease-in-out duration-300"
           >
             CONOCER MÁS
           </a>
