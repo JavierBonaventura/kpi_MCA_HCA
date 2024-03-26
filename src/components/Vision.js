@@ -17,14 +17,14 @@ function Vision() {
             volcán Tupungato, una de las montañas más importantes de la
             cordillera de los Andes.
           </p>
-          <a
-            href=""
-            className="boton-ver-mas-vision !text-white !rounded-none border-white relative  flex flex-col items-center hover:bg-[#460377] transition-all ease-in-out duration-300"
-          >
-            <p className="boton-ver-mas-texto-vision !text-white">
+          <div className="inline-block mr-auto">
+            <a
+              href=""
+              className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
+            >
               CONOCER MÁS
-            </p>
-          </a>
+            </a>
+          </div>
         </div>
         <div id="derecho" className="w-full lg:w-2/5  ml-auto  ">
           <img className="" src={barriles} alt="Barriles" />
