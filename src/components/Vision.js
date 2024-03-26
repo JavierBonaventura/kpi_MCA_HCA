@@ -21,9 +21,7 @@ function Vision() {
             href=""
             className="boton-ver-mas-vision !rounded-none border-white relative  flex flex-col items-center hover:bg-[#460377] transition-all ease-in-out duration-300"
           >
-            <p className="boton-ver-mas-texto-vision !text-white">
-              CONOCER MÁS
-            </p>
+            CONOCER MÁS
           </a>
         </div>
         <div id="derecho" className="w-full lg:w-2/5  ml-auto  ">
