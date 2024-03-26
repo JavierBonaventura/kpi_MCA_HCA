@@ -30,8 +30,13 @@ function Bodega() {
           </p>
         </div>
         <div className="flex">
-          <div className="flex relative  z-10  flex-shrink-0 border border-white  flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
-            <p className="text-ver-mas  text-white">ver más</p>
+          <div className="inline-block mr-auto z-10">
+            <a
+              href=""
+              className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
+            >
+              VER MÁS
+            </a>
           </div>
         </div>
       </div>

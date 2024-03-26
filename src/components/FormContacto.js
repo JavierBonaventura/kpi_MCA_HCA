@@ -22,7 +22,7 @@ function FormContacto() {
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-24">
         <form className="max-w-xl mx-auto p-8  rounded shadow-md">
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-5 lg:gap-10">
             <div>
               <label htmlFor="name" className="block text-white font-bold mb-2">
                 Nombre
@@ -97,13 +97,14 @@ function FormContacto() {
               ></textarea>
             </div>
             <div className="col-span-2 flex justify-start">
-              <button
-                type="submit"
-                href=""
-                className="border px-8 py-3 !rounded-none border-white relative  flex flex-col items-center hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-                <p className="boton-ver-mas-texto-vision">Enviar</p>
-              </button>
+              <div className="inline-block ">
+                <a
+                  href=""
+                  className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
+                >
+                  ENVIAR
+                </a>
+              </div>
             </div>
           </div>
         </form>

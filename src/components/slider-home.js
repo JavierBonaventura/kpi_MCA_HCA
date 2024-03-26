@@ -66,12 +66,14 @@ export default function App() {
               VIÑEDOS - VALLE DE UCO
             </span>
             <h1 className="texto-pampa font-black">PAMPA EL CEPILLO</h1>
-            <a
-              href=""
-              className="border border-white px-4 py-2 texto-ver-mas-pampa"
-            >
-              VER MÁS
-            </a>
+            <div className="inline-block mx-auto z-10">
+              <a
+                href=""
+                className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
+              >
+                VER MÁS
+              </a>
+            </div>
           </div>
           <img
             src={Slider1}
@@ -85,12 +87,14 @@ export default function App() {
               VIÑEDOS - VALLE DE UCO 1
             </span>
             <h1 className="texto-pampa font-black">PAMPA EL CEPILLO</h1>
-            <a
-              href=""
-              className="border border-white px-4 py-2 texto-ver-mas-pampa"
-            >
-              VER MÁS
-            </a>
+            <div className="inline-block mx-auto z-10">
+              <a
+                href=""
+                className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
+              >
+                VER MÁS
+              </a>
+            </div>
           </div>
           <img
             src={Slider1}
@@ -104,12 +108,14 @@ export default function App() {
               VIÑEDOS - VALLE DE UCO 2
             </span>
             <h1 className="texto-pampa font-black">PAMPA EL CEPILLO</h1>
-            <a
-              href=""
-              className="border border-white px-4 py-2 texto-ver-mas-pampa"
-            >
-              VER MÁS
-            </a>
+            <div className="inline-block mx-auto z-10">
+              <a
+                href=""
+                className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
+              >
+                VER MÁS
+              </a>
+            </div>
           </div>
           <img
             src={Slider1}

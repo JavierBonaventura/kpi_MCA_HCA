@@ -31,10 +31,13 @@ function VinosComponente4() {
             Nuestro blend de Malbec, Petit Verdot y Merlot proviene de nuestras
             fincas de Altamira, Gualtallary y Vista Flores.
           </p>
-          <div className=" inline-block mt-10">
-            <div className="flex justify-center items-center z-10  flex-shrink-0 border border-white relative flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
-              <p className="text-ver-mas  text-white">ver más</p>
-            </div>
+          <div className="inline-block mx-auto z-10 mt-10">
+            <a
+              href=""
+              className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
+            >
+              VER MÁS
+            </a>
           </div>
         </div>
       </div>
