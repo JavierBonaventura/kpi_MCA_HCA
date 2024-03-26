@@ -20,9 +20,9 @@ function FormContacto() {
         backgroundPosition: "left",
       }}
     >
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
-        <form className="max-w-md mx-auto p-8  rounded shadow-md">
-          <div className="grid grid-cols-2 gap-4">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-24">
+        <form className="max-w-xl mx-auto p-8  rounded shadow-md">
+          <div className="grid grid-cols-2 gap-10">
             <div>
               <label htmlFor="name" className="block text-white font-bold mb-2">
                 Nombre
@@ -61,7 +61,7 @@ function FormContacto() {
                 className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               >
                 <option value="" disabled selected hidden>
-                  ver
+                  Seleccionar
                 </option>
                 <option value="Servicio 1">Servicio 1</option>
                 <option value="Servicio 2">Servicio 2</option>
@@ -96,12 +96,13 @@ function FormContacto() {
                 className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               ></textarea>
             </div>
-            <div className="col-span-2 flex justify-center">
+            <div className="col-span-2 flex justify-start">
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                href=""
+                className="border px-8 py-3 !rounded-none border-white relative  flex flex-col items-center hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                Enviar
+                <p className="boton-ver-mas-texto-vision">Enviar</p>
               </button>
             </div>
           </div>

@@ -1,461 +1,481 @@
 /* componente valle de uco */
 
 .texto-valle-uco-1 {
-    color: #FFF;
-    text-align: center;
-    font-family: Gotham Black;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 70px; /* 116.667% */
-    letter-spacing: -1px;
+  color: #fff;
+  text-align: center;
+  font-family: Gotham Black;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 70px; /* 116.667% */
+  letter-spacing: -1px;
 }
 
 .texto-valle-uco-2 {
-    color: #FFF;
-    text-align: center;
-    font-family: Gotham;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 155.556% */
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
 }
-
 
 /* componente Header */
 
 .text-header {
-color: #FFF;
-font-family: Gotham;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  font-family: Gotham;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .text-header-idiomas {
-    color: #FFF;
-font-family: Gotham;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
-
 
 /* componete vinos */
 
 .texto-vinos {
-    color: #FFF;
-font-family: Gotham Black;
-font-size: 56px;
-font-style: normal;
-font-weight: 500;
-line-height: 50px; /* 89.286% */
+  color: #fff;
+  font-family: Gotham Black;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 89.286% */
 }
 
 .texto-vinos-botellas {
-    color: #FFF;
-    text-align: center;
-    font-family: Gotham;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .text-ver-mas {
-    color: #FFF;
-text-align: center;
-font-family: Gotham;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
-
 
 /* componente bodega */
 
 .texto-bodega {
-    color: #FFF;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px; /* 155.556% */
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
 }
 
 .texto-bodega-titulo {
-    color: #FFF;
+  color: #fff;
 
-    font-family: Gotham Black;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 50px; /* 125% */
+  font-family: Gotham Black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 125% */
 }
 
 .boton-ver-mas {
-    
-background: #460377;
-display: flex;
-width: 220px;
-height: 40px;
+  background: #460377;
+  display: flex;
+  width: 220px;
+  height: 40px;
 
-justify-content: center;
-align-items: center;
-flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.boton-ver-mas-texto{
-color: var(--White, #FFF);
-text-align: center;
-font-family: Gotham;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+.boton-ver-mas-texto {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
-
 
 /* componente pampa */
 
 .texto-pampa {
-    color: #FFF;
-text-align: center;
-font-family: Gotham Black;
-font-size: 40px;
-font-style: normal;
-font-weight: 500;
-line-height: 50px; /* 125% */
+  color: #fff;
+  text-align: center;
+  font-family: Gotham Black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 125% */
 }
 
 .texto-vinedos {
-    color: #FFF;
-font-family: Gotham;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .texto-ver-mas-pampa {
-    color: #FFF;
-text-align: center;
-font-family: Gotham;
-font-size: 11px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
-
 
 /* componente vision */
 
 .texto-vision {
-    color: #FFF;
-font-family: Gotham Black;
-font-size: 40px;
-font-style: normal;
-font-weight: 500;
-line-height: 50px; /* 125% */
-text-transform: uppercase;
+  color: #fff;
+  font-family: Gotham Black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 125% */
+  text-transform: uppercase;
 }
 
 .texto-vision-segundo-texto {
-    color: #FFF;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 28px; /* 155.556% */
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
 }
 
-
 .boton-ver-mas-vision {
-    
-    border-radius: 5px;
-    border: 1px solid #FFF;
-    display: flex;
-    width: 220px;
-    height: 50px;
-    
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    }
-    
-    .boton-ver-mas-texto-vision {
-        color: var(--White, #FFF);
-        text-align: center;
-        font-family: Gotham;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-    }
+  border-radius: 5px;
+  border: 1px solid #fff;
+  display: flex;
+  width: 220px;
+  height: 50px;
 
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
 
-    /* componente nueva linea */
+.boton-ver-mas-texto-vision {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
 
-    .texto-nueva-linea-secundario {
-        color: #FFF;
-text-align: center;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px; /* 155.556% */
-    }
+/* componente nueva linea */
 
+.texto-nueva-linea-secundario {
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+}
 
-    .texto-nueva-linea {
-    color: #FFF;
-text-align: center;
-font-family: Gotham Black;
-font-size: 60px;
-font-style: normal;
-font-weight: 500;
-line-height: 70px; /* 116.667% */
-letter-spacing: -1px;}
-
-
+.texto-nueva-linea {
+  color: #fff;
+  text-align: center;
+  font-family: Gotham Black;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 70px; /* 116.667% */
+  letter-spacing: -1px;
+}
 
 /* componente footer */
 
 .text-footer-titulos {
-    color: #FFF;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
-.text-footer-sub-titulos{
-    color: #FFF;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 22px; /* 122.222% */
+.text-footer-sub-titulos {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 122.222% */
 }
 
 .text-footer-sub-titulos-footer {
-    color: #FFF;
-font-family: Gotham;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
-
-
 
 /* Componente Guantallary */
 
 .texto-guantallary {
-color: #FFF;
-font-family: Gotham Black;
-font-size: 40px;
-font-style: normal;
-font-weight: 500;
-line-height: 50px; /* 125% */
+  color: #fff;
+  font-family: Gotham Black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 125% */
 }
 
 .texto-guantallary-sub {
-color: #FFF;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px; /* 155.556% */
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
 }
-
 
 /* Componente contacto */
 
 .text-contacto-sub {
-color: #FFF;
-text-align: center;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 28px; /* 155.556% */
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
 }
 
 /* componente FomrContacto */
 .texto-formulario {
-color: #FFF;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: 28px; /* 155.556% */
-letter-spacing: 4px;
-text-transform: uppercase;
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 155.556% */
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
-
 
 /* componente bodega 2 */
 .text-bodega-comp2 {
-    color: #FFF;
-    text-align: center;
-    font-family: Gotham;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px; /* 150% */
-    }
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px; /* 150% */
+}
 
-    /* componente bodega 4 */
+/* componente bodega 4 */
 .text-bodega-comp4 {
-    color: #FFF;
-    text-align: center;
-    font-family: Gotham;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px; /* 155.556% */
-    }
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+}
 
-        /* componente bodega 5 */
+/* componente bodega 5 */
 .text-bodega-comp5 {
-    color: #FFF;
-    text-align: center;
-    font-family: Gotham Black;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 70px; /* 116.667% */
-    letter-spacing: -1px;
-    }
+  color: #fff;
+  text-align: center;
+  font-family: Gotham Black;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 70px; /* 116.667% */
+  letter-spacing: -1px;
+}
 
-
-    
 /* componente nosotros */
 
 .text-nosotros-comp2 {
-    color: #FFF;
-text-align: center;
-font-family: Gotham;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: 36px; /* 150% */
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px; /* 150% */
 }
 
 .text-nosotros-comp3 {
-    color: #FFF;
-text-align: center;
-font-family: "Gotham Black";
-font-size: 40px;
-font-style: normal;
-font-weight: 500;
-line-height: 50px; /* 125% */
-text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-family: "Gotham Black";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 125% */
+  text-transform: uppercase;
 }
 
-.text-nosotros-comp3-chico{
-    color: #FFF;
-text-align: center;
-font-family: Gotham;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px; /* 116.667% */
+.text-nosotros-comp3-chico {
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 116.667% */
 }
 
-.text-nosotros-comp4{
-    color: #FFF;
-font-family: Gotham;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px; /* 155.556% */
+.text-nosotros-comp4 {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
 }
-
 
 /* componente vinos */
 
-
-.text-vinos-comp2{
-    color: #FFF;
-text-align: center;
-font-family: Gotham;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: 36px; /* 150% */
+.text-vinos-comp2 {
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px; /* 150% */
 }
 
-.text-vinos-comp3-titulo{
-color: #FFF;
-font-family: "Gotham Black";
-font-size: 40px;
-font-style: normal;
-font-weight: 500;
-line-height: 50px; /* 125% */
-letter-spacing: 4px;
-text-transform: uppercase;
+.text-vinos-comp3-titulo {
+  color: #fff;
+  font-family: "Gotham Black";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 125% */
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
-.text-vinos-comp3{
-    color: #FFF;
-    font-family: Gotham;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px; /* 155.556% */
+.text-vinos-comp3 {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
 }
 
-.boton-vinos-ver-mas-comp3{
-    width: 154px;
-height: 40px;
-flex-shrink: 0;
-border-radius: 5px;
-border: 2px solid #FFF;
-background: rgba(245, 244, 255, 0.00);
-display: flex;  
-align-items: center;
-} 
+.boton-vinos-ver-mas-comp3 {
+  width: 154px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  background: rgba(245, 244, 255, 0);
+  display: flex;
+  align-items: center;
+}
 
-.texto-boton-vinos-ver-mas-comp3{
-    color: #FFF;
-    text-align: center;
-    font-family: Gotham;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    display: flex;
-    width: 154px;
-    height: 16px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-} 
+.texto-boton-vinos-ver-mas-comp3 {
+  color: #fff;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: flex;
+  width: 154px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.my-float {
+  margin-top: 16px;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-12px);
+  }
+}

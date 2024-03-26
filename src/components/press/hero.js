@@ -35,7 +35,7 @@ function Hero() {
         <div className="w-full lg:w-1/2 mx-auto">
           <p className="text-center texto-valle-uco-2" style={firaSans}>
             Fotografías de botellas, logotipo, viñedos, terroirs, barricas, y
-            mucho material más. Si necesitas más información contactanos en
+            mucho material más. Si necesitas más información contactanos en{" "}
             <a href="mailto:info@vinosdelaluz.com" className=" hover:underline">
               info@vinosdelaluz.com
             </a>
