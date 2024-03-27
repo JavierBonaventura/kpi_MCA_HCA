@@ -10,6 +10,10 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper/modules";
 
+const gothamBlack = {
+  fontFamily: "Gotham Black",
+};
+
 export default function App() {
   return (
     <>
@@ -69,18 +73,25 @@ export default function App() {
         className="mySwiper  h-[70vh]"
       >
         <SwiperSlide className="relative ">
-          <div className="absolute text-white flex justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
-            <span className="texto-vinedos font-black ">
+          <div className="absolute text-white flex justify-start pt-20 lg:pt-0 lg:justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
+            <span className="font-gotham text-xs lg:text-sm lg:leading-[13px] tracking-[4px] text-white">
               VIÑEDOS - VALLE DE UCO
             </span>
-            <h1 className="texto-pampa font-black">PAMPA EL CEPILLO</h1>
-            <div className="inline-block mx-auto z-10">
-              <a
-                href=""
-                className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-                VER MÁS
-              </a>
+            <h1
+              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center"
+              style={gothamBlack}
+            >
+              PAMPA EL CEPILLO
+            </h1>
+            <div className="flex">
+              <div className="inline-block mx-auto z-10">
+                <a
+                  href=""
+                  className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+                >
+                  VER MÁS
+                </a>
+              </div>
             </div>
           </div>
           <img
@@ -90,18 +101,25 @@ export default function App() {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="absolute text-white flex justify-center items-center flex-col w-full z-50 h-full gap-y-3">
-            <span className="texto-vinedos text-black font-black ">
+          <div className="absolute text-white flex justify-start pt-20 lg:pt-0 lg:justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
+            <span className="font-gotham text-xs lg:text-sm lg:leading-[13px] tracking-[4px] text-white">
               VIÑEDOS - VALLE DE UCO 1
             </span>
-            <h1 className="texto-pampa font-black">PAMPA EL CEPILLO</h1>
-            <div className="inline-block mx-auto z-10">
-              <a
-                href=""
-                className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-                VER MÁS
-              </a>
+            <h1
+              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center"
+              style={gothamBlack}
+            >
+              PAMPA EL CEPILLO
+            </h1>
+            <div className="flex">
+              <div className="inline-block mx-auto z-10">
+                <a
+                  href=""
+                  className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+                >
+                  VER MÁS
+                </a>
+              </div>
             </div>
           </div>
           <img
@@ -111,18 +129,25 @@ export default function App() {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="absolute text-white flex justify-center items-center flex-col w-full z-50 h-full  gap-y-3">
-            <span className="texto-vinedos text-black font-black ">
+          <div className="absolute text-white flex justify-start pt-20 lg:pt-0 lg:justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
+            <span className="font-gotham text-xs lg:text-sm lg:leading-[13px] tracking-[4px] text-white">
               VIÑEDOS - VALLE DE UCO 2
             </span>
-            <h1 className="texto-pampa font-black">PAMPA EL CEPILLO</h1>
-            <div className="inline-block mx-auto z-10">
-              <a
-                href=""
-                className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-                VER MÁS
-              </a>
+            <h1
+              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center"
+              style={gothamBlack}
+            >
+              PAMPA EL CEPILLO
+            </h1>
+            <div className="flex">
+              <div className="inline-block mx-auto z-10">
+                <a
+                  href=""
+                  className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+                >
+                  VER MÁS
+                </a>
+              </div>
             </div>
           </div>
           <img

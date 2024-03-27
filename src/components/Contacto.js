@@ -13,7 +13,7 @@ function Contacto() {
   };
 
   return (
-    <div className="bg-[#252323] relative py-12 lg:py-44  ">
+    <div className="bg-[#252323] relative  pt-28 lg:py-44  ">
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl space-y-10 lg:space-y-0  ">
         <div className="w-full lg:w-1/2 text-white space-y-5 lg:space-y-10  lg:pr-28 ">
           <h1

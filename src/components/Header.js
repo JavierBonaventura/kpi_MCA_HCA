@@ -8,7 +8,7 @@ import menuMobile from "../images/menu-mobile.svg";
 
 function Header() {
   return (
-    <header className="bg-[#252323] fixed z-50 w-full">
+    <header className="bg-[#252323] fixed z-[100] w-full shadow-2xl">
       <div
         id="menu-desk"
         className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-header lg:flex justify-between hidden "

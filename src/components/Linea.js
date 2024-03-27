@@ -18,6 +18,10 @@ function Linea() {
     backgroundColor: "rgba(0, 0, 0, 0.38)",
   };
 
+  const gothamBlack = {
+    fontFamily: "Gotham Black",
+  };
+
   return (
     <div className="bg-[#252323] py-8">
       <div
@@ -27,7 +31,10 @@ function Linea() {
         !
         <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-28 space-y-5">
           <div className="text-center relative z-10  flex justify-center">
-            <h1 className="texto-nueva-linea text-black font-black  ">
+            <h1
+              className="text-white text-3xl lg:text-6xl lg:leading-[70px] tracking-[-1px]"
+              style={gothamBlack}
+            >
               NUEVA LÍNEA RASPÓN
             </h1>
           </div>

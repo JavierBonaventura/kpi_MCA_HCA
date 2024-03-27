@@ -21,19 +21,19 @@ function HeroValle() {
 
   return (
     <>
-      <style>{`
-
-          .heightMobile {
+      <style>
+        {` .heightMobile {
             padding: 8rem 0;
           }
-            @media (min-width: 1024px) {
-              .heightMobile {
-                               padding: 0;
+           media (min-width: 1024px) {
+          .heightMobile {
+          padding: 0;
               }
             }
-          `}</style>
+          `}
+      </style>
       <div
-        className="w-full screenCustomStyleMobile lg:h-screen flex items-center justify-center bg-cover bg-center relative"
+        className="w-full heightMobile lg:h-screen flex items-center justify-center bg-cover bg-center relative "
         style={{ backgroundImage: `url(${valleUco})` }}
       >
         <div className="z-10 space-y-8 container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl ">

@@ -1,6 +1,10 @@
 import React from "react";
 import barriles from "../images/barriles.png";
 
+const gothamBlack = {
+  fontFamily: "Gotham Black",
+};
+
 function Vision() {
   return (
     <div className="bg-[#252323] py-20 lg:py-28 ">
@@ -9,25 +13,30 @@ function Vision() {
           className="text-center relative z-10 w-full lg:w-2/5 flex flex-col justify-between gap-y-5 lg:gap-y-0"
           id="izquierdo"
         >
-          <h1 className="texto-vision text-black font-black text-left">
+          <h1
+            className="text-white text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase text-start"
+            style={gothamBlack}
+          >
             Visión de la empresa
           </h1>
-          <p className="texto-vision-segundo-texto text-left ">
+          <p className="text-left text-lg leading-[28px] font-gotham text-white">
             Nuestra bodega en Mendoza se ubica en Vista Flores, a los pies del
             volcán Tupungato, una de las montañas más importantes de la
             cordillera de los Andes.
           </p>
-          <div className="inline-block mr-auto">
-            <a
-              href=""
-              className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
-            >
-              CONOCER MÁS
-            </a>
+          <div className="flex">
+            <div className="inline-block mr-auto z-10">
+              <a
+                href=""
+                className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+              >
+                CONOCER MÁS
+              </a>
+            </div>
           </div>
         </div>
         <div id="derecho" className="w-full lg:w-2/5  ml-auto  ">
-          <img className="" src={barriles} alt="Barriles" />
+          <img className="shadow-2xl" src={barriles} alt="Barriles" />
         </div>
       </div>
     </div>

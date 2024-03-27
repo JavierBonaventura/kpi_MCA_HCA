@@ -132,14 +132,23 @@ function NuestrosVinos() {
     backgroundColor: "rgba(0, 0, 0, 0.63)",
   };
 
+  const gothamBlack = {
+    fontFamily: "Gotham Black",
+  };
+
   return (
     <div
       className="lg:hidden w-full  bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url(${fondoVinos})` }}
     >
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-16">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-10">
         <div className="relative z-10 ">
-          <h1 className="texto-vinos text-black font-black ">VINOS</h1>
+          <h1
+            className="text-white text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
+            style={gothamBlack}
+          >
+            VINOS
+          </h1>
         </div>
         <div className="flex items-center justify-between">
           <div className=" relative z-50 ">
@@ -173,7 +182,9 @@ function NuestrosVinos() {
                     "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
                 }}
               />
-              <p className=" mt-5 texto-vinos-botellas">malbec</p>
+              <p className=" mt-5 font-gotham-700 text-xs leading-[13px] tracking-[4px] uppercase text-white text-center">
+                malbec
+              </p>
             </div>
 
             <div
@@ -192,7 +203,9 @@ function NuestrosVinos() {
                 }}
               />
               <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
-                <p className=" mt-5 texto-vinos-botellas">cabernet sauvignon</p>
+                <p className=" mt-5 font-gotham-700 text-xs leading-[15px] tracking-[4px] uppercase text-white text-center">
+                  cabernet sauvignon
+                </p>
               </div>
             </div>
             <div
@@ -210,7 +223,9 @@ function NuestrosVinos() {
                     "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
                 }}
               />
-              <p className=" mt-5 texto-vinos-botellas">malbec</p>
+              <p className=" mt-5 font-gotham-700 text-xs leading-[13px] tracking-[4px] uppercase text-white text-center">
+                malbec
+              </p>
             </div>
           </div>
           <div className="relative z-50">
@@ -227,9 +242,14 @@ function NuestrosVinos() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-10">
-          <div className="flex justify-center items-center z-10  flex-shrink-0 border border-white relative flex-col  hover:bg-[#460377] hover:cursor-pointer  transition-all ease-in-out duration-300 px-12 py-3">
-            <p className="text-ver-mas  text-white">ver más</p>
+        <div className="flex">
+          <div className="inline-block mx-auto z-10">
+            <a
+              href=""
+              className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+            >
+              VER MÁS
+            </a>
           </div>
         </div>
       </div>

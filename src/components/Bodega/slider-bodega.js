@@ -26,7 +26,7 @@ export default function App() {
                 transition-property: all;
                 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
                 transition-duration: 300ms;
-                right: 150px;
+                right: 10px;
             }
 
             .swiper-button-next:hover {
@@ -46,11 +46,21 @@ export default function App() {
                 transition-property: all;
                 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
                 transition-duration: 300ms;
-                left: 150px;
+                left: 10px;
             }
 
             .swiper-button-prev:hover {
               opacity: 0.7;
+            }
+
+            @media (min-width: 1024px) {
+              .swiper-button-next{
+                right: 150px;
+              }
+
+              .swiper-button-prev {
+                left: 150px;
+              }
             }
           `}</style>
       <Swiper
