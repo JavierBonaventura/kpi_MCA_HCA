@@ -24,7 +24,10 @@ function FormContacto() {
         <form className="max-w-xl mx-auto p-8  rounded shadow-md">
           <div className="grid grid-cols-2 gap-5 lg:gap-10">
             <div>
-              <label htmlFor="name" className="block text-white font-bold mb-2">
+              <label
+                htmlFor="name"
+                className="block text-white font-gotham-700 text-base lg:text-lg tracking-[4px] mb-1 uppercase"
+              >
                 Nombre
               </label>
               <input
@@ -37,7 +40,7 @@ function FormContacto() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-white font-bold mb-2"
+                className="block text-white font-gotham-700 text-base lg:text-lg tracking-[4px] mb-1 uppercase"
               >
                 Email
               </label>
@@ -51,7 +54,7 @@ function FormContacto() {
             <div>
               <label
                 htmlFor="service"
-                className="block text-white font-bold mb-2"
+                className="block text-white font-gotham-700 text-base lg:text-lg tracking-[4px] mb-1 uppercase"
               >
                 Servicio
               </label>
@@ -71,7 +74,7 @@ function FormContacto() {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-white font-bold mb-2"
+                className="block text-white font-gotham-700 text-base lg:text-lg tracking-[4px] mb-1 uppercase"
               >
                 Teléfono
               </label>
@@ -85,7 +88,7 @@ function FormContacto() {
             <div className="col-span-2">
               <label
                 htmlFor="message"
-                className="block text-white font-bold mb-2"
+                className="block text-white font-gotham-700 text-base lg:text-lg tracking-[4px] mb-1 uppercase"
               >
                 Mensaje
               </label>
@@ -97,13 +100,15 @@ function FormContacto() {
               ></textarea>
             </div>
             <div className="col-span-2 flex justify-start">
-              <div className="inline-block ">
-                <a
-                  href=""
-                  className="border border-white text-white px-10 py-2   hover:bg-[#460377] transition-all ease-in-out duration-300"
-                >
-                  ENVIAR
-                </a>
+              <div className="flex">
+                <div className="inline-block mr-auto z-10">
+                  <a
+                    href=""
+                    className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+                  >
+                    ENVIAR
+                  </a>
+                </div>
               </div>
             </div>
           </div>

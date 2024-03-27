@@ -75,31 +75,36 @@ function Footer() {
               </p>
               <div className="flex flex-col gap-y-3">
                 <Link
-                  to=""
+                  to="/bodega"
+                  target="_blank"
                   className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                 >
                   Bodega
                 </Link>
                 <Link
-                  to=""
+                  to="/nosotros"
+                  target="_blank"
                   className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                 >
                   Nosotros
                 </Link>
                 <Link
-                  to=""
+                  to="/vinedos"
+                  target="_blank"
                   className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                 >
                   Viñedos
                 </Link>
                 <Link
-                  to=""
+                  to="/press"
+                  target="_blank"
                   className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                 >
                   Press Kit
                 </Link>
                 <Link
-                  to=""
+                  to="/contacto"
+                  target="_blank"
                   className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                 >
                   Contacto
@@ -114,24 +119,28 @@ function Footer() {
                 <div className="flex flex-col gap-y-3">
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Iluminado
                   </Link>
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Gran Callejón
                   </Link>
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Blend de Terroir
                   </Link>
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Single Vineyard
@@ -139,6 +148,7 @@ function Footer() {
 
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Gran Reserva
@@ -147,18 +157,21 @@ function Footer() {
                 <div className="flex flex-col gap-y-3">
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Reserva
                   </Link>
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Relatos
                   </Link>
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Perlas
@@ -166,6 +179,7 @@ function Footer() {
 
                   <Link
                     to=""
+                    target="_blank"
                     className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
                   >
                     Episodio

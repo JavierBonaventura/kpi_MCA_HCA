@@ -30,11 +30,14 @@ function NosotrosComponente3() {
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-16 lg:!py-44">
         <div className="text-center relative z-10 space-y-10 text-white">
-          <h1 className="text-lg lg:text-[3rem]" style={gothamBlack}>
+          <h1
+            className="text-lg lg:text-[2.5rem] lg:leading-[50px]"
+            style={gothamBlack}
+          >
             NUESTROS ORÍGENES
           </h1>
 
-          <p className="text-sm lg:text-lg" style={gothamMedium}>
+          <p className="text-sm lg:text-lg font-gotham w-1/2 mx-auto text-justify">
             El origen de la tradición vitícola de la familia Fernández Núñez se
             remonta a principios del siglo XX, cuando en 1910, los emigrantes
             gallegos Serafín Fernández y María Núñez, partieron a Argentina en

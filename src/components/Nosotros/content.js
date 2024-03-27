@@ -24,7 +24,7 @@ function NosotrosContent() {
     <div className="bg-[#252323] relative py-12 lg:py-32  ">
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl space-y-10 lg:space-y-0  ">
         <div className="w-full lg:w-1/2 text-white space-y-5 lg:space-y-10  lg:pr-28 ">
-          <p className="text-sm lg:text-xl text-justify">
+          <p className="font-gotham text-white text-base lg:text-xl lg:leading-[30px] text-justify">
             Callejón del Crimen pertenece al grupo vitivinícola Vinos de La Luz,
             que cuenta con bodegas y viñedos en las regiones más destacadas del
             viejo y nuevo mundo. El vino es para nosotros mucho más que una
@@ -34,7 +34,7 @@ function NosotrosContent() {
             elaboramos.
           </p>
 
-          <div className="text-sm lg:text-xl text-start mx-auto space-y-4">
+          <div className="text-sm lg:text-base text-start mx-auto space-y-4 font-gotham-regular">
             <div className="flex items-center gap-x-3">
               <div className="bg-[#460377]  rounded-full py-2 px-3">
                 <img src={vineta} alt="" className="w-2" />

@@ -21,10 +21,10 @@ function Hero() {
 
   return (
     <div
-      className="w-full py-24 lg:py-[12.5rem]  flex items-center justify-center bg-cover bg-center relative"
+      className="w-full py-40 lg:py-[12.5rem]  flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${valleUco})` }}
     >
-      <div className="z-10 space-y-8 ">
+      <div className="z-10 space-y-8 container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
         <h1
           className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
           style={gothamBlack}

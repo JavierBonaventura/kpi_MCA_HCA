@@ -23,18 +23,21 @@ function VistaFlores() {
 
   return (
     <div className="flex flex-col-reverse lg:flex-row ">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 ">
-        <h1 className=" texto-guantallary" style={gothamBlack}>
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-12 lg:py-0 ">
+        <h1
+          className="text-white text-2xl lg:text-[2.5rem] lg:leading-[50px]"
+          style={gothamBlack}
+        >
           VISTA FLORES
         </h1>
 
-        <div>
-          <p className="texto-guantallary-sub">
+        <div className="font-gotham text-white text-base lg:text-lg">
+          <p>
             <img src={iconoMap} alt="Icono Map" className="inline-block mr-2" />
             Tunuyán, 1.050 msnm
           </p>
 
-          <p className="texto-guantallary-sub mt-6">
+          <p className="mt-6">
             <img
               src={iconoSuelo}
               alt="Icono Map"
@@ -44,7 +47,7 @@ function VistaFlores() {
             de arenas, arcillas y carbonatos. Gracias a viñas de más de 40 años
             conducidas en espaldero, logramos un vino con expresión y potencia.
           </p>
-          <p className="texto-guantallary-sub mt-6 ">
+          <p className="mt-6">
             <img
               src={iconoUvas}
               alt="Icono Map"

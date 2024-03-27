@@ -97,7 +97,7 @@ export default function App() {
           <img
             src={Slider1}
             alt=""
-            className="object-cover h-full w-full brightness-75"
+            className="object-cover h-full w-full brightness-[0.6]"
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
@@ -125,7 +125,7 @@ export default function App() {
           <img
             src={Slider1}
             alt=""
-            className="object-cover h-full w-full brightness-75"
+            className="object-cover h-full w-full brightness-[0.6]"
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
@@ -153,7 +153,7 @@ export default function App() {
           <img
             src={Slider1}
             alt=""
-            className="object-cover h-full w-full brightness-75"
+            className="object-cover h-full w-full brightness-[0.6]"
           />
         </SwiperSlide>
       </Swiper>

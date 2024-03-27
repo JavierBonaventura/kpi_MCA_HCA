@@ -4,6 +4,12 @@
   font-weight: 400;
 }
 
+.font-gotham-500 {
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 500;
+}
+
 .font-gotham-700 {
   font-family: Gotham;
   font-style: normal;

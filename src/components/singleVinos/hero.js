@@ -23,20 +23,19 @@ function Hero() {
 
   return (
     <>
-      <style>{`
-
-.screenCustomStyle {
-  padding: 8rem 0;
-}
-  @media (min-width: 1024px) {
-    .screenCustomStyle {
-      height: calc(100vh - 86.77px);
-      padding: 0;
-    }
-  }
-`}</style>
+      <style>
+        {` .heightMobile {
+            padding: 14rem 0;
+          }
+           media (min-width: 1024px) {
+          .heightMobile {
+          padding: 0;
+              }
+            }
+          `}
+      </style>
       <div
-        className="w-full  screenCustomStyle flex items-center justify-center bg-cover bg-center relative"
+        className="w-full  heightMobile lg:h-screen flex items-center justify-center bg-cover bg-center relative"
         style={{ backgroundImage: `url(${valleUco})` }}
       >
         <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl z-10 ">

@@ -27,21 +27,24 @@ function Gualtallary() {
         className="w-full lg:w-1/2 py-32 lg:py-80 bg-cover bg-center"
         style={{ backgroundImage: `url(${gualtallary})` }}
       ></div>
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 ">
-        <h1 className=" texto-guantallary" style={gothamBlack}>
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col justify-center lg:px-44 gap-y-6 !py-12 lg:py-0 ">
+        <h1
+          className="text-white text-2xl lg:text-[2.5rem] lg:leading-[50px]"
+          style={gothamBlack}
+        >
           GUALTALLARY
         </h1>
 
-        <div>
-          <p className="texto-guantallary-sub">
+        <div className="font-gotham text-white text-base lg:text-lg">
+          <p className="">
             <img src={iconoMap} alt="Icono Map" className="inline-block mr-2" />
             Tupungato, 1.280 msnm
           </p>
-          <p className="texto-guantallary-sub mt-6">
+          <p className="mt-6">
             Ubicada en uno de los lugares más extremos y apasionantes para el
             vino argentino.
           </p>
-          <p className="texto-guantallary-sub mt-6">
+          <p className="mt-6">
             <img
               src={iconoSuelo}
               alt="Icono Map"
@@ -50,7 +53,7 @@ function Gualtallary() {
             SUELO: Formado de manera biológica, interviniendo bacterias, plantas
             y rocas en su composición.
           </p>
-          <p className="texto-guantallary-sub mt-6 ">
+          <p className="mt-6">
             <img
               src={iconoUvas}
               alt="Icono Map"

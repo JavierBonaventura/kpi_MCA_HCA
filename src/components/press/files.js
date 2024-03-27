@@ -16,7 +16,7 @@ function Files() {
 
   return (
     <div className="bg-[#252323]">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-28">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-16 lg:!py-28">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="bg-white relative border rounded-xl bg-opacity-75 hover:bg-opacity-60  transition-all ease-in-out duration-300 transform hover:-translate-y-1">
             <div className="p-2 ">
@@ -27,7 +27,7 @@ function Files() {
             </div>
             <div className="">
               <div className="absolute top-10 left-2 bg-[#460377] text-white px-5 border border-white rounded-e-lg">
-                <h1 className=" text-lg">Logos</h1>
+                <h1 className="text-base lg:text-lg font-gotham">Logos</h1>
               </div>
               <div className="absolute bottom-5 right-6">
                 <a href="">
@@ -49,7 +49,7 @@ function Files() {
             </div>
             <div className="">
               <div className="absolute top-10 left-2 bg-[#460377] text-white px-5 border border-white rounded-e-lg">
-                <h1 className=" text-lg">Imágenes</h1>
+                <h1 className="text-base lg:text-lg font-gotham">Imágenes</h1>
               </div>
               <div className="absolute bottom-5 right-6">
                 <a href="">
@@ -71,7 +71,9 @@ function Files() {
             </div>
             <div className="">
               <div className="absolute top-10 left-2 bg-[#460377] text-white px-5 border border-white rounded-e-lg">
-                <h1 className=" text-lg">Material completo</h1>
+                <h1 className="text-base lg:text-lg font-gotham">
+                  Material completo
+                </h1>
               </div>
               <div className="absolute bottom-5 right-6">
                 <a href="">

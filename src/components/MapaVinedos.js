@@ -20,12 +20,9 @@ function NuestrosVinedos() {
 
   return (
     <div
-      className="w-full h-[506px] flex items-center justify-center bg-cover bg-center relative"
+      className="w-full py-32 lg:py-56 flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${mapaVinedos})` }}
     >
-      <div className="text-center relative  z-10">
-        <div className="w-[719px] mx-auto"></div>
-      </div>
       <div className="z-0" style={overlayStyle}></div>
     </div>
   );
