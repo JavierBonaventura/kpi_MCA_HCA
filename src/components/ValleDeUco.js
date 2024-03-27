@@ -23,7 +23,7 @@ function HeroValle() {
     <>
       <style>
         {` .heightMobile {
-            padding: 8rem 0;
+            padding: 14rem 0;
           }
            media (min-width: 1024px) {
           .heightMobile {
