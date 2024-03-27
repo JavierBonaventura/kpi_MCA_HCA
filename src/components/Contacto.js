@@ -13,30 +13,37 @@ function Contacto() {
   };
 
   return (
-    <div className=" bg-[#252323] py-10 lg:py-0 ">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col lg:flex-row gap-y-5 lg:gap-y-0">
-        <div className="w-full lg:w-1/2 text-white space-y-8 flex flex-col justify-center">
-          <h1 className="text-3xl lg:text-6xl" style={gothamBlack}>
+    <div className="bg-[#252323] relative py-12 lg:py-44  ">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl space-y-10 lg:space-y-0  ">
+        <div className="w-full lg:w-1/2 text-white space-y-5 lg:space-y-10  lg:pr-28 ">
+          <h1
+            className="text-white text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
+            style={gothamBlack}
+          >
             CONTACTO
           </h1>
-          <div className="text-sm lg:text-lg space-y-2 ">
-            <p style={firaSans}>
+          <div className="text-white text-base lg:text-lg lg:leading-[28px] font-gotham space-y-2 ">
+            <p>
               Armani, s/n Villa Seca, Tunuyan, <br /> Valle de Uco (5563)
               Mendoza, <br />
               Argentina
             </p>
-            <div className="space-x-2" style={firaSans}>
+            <div className="space-x-2">
               <img src={celular} alt="Icono Map" className="inline-block w-5" />
               <span> (+ 54 11)4328.4868/3883</span>
             </div>
-            <div className="space-x-2" style={firaSans}>
+            <div className="space-x-2">
               <img src={correo} alt="Icono Map" className="inline-block w-5" />
               <span> info@vinosdelaluz.com</span>
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2">
-          <img src={map} alt="" className="w-full" />
+        <div className="w-full lg:w-1/2 h-full lg:absolute right-0 top-0 ">
+          <img
+            src={map}
+            alt=""
+            className="bg-white mx-auto h-full object-cover w-full"
+          />
         </div>
       </div>
     </div>

@@ -71,11 +71,10 @@ function App() {
             }
           />
           <Route
-            path="/nuestrosVinedos"
+            path="/vinedos"
             element={
               <>
                 <Header />
-
                 <NuestrosVinedos />
                 <MapaVinedos />
                 <Gualtallary />
@@ -91,7 +90,6 @@ function App() {
             element={
               <>
                 <Header />
-
                 <Contacto />
                 <FormContacto />
                 <Footer />
@@ -103,7 +101,6 @@ function App() {
             element={
               <>
                 <Header />
-
                 <BodegaComponente1 />
                 <BodegaComponente2 />
                 <SliderBodega />
@@ -132,7 +129,6 @@ function App() {
             element={
               <>
                 <Header />
-
                 <VinosComponente1 />
                 <VinosComponente2 />
                 <VinosComponente6 />

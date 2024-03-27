@@ -44,7 +44,7 @@ function Hero() {
             to="/vinos"
             className="inline-block bg-white hover:bg-[#460377] rounded-[5px] absolute top-10 transition-all ease-in-out duration-300 hover:text-white"
           >
-            <div className="flex items-center gap-x-2 px-2 py-2">
+            <div className="flex items-center gap-x-2 px-2 py-2 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -58,21 +58,19 @@ function Hero() {
                   d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
                 />
               </svg>
-              <span className="uppercase">Volver atrás</span>
+              <span className="uppercase font-gotham">Volver atrás</span>
             </div>
           </Link>
           <div className="z-10 space-y-8 ">
-            <h1 className="texto-valle-uco-1 uppercase" style={gothamBlack}>
+            <h1
+              className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
+              style={gothamBlack}
+            >
               Single vineyard
             </h1>
-            <div className="w-1/2 mx-auto">
-              <p
-                className="text-center texto-valle-uco-2 mb-2"
-                style={firaSans}
-              >
-                La expresión del terrior
-              </p>
-              <p className="text-center texto-valle-uco-2 !text-sm">
+            <div className="w-1/2 mx-auto text-white text-center text-base lg:text-lg lg:leading-[28px]">
+              <p className="mb-2 font-gotham">La expresión del terrior</p>
+              <p className="font-gotham-regular">
                 Es la línea que mejor representa nuestra diversidad geográfica.
                 Exhibe nuestro compromiso para poner en valor y comunicar la
                 riqueza de terruños y expresiones que nos regala el Valle de

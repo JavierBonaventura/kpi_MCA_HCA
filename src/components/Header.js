@@ -8,7 +8,7 @@ import menuMobile from "../images/menu-mobile.svg";
 
 function Header() {
   return (
-    <header className="bg-[#252323]">
+    <header className="bg-[#252323] fixed z-50 w-full">
       <div
         id="menu-desk"
         className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-header lg:flex justify-between hidden "
@@ -21,7 +21,7 @@ function Header() {
             Bodega
           </Link>
           <Link
-            to="/nuestrosVinedos"
+            to="/vinedos"
             className="h-full flex items-center px-2 hover:bg-[#460377] transition-all ease-in-out duration-300 uppercase py-1"
           >
             Viñedos
@@ -79,7 +79,7 @@ function Header() {
             </div>
             <div className="flex">
               <a
-                href=""
+                href="https://www.linkedin.com/company/vinosdelaluz/"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >

@@ -17,7 +17,7 @@ function Footer() {
 
             <div className="flex ml-7">
               <a
-                href=""
+                href="https://www.linkedin.com/company/vinosdelaluz/"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >

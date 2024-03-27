@@ -1,5 +1,5 @@
 import React from "react";
-import map from "../../images/mapa-vinosluz.png";
+import map from "../../images/mapa-nosotros.jpg";
 import vineta from "../../images/flechaDerecha.png";
 
 function NosotrosContent() {
@@ -71,7 +71,7 @@ function NosotrosContent() {
           <img
             src={map}
             alt=""
-            className="bg-white mx-auto h-full object-contain"
+            className="bg-white mx-auto h-full object-cover"
           />
         </div>
       </div>

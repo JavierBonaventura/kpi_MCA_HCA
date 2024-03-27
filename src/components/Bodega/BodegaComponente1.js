@@ -21,16 +21,17 @@ function BodegaComponente1() {
 
   return (
     <div
-      className="w-full py-32 lg:py-56 flex items-center justify-center bg-cover bg-center relative"
+      className="w-full py-40 lg:py-64 flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bodegaFoto1})` }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
         <div className="text-center relative  z-10">
-          <div className=" mx-auto">
-            <h1 className=" texto-valle-uco-1" style={gothamBlack}>
-              BODEGA
-            </h1>
-          </div>
+          <h1
+            className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
+            style={gothamBlack}
+          >
+            BODEGA
+          </h1>
         </div>
       </div>
       <div className="z-0" style={overlayStyle}></div>

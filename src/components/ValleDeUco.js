@@ -23,26 +23,28 @@ function HeroValle() {
     <>
       <style>{`
 
-          .screenCustomStyle {
+          .heightMobile {
             padding: 8rem 0;
           }
             @media (min-width: 1024px) {
-              .screenCustomStyle {
-                height: calc(100vh - 86.77px);
-                padding: 0;
+              .heightMobile {
+                               padding: 0;
               }
             }
           `}</style>
       <div
-        className="w-full screenCustomStyle flex items-center justify-center bg-cover bg-center relative"
+        className="w-full screenCustomStyleMobile lg:h-screen flex items-center justify-center bg-cover bg-center relative"
         style={{ backgroundImage: `url(${valleUco})` }}
       >
-        <div className="z-10 space-y-8 ">
-          <h1 className="texto-valle-uco-1 uppercase" style={gothamBlack}>
+        <div className="z-10 space-y-8 container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl ">
+          <h1
+            className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
+            style={gothamBlack}
+          >
             VALLE DE UCO
           </h1>
-          <div className="w-1/2 mx-auto">
-            <p className="text-center texto-valle-uco-2" style={firaSans}>
+          <div className="w-full lg:w-1/3 mx-auto">
+            <p className="text-white text-center text-base lg:text-lg lg:leading-[28px] font-gotham">
               La expresión de Vista Flores, la frescura de Pampa el Cepillo, la
               fineza de Gualtallary y la textura de Paraje Altamira
             </p>

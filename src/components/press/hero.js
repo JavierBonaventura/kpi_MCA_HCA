@@ -21,15 +21,18 @@ function Hero() {
 
   return (
     <div
-      className="w-full py-32 lg:py-40  flex items-center justify-center bg-cover bg-center relative"
+      className="w-full py-24 lg:py-[12.5rem]  flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${valleUco})` }}
     >
       <div className="z-10 space-y-8 ">
-        <h1 className="texto-valle-uco-1 uppercase" style={gothamBlack}>
+        <h1
+          className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
+          style={gothamBlack}
+        >
           Press Kit
         </h1>
         <div className="w-full lg:w-1/2 mx-auto">
-          <p className="text-center texto-valle-uco-2" style={firaSans}>
+          <p className="text-white text-center text-base lg:text-lg lg:leading-[28px] font-gotham">
             Fotografías de botellas, logotipo, viñedos, terroirs, barricas, y
             mucho material más. Si necesitas más información contactanos en{" "}
             <a href="mailto:info@vinosdelaluz.com" className=" hover:underline">

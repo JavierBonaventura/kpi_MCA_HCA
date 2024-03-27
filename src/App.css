@@ -1,3 +1,15 @@
+.font-gotham-regular {
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.font-gotham {
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 600;
+}
+
 /* componente valle de uco */
 
 .texto-valle-uco-1 {
