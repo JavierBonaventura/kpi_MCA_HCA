@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import { Link } from "react-router-dom";
 import fondoVinos from "../images/fondoVinos.png";
 import vino1 from "../images/vino1.png";
 import vino2 from "../images/vino2.png";
@@ -254,12 +254,12 @@ function NuestrosVinos() {
 
         <div className="flex justify-center mt-10">
           <div className="inline-block mx-auto z-10">
-            <a
-              href=""
+            <Link
+              to="/vinos"
               className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
             >
               VER MÁS
-            </a>
+            </Link>
           </div>
         </div>
       </div>

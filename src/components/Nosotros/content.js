@@ -34,7 +34,7 @@ function NosotrosContent() {
             elaboramos.
           </p>
 
-          <div className="text-sm lg:text-base text-start mx-auto space-y-4 font-gotham-regular">
+          <div className="text-sm lg:text-xl text-start mx-auto space-y-4 font-gotham-regular">
             <div className="flex items-center gap-x-3">
               <div className="bg-[#460377]  rounded-full py-2 px-3">
                 <img src={vineta} alt="" className="w-2" />

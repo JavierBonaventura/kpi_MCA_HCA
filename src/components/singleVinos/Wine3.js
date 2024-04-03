@@ -20,15 +20,20 @@ function VinosComponente7() {
   };
 
   return (
-    <div className="flex flex-col-reverse lg:flex-row ">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 ">
-        <h1 className=" texto-guantallary" style={gothamBlack}>
-          SINGLE VINEYARD PAMPA EL CEPILLO
+    <div className="flex flex-col-reverse lg:flex-row py-4 lg:py-0 bg-[#252323]">
+      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] text-white flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 ">
+        <h1
+          className="text-2xl lg:text-[2.5rem] lg:leading-[50px]"
+          style={gothamBlack}
+        >
+          PAMPA EL CEPILLO
         </h1>
 
-        <div>
-          <h1 className="texto-guantallary-sub"></h1>
-          <p className="texto-guantallary-sub mt-6">
+        <div className="font-gotham">
+          <h1 className="text-lg lg:text-2xl lg:leading-[36px]">
+            TUPUNGATO, 1.280 msnm
+          </h1>
+          <p className="text-sm lg:text-lg mt-6">
             Ubicada en el extremo sur del Valle de Uco a 1.100 metros de altura.
             Con orientación sureste, este viñedo se enfrenta directamente con la
             Cordillera de los Andes frontal. Ésta es una zona fría y extrema que
@@ -38,12 +43,22 @@ function VinosComponente7() {
             temperaturas transmite un Malbec profundo, de gran tensión y
             personalidad gracias a sus bajas temperaturas.
           </p>
+          <div className="flex">
+            <div className="inline-block mr-auto z-10 mt-10">
+              <a
+                href=""
+                className="border border-white text-white px-5 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+              >
+                VER FICHA TÉCNICA
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-full lg:w-1/2  bg-cover bg-center bg-[#252323]">
         <div className="relative flex justify-center items-center">
-          <img src={Sombra} alt="" className="" />
-          <img src={Bottle} className="absolute w-28 " alt="" />
+          <img src={Sombra} alt="" className="w-auto" />
+          <img src={Bottle} className="absolute w-[4.5rem] lg:w-28 " alt="" />
         </div>
       </div>
     </div>

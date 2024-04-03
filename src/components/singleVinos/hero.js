@@ -25,7 +25,7 @@ function Hero() {
     <>
       <style>
         {` .heightMobile {
-            padding: 14rem 0;
+            padding: 10rem 0;
           }
            media (min-width: 1024px) {
           .heightMobile {
@@ -41,9 +41,9 @@ function Hero() {
         <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl z-10 ">
           <Link
             to="/vinos"
-            className="inline-block bg-white hover:bg-[#460377] rounded-[5px] absolute top-10 transition-all ease-in-out duration-300 hover:text-white"
+            className="inline-block bg-white hover:bg-[#460377] rounded-[5px] absolute top-24 lg:top-32 transition-all ease-in-out duration-300 hover:text-white"
           >
-            <div className="flex items-center gap-x-2 px-2 py-2 ">
+            <div className="flex items-center gap-x-2 px-2 lg:px-4 py-1.5 lg:py-0.5 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -57,7 +57,9 @@ function Hero() {
                   d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
                 />
               </svg>
-              <span className="uppercase font-gotham">Volver atrás</span>
+              <span className="hidden lg:block uppercase font-gotham text-xs lg:text-sm lg:leading-[36px]">
+                Volver atrás
+              </span>
             </div>
           </Link>
           <div className="z-10 space-y-8 ">
@@ -67,9 +69,11 @@ function Hero() {
             >
               Single vineyard
             </h1>
-            <div className="w-1/2 mx-auto text-white text-center text-base lg:text-lg lg:leading-[28px]">
-              <p className="mb-2 font-gotham">La expresión del terrior</p>
-              <p className="font-gotham-regular">
+            <div className=" w-full lg:w-1/2 mx-auto text-white text-center text-sm lg:text-lg lg:leading-[28px]">
+              <p className="mb-2 font-gotham text-xl lg:text-2xl">
+                La expresión del terrior
+              </p>
+              <p className="font-gotham">
                 Es la línea que mejor representa nuestra diversidad geográfica.
                 Exhibe nuestro compromiso para poner en valor y comunicar la
                 riqueza de terruños y expresiones que nos regala el Valle de

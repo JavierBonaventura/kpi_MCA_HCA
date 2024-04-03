@@ -43,10 +43,11 @@ function HeroValle() {
           >
             VALLE DE UCO
           </h1>
-          <div className="w-full lg:w-1/3 mx-auto">
+          <div className="w-full lg:w-1/2  mx-auto">
             <p className="text-white text-center text-base lg:text-lg lg:leading-[28px] font-gotham">
-              La expresión de Vista Flores, la frescura de Pampa el Cepillo, la
-              fineza de Gualtallary y la textura de Paraje Altamira
+              La expresión de Vista Flores, la frescura de Pampa el Cepillo,{" "}
+              <br className="hidden lg:block" /> la fineza de Gualtallary y la
+              textura de Paraje Altamira
             </p>
           </div>
         </div>

@@ -23,18 +23,28 @@ function Contacto() {
             CONTACTO
           </h1>
           <div className="text-white text-base lg:text-lg lg:leading-[28px] font-gotham space-y-2 ">
-            <p>
+            <a
+              href="https://www.google.com/maps/place/Armani,+Tunuy%C3%A1n,+Mendoza/data=!4m2!3m1!1s0x967c25c55264fbc9:0x98a8695ef02d48a5?sa=X&ved=1t:242&ictx=111"
+              target="_blank"
+              className="hover:underline"
+            >
               Armani, s/n Villa Seca, Tunuyan, <br /> Valle de Uco (5563)
               Mendoza, <br />
               Argentina
-            </p>
+            </a>
             <div className="space-x-2">
               <img src={celular} alt="Icono Map" className="inline-block w-5" />
-              <span> (+ 54 11)4328.4868/3883</span>
+              <span> (+ 54 11) 4328-4868/3883</span>
             </div>
             <div className="space-x-2">
               <img src={correo} alt="Icono Map" className="inline-block w-5" />
-              <span> info@vinosdelaluz.com</span>
+              <a
+                href="mailto:info@vinosdelaluz.com"
+                className="hover:underline"
+              >
+                {" "}
+                <span>info@vinosdelaluz.com</span>
+              </a>
             </div>
           </div>
         </div>

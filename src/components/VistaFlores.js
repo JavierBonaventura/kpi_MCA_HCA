@@ -1,5 +1,5 @@
 import React from "react";
-import gualtallary from "../images/vistaFlores.png";
+import Flores from "../images/vistaFlores.png";
 import iconoMap from "../images/iconoMap.png";
 import iconoSuelo from "../images/iconoSuelo.png";
 import iconoUvas from "../images/iconoUvas.png";
@@ -60,7 +60,7 @@ function VistaFlores() {
       </div>
       <div
         className="w-full lg:w-1/2 py-32 lg:py-80 bg-cover bg-center"
-        style={{ backgroundImage: `url(${gualtallary})` }}
+        style={{ backgroundImage: `url(${Flores})` }}
       ></div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import bodegaFoto3 from "../../images/banner-bodega.png";
+import { Link } from "react-router-dom";
 
 function BodegaComponente5() {
   const firaSans = {
@@ -31,12 +32,12 @@ function BodegaComponente5() {
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-center relative  z-10">
         <div className="flex">
           <div className="inline-block mx-auto z-10">
-            <a
-              href=""
+            <Link
+              to="/vinos"
               className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
             >
               VER VINOS
-            </a>
+            </Link>
           </div>
         </div>
       </div>

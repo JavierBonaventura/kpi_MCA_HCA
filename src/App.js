@@ -37,6 +37,7 @@ import VinosComponente7 from "./components/Vinos/VinosComponente7";
 import VinosComponente8 from "./components/Vinos/VinosComponente8";
 import VinosComponente9 from "./components/Vinos/VinosComponente9";
 import VinosComponente10 from "./components/Vinos/VinosComponente10";
+import VinosComponente11 from "./components/Vinos/VinosComponente11";
 
 import HeroPress from "./components/press/hero";
 import Files from "./components/press/files";
@@ -131,14 +132,15 @@ function App() {
                 <Header />
                 <VinosComponente1 />
                 <VinosComponente2 />
+                <VinosComponente3 />
+                <VinosComponente4 />
+                <VinosComponente5 />
+                <VinosComponente11 />
                 <VinosComponente6 />
                 <VinosComponente9 />
                 <VinosComponente7 />
                 <VinosComponente8 />
                 <VinosComponente10 />
-                <VinosComponente3 />
-                <VinosComponente4 />
-                <VinosComponente5 />
                 <Footer />
               </>
             }

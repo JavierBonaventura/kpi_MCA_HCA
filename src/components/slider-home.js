@@ -1,8 +1,10 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import Slider1 from "../images/swiper-home-1.png";
-
+import { Link } from "react-router-dom";
+import Gualtallary from "../images/Gualtallary.png";
+import Flores from "../images/vistaFlores.png";
+import Cepillo from "../images/swiper-home-1.png";
+import Altamira from "../images/ParajeAltamira.png";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -78,24 +80,25 @@ export default function App() {
               VIÑEDOS - VALLE DE UCO
             </span>
             <h1
-              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center"
+              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center uppercase"
               style={gothamBlack}
             >
-              PAMPA EL CEPILLO
+              Gualtallary
             </h1>
             <div className="flex">
               <div className="inline-block mx-auto z-10">
-                <a
+                <Link
+                  to="/vinedos"
                   href=""
                   className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
                 >
                   VER MÁS
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <img
-            src={Slider1}
+            src={Gualtallary}
             alt=""
             className="object-cover h-full w-full brightness-[0.6]"
           />
@@ -103,7 +106,35 @@ export default function App() {
         <SwiperSlide className="relative">
           <div className="absolute text-white flex justify-start pt-20 lg:pt-0 lg:justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
             <span className="font-gotham text-xs lg:text-sm lg:leading-[13px] tracking-[4px] text-white">
-              VIÑEDOS - VALLE DE UCO 1
+              VIÑEDOS - VALLE DE UCO
+            </span>
+            <h1
+              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center uppercase"
+              style={gothamBlack}
+            >
+              Vista Flores
+            </h1>
+            <div className="flex">
+              <div className="inline-block mx-auto z-10">
+                <Link
+                  to="/vinedos"
+                  className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+                >
+                  VER MÁS
+                </Link>
+              </div>
+            </div>
+          </div>
+          <img
+            src={Flores}
+            alt=""
+            className="object-cover h-full w-full brightness-[0.6]"
+          />
+        </SwiperSlide>
+        <SwiperSlide className="relative">
+          <div className="absolute text-white flex justify-start pt-20 lg:pt-0 lg:justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
+            <span className="font-gotham text-xs lg:text-sm lg:leading-[13px] tracking-[4px] text-white">
+              VIÑEDOS - VALLE DE UCO
             </span>
             <h1
               className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center"
@@ -113,17 +144,17 @@ export default function App() {
             </h1>
             <div className="flex">
               <div className="inline-block mx-auto z-10">
-                <a
-                  href=""
+                <Link
+                  to="/vinedos"
                   className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
                 >
                   VER MÁS
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <img
-            src={Slider1}
+            src={Cepillo}
             alt=""
             className="object-cover h-full w-full brightness-[0.6]"
           />
@@ -131,27 +162,27 @@ export default function App() {
         <SwiperSlide className="relative">
           <div className="absolute text-white flex justify-start pt-20 lg:pt-0 lg:justify-center items-center  h-full flex-col w-full z-50  gap-y-3 ">
             <span className="font-gotham text-xs lg:text-sm lg:leading-[13px] tracking-[4px] text-white">
-              VIÑEDOS - VALLE DE UCO 2
+              VIÑEDOS - VALLE DE UCO
             </span>
             <h1
-              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center"
+              className="text-white text-3xl lg:text-[2.5rem] lg:leading-[50px] text-center uppercase"
               style={gothamBlack}
             >
-              PAMPA EL CEPILLO
+              Paraje Altamira
             </h1>
             <div className="flex">
               <div className="inline-block mx-auto z-10">
-                <a
-                  href=""
+                <Link
+                  to="/vinedos"
                   className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
                 >
                   VER MÁS
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <img
-            src={Slider1}
+            src={Altamira}
             alt=""
             className="object-cover h-full w-full brightness-[0.6]"
           />

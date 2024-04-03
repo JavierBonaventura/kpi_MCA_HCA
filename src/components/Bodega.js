@@ -1,5 +1,6 @@
 import React from "react";
 import fondoBodega from "../images/fondoBodega.png";
+import { Link } from "react-router-dom";
 
 function Bodega() {
   const overlayStyle = {
@@ -38,12 +39,12 @@ function Bodega() {
         </div>
         <div className="flex">
           <div className="inline-block mr-auto z-10">
-            <a
-              href=""
+            <Link
+              to="/bodega"
               className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
             >
               VER MÁS
-            </a>
+            </Link>
           </div>
         </div>
       </div>
