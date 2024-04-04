@@ -19,9 +19,23 @@ function Bodega() {
   };
 
   useEffect(() => {
-    AOS.init({
-      // Configura las opciones de AOS aquí, si es necesario
-    });
+    const initializeAOS = () => {
+      // Inicializar AOS solo si el ancho de la ventana es mayor o igual a 1024px
+      if (window.innerWidth >= 1024) {
+        AOS.init();
+      }
+    };
+
+    // Verificar el tamaño de la ventana en el montaje del componente
+    initializeAOS();
+
+    // Agregar un listener para verificar el cambio en el tamaño de la ventana
+    window.addEventListener("resize", initializeAOS);
+
+    // Eliminar el listener al desmontar el componente
+    return () => {
+      window.removeEventListener("resize", initializeAOS);
+    };
   }, []);
 
   return (
