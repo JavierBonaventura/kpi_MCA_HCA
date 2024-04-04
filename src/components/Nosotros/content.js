@@ -67,7 +67,7 @@ function NosotrosContent() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 h-full lg:absolute right-0 top-0 ">
+        <div className="w-full lg:w-1/2 h-full lg:absolute right-0 top-0 hidden lg:block ">
           <img
             src={map}
             alt=""
