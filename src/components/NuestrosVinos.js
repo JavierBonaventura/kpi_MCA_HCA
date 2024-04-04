@@ -6,6 +6,8 @@ import vino2 from "../images/vino2.png";
 import vino3 from "../images/vino3.png";
 import flechaIzquierda from "../images/flechaIzquierda.png";
 import flechaDerecha from "../images/flechaDerecha.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function NuestrosVinos() {
   const [offset1, setOffset1] = useState(0);
@@ -136,13 +138,23 @@ function NuestrosVinos() {
     fontFamily: "Gotham Black",
   };
 
+  useEffect(() => {
+    AOS.init({
+      // Configura las opciones de AOS aquí, si es necesario
+    });
+  }, []);
+
   return (
     <div
       className="hidden lg:block w-full  bg-cover bg-center relative overflow-hidden "
       style={{ backgroundImage: `url(${fondoVinos})` }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-16">
-        <div className="relative z-10 ">
+        <div
+          className="relative z-10  "
+          data-aos="fade-right"
+          data-aos-duration="1500"
+        >
           <h1
             className="text-white text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
             style={gothamBlack}

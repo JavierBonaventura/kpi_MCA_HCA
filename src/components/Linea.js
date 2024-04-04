@@ -1,12 +1,7 @@
-import React from "react";
-import fondoVinos from "../images/fondoPampa.png";
+import React, { useEffect } from "react";
 import fondoLinea from "../images/fondoNuevaLinea.png";
-
-import vino1 from "../images/vino1.png";
-import vino2 from "../images/vino2.png";
-import vino3 from "../images/vino3.png";
-import flechaIzquierda from "../images/flechaIzquierda.png";
-import flechaDerecha from "../images/flechaDerecha.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Linea() {
   const overlayStyle = {
@@ -32,6 +27,8 @@ function Linea() {
           <div className="text-center relative z-10  flex justify-center">
             <h1
               className="text-white text-3xl lg:text-6xl lg:leading-[70px] tracking-[-1px]"
+              data-aos="zoom-in"
+              data-aos-duration="1500"
               style={gothamBlack}
             >
               NUEVA LÍNEA RASPÓN

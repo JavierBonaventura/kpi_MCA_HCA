@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import fondoBodega from "../images/fondoBodega.png";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Bodega() {
   const overlayStyle = {
@@ -16,6 +18,12 @@ function Bodega() {
     fontFamily: "Gotham Black",
   };
 
+  useEffect(() => {
+    AOS.init({
+      // Configura las opciones de AOS aquí, si es necesario
+    });
+  }, []);
+
   return (
     <div
       className="w-full  bg-cover bg-center relative py-24"
@@ -25,19 +33,31 @@ function Bodega() {
         <h1
           className="text-white text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
           style={gothamBlack}
+          data-aos="fade-right"
+          data-aos-duration="1500"
         >
           BODEGA
         </h1>
 
         <div className="w-full lg:w-2/5">
-          <p className="text-left text-lg leading-[28px] font-gotham text-white">
+          <p
+            className="text-left text-lg leading-[28px] font-gotham text-white"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            data-aos-delay="500"
+          >
             Nuestros vinos nacen de la experiencia, la atención al detalle y una
             exhaustiva selección de viñedos que se ha ido haciendo a lo largo de
             casi dos décadas. <br /> <br /> Trabajamos en torno a 3 pilares
             fundamentales: Naturaleza, Innovacion y Sostenibilidad.
           </p>
         </div>
-        <div className="flex">
+        <div
+          className="flex"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+          data-aos-delay="500"
+        >
           <div className="inline-block mr-auto z-10">
             <Link
               to="/bodega"
