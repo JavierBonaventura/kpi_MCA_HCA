@@ -171,7 +171,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span>Bodega</span>
+                    <span className="mt-2">Bodega</span>
                   </div>
                 </Link>
 
@@ -184,7 +184,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span>Viñedos</span>
+                    <span className="mt-1">Viñedos</span>
                   </div>
                 </Link>
 
@@ -197,7 +197,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span>Vinos</span>
+                    <span className="mt-3">Vinos</span>
                   </div>
                 </Link>
 
