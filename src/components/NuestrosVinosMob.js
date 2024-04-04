@@ -40,7 +40,7 @@ function NuestrosVinos() {
     setDistancia2(distanciaEntre2y3);
   }, []);
 
-  const offsetChange = distancia2 - 2;
+  const offsetChange = distancia2 - 5;
 
   const moveLeft = () => {
     if (mainImage == 2) {
@@ -109,17 +109,17 @@ function NuestrosVinos() {
   };
 
   const imageStyle1 = {
-    transform: `translateX(${offset1}px)`,
+    transform: `translateX(20px)`,
     transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
 
   const imageStyle2 = {
-    transform: `translateX(${offset2}px)`,
+    transform: `translateX(20px)`,
     transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
 
   const imageStyle3 = {
-    transform: `translateX(${offset3}px)`,
+    transform: `translateX(20px)`,
     transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
 
