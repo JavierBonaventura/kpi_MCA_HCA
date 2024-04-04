@@ -28,7 +28,6 @@ function Linea() {
         className="w-full bg-cover bg-center lg:bg-bottom relative"
         style={{ backgroundImage: `url(${fondoLinea})` }}
       >
-        !
         <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-28 space-y-5">
           <div className="text-center relative z-10  flex justify-center">
             <h1

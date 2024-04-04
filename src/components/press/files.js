@@ -51,7 +51,9 @@ function Files() {
             </div>
             <div className="">
               <div className="absolute top-10 left-0 bg-[#460377] text-white px-5 border border-white rounded-e-lg">
-                <h1 className="text-base lg:text-lg font-gotham">Imágenes</h1>
+                <h1 className="text-base lg:text-lg font-gotham mt-2 lg:mt-0">
+                  Imágenes
+                </h1>
               </div>
               <div className="absolute bottom-10 right-6">
                 <a href="">
@@ -73,7 +75,7 @@ function Files() {
             </div>
             <div className="">
               <div className="absolute top-10 left-0 bg-[#460377] text-white px-5 border border-white rounded-e-lg">
-                <h1 className="text-base lg:text-lg font-gotham">
+                <h1 className="text-base lg:text-lg font-gotham mt-2 lg:mt-0">
                   Material completo
                 </h1>
               </div>

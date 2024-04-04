@@ -37,7 +37,7 @@ function NosotrosComponente3() {
             NUESTROS ORÍGENES
           </h1>
 
-          <p className="text-sm lg:text-lg font-gotham w-1/2 mx-auto text-justify">
+          <p className="text-sm lg:text-lg font-gotham w-full lg:w-1/2 mx-auto text-justify">
             El origen de la tradición vitícola de la familia Fernández Núñez se
             remonta a principios del siglo XX, cuando en 1910, los emigrantes
             gallegos Serafín Fernández y María Núñez, partieron a Argentina en
