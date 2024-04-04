@@ -21,7 +21,7 @@ function FormContacto() {
       }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-24">
-        <form className="max-w-xl mx-auto p-8  rounded shadow-md">
+        <form className="max-w-xl mx-auto  rounded shadow-md ">
           <div className="grid grid-cols-2 gap-5 lg:gap-10">
             <div>
               <label
