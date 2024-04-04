@@ -27,7 +27,7 @@ function BodegaComponente1() {
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
         <div className="text-center relative  z-10">
           <h1
-            className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
+            className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase -mb-5 lg:mb-0"
             style={gothamBlack}
           >
             BODEGA

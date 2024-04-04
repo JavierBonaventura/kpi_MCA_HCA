@@ -171,7 +171,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span className="mt-2">Bodega</span>
+                    <span className="mt-3">Bodega</span>
                   </div>
                 </Link>
 
@@ -184,7 +184,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span className="mt-1">Viñedos</span>
+                    <span className="mt-3">Viñedos</span>
                   </div>
                 </Link>
 
@@ -210,7 +210,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span>Nosotros</span>
+                    <span className="mt-3">Nosotros</span>
                   </div>
                 </Link>
 
@@ -223,7 +223,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span>Press kit</span>
+                    <span className="mt-3">Press kit</span>
                   </div>
                 </Link>
 
@@ -236,7 +236,7 @@ function Header() {
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
                       <img src={vineta} alt="" className="w-2" />
                     </div>
-                    <span>Contacto</span>
+                    <span className="mt-3">Contacto</span>
                   </div>
                 </Link>
               </div>
@@ -245,7 +245,7 @@ function Header() {
 
             {/* Mobile icons social media start */}
             <div
-              className="flex justify-center items-center gap-x-5 w-full py-10 "
+              className="flex justify-center items-center gap-x-5 w-full py-10"
               style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 400 }}
             >
               <a
