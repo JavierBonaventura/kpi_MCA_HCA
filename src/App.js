@@ -119,7 +119,6 @@ function App() {
                 <NosotrosComponente1 />
                 <NosotrosContent />
                 <NosotrosComponente3 />
-
                 <Linea />
                 <Footer />
               </>

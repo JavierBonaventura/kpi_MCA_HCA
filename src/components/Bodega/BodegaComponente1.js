@@ -21,7 +21,7 @@ function BodegaComponente1() {
 
   return (
     <div
-      className="w-full pt-56 pb-40 lg:py-64 lg:pt-0 lg:pb-0 flex items-center justify-center bg-cover bg-center relative"
+      className="w-full pt-56 pb-40 lg:py-64 flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bodegaFoto1})` }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">

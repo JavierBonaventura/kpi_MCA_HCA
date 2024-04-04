@@ -21,7 +21,7 @@ function NuestrosVinedos() {
 
   return (
     <div
-      className="w-full py-56 lg:py-64 flex items-center justify-center bg-cover bg-center relative"
+      className="w-full  pt-56 pb-40 lg:py-64 flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${fondoBodega})` }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
