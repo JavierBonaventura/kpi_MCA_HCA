@@ -40,7 +40,7 @@ function NuestrosVinos() {
     setDistancia2(distanciaEntre2y3);
   }, []);
 
-  const offsetChange = distancia2 - 5;
+  const offsetChange = distancia2 - 2;
 
   const moveLeft = () => {
     if (mainImage == 2) {
@@ -208,6 +208,7 @@ function NuestrosVinos() {
                 </p>
               </div>
             </div>
+
             <div
               className="  z-10 flex flex-col items-center "
               style={imageStyle3}
