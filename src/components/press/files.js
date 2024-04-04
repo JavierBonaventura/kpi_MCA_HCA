@@ -27,7 +27,7 @@ function Files() {
             </div>
             <div className="">
               <div className="absolute top-10 left-0 bg-[#460377] text-white px-5 border border-white rounded-e-lg">
-                <h1 className="text-base lg:text-lg font-gotham mt-1 lg:mt-0">
+                <h1 className="text-base lg:text-lg font-gotham mt-2 lg:mt-0">
                   Logos
                 </h1>
               </div>
