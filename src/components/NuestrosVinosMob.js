@@ -109,17 +109,17 @@ function NuestrosVinos() {
   };
 
   const imageStyle1 = {
-    transform: `translateX(20px)`,
+    transform: `translateX(${offset1}px)`,
     transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
 
   const imageStyle2 = {
-    transform: `translateX(20px)`,
+    transform: `translateX(${offset2}px)`,
     transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
 
   const imageStyle3 = {
-    transform: `translateX(20px)`,
+    transform: `translateX(${offset3}px)`,
     transition: "transform 0.5s ease-in-out, height 0.5s ease-in-out",
   };
 
