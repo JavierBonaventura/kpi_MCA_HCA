@@ -246,7 +246,7 @@ function NuestrosVinos() {
           <div className="inline-block mx-auto z-10">
             <Link
               to="/vinos"
-              className="border border-white text-white px-10 pb-5 pt-3 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+              className="border border-white text-white px-10 pt-5 pb-3 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
             >
               VER MÁS
             </Link>
