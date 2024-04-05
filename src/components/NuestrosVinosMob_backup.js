@@ -164,17 +164,17 @@ function NuestrosVinos() {
             </div>
           </div>
           <div
-            className="flex justify-between w-2/3 h-[450px] py-24  "
+            className="flex justify-between w-full h-[450px] py-24  "
             id="caja"
           >
             <div
-              className=" z-10 flex flex-col items-center  "
+              className="  z-10 flex flex-col items-center  "
               style={imageStyle1}
               id="div1"
               ref={div1Ref}
             >
               <img
-                className="h-3/4 "
+                className="h-full"
                 src={vino1}
                 alt="Vino 1"
                 style={{
@@ -182,7 +182,7 @@ function NuestrosVinos() {
                     "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
                 }}
               />
-              <p className="font-gotham-700 text-[9px] leading-[13px] tracking-[4px] uppercase text-white text-center">
+              <p className=" mt-5 font-gotham-700 text-xs leading-[13px] tracking-[4px] uppercase text-white text-center">
                 malbec
               </p>
             </div>
@@ -194,7 +194,7 @@ function NuestrosVinos() {
               ref={div2Ref}
             >
               <img
-                className="h-3/4 "
+                className="h-full"
                 src={vino2}
                 alt="Vino 2"
                 style={{
@@ -203,7 +203,7 @@ function NuestrosVinos() {
                 }}
               />
               <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
-                <p className="  font-gotham-700 text-[9px] leading-[15px] tracking-[4px] uppercase text-white text-center">
+                <p className=" mt-5 font-gotham-700 text-xs leading-[15px] tracking-[4px] uppercase text-white text-center">
                   cabernet sauvignon
                 </p>
               </div>
@@ -216,7 +216,7 @@ function NuestrosVinos() {
               ref={div3Ref}
             >
               <img
-                className="h-3/4 "
+                className="h-full"
                 src={vino3}
                 alt="Vino 3"
                 style={{
@@ -224,8 +224,8 @@ function NuestrosVinos() {
                     "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
                 }}
               />
-              <p className="  font-gotham-700 text-[9px] leading-[13px] tracking-[4px] uppercase text-white text-center">
-                malbec{" "}
+              <p className=" mt-5 font-gotham-700 text-xs leading-[13px] tracking-[4px] uppercase text-white text-center">
+                malbec
               </p>
             </div>
           </div>
