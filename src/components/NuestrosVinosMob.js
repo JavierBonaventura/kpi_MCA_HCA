@@ -153,7 +153,7 @@ function NuestrosVinos() {
         <div className="flex items-center justify-between">
           <div className=" relative z-50 ">
             <div
-              className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/2  bg-[#460377] transition-background duration-500`}
+              className={`cursor-pointer z-10 h-10 w-10 rounded-full flex items-center justify-center absolute -top-5  bg-[#460377] transition-background duration-500`}
               onClick={moveLeft}
             >
               <img
@@ -182,7 +182,7 @@ function NuestrosVinos() {
                     "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
                 }}
               />
-              <p className="font-gotham-700 text-[9px] leading-[13px] tracking-[4px] uppercase text-white text-center">
+              <p className="font-gotham-700 text-[8px] leading-[11px] tracking-[4px] uppercase text-white text-center pt-4">
                 malbec
               </p>
             </div>
@@ -203,7 +203,7 @@ function NuestrosVinos() {
                 }}
               />
               <div className="flex flex-col items-center flex-shrink-0 w-1/2 justify-center">
-                <p className="  font-gotham-700 text-[9px] leading-[15px] tracking-[4px] uppercase text-white text-center">
+                <p className="  font-gotham-700 text-[8px] leading-[11px] tracking-[4px] uppercase text-white text-center pt-4">
                   cabernet sauvignon
                 </p>
               </div>
@@ -224,14 +224,14 @@ function NuestrosVinos() {
                     "height 0.5s ease-in-out, margin-top 0.5s ease-in-out",
                 }}
               />
-              <p className="  font-gotham-700 text-[9px] leading-[13px] tracking-[4px] uppercase text-white text-center">
+              <p className="  font-gotham-700 text-[8px] leading-[11px] tracking-[4px] uppercase text-white text-center pt-4">
                 malbec{" "}
               </p>
             </div>
           </div>
           <div className="relative z-50">
             <div
-              className={`cursor-pointer z-10 h-14 w-14 rounded-full flex items-center justify-center absolute top-1/2 right-0 bg-[#460377]  transition-background duration-500`}
+              className={`cursor-pointer z-10 h-10 w-10 rounded-full flex items-center justify-center absolute -top-5 right-0 bg-[#460377]  transition-background duration-500`}
               onClick={moveRight}
             >
               <img
