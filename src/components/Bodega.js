@@ -77,7 +77,6 @@ function Bodega() {
           </div>
         </div>
       </div>
-
       <div className="z-0" style={overlayStyle}></div>
     </div>
   );

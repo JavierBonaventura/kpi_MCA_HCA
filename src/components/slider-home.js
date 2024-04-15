@@ -85,7 +85,12 @@ export default function SliderHome() {
             >
               Gualtallary
             </h1>
-            <div className="flex">
+            <div className="hidden lg:inline-block mx-auto z-10">
+              <div className="border border-white text-white h-8 w-48 flex justify-center items-center hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center">
+                <Link to="/vinedos">VER MÁS</Link>
+              </div>
+            </div>
+            <div className="flex lg:hidden">
               <div className="inline-block mx-auto z-10">
                 <Link
                   to="/vinedos"
@@ -114,7 +119,12 @@ export default function SliderHome() {
             >
               Vista Flores
             </h1>
-            <div className="flex">
+            <div className="hidden lg:inline-block mx-auto z-10">
+              <div className="border border-white text-white h-8 w-48 flex justify-center items-center hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center">
+                <Link to="/vinedos">VER MÁS</Link>
+              </div>
+            </div>
+            <div className="flex lg:hidden">
               <div className="inline-block mx-auto z-10">
                 <Link
                   to="/vinedos"
@@ -142,7 +152,12 @@ export default function SliderHome() {
             >
               PAMPA EL CEPILLO
             </h1>
-            <div className="flex">
+            <div className="hidden lg:inline-block mx-auto z-10">
+              <div className="border border-white text-white h-8 w-48 flex justify-center items-center hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center">
+                <Link to="/vinedos">VER MÁS</Link>
+              </div>
+            </div>
+            <div className="flex lg:hidden">
               <div className="inline-block mx-auto z-10">
                 <Link
                   to="/vinedos"
@@ -170,7 +185,12 @@ export default function SliderHome() {
             >
               Paraje Altamira
             </h1>
-            <div className="flex">
+            <div className="hidden lg:inline-block mx-auto z-10">
+              <div className="border border-white text-white h-8 w-48 flex justify-center items-center hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center">
+                <Link to="/vinedos">VER MÁS</Link>
+              </div>
+            </div>
+            <div className="flex lg:hidden">
               <div className="inline-block mx-auto z-10">
                 <Link
                   to="/vinedos"
