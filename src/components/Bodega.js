@@ -64,7 +64,6 @@ function Bodega() {
           <div className="mr-auto z-10">
             <Link
               to="/bodega"
-              href=""
               className="border border-white text-white  hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center btn-custom"
             >
               VER MÁS
