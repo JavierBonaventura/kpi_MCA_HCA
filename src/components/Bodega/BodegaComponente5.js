@@ -30,15 +30,13 @@ function BodegaComponente5() {
       style={{ backgroundImage: `url(${bodegaFoto3})` }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-center relative  z-10">
-        <div className="flex">
-          <div className="inline-block mx-auto z-10">
-            <Link
-              to="/vinos"
-              className="border border-white text-white px-10 pt-5 pb-3 lg:py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
-            >
-              VER VINOS
-            </Link>
-          </div>
+        <div className="w-fit flex mx-auto">
+          <a
+            href="/vinos"
+            className="border border-white text-white px-10 py-3 lg:py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
+          >
+            VER VINOS
+          </a>
         </div>
       </div>
       <div className="z-0" style={overlayStyle}></div>
