@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import ValleDeUco from "./components/ValleDeUco";
@@ -50,10 +50,21 @@ import Wine2 from "./components/singleVinos/Wine2";
 import Wine3 from "./components/singleVinos/Wine3";
 import NosotrosContent from "./components/Nosotros/content";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route
             path="/"
@@ -160,7 +171,6 @@ function App() {
             element={
               <>
                 <Header />
-
                 <HeroVino />
                 <Wine1 />
                 <Wine2 />
