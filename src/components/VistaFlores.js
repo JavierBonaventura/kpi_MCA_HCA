@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Flores from "../images/vistaFlores.png";
 import iconoMap from "../images/iconoMap.png";
 import iconoSuelo from "../images/iconoSuelo.png";
 import iconoUvas from "../images/iconoUvas.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function VistaFlores() {
   const firaSans = {
@@ -21,9 +23,17 @@ function VistaFlores() {
     height: "100%",
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
-    <div className="flex flex-col-reverse lg:flex-row ">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-12 lg:py-0 ">
+    <div className="flex flex-col-reverse lg:flex-row bg-[#252323]">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1500"
+        className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-6 !py-12 lg:py-0 "
+      >
         <h1
           className="text-white text-2xl lg:text-[2.5rem] lg:leading-[50px]"
           style={gothamBlack}

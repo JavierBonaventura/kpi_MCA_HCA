@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Imagen from "../../images/vinosFoto4.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function VinosComponente6() {
   const firaSans = {
@@ -18,9 +20,17 @@ function VinosComponente6() {
     height: "100%",
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
-    <div className="flex flex-col-reverse lg:flex-row-reverse ">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-0 lg:gap-y-6 !py-10 lg:py-0 ">
+    <div className="flex flex-col-reverse lg:flex-row-reverse bg-[#252323] overflow-hidden">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1500"
+        className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] flex flex-col  justify-center lg:px-44 gap-y-0 lg:gap-y-6 !py-10 lg:py-0 "
+      >
         <h1
           className="text-white text-2xl lg:text-[2rem] lg:leading-[50px]"
           style={gothamBlack}
@@ -34,7 +44,7 @@ function VinosComponente6() {
             Exhibe nuestro compromiso para poner en valor y comunicar la riqueza
             de terruños y expresiones que nos regala el Valle de Uco.
           </p>
-          <div className="flex">
+          <div className="flex lg:hidden">
             <div className="inline-block mr-auto mt-10 z-10">
               <a
                 href=""
@@ -42,6 +52,11 @@ function VinosComponente6() {
               >
                 VER MÁS
               </a>
+            </div>
+          </div>
+          <div className="hidden lg:inline-block mr-auto z-10 mt-10">
+            <div className="border border-white text-white h-8 w-48 flex justify-center items-center hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center">
+              <a href="">VER MÁS</a>
             </div>
           </div>
         </div>

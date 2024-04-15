@@ -22,9 +22,7 @@ function HeroValle() {
   };
 
   useEffect(() => {
-    AOS.init({
-      // Configura las opciones de AOS aquí, si es necesario
-    });
+    AOS.init({});
   }, []);
 
   return (
