@@ -265,13 +265,10 @@ function NuestrosVinos() {
         </div>
 
         <div className="flex justify-center mt-10">
-          <div className="inline-block mx-auto z-10">
-            <Link
-              to="/vinos"
-              className="border border-white text-white px-10 py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
-            >
-              VER MÁS
-            </Link>
+          <div className="inline-block mx-auto z-10 ">
+            <div className="border border-white text-white h-8 w-48 flex justify-center items-center hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center">
+              <Link to="/vinos">VER MÁS</Link>
+            </div>
           </div>
         </div>
       </div>

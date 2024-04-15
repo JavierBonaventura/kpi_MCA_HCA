@@ -62,12 +62,9 @@ function Bodega() {
           data-aos-delay="500"
         >
           <div className="inline-block mr-auto z-10">
-            <Link
-              to="/bodega"
-              className="border border-white text-white px-10 pt-5 pb-3 lg:py-2 hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center"
-            >
-              VER MÁS
-            </Link>
+            <div className="border border-white text-white h-8 w-48 flex justify-center items-center hover:bg-[#460377] transition-all ease-in-out duration-300 font-gotham text-xs lg:text-sm lg:leading-[14px] tracking-[4px] text-center">
+              <Link to="/bodega">VER MÁS</Link>
+            </div>
           </div>
         </div>
       </div>
