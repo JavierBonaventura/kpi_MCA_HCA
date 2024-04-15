@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nosotros from "../../images/hero-nosotros.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function NosotrosComponente1() {
   const firaSans = {
@@ -19,6 +21,10 @@ function NosotrosComponente1() {
     backgroundColor: "rgba(0, 0, 0, 0.46)",
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <div
       className="w-full  pt-56 pb-40 lg:py-64 flex items-center justify-center bg-cover bg-center relative"
@@ -28,6 +34,8 @@ function NosotrosComponente1() {
         <div className="text-center relative  z-10">
           <div className=" mx-auto">
             <h1
+              data-aos="zoom-in"
+              data-aos-duration="1500"
               className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
               style={gothamBlack}
             >

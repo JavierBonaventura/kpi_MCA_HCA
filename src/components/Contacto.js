@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import map from "../images/map-contacto.png";
 import celular from "../images/celular.png";
 import correo from "../images/correo.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Contacto() {
   const firaSans = {
@@ -12,10 +14,18 @@ function Contacto() {
     fontFamily: "Gotham Black",
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <div className="bg-[#252323] relative  pt-28 lg:py-44  ">
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl space-y-10 lg:space-y-0  ">
-        <div className="w-full lg:w-1/2 text-white space-y-5 lg:space-y-10  lg:pr-28 ">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1500"
+          className="w-full lg:w-1/2 text-white space-y-5 lg:space-y-10  lg:pr-28 "
+        >
           <h1
             className="text-white text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
             style={gothamBlack}

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sombra from "../../images/textura-single-vinos.png";
 import Bottle from "../../images/wine-bottle-1.png";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function VinosComponente7() {
   const firaSans = {
@@ -20,9 +22,17 @@ function VinosComponente7() {
     height: "100%",
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <div className="flex flex-col-reverse lg:flex-row py-4 lg:py-0 bg-[#252323]">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] text-white flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 ">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1500"
+        className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl w-full lg:w-1/2 bg-[#252323] text-white flex flex-col  justify-center lg:px-44 gap-y-6 !py-5 lg:py-0 "
+      >
         <h1
           className="text-2xl lg:text-[2.5rem] lg:leading-[50px]"
           style={gothamBlack}

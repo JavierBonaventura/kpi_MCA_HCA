@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import valleUco from "../../images/hero-single-vinos.png";
 import Arrow from "../../images/arrow-l.png";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Hero() {
   const firaSans = {
@@ -20,6 +22,10 @@ function Hero() {
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.46)",
   };
+
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
     <>
@@ -64,12 +70,19 @@ function Hero() {
           </Link>
           <div className="z-10 space-y-8 ">
             <h1
+              data-aos="zoom-in"
+              data-aos-duration="1500"
               className="text-white text-center text-4xl lg:text-6xl lg:leading-[70px] tracking-[-1px] uppercase"
               style={gothamBlack}
             >
               Single vineyard
             </h1>
-            <div className=" w-full lg:w-1/2 mx-auto text-white text-center text-sm lg:text-lg lg:leading-[28px]">
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              data-aos-delay="1000"
+              className=" w-full lg:w-1/2 mx-auto text-white text-center text-sm lg:text-lg lg:leading-[28px]"
+            >
               <p className="mb-2 font-gotham text-xl lg:text-2xl">
                 La expresión del terrior
               </p>

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import map from "../../images/mapa-nosotros.jpg";
 import vineta from "../../images/flechaDerecha.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function NosotrosContent() {
   const firaSans = {
@@ -20,10 +22,18 @@ function NosotrosContent() {
     backgroundColor: "rgba(0, 0, 0, 0.46)",
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <div className="bg-[#252323] relative py-12 lg:py-32  ">
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl space-y-10 lg:space-y-0  ">
-        <div className="w-full lg:w-1/2 text-white space-y-5 lg:space-y-10  lg:pr-28 ">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1500"
+          className="w-full lg:w-1/2 text-white space-y-5 lg:space-y-10  lg:pr-28 "
+        >
           <p className="font-gotham text-white text-base lg:text-xl lg:leading-[30px] text-justify">
             Callejón del Crimen pertenece al grupo vitivinícola Vinos de La Luz,
             que cuenta con bodegas y viñedos en las regiones más destacadas del

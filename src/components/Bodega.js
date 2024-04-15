@@ -55,7 +55,12 @@ function Bodega() {
             fundamentales: Naturaleza, Innovacion y Sostenibilidad.
           </p>
         </div>
-        <div className="flex">
+        <div
+          className="flex"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+          data-aos-delay="500"
+        >
           <div className="mr-auto z-10">
             <Link
               to="/bodega"

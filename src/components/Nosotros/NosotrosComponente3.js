@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import referentes from "../../images/nosotros-vinedo.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function NosotrosComponente3() {
   const firaSans = {
@@ -23,13 +25,21 @@ function NosotrosComponente3() {
     backgroundColor: "rgba(0, 0, 0, 0.46)",
   };
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <div
       className="w-full  flex items-center justify-center bg-cover bg-center relative"
       style={{ backgroundImage: `url(${referentes})` }}
     >
       <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-16 lg:!py-44">
-        <div className="text-center relative z-10 space-y-10 text-white">
+        <div
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+          className="text-center relative z-10 space-y-10 text-white"
+        >
           <h1
             className="text-lg lg:text-[2.5rem] lg:leading-[50px]"
             style={gothamBlack}
