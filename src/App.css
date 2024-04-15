@@ -505,11 +505,11 @@
 }
 
 .btn-custom {
-  padding: 0.75rem 2.5rem !important;
+  padding: 0.75rem 2.5rem;
 }
 
 @media (min-width: 1024px) {
   .btn-custom {
-    padding: 0.5rem 2.5rem !important;
+    padding: 0.5rem 2.5rem;
   }
 }
