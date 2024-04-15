@@ -61,7 +61,7 @@ function Bodega() {
           data-aos-duration="2000"
           data-aos-delay="500"
         >
-          <div className="inline-block mr-auto z-10">
+          <div className="mr-auto z-10">
             <Link
               to="/bodega"
               href=""
