@@ -1,12 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo-white.png";
-import linkedin from "../images/linkedin.png";
-import facebook from "../images/facebook.png";
-import instagram from "../images/icon-instagram.svg";
-import menuMobile from "../images/menu-mobile.svg";
-import close from "../images/icon-close.svg";
-import vineta from "../images/flechaDerecha.png";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -49,11 +42,7 @@ function Header() {
         </div>
         <div className="w-[20%] mx-auto">
           <Link to="/">
-            <img
-              src={logo}
-              alt="Logo"
-              className="w-28 mx-auto py-1 hover:bg-[#460377] transition-all ease-in-out duration-300"
-            />
+
           </Link>
         </div>
         <div className="flex w-[40%] justify-between items-center">
@@ -97,33 +86,21 @@ function Header() {
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img
-                  src={linkedin}
-                  alt="instagram"
-                  className="w-6 h-6 flex-shrink-0"
-                />
+
               </a>
               <a
                 href="https://www.facebook.com/callejoncrimen"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img
-                  src={facebook}
-                  alt="facebook"
-                  className="w-6 h-6 flex-shrink-0"
-                />
+
               </a>
               <a
                 href="https://www.instagram.com/callejoncrimen/"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img
-                  src={instagram}
-                  alt="facebook"
-                  className="w-6 h-6 flex-shrink-0"
-                />
+
               </a>
             </div>
           </div>
@@ -134,15 +111,10 @@ function Header() {
         className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl text-header lg:hidden justify-between flex items-center"
       >
         <Link to="/">
-          <img
-            src={logo}
-            alt="Logo"
-            className="w-20 mx-auto py-1 hover:bg-[#460377] transition-all ease-in-out duration-300"
-          />
+
         </Link>
 
         <a href="#" onClick={toggleMobileMenu}>
-          <img src={menuMobile} alt="" className="w-8" />
         </a>
 
         <div
@@ -153,7 +125,6 @@ function Header() {
           <div className="px-5">
             <div className="flex justify-end items-center  ">
               <span className="" id="menu-close" onClick={closeMobileMenu}>
-                <img src={close} alt="close" className="w-5 cursor-pointer" />
               </span>
             </div>
           </div>
@@ -169,7 +140,6 @@ function Header() {
                 >
                   <div className="flex items-center gap-x-3">
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
-                      <img src={vineta} alt="" className="w-2" />
                     </div>
                     <span className="mt-3">Bodega</span>
                   </div>
@@ -182,7 +152,6 @@ function Header() {
                 >
                   <div className="flex items-center gap-x-3">
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
-                      <img src={vineta} alt="" className="w-2" />
                     </div>
                     <span className="mt-3">Viñedos</span>
                   </div>
@@ -195,7 +164,6 @@ function Header() {
                 >
                   <div className="flex items-center gap-x-3">
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
-                      <img src={vineta} alt="" className="w-2" />
                     </div>
                     <span className="mt-3">Vinos</span>
                   </div>
@@ -208,7 +176,6 @@ function Header() {
                 >
                   <div className="flex items-center gap-x-3">
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
-                      <img src={vineta} alt="" className="w-2" />
                     </div>
                     <span className="mt-3">Nosotros</span>
                   </div>
@@ -221,7 +188,6 @@ function Header() {
                 >
                   <div className="flex items-center gap-x-3">
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
-                      <img src={vineta} alt="" className="w-2" />
                     </div>
                     <span className="mt-3">Press kit</span>
                   </div>
@@ -234,7 +200,6 @@ function Header() {
                 >
                   <div className="flex items-center gap-x-3">
                     <div className="bg-[#460377]  rounded-full py-2 px-3">
-                      <img src={vineta} alt="" className="w-2" />
                     </div>
                     <span className="mt-3">Contacto</span>
                   </div>
@@ -253,21 +218,18 @@ function Header() {
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img src={linkedin} alt="instagram" className="w-8" />
               </a>
               <a
                 href="https://www.facebook.com/callejoncrimen"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img src={facebook} alt="facebook" className="w-8" />
               </a>
               <a
                 href="https://www.instagram.com/callejoncrimen/"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img src={instagram} alt="facebook" className="w-8" />
               </a>
             </div>
             {/* Mobile icons social media end */}

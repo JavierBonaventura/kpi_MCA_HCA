@@ -1,8 +1,4 @@
 import React from "react";
-import logo_footer from "../images/logoConCalidad.png";
-import linkedin from "../images/linkedin.png";
-import facebook from "../images/facebook.png";
-import instagram from "../images/icon-instagram.svg";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -12,11 +8,7 @@ function Footer() {
         <div className="flex flex-col lg:flex-row w-full justify-between  gap-y-6 lg:gap-y-0 ">
           <div className="w-full lg:w-1/5 lg:-mt-8">
             <Link to="/">
-              <img
-                className="w-32 lg:w-40 -ml-2"
-                src={logo_footer}
-                alt="Logo"
-              />
+
             </Link>
 
             <div className="flex lg:ml-7">
@@ -25,21 +17,18 @@ function Footer() {
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img src={linkedin} alt="instagram" className="w-7" />
               </a>
               <a
                 href="https://www.facebook.com/callejoncrimen"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img src={facebook} alt="facebook" className="w-7" />
               </a>
               <a
                 href="https://www.instagram.com/callejoncrimen/"
                 target="_blank"
                 className="hover:bg-[#460377] transition-all ease-in-out duration-300"
               >
-                <img src={instagram} alt="instagram" className="w-7" />
               </a>
             </div>
           </div>
