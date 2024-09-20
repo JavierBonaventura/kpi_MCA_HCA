@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header_Home from "./components/Header_Home";
-import Footer from "./components/Footer";
+import Servicios from "./components/Servicios";
 
 
 const ScrollToTop = () => {
@@ -26,6 +26,8 @@ function App() {
             element={
               <>
                 <Header_Home />
+                <Servicios />
+
               </>
             }
           />
