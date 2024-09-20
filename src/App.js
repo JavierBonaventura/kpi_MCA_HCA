@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
+import Header_Home from "./components/Header_Home";
 import Footer from "./components/Footer";
 
 
@@ -25,9 +25,7 @@ function App() {
             path="/"
             element={
               <>
-                <Header />
-
-                <Footer />
+                <Header_Home />
               </>
             }
           />
