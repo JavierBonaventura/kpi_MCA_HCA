@@ -1,8 +1,7 @@
 import React from "react";
 import fondoServicios from "../images/fondoServicios.png";
-import recuadroUno from "../images/recuadroUno.png"; 
-import recuadroDos from "../images/recuadroDos.png"; 
-
+import recuadroUno from "../images/recuadroUno.png";
+import recuadroDos from "../images/recuadroDos.png";
 
 function Header_Home() {
   // Cálculo del margen izquierdo en porcentaje
@@ -46,13 +45,14 @@ function Header_Home() {
               fontFeatureSettings: "'liga' off, 'clig' off",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum erat nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum erat nec.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            interdum erat nec. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Aliquam interdum erat nec.
           </div>
 
           {/* Contenedor de los dos rectángulos centrados horizontalmente */}
           <div
             className="flex justify-center mt-[50px] space-x-[30px]" // Flexbox para alinear los rectángulos uno al lado del otro
-
           >
             {/* Primer rectángulo */}
             <div
@@ -71,6 +71,97 @@ function Header_Home() {
                 alt="Recuadro uno"
                 className="absolute top-[-30px] left-1/2 transform -translate-x-1/2"
               />
+
+              {/* Texto debajo de la imagen */}
+              <div
+                style={{
+                  color: "#464646",
+                  textAlign: "center",
+                  fontFeatureSettings: "'liga' off, 'clig' off",
+                  fontFamily: "Fira Sans",
+                  fontSize: "30px",
+                  fontStyle: "normal",
+                  fontWeight: "400", // Peso para "Asesoramiento"
+                  lineHeight: "21.323px",
+                  letterSpacing: "-1.333px",
+                  position: "absolute",
+                  top: "220px", // Para posicionar el texto a 20px debajo de la imagen
+                  width: "100%",
+                }}
+              >
+                <span style={{ fontWeight: "400" }}>Asesoramiento </span>
+                <span
+                  style={{
+                    color: "#464646",
+                    fontFeatureSettings: "'liga' off, 'clig' off",
+                    fontFamily: "Fira Sans",
+                    fontSize: "30px",
+                    fontStyle: "normal",
+                    fontWeight: "600", // Peso para "Integral"
+                    lineHeight: "21.323px",
+                    letterSpacing: "-1.333px",
+                  }}
+                >
+                  Integral
+                </span>
+              </div>
+
+              {/* Texto adicional debajo de "Asesoramiento Integral" */}
+              <div
+                style={{
+                  color: "#464646",
+                  textAlign: "center",
+                  fontFeatureSettings: "'liga' off, 'clig' off",
+                  fontFamily: "Fira Sans",
+                  fontSize: "20px",
+                  fontStyle: "normal",
+                  fontWeight: "400",
+                  lineHeight: "23px", // 115% de la altura de línea
+                  letterSpacing: "-1.333px",
+                  position: "absolute",
+                  top: "270px", // Para posicionar el texto 40px debajo de "Asesoramiento Integral"
+                  width: "452.381px",
+                  height: "62.274px",
+                  left: "50%",
+                  transform: "translateX(-50%)", // Centrado horizontalmente
+                }}
+              >
+                Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit
+                praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl
+                facilisi. Pellentesque pharetra id placerat.
+              </div>
+
+              {/* Botón debajo del texto */}
+              <button
+                style={{
+                  width: "217px",
+                  height: "50px",
+                  borderRadius: "5px",
+                  background: "#00942C",
+                  position: "absolute",
+                  top: "370px", // Ajuste para que el botón esté debajo del texto
+                  left: "50%",
+                  transform: "translateX(-50%)", // Centrado horizontalmente
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center", // Para centrar verticalmente el texto dentro del botón
+                }}
+              >
+                <span
+                  style={{
+                    color: "#FFF",
+                    textAlign: "center",
+                    fontFamily: "Fira Sans",
+                    fontSize: "14px",
+                    fontStyle: "normal",
+                    fontWeight: "400",
+                    letterSpacing: "4px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  VER MAS
+                </span>
+              </button>
             </div>
 
             {/* Segundo rectángulo */}
@@ -90,6 +181,96 @@ function Header_Home() {
                 alt="Recuadro dos"
                 className="absolute top-[-30px] left-1/2 transform -translate-x-1/2"
               />
+                {/* Texto debajo de la imagen */}
+                <div
+                style={{
+                  color: "#464646",
+                  textAlign: "center",
+                  fontFeatureSettings: "'liga' off, 'clig' off",
+                  fontFamily: "Fira Sans",
+                  fontSize: "30px",
+                  fontStyle: "normal",
+                  fontWeight: "400", // Peso para "Asesoramiento"
+                  lineHeight: "21.323px",
+                  letterSpacing: "-1.333px",
+                  position: "absolute",
+                  top: "220px", // Para posicionar el texto a 20px debajo de la imagen
+                  width: "100%",
+                }}
+              >
+                <span style={{ fontWeight: "400" }}>Asesoramiento </span>
+                <span
+                  style={{
+                    color: "#464646",
+                    fontFeatureSettings: "'liga' off, 'clig' off",
+                    fontFamily: "Fira Sans",
+                    fontSize: "30px",
+                    fontStyle: "normal",
+                    fontWeight: "600", // Peso para "Integral"
+                    lineHeight: "21.323px",
+                    letterSpacing: "-1.333px",
+                  }}
+                >
+                  Productivo
+                </span>
+              </div>
+
+              {/* Texto adicional debajo de "Asesoramiento Integral" */}
+              <div
+                style={{
+                  color: "#464646",
+                  textAlign: "center",
+                  fontFeatureSettings: "'liga' off, 'clig' off",
+                  fontFamily: "Fira Sans",
+                  fontSize: "20px",
+                  fontStyle: "normal",
+                  fontWeight: "400",
+                  lineHeight: "23px", // 115% de la altura de línea
+                  letterSpacing: "-1.333px",
+                  position: "absolute",
+                  top: "270px", // Para posicionar el texto 40px debajo de "Asesoramiento Integral"
+                  width: "452.381px",
+                  height: "62.274px",
+                  left: "50%",
+                  transform: "translateX(-50%)", // Centrado horizontalmente
+                }}
+              >
+                Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit
+                praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl
+                facilisi. Pellentesque pharetra id placerat.
+              </div>
+
+              {/* Botón debajo del texto */}
+              <button
+                style={{
+                  width: "217px",
+                  height: "50px",
+                  borderRadius: "5px",
+                  background: "#00942C",
+                  position: "absolute",
+                  top: "370px", // Ajuste para que el botón esté debajo del texto
+                  left: "50%",
+                  transform: "translateX(-50%)", // Centrado horizontalmente
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center", // Para centrar verticalmente el texto dentro del botón
+                }}
+              >
+                <span
+                  style={{
+                    color: "#FFF",
+                    textAlign: "center",
+                    fontFamily: "Fira Sans",
+                    fontSize: "14px",
+                    fontStyle: "normal",
+                    fontWeight: "400",
+                    letterSpacing: "4px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  VER MAS
+                </span>
+              </button>
             </div>
           </div>
         </div>

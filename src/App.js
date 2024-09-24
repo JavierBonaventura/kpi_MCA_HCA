@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header_Home from "./components/Header_Home";
 import Servicios from "./components/Servicios";
+import Desde1976 from "./components/Desde1976";
 
 
 const ScrollToTop = () => {
@@ -27,6 +28,8 @@ function App() {
               <>
                 <Header_Home />
                 <Servicios />
+                <Desde1976 />
+                
 
               </>
             }
