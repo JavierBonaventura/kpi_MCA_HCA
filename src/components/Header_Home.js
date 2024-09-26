@@ -31,7 +31,8 @@ function Header_Home() {
   return (
     <div
       className="relative h-[760px] bg-cover bg-center"
-      style={{ backgroundImage: `url(${fondoHome})` }}
+      style={{ backgroundImage: `url(${fondoHome}),linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))` }}
+      
     >
       <div className="absolute top-0 left-0 w-full h-[94px]">
         <div className="absolute inset-0 bg-[#F7FFF1] bg-opacity-100"></div>

@@ -3,7 +3,7 @@ import fondoServicios from "../images/fondoServicios.png";
 import recuadroUno from "../images/recuadroUno.png";
 import recuadroDos from "../images/recuadroDos.png";
 
-function Header_Home() {
+function Servicios() {
   // Cálculo del margen izquierdo en porcentaje
   const leftPercentageLogo = (184 / 1440) * 100;
 
@@ -13,7 +13,13 @@ function Header_Home() {
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
           className="relative z-10 flex flex-col h-full px-4"
-          style={{ backgroundImage: `url(${fondoServicios})` }}
+          style={{
+            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`, // Capa verde más sutil
+            backgroundPosition: "0px -300.596px",
+            backgroundSize: "100% 143.058%",
+            backgroundBlendMode: "overlay", // Mezcla la imagen con la capa verde
+            backgroundRepeat: "no-repeat",
+          }}
         >
           {/* Texto "Servicios" con margen superior de 120px */}
           <div
@@ -279,4 +285,4 @@ function Header_Home() {
   );
 }
 
-export default Header_Home;
+export default Servicios;
