@@ -6,6 +6,10 @@ import Servicios from "./components/Servicios";
 import Desde1976 from "./components/Desde1976";
 import AlgunosNumeros from "./components/AlgunosNumeros"
 import NuestrosProyectos from "./components/NuestrosProyectos";
+import Historias from "./components/Historias";
+import Impacto from "./components/Impacto";
+import EnMarcha from "./components/EnMarcha";
+import Footer from "./components/Footer";
 
 
 const ScrollToTop = () => {
@@ -33,7 +37,10 @@ function App() {
                 <Desde1976 />
                 <AlgunosNumeros />
                 <NuestrosProyectos />
-                
+                <Historias />
+                <Impacto/>
+                <EnMarcha/>
+                <Footer/>
 
               </>
             }

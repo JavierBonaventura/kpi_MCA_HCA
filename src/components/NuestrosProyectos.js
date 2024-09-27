@@ -9,7 +9,7 @@ function Servicios() {
 
   return (
     <div>
-      <div className="w-full h-[852px]">
+      <div className="w-full h-[852px] overflow-x-hidden">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
           className="relative z-10 flex flex-col items-center justify-center h-full px-4"
@@ -55,7 +55,7 @@ function Servicios() {
           </div>
 
           {/* Contenedor para las tarjetas y botones de navegación */}
-          <div className="flex items-center justify-center mt-[50px] space-x-[30px] gap-[50px]">
+          <div className="flex items-center justify-center mt-[50px] space-x-[30px] gap-[50px] ">
           
 
             {/* Tarjeta 1 */}

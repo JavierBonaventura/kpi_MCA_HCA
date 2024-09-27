@@ -3,7 +3,7 @@ import fondoServicios from "../images/fondoServicios.png";
 import recuadroUno from "../images/recuadroUno.png";
 import recuadroDos from "../images/recuadroDos.png";
 
-function Servicios() {
+function Header_Home() {
   // Cálculo del margen izquierdo en porcentaje
   const leftPercentageLogo = (184 / 1440) * 100;
 
@@ -285,4 +285,4 @@ function Servicios() {
   );
 }
 
-export default Servicios;
+export default Header_Home;

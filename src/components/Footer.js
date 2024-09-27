@@ -1,196 +1,196 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import fondoServicios from "../images/fondoServicios.png";
+import logoGarabi from "../images/logo-garabi.svg"; // Importa el logo
+import logoInstagram from "../images/instagramNegra.png";
+import logoLinkedin from "../images/linkedinNegra.png";
 
 function Footer() {
+  // Cálculo del margen izquierdo en porcentaje
+  const leftPercentageLogo = (184 / 1440) * 100;
+
   return (
-    <div className="bg-[#252323] lg:pt-24 space-y-16">
-      <div className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl">
-        <div className="flex flex-col lg:flex-row w-full justify-between  gap-y-6 lg:gap-y-0 ">
-          <div className="w-full lg:w-1/5 lg:-mt-8">
-            <Link to="/">
+    <div>
+      <div className="w-full h-[300px] relative">
+        {/* Fondo y contenedor principal */}
+        <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
 
-            </Link>
-
-            <div className="flex lg:ml-7">
-              <a
-                href="https://www.linkedin.com/company/vinosdelaluz/"
-                target="_blank"
-                className="hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-              </a>
-              <a
-                href="https://www.facebook.com/callejoncrimen"
-                target="_blank"
-                className="hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-              </a>
-              <a
-                href="https://www.instagram.com/callejoncrimen/"
-                target="_blank"
-                className="hover:bg-[#460377] transition-all ease-in-out duration-300"
-              >
-              </a>
-            </div>
-          </div>
-          <div className="w-full lg:w-4/5 flex flex-col lg:flex-row justify-between gap-y-10 lg:gap-y-0">
-            <div className="space-y-3 lg:space-y-5">
-              <p className="text-sm lg:text-lg lg:leading-[20px] tracking-[4px] text-white font-gotham-700">
-                CONTACTO
-              </p>
-              <div className="space-y-3">
-                <a
-                  href="https://www.google.com/maps/place/Armani,+Tunuy%C3%A1n,+Mendoza/data=!4m2!3m1!1s0x967c25c55264fbc9:0x98a8695ef02d48a5?sa=X&ved=1t:242&ictx=111"
-                  target="_blank"
-                  className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                >
-                  Calle Armani S/N, M5563 <br /> Villa Seca, Mendoza
-                </a>
-                <p className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px]">
-                  (+ 54 11) 4328.4868 / 3883
-                </p>
-                <div className="mt-1">
-                  <a
-                    href="mailto:info@vinosdelaluz.com"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    info@vinosdelaluz.com
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-3 lg:space-y-5">
-              <p className="text-sm lg:text-lg lg:leading-[20px] tracking-[4px] text-white font-gotham-700">
-                LINKS
-              </p>
-              <div className="flex flex-col gap-y-3">
-                <Link
-                  to="/bodega"
-                  target="_blank"
-                  className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                >
-                  Bodega
-                </Link>
-                <Link
-                  to="/nosotros"
-                  target="_blank"
-                  className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                >
-                  Nosotros
-                </Link>
-                <Link
-                  to="/vinedos"
-                  target="_blank"
-                  className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                >
-                  Viñedos
-                </Link>
-                <Link
-                  to="/press"
-                  target="_blank"
-                  className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                >
-                  Press Kit
-                </Link>
-                <Link
-                  to="/contacto"
-                  target="_blank"
-                  className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                >
-                  Contacto
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-3 lg:space-y-5">
-              <p className="text-sm lg:text-lg lg:leading-[20px] tracking-[4px] text-white font-gotham-700 uppercase">
-                Nuestros vinos
-              </p>
-              <div className="flex gap-x-10">
-                <div className="flex flex-col gap-y-3">
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Iluminado
-                  </Link>
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Gran Callejón
-                  </Link>
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Blend de Terroir
-                  </Link>
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Single Vineyard
-                  </Link>
-
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Gran Reserva
-                  </Link>
-                </div>
-                <div className="flex flex-col gap-y-3">
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Reserva
-                  </Link>
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Relatos
-                  </Link>
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Perlas
-                  </Link>
-
-                  <Link
-                    to=""
-                    target="_blank"
-                    className="font-gotham-regular text-white text-sm lg:text-lg lg:leading-[22px] hover:underline"
-                  >
-                    Episodio
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-gray-500">
         <div
-          className="container mx-auto max-w-screen-xl 2xl:max-w-screen-2xl !py-5
-        "
+          className="relative z-10 flex flex-col h-full px-4"
+          style={{
+            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
+            backgroundSize: "100% 143.058%",
+            backgroundBlendMode: "overlay",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-y-2 ">
-            <p className="text-white text-xs lg:text-sm lg:leading-[14px] tracking-[4px] uppercase font-gotham">
-              © 2024 callejón del crimen
-            </p>
-            <p className="text-white text-xs lg:text-sm lg:leading-[14px] tracking-[4px] uppercase font-gotham">
-              All rights reserved
-            </p>
+          {/* Nuevo contenedor con margen */}
+          <div
+            className="flex justify-between"
+            style={{
+              marginLeft: `${leftPercentageLogo}%`,
+            }}
+          >
+            {/* Primera columna con el logo y texto */}
+            <div className="flex flex-col">
+              <img
+                src={logoGarabi}
+                alt="Logo Garabi"
+                style={{
+                  width: "157px",
+                  height: "80px",
+                  flexShrink: 0,
+                }}
+              />
+              <div
+                style={{
+                  width: "304.457px",
+                  color: "#000",
+                  fontFamily: "Fira Sans",
+                  fontSize: "18px",
+                  fontWeight: "400",
+                  lineHeight: "28px",
+                  marginTop: "20px",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                nisl augue, finibus sed magna varius, egestas varius ex.
+              </div>
+            </div>
+
+            {/* Segunda columna */}
+            <div className="flex flex-col top-20px mt-8">
+              <div
+                style={{
+                  width: "133.714px",
+                  color: "#000",
+                  fontFamily: "Fira Sans",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                  letterSpacing: "4px",
+                  textTransform: "uppercase",
+                }}
+              >
+                HOME
+              </div>
+              <div className="w-[133.714px] h-[139px] text-black font-fira-sans text-[18px] font-normal leading-[28px] mt-[20px]">
+                <p className="mb-[10px]">Nosotros</p>
+                <p className="mb-[10px]">Proyectos</p>
+                <p>Medio Ambiente</p>
+              </div>
+            </div>
+
+            {/* Tercera columna */}
+            <div className="flex flex-col top-20px mt-8">
+              <div
+                style={{
+                  width: "133.714px",
+                  color: "#000",
+                  fontFamily: "Fira Sans",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                  letterSpacing: "4px",
+                  textTransform: "uppercase",
+                }}
+              >
+                SERVICIOS
+              </div>
+              <div className="w-[133.714px] h-[139px] text-black font-fira-sans text-[18px] font-normal leading-[28px] mt-[20px]">
+                <p className="mb-[10px]">Servicio 1</p>
+                <p className="mb-[10px]">Servicio 2</p>
+                <p>Servicio 3</p>
+              </div>
+            </div>
+
+            {/* Cuarta columna */}
+{/* Cuarta columna */}
+<div className="flex flex-col top-20px mt-8">
+  <div
+    style={{
+      width: "133.714px",
+      color: "#000",
+      fontFamily: "Fira Sans",
+      fontSize: "14px",
+      fontWeight: "500",
+      letterSpacing: "4px",
+      textTransform: "uppercase",
+    }}
+  >
+    SERVICIOS
+  </div>
+  <div className="w-[213px] h-[139px] text-black font-fira-sans text-[18px] font-normal leading-[28px] mt-[20px]">
+    <p className="mb-[10px]"> +72 699 241-395</p>
+    <p className="mb-[10px]">alexei@getcraftwork.com</p>
+    <div
+      className="absolute"
+      style={{
+        left: `${(1119 / 1440) * 100}%`,
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src={logoLinkedin}
+        alt="LinkedIn"
+        style={{
+          width: "30px",
+          height: "30px",
+          flexShrink: 0,
+          marginRight: "10px",
+        }}
+      />
+      <div
+        style={{
+          width: "0.5px",
+          height: "28.343px",
+          backgroundColor: "#00942C",
+          margin: "0 10px",
+        }}
+      />
+      <img
+        src={logoInstagram}
+        alt="Instagram"
+        style={{
+          width: "26.572px",
+          height: "28.343px",
+          flexShrink: 0,
+        }}
+      />
+    </div>
+  </div>
+</div>
+
+
+                      {/* Quinta columna */}
+                      <div className="flex flex-col top-20px mt-8" style={{ width: `${leftPercentageLogo}px` }}>
+       
+            </div>
+          </div>
+
+          {/* Línea centrada */}
+          <div
+            style={{
+              width: "1307px",
+              height: "1px",
+              background: "#000",
+              margin: "40px auto 20px", // Centrar la línea
+            }}
+          ></div>
+
+          {/* Texto centrado */}
+          <div
+            style={{
+              width: "522.514px",
+              color: "#000",
+              fontFamily: "Fira Sans",
+              fontSize: "14px",
+              fontWeight: "500",
+              letterSpacing: "4px",
+              textTransform: "uppercase",
+              textAlign: "center", // Centrar el texto
+              margin: "0 auto", // Asegura el centrado del contenedor
+            }}
+          >
+            © 2024 AW visual studio. All rights reserved.
           </div>
         </div>
       </div>
