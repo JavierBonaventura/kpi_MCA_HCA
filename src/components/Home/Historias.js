@@ -1,6 +1,6 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import galleryPersona1 from "../images/galleryPersona1.png";
+import fondoServicios from "../../images/fondoServicios.png";
+import galleryPersona1 from "../../images/galleryPersona1.png";
 
 function Historias() {
   return (

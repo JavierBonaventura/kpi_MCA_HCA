@@ -1,9 +1,9 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import imagenCirculo1 from "../images/imagen-circulo-1.png";
-import imagenCirculo2 from "../images/imagen-circulo-2.png";
-import imagenCirculo3 from "../images/imagen-circulo-3.png";
-import imagenCirculo4 from "../images/imagen-circulo-4.png";
+import fondoServicios from "../../images/fondoServicios.png";
+import imagenCirculo1 from "../../images/imagen-circulo-1.png";
+import imagenCirculo2 from "../../images/imagen-circulo-2.png";
+import imagenCirculo3 from "../../images/imagen-circulo-3.png";
+import imagenCirculo4 from "../../images/imagen-circulo-4.png";
 
 function AlgunosNumeros() {
   return (

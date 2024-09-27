@@ -1,8 +1,8 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import logoGarabi from "../images/logo-garabi.svg"; // Importa el logo
-import logoInstagram from "../images/instagramNegra.png";
-import logoLinkedin from "../images/linkedinNegra.png";
+import fondoServicios from "../../images/fondoServicios.png";
+import logoGarabi from "../../images/logo-garabi.svg"; // Importa el logo
+import logoInstagram from "../../images/instagramNegra.png";
+import logoLinkedin from "../../images/linkedinNegra.png";
 
 function Footer() {
   // Cálculo del margen izquierdo en porcentaje

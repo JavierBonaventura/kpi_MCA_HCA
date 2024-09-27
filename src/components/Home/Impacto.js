@@ -1,9 +1,9 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import sustentabilidad from "../images/sustentabilidad.png"; // Imagen de sustentabilidad
-import seguridad from "../images/seguridad.png"; // Imagen de seguridad
-import comunidad from "../images/comunidad.png"; // Imagen de comunidad
-import medioAmbiente from "../images/medioAmbiente.png"; // Imagen de fondo
+import fondoServicios from "../../images/fondoServicios.png";
+import sustentabilidad from "../../images/sustentabilidad.png"; // Imagen de sustentabilidad
+import seguridad from "../../images/seguridad.png"; // Imagen de seguridad
+import comunidad from "../../images/comunidad.png"; // Imagen de comunidad
+import medioAmbiente from "../../images/medioAmbiente.png"; // Imagen de fondo
 
 function Impacto() {
   return (

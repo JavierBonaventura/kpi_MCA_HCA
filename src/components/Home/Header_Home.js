@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import fondoHome from "../images/fondo-home.png";
-import fondoTopBar from "../images/topbar-fondo.png";
-import logoGarabi from "../images/logo-garabi.svg";
-import logoInstagram from "../images/logoInstagram.svg";
-import logoLinkedin from "../images/linkedin.png";
+import { Link } from "react-router-dom"; // Importar Link
+import fondoHome from "../../images/fondo-home.png";
+import fondoTopBar from "../../images/topbar-fondo.png";
+import logoGarabi from "../../images/logo-garabi.svg";
+import logoInstagram from "../../images/logoInstagram.svg";
+import logoLinkedin from "../../images/linkedin.png";
 
 function Header_Home() {
   const [fontSize, setFontSize] = useState(14);
@@ -52,45 +53,53 @@ function Header_Home() {
             }}
           />
           
+
           <div
-            className="absolute"
-            style={{
-              left: `${(421 / 1440) * 100}%`,
-              top: "40px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "24px",
-            }}
-          >
-            {["HOME", "ABOUT US", "PROYECTOS", "IMPACTO", "CONTACTO"].map((texto, index) => (
-              <span
-                key={index}
+          className="absolute"
+          style={{
+            left: `${(421 / 1440) * 100}%`,
+            top: "40px",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "24px",
+          }}
+        >
+          {[
+            { text: "HOME", to: "/" },
+            { text: "ABOUT US", to: "/about" },
+            { text: "PROYECTOS", to: "/projects" },
+            { text: "IMPACTO", to: "/impact" },
+            { text: "CONTACTO", to: "/contact" }
+          ].map((item, index) => (
+            <Link
+              key={index}
+              to={item.to}
+              style={{
+                color: "#00942C",
+                textAlign: "center",
+                fontFamily: "TT Norms Pro",
+                fontSize: `${fontSize}px`,
+                fontWeight: 400,
+                letterSpacing: `${letterSpacing}px`,
+                textTransform: "uppercase",
+                position: "relative",
+                display: "inline-block",
+                marginBottom: "9.16px",
+                cursor: "pointer",
+              }}
+              className="group"
+            >
+              {item.text}
+              <div
+                className="absolute left-1/2 transform -translate-x-1/2 h-[3.205px] bg-[#00942C] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                  color: "#00942C",
-                  textAlign: "center",
-                  fontFamily: "TT Norms Pro",
-                  fontSize: `${fontSize}px`,
-                  fontWeight: 400,
-                  letterSpacing: `${letterSpacing}px`,
-                  textTransform: "uppercase",
-                  position: "relative",
-                  display: "inline-block",
-                  marginBottom: "9.16px",
-                  cursor: "pointer",
+                  width: "100%",
+                  marginTop: "3px",
                 }}
-                className="group"
-              >
-                {texto}
-                <div
-                  className="absolute left-1/2 transform -translate-x-1/2 h-[3.205px] bg-[#00942C] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    width: "100%",
-                    marginTop: "3px",
-                  }}
-                />
-              </span>
-            ))}
-          </div>
+              />
+            </Link>
+          ))}
+        </div>
 
           <div
             className="absolute"

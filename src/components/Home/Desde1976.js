@@ -1,6 +1,6 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import campoDesde from "../images/campoDesde.png";
+import fondoServicios from "../../images/fondoServicios.png";
+import campoDesde from "../../images/campoDesde.png";
 
 function Desde1976() {
   // Cálculo del margen izquierdo en porcentaje
@@ -11,7 +11,7 @@ function Desde1976() {
       <div className="w-full h-[852px]">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
-          className="relative z-10 flex h-full px-4"
+          className="relative z-10 flex h-full"
           style={{
             backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`, // Capa verde más sutil
             backgroundPosition: "0px -300.596px",

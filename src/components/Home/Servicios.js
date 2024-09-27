@@ -1,7 +1,7 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import recuadroUno from "../images/recuadroUno.png";
-import recuadroDos from "../images/recuadroDos.png";
+import fondoServicios from "../../images/fondoServicios.png";
+import recuadroUno from "../../images/recuadroUno.png";
+import recuadroDos from "../../images/recuadroDos.png";
 
 function Header_Home() {
   // Cálculo del margen izquierdo en porcentaje

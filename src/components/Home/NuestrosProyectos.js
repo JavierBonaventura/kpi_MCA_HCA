@@ -1,8 +1,8 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import gallery1 from "../images/gallery1.png";
-import gallery2 from "../images/gallery2.png";
-import gallery3 from "../images/gallery3.png";
+import fondoServicios from "../../images/fondoServicios.png";
+import gallery1 from "../../images/gallery1.png";
+import gallery2 from "../../images/gallery2.png";
+import gallery3 from "../../images/gallery3.png";
 
 function Servicios() {
   const leftPercentageLogo = (184 / 1440) * 100;

@@ -1,6 +1,6 @@
 import React from "react";
-import fondoServicios from "../images/fondoServicios.png";
-import imagenCurva from "../images/imagenCurva.png"; // Importa la imagen curva
+import fondoServicios from "../../images/fondoServicios.png";
+import imagenCurva from "../../images/imagenCurva.png"; // Importa la imagen curva
 
 function EnMarcha() {
   // Cálculo del margen izquierdo en porcentaje
