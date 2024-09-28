@@ -9,7 +9,7 @@ import logoLinkedin from "../../images/linkedin.png";
 function Header() {
   const [fontSize, setFontSize] = useState(14);
   const [letterSpacing, setLetterSpacing] = useState(4);
-
+  
   const handleResize = () => {
     const width = window.innerWidth;
     const newFontSize = (width / 1440) * 14; // Proporcional al ancho
@@ -68,7 +68,7 @@ function Header() {
             { text: "ABOUT US", to: "/about" },
             { text: "PROYECTOS", to: "/projects" },
             { text: "IMPACTO", to: "/impact" },
-            { text: "CONTACTO", to: "/contact" },
+            { text: "CONTACTO", to: "/contact" }
           ].map((item, index) => (
             <Link
               key={index}
@@ -109,51 +109,33 @@ function Header() {
             alignItems: "center",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <img
-              src={logoLinkedin}
-              alt="LinkedIn"
-              style={{
-                width: "30px",
-                height: "30px",
-                flexShrink: 0,
-                marginRight: "10px",
-                cursor: "pointer", // Cambia el cursor al pasar el mouse
-                transition: "transform 0.2s", // Suaviza el efecto de escala
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.1)")
-              } // Escala al pasar el mouse
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              } // Vuelve al tamaño original
-            />
-            <div
-              style={{
-                width: "0.5px",
-                height: "28.343px",
-                backgroundColor: "#00942C",
-                margin: "0 10px",
-              }}
-            />
-            <img
-              src={logoInstagram}
-              alt="Instagram"
-              style={{
-                width: "26.572px",
-                height: "28.343px",
-                flexShrink: 0,
-                cursor: "pointer", // Cambia el cursor al pasar el mouse
-                transition: "transform 0.2s", // Suaviza el efecto de escala
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.1)")
-              } // Escala al pasar el mouse
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              } // Vuelve al tamaño original
-            />
-          </div>
+          <img
+            src={logoLinkedin}
+            alt="LinkedIn"
+            style={{
+              width: "30px",
+              height: "30px",
+              flexShrink: 0,
+              marginRight: "10px",
+            }}
+          />
+          <div
+            style={{
+              width: "0.5px",
+              height: "28.343px",
+              backgroundColor: "#00942C",
+              margin: "0 10px",
+            }}
+          />
+          <img
+            src={logoInstagram}
+            alt="Instagram"
+            style={{
+              width: "26.572px",
+              height: "28.343px",
+              flexShrink: 0,
+            }}
+          />
         </div>
       </div>
     </div>

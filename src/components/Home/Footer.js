@@ -60,110 +60,95 @@ function Footer() {
             {/* Segunda columna */}
             <div className="flex flex-col top-20px mt-8">
               <div
-                style={{
-                  width: "133.714px",
-                  color: "#000",
-                  fontFamily: "Fira Sans",
-                  fontSize: "14px",
-                  fontWeight: "500",
-                  letterSpacing: "4px",
-                  textTransform: "uppercase",
-                }}
+                className="text-black font-fira-sans text-[14px] font-medium uppercase tracking-[4px] hover:cursor-pointer hover:scale-105 transition-transform duration-200"
               >
                 HOME
               </div>
               <div className="w-[133.714px] h-[139px] text-black font-fira-sans text-[18px] font-normal leading-[28px] mt-[20px]">
-                <p className="mb-[10px]">Nosotros</p>
-                <p className="mb-[10px]">Proyectos</p>
-                <p>Medio Ambiente</p>
+                <p className="mb-[10px] hover:cursor-pointer hover:scale-105 transition-transform duration-200">Nosotros</p>
+                <p className="mb-[10px] hover:cursor-pointer hover:scale-105 transition-transform duration-200">Proyectos</p>
+                <p className="hover:cursor-pointer hover:scale-105 transition-transform duration-200">Medio Ambiente</p>
               </div>
             </div>
 
             {/* Tercera columna */}
             <div className="flex flex-col top-20px mt-8">
               <div
-                style={{
-                  width: "133.714px",
-                  color: "#000",
-                  fontFamily: "Fira Sans",
-                  fontSize: "14px",
-                  fontWeight: "500",
-                  letterSpacing: "4px",
-                  textTransform: "uppercase",
-                }}
+                className="text-black font-fira-sans text-[14px] font-medium uppercase tracking-[4px] hover:cursor-pointer hover:scale-105 transition-transform duration-200"
               >
                 SERVICIOS
               </div>
               <div className="w-[133.714px] h-[139px] text-black font-fira-sans text-[18px] font-normal leading-[28px] mt-[20px]">
-                <p className="mb-[10px]">Servicio 1</p>
-                <p className="mb-[10px]">Servicio 2</p>
-                <p>Servicio 3</p>
+                <p className="mb-[10px] hover:cursor-pointer hover:scale-105 transition-transform duration-200">Servicio 1</p>
+                <p className="mb-[10px] hover:cursor-pointer hover:scale-105 transition-transform duration-200">Servicio 2</p>
+                <p className="hover:cursor-pointer hover:scale-105 transition-transform duration-200">Servicio 3</p>
               </div>
             </div>
 
             {/* Cuarta columna */}
-{/* Cuarta columna */}
-<div className="flex flex-col top-20px mt-8">
-  <div
-    style={{
-      width: "133.714px",
-      color: "#000",
-      fontFamily: "Fira Sans",
-      fontSize: "14px",
-      fontWeight: "500",
-      letterSpacing: "4px",
-      textTransform: "uppercase",
-    }}
-  >
-    SERVICIOS
-  </div>
-  <div className="w-[213px] h-[139px] text-black font-fira-sans text-[18px] font-normal leading-[28px] mt-[20px]">
-    <p className="mb-[10px]"> +72 699 241-395</p>
-    <p className="mb-[10px]">alexei@getcraftwork.com</p>
-    <div
-      className="absolute"
-      style={{
-        left: `${(1119 / 1440) * 100}%`,
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <img
-        src={logoLinkedin}
-        alt="LinkedIn"
-        style={{
-          width: "30px",
-          height: "30px",
-          flexShrink: 0,
-          marginRight: "10px",
-        }}
-      />
-      <div
-        style={{
-          width: "0.5px",
-          height: "28.343px",
-          backgroundColor: "#00942C",
-          margin: "0 10px",
-        }}
-      />
-      <img
-        src={logoInstagram}
-        alt="Instagram"
-        style={{
-          width: "26.572px",
-          height: "28.343px",
-          flexShrink: 0,
-        }}
-      />
-    </div>
-  </div>
-</div>
-
-
-                      {/* Quinta columna */}
-                      <div className="flex flex-col top-20px mt-8" style={{ width: `${leftPercentageLogo}px` }}>
-       
+            <div className="flex flex-col top-20px mt-8">
+              <div
+                className="text-black font-fira-sans text-[14px] font-medium uppercase tracking-[4px] hover:cursor-pointer hover:scale-105 transition-transform duration-200"
+              >
+                CONTACTO
+              </div>
+              <div className="w-[213px] h-[139px] text-black font-fira-sans text-[18px] font-normal leading-[28px] mt-[20px]">
+                <p className="mb-[10px] hover:cursor-pointer hover:scale-105 transition-transform duration-200"> +72 699 241-395</p>
+                <p className="mb-[10px] hover:cursor-pointer hover:scale-105 transition-transform duration-200">alexei@getcraftwork.com</p>
+                <div
+                  className="absolute"
+                  style={{
+                    left: `${(1119 / 1440) * 100}%`,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <img
+                      src={logoLinkedin}
+                      alt="LinkedIn"
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        flexShrink: 0,
+                        marginRight: "10px",
+                        cursor: "pointer", // Cambia el cursor al pasar el mouse
+                        transition: "transform 0.2s", // Suaviza el efecto de escala
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1)"} // Escala al pasar el mouse
+                      onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"} // Vuelve al tamaño original
+                    />
+                    <div
+                      style={{
+                        width: "0.5px",
+                        height: "28.343px",
+                        backgroundColor: "#00942C",
+                        margin: "0 10px",
+                      }}
+                    />
+                    <img
+                      src={logoInstagram}
+                      alt="Instagram"
+                      style={{
+                        width: "26.572px",
+                        height: "28.343px",
+                        flexShrink: 0,
+                        cursor: "pointer", // Cambia el cursor al pasar el mouse
+                        transition: "transform 0.2s", // Suaviza el efecto de escala
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1)"} // Escala al pasar el mouse
+                      onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"} // Vuelve al tamaño original
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* Quinta columna */}
+            <div
+              className="flex flex-col top-20px mt-8"
+              style={{ width: `${leftPercentageLogo}px` }}
+            ></div>
           </div>
 
           {/* Línea centrada */}

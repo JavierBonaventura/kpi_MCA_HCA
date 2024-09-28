@@ -81,18 +81,7 @@ function ProyectosEnMarcha() {
         {/* Tarjeta superpuesta 1 */}
         <div
           className="absolute z-30"
-          style={{
-            top: "680px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            transition: "transform 0.3s",
-          }} // Añadir transición
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1.02)")
-          } // Escalar al pasar el mouse
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1)")
-          } // Restaurar escala
+          style={{ top: "680px", left: "50%", transform: "translateX(-50%)" }}
         >
           {" "}
           {/* Centra la tarjeta horizontalmente */}
@@ -180,15 +169,7 @@ function ProyectosEnMarcha() {
                   flexShrink: 0,
                   borderRadius: "5px",
                   backgroundColor: "#00942C",
-                  cursor: "pointer", // Cursor de mano
-                  transition: "background 0.3s", // Transición suave para el cambio de color
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "#007A24")
-                } // Cambio de color al pasar el mouse
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "#00942C")
-                } // Restaurar color
               >
                 <span
                   style={{
@@ -210,18 +191,7 @@ function ProyectosEnMarcha() {
         {/* Tarjeta superpuesta foto derecha 2*/}
         <div
           className="absolute z-30"
-          style={{
-            top: "1000px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            transition: "transform 0.3s",
-          }} // Añadir transición
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1.02)")
-          } // Escalar al pasar el mouse
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1)")
-          } // Restaurar escala
+          style={{ top: "1000px", left: "50%", transform: "translateX(-50%)" }}
         >
           {" "}
           {/* Centra la tarjeta horizontalmente */}
@@ -293,15 +263,7 @@ function ProyectosEnMarcha() {
                   flexShrink: 0,
                   borderRadius: "5px",
                   backgroundColor: "#00942C",
-                  cursor: "pointer", // Cursor de mano
-                  transition: "background 0.3s", // Transición suave para el cambio de color
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "#007A24")
-                } // Cambio de color al pasar el mouse
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "#00942C")
-                } // Restaurar color
               >
                 <span
                   style={{
@@ -338,18 +300,7 @@ function ProyectosEnMarcha() {
         {/* Tarjeta superpuesta 3*/}
         <div
           className="absolute z-30"
-          style={{
-            top: "1320px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            transition: "transform 0.3s",
-          }} // Añadir transición
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1.02)")
-          } // Escalar al pasar el mouse
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1)")
-          } // Restaurar escala
+          style={{ top: "1320px", left: "50%", transform: "translateX(-50%)" }}
         >
           {" "}
           {/* Centra la tarjeta horizontalmente */}
@@ -437,15 +388,7 @@ function ProyectosEnMarcha() {
                   flexShrink: 0,
                   borderRadius: "5px",
                   backgroundColor: "#00942C",
-                  cursor: "pointer", // Cursor de mano
-                  transition: "background 0.3s", // Transición suave para el cambio de color
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "#007A24")
-                } // Cambio de color al pasar el mouse
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "#00942C")
-                } // Restaurar color
               >
                 <span
                   style={{
@@ -467,18 +410,7 @@ function ProyectosEnMarcha() {
         {/* Tarjeta superpuesta foto derecha 4*/}
         <div
           className="absolute z-30"
-          style={{
-            top: "1640px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            transition: "transform 0.3s",
-          }} // Añadir transición
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1.02)")
-          } // Escalar al pasar el mouse
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1)")
-          } // Restaurar escala
+          style={{ top: "1640px", left: "50%", transform: "translateX(-50%)" }}
         >
           {" "}
           {/* Centra la tarjeta horizontalmente */}
@@ -550,15 +482,7 @@ function ProyectosEnMarcha() {
                   flexShrink: 0,
                   borderRadius: "5px",
                   backgroundColor: "#00942C",
-                  cursor: "pointer", // Cursor de mano
-                  transition: "background 0.3s", // Transición suave para el cambio de color
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "#007A24")
-                } // Cambio de color al pasar el mouse
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "#00942C")
-                } // Restaurar color
               >
                 <span
                   style={{
@@ -595,18 +519,7 @@ function ProyectosEnMarcha() {
         {/* Tarjeta superpuesta 5 */}
         <div
           className="absolute z-30"
-          style={{
-            top: "1960px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            transition: "transform 0.3s",
-          }} // Añadir transición
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1.02)")
-          } // Escalar al pasar el mouse
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.transform = "translateX(-50%) scale(1)")
-          } // Restaurar escala
+          style={{ top: "1960px", left: "50%", transform: "translateX(-50%)" }}
         >
           {" "}
           {/* Centra la tarjeta horizontalmente */}
@@ -694,15 +607,7 @@ function ProyectosEnMarcha() {
                   flexShrink: 0,
                   borderRadius: "5px",
                   backgroundColor: "#00942C",
-                  cursor: "pointer", // Cursor de mano
-                  transition: "background 0.3s", // Transición suave para el cambio de color
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "#007A24")
-                } // Cambio de color al pasar el mouse
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "#00942C")
-                } // Restaurar color
               >
                 <span
                   style={{
@@ -721,85 +626,76 @@ function ProyectosEnMarcha() {
             </div>
           </div>
         </div>
-        {/* Imagen de árboles con texto y botón debajo */}
-        <div className="absolute z-10 w-full" style={{ top: "2040px" }}>
-          <img
-            src={arbolesProyectos}
-            alt="Árboles Proyectos"
-            style={{ width: "100vw", height: "678px" }}
-          />
+{/* Imagen de árboles con texto y botón debajo */}
+<div className="absolute z-10 w-full" style={{ top: "2040px" }}>
+  <img
+    src={arbolesProyectos}
+    alt="Árboles Proyectos"
+    style={{ width: "100vw", height: "678px" }}
+  />
 
-          {/* Nuevo div superpuesto */}
-          <div
-            className="absolute"
-            style={{
-              width: "571px",
-              height: "100vw",
-              transform: "rotate(90deg)",
-              flexShrink: 0,
-              background:
-                "linear-gradient(90deg, #dfe8e0 0%, rgba(237, 242, 232, 0.00) 100%)",
-              top: "0%", // Ajusta según necesites
-              left: "100%", // Ajusta según necesites
-              transformOrigin: "top left", // Asegura que la rotación sea desde la esquina superior izquierda
-            }}
-          />
+  {/* Nuevo div superpuesto */}
+  <div
+    className="absolute"
+    style={{
+      width: "571px",
+      height: "100vw",
+      transform: "rotate(90deg)",
+      flexShrink: 0,
+      background:
+        "linear-gradient(90deg, #dfe8e0 0%, rgba(237, 242, 232, 0.00) 100%)",
+      top: "0%", // Ajusta según necesites
+      left: "100%", // Ajusta según necesites
+      transformOrigin: "top left", // Asegura que la rotación sea desde la esquina superior izquierda
+    }}
+  />
 
-          <div
-            className="absolute inset-0 flex flex-col justify-center items-center"
-            style={{ width: "100%", margin: "0 auto", textAlign: "center" }}
-          >
-            <div
-              className="text-center"
-              style={{
-                color: "#00942C",
-                fontFamily: "Fira Sans",
-                fontSize: "40px",
-                fontWeight: "700",
-                lineHeight: "50px",
-                maxWidth: "615px", // Limitar el ancho máximo del texto
-              }}
-            >
-              Contáctanos ahora para darle forma a tu futuro verde
-            </div>
+  <div
+    className="absolute inset-0 flex flex-col justify-center items-center"
+    style={{ width: "100%", margin: "0 auto", textAlign: "center" }}
+  >
+    <div
+      className="text-center"
+      style={{
+        color: "#00942C",
+        fontFamily: "Fira Sans",
+        fontSize: "40px",
+        fontWeight: "700",
+        lineHeight: "50px",
+        maxWidth: "615px", // Limitar el ancho máximo del texto
+      }}
+    >
+      Contáctanos ahora para darle forma a tu futuro verde
+    </div>
 
-            <button
-              className="mt-6 flex justify-center items-center"
-              style={{
-                width: "245.25px",
-                height: "50px",
-                flexShrink: 0,
-                borderRadius: "5px",
-                border: "1px solid #00942C",
-                backgroundColor: "#FFF",
-                cursor: "pointer", // Cursor de mano
-                transition: "background 0.3s, color 0.3s", // Transición suave para el cambio de color
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#D1D1D1"; // Nuevo color de fondo al pasar el mouse
-                e.currentTarget.style.color = "#00942C"; // Cambiar color del texto a verde
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#FFF"; // Restaurar fondo
-                e.currentTarget.style.color = "#00942C"; // Restaurar color del texto
-              }}
-            >
-              <span
-                style={{
-                  color: "#00942C",
-                  textAlign: "center",
-                  fontFamily: "Fira Code",
-                  fontSize: "14px",
-                  fontWeight: "400",
-                  letterSpacing: "4px",
-                  textTransform: "uppercase",
-                }}
-              >
-                Contáctanos
-              </span>
-            </button>
-          </div>
-        </div>
+    <button
+      className="mt-6 flex justify-center items-center"
+      style={{
+        width: "245.25px",
+        height: "50px",
+        flexShrink: 0,
+        borderRadius: "5px",
+        border: "1px solid #00942C",
+        backgroundColor: "#FFF",
+      }}
+    >
+      <span
+        style={{
+          color: "#00942C",
+          textAlign: "center",
+          fontFamily: "Fira Code",
+          fontSize: "14px",
+          fontWeight: "400",
+          letterSpacing: "4px",
+          textTransform: "uppercase",
+        }}
+      >
+        Contáctanos
+      </span>
+    </button>
+  </div>
+</div>
+
       </div>
     </div>
   );

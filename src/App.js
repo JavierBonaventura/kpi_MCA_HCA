@@ -14,6 +14,8 @@ import Footer from "./components/Home/Footer";
 // projects
 import Header from "./components/Projects/Header"; // Importa tu nuevo componente
 import ProyectosEnMarcha from "./components/Projects/ProyectosEnMarcha";
+// Contact
+import ContactoForm from "./components/Contact/ContactoForm";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -53,6 +55,16 @@ function App() {
               <>
                 <Header />
                <ProyectosEnMarcha />
+                <Footer />
+              </>
+            }
+          />
+                    <Route
+            path="/contact"
+            element={
+              <>
+                <Header />
+                <ContactoForm />
                 <Footer />
               </>
             }

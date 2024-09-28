@@ -110,44 +110,33 @@ function Header_Home() {
               alignItems: "center",
             }}
           >
-    <div style={{ display: "flex", alignItems: "center" }}>
-  <img
-    src={logoLinkedin}
-    alt="LinkedIn"
-    style={{
-      width: "30px",
-      height: "30px",
-      flexShrink: 0,
-      marginRight: "10px",
-      cursor: "pointer", // Cambia el cursor al pasar el mouse
-      transition: "transform 0.2s", // Suaviza el efecto de escala
-    }}
-    onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1)"} // Escala al pasar el mouse
-    onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"} // Vuelve al tamaño original
-  />
-  <div
-    style={{
-      width: "0.5px",
-      height: "28.343px",
-      backgroundColor: "#00942C",
-      margin: "0 10px",
-    }}
-  />
-  <img
-    src={logoInstagram}
-    alt="Instagram"
-    style={{
-      width: "26.572px",
-      height: "28.343px",
-      flexShrink: 0,
-      cursor: "pointer", // Cambia el cursor al pasar el mouse
-      transition: "transform 0.2s", // Suaviza el efecto de escala
-    }}
-    onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1)"} // Escala al pasar el mouse
-    onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"} // Vuelve al tamaño original
-  />
-</div>
-
+            <img
+              src={logoLinkedin}
+              alt="LinkedIn"
+              style={{
+                width: "30px",
+                height: "30px",
+                flexShrink: 0,
+                marginRight: "10px",
+              }}
+            />
+            <div
+              style={{
+                width: "0.5px",
+                height: "28.343px",
+                backgroundColor: "#00942C",
+                margin: "0 10px",
+              }}
+            />
+            <img
+              src={logoInstagram}
+              alt="Instagram"
+              style={{
+                width: "26.572px",
+                height: "28.343px",
+                flexShrink: 0,
+              }}
+            />
           </div>
         </div>
       </div>
@@ -214,84 +203,69 @@ function Header_Home() {
 
       {/* Contenedor para los botones */}
       <div
-  style={{
-    position: "absolute",
-    left: `${leftPercentageLogo}%`,
-    top: "515px", // Margen superior para la posición de los botones
-    display: "flex",
-    gap: "10px", // Espacio entre botones
-  }}
->
-  {/* Botón 1 */}
-  <div
-    style={{
-      width: "217px",
-      height: "50px",
-      borderRadius: "5px",
-      background: "#00942C",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      cursor: "pointer", // Cursor de mano
-      transition: "background 0.3s", // Transición suave para el cambio de color
-    }}
-    onMouseEnter={(e) => (e.currentTarget.style.background = "#007A24")} // Cambio de color al pasar el mouse
-    onMouseLeave={(e) => (e.currentTarget.style.background = "#00942C")} // Restaurar color
-  >
-    <span
-      style={{
-        color: "#FFF",
-        textAlign: "center",
-        fontFamily: "Fira Sans",
-        fontSize: "14px",
-        fontWeight: 400,
-        letterSpacing: "4px",
-        textTransform: "uppercase",
-      }}
-    >
-      SOBRE NOSOTROS
-    </span>
-  </div>
+        style={{
+          position: "absolute",
+          left: `${leftPercentageLogo}%`,
+          top: "515px", // Margen superior para la posición de los botones
+          display: "flex",
+          gap: "10px", // Espacio entre botones
+        }}
+      >
+        {/* Botón 1 */}
+        <div
+          style={{
+            width: "217px",
+            height: "50px",
+            borderRadius: "5px",
+            background: "#00942C",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <span
+            style={{
+              color: "#FFF",
+              textAlign: "center",
+              fontFamily: "Fira Sans",
+              fontSize: "14px",
+              fontWeight: 400,
+              letterSpacing: "4px",
+              textTransform: "uppercase",
+            }}
+          >
+            SOBRE NOSOTROS
+          </span>
+        </div>
 
-  {/* Botón 2 */}
-  <div
-    style={{
-      width: "187.875px",
-      height: "50px",
-      borderRadius: "5px",
-      border: "1px solid #00942C",
-      background: "#FFF",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      cursor: "pointer", // Cursor de mano
-      transition: "background 0.3s, color 0.3s", // Transición suave para el cambio de color
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.background = "#D1D1D1"; // Nuevo color de fondo al pasar el mouse
-      e.currentTarget.style.color = "#00942C"; // Cambiar color del texto a verde
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.background = "#FFF"; // Restaurar fondo
-      e.currentTarget.style.color = "#00942C"; // Restaurar color del texto
-    }}
-  >
-    <span
-      style={{
-        color: "#00942C",
-        textAlign: "center",
-        fontFamily: "Fira Sans",
-        fontSize: "14px",
-        fontWeight: 400,
-        letterSpacing: "4px",
-        textTransform: "uppercase",
-      }}
-    >
-      PROYECTOS
-    </span>
-  </div>
-</div>
-
+        {/* Botón 2 */}
+        <div
+          style={{
+            width: "187.875px",
+            height: "50px",
+            borderRadius: "5px",
+            border: "1px solid #00942C",
+            background: "#FFF",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <span
+            style={{
+              color: "#00942C",
+              textAlign: "center",
+              fontFamily: "Fira Sans",
+              fontSize: "14px",
+              fontWeight: 400,
+              letterSpacing: "4px",
+              textTransform: "uppercase",
+            }}
+          >
+            PROYECTOS
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

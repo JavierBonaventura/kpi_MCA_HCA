@@ -3,28 +3,27 @@ import fondoServicios from "../../images/fondoServicios.png";
 import imagenCurva from "../../images/imagenCurva.png"; // Importa la imagen curva
 
 function EnMarcha() {
+  // Cálculo del margen izquierdo en porcentaje
   const leftPercentageLogo = (184 / 1440) * 100;
 
   return (
     <div>
-      <div className="w-full h-[852px] relative">
+      <div className="w-full h-[852px] relative"> {/* Hacemos el contenedor relativo */}
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
 
-        {/* Imagen curva con propiedades ajustadas */}
+        {/* Imagen curva con máxima prioridad */}
         <img
           src={imagenCurva}
           alt="Curva"
-          className="absolute top-0 left-0 w-full h-auto z-30 max-h-[850px]" // Asegúrate de que tenga un z-index alto
+          className="absolute top-0 left-0 w-full h-auto z-20 max-h-[850px]" // Mayor prioridad y no afectada por filtros
           style={{
-            mixBlendMode: "normal",
-            top: "30px",
-            pointerEvents: "none", // Permitir que el mouse interactúe con elementos debajo
+            mixBlendMode: "normal", // No aplicar ningún filtro o mezcla
+            top: "30px"
           }}
         />
 
-        {/* Contenedor con el fondo y el filtro */}
         <div
-          className="relative z-20 flex flex-col h-full px-4"
+          className="relative z-10 flex flex-col h-full px-4"
           style={{
             backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
             backgroundPosition: "0px -300.596px",
@@ -33,6 +32,7 @@ function EnMarcha() {
             backgroundRepeat: "no-repeat",
           }}
         >
+          {/* Texto "Querés poner en marcha tu proyecto? Escribinos!" */}
           <div
             className="w-[631px] h-[196px] flex-shrink-0 mt-[120px]"
             style={{
@@ -49,6 +49,7 @@ function EnMarcha() {
             Querés poner en marcha tu proyecto? Escribinos!
           </div>
 
+          {/* Contenedor de los botones */}
           <div
             className="flex mt-[20px] gap-4"
             style={{
@@ -57,14 +58,10 @@ function EnMarcha() {
           >
             {/* Primer botón - "Email" */}
             <button
-              className="w-[245.25px] h-[50px] rounded-[5px] bg-[#00942C] flex justify-center items-center z-30"
+              className="w-[245.25px] h-[50px] rounded-[5px] bg-[#00942C] flex justify-center items-center"
               style={{
                 flexShrink: 0,
-                cursor: "pointer",
-                transition: "background 0.3s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#007A24")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#00942C")}
             >
               <span
                 style={{
@@ -85,16 +82,6 @@ function EnMarcha() {
               className="w-[245.25px] h-[50px] rounded-[5px] border border-[#00942C] bg-[#FFF] flex justify-center items-center"
               style={{
                 flexShrink: 0,
-                cursor: "pointer", // Cursor de mano
-                transition: "background 0.3s, color 0.3s", // Transición suave para el cambio de color
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#D1D1D1"; // Nuevo color de fondo al pasar el mouse
-                e.currentTarget.style.color = "#00942C"; // Cambiar color del texto a verde
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#FFF"; // Restaurar fondo
-                e.currentTarget.style.color = "#00942C"; // Restaurar color del texto
               }}
             >
               <span

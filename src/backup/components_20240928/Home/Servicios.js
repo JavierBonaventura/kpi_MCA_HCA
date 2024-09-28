@@ -152,8 +152,6 @@ function Header_Home() {
                   justifyContent: "center",
                   alignItems: "center", // Para centrar verticalmente el texto dentro del botón
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#007A24")} // Cambio de color al pasar el mouse
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#00942C")} // Restaurar color
               >
                 <span
                   style={{
@@ -166,7 +164,6 @@ function Header_Home() {
                     letterSpacing: "4px",
                     textTransform: "uppercase",
                   }}
-                  
                 >
                   VER MAS
                 </span>
@@ -264,8 +261,6 @@ function Header_Home() {
                   justifyContent: "center",
                   alignItems: "center", // Para centrar verticalmente el texto dentro del botón
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#007A24")} // Cambio de color al pasar el mouse
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#00942C")} // Restaurar color
               >
                 <span
                   style={{

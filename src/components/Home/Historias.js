@@ -1,14 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import fondoServicios from "../../images/fondoServicios.png";
-import galleryPersona1 from "../../images/galleryPersona1.png";
+import galleryPersona1 from "../../images/galleryPersona1.png"; // Asegúrate de importar la imagen correcta
 
 function Historias() {
+  // Estado para manejar el índice de la tarjeta visible
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Contenido de las tarjetas
+  const cards = [
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
+    // Puedes agregar más objetos para otras tarjetas si lo deseas
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
+  ];
+
+  // Función para ir a la tarjeta siguiente
+  const nextCard = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+  };
+
+  // Función para ir a la tarjeta anterior
+  const prevCard = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + cards.length) % cards.length
+    );
+  };
+
   return (
     <div>
-      <div className="w-full h-[350px]">
+      <div className="w-full h-[350px] relative">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
-          className="relative z-10 flex flex-col items-center justify-center h-full px-4"
+          className="absolute inset-0 flex flex-col items-center justify-center h-full px-4"
           style={{
             backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
             backgroundSize: "100% 143.058%",
@@ -16,95 +57,134 @@ function Historias() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          {/* Contenedor para las tarjetas y botones de navegación */}
-          <div className="flex items-center justify-center mt-[50px] space-x-[30px] gap-[50px]">
+          {/* Contenedor para las tarjetas */}
+          <div className="relative w-full flex items-center justify-center mt-[50px]">
             {/* Botón de navegación izquierda */}
-            <button className="w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white">
+            <button
+              onClick={prevCard}
+              className="absolute left-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10"
+              style={{
+                cursor: "pointer", // Cursor de mano
+                transition: "background 0.3s", // Transición suave para el cambio de color
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "#007A24")
+              } // Cambio de color al pasar el mouse
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background = "#00942C")
+              } // Restaurar color
+            >
               &lt;
             </button>
 
-            {/* Tarjeta */}
-            <div className="flex flex-row items-center justify-between  p-6 rounded-lg ">
-              {/* Contenedor de la izquierda con la imagen */}
-              <div className="flex-shrink-0 w-[185.39px] h-[185.39px] rounded-full overflow-hidden bg-[#D9D9D9]">
-                <img
-                  src={galleryPersona1}
-                  alt="Persona 1"
-                  className="object-cover w-full h-full"
-                  style={{
-                    width: "185.39px",
-                    height: "185.39px",
-                    flexShrink: 0,
-                  }}
-                />
-              </div>
+            {/* Tarjetas */}
+            <div className="relative w-[941px] h-[235px] overflow-hidden">
+              {cards.map((card, index) => {
+                const translateClass =
+                  index === currentIndex
+                    ? "translate-x-0"
+                    : index === (currentIndex + 1) % cards.length
+                    ? "translate-x-full"
+                    : "-translate-x-full";
 
-              {/* Contenedor de la derecha con los textos */}
-              <div className="flex flex-col justify-center ml-6">
-                {/* Componente de arriba */}
-                <div
-                  className="mb-4"
-                  style={{
-                    width: "681.849px",
-                    height: "78.65px",
-                    flexShrink: 0,
-                    color: "#633F3F",
-                    fontFeatureSettings: "'liga' off, 'clig' off",
-                    fontFamily: '"Fira Sans"',
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "28px", // 155.556%
-                  }}
-                >
-                  <p className="">
-                    Testimonials take the spotlight away from the seller, and
-                    shine it on the customer. Your customer was once in the
-                    shopper’s shoes, debating what product to choose, comparing
-                    prices, reading marketing message after marketing message.
-                  </p>
-                </div>
+                return (
+                  <div
+                    key={index}
+                    className={`absolute transition-transform duration-500 ease-in-out w-full h-full ${translateClass} flex items-center justify-center`}
+                  >
+                    <div className="flex flex-row items-center justify-between p-6 rounded-lg">
+                      {/* Contenedor de la izquierda con la imagen */}
+                      <div className="flex-shrink-0 w-[185.39px] h-[185.39px] rounded-full overflow-hidden bg-[#D9D9D9]">
+                        <img
+                          src={card.image}
+                          alt="Persona"
+                          className="object-cover w-full h-full"
+                          style={{
+                            width: "185.39px",
+                            height: "185.39px",
+                            flexShrink: 0,
+                          }}
+                        />
+                      </div>
 
-                {/* Componente del medio */}
-                <div
-                  className="mb-2"
-                  style={{
-                    width: "208.357px",
-                    height: "29.962px",
-                    flexShrink: 0,
-                    color: "#633F3F",
-                    fontFamily: "Fira Sans",
-                    fontSize: "22px",
-                    fontStyle: "normal",
-                    fontWeight: 500,
-                    lineHeight: "32px", // 145.455%
-                  }}
-                >
-                  <p>Molly Chambers</p>
-                </div>
+                      {/* Contenedor de la derecha con los textos */}
+                      <div className="flex flex-col justify-center ml-6">
+                        {/* Componente de arriba */}
+                        <div
+                          className="mb-4"
+                          style={{
+                            width: "681.849px",
+                            height: "78.65px",
+                            flexShrink: 0,
+                            color: "#633F3F",
+                            fontFeatureSettings: "'liga' off, 'clig' off",
+                            fontFamily: '"Fira Sans"',
+                            fontSize: "18px",
+                            fontStyle: "normal",
+                            fontWeight: 400,
+                            lineHeight: "28px", // 155.556%
+                          }}
+                        >
+                          <p>{card.testimonial}</p>
+                        </div>
 
-                {/* Componente de abajo */}
-                <div
-                  style={{
-                    width: "354.34px",
-                    height: "15.917px",
-                    flexShrink: 0,
-                    color: "#633F3F",
-                    fontFamily: "Fira Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: 500,
-                    letterSpacing: "4px",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  <p>Owner of CF INVESTMENTS</p>
-                </div>
-              </div>
+                        {/* Componente del medio */}
+                        <div
+                          className="mb-2"
+                          style={{
+                            width: "208.357px",
+                            height: "29.962px",
+                            flexShrink: 0,
+                            color: "#633F3F",
+                            fontFamily: "Fira Sans",
+                            fontSize: "22px",
+                            fontStyle: "normal",
+                            fontWeight: 500,
+                            lineHeight: "32px", // 145.455%
+                          }}
+                        >
+                          <p>{card.name}</p>
+                        </div>
+
+                        {/* Componente de abajo */}
+                        <div
+                          style={{
+                            width: "354.34px",
+                            height: "15.917px",
+                            flexShrink: 0,
+                            color: "#633F3F",
+                            fontFamily: "Fira Sans",
+                            fontSize: "14px",
+                            fontStyle: "normal",
+                            fontWeight: 500,
+                            letterSpacing: "4px",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          <p>{card.position}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Botón de navegación derecha */}
-            <button className="w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white">
+            <button
+              onClick={nextCard}
+              className="absolute right-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10"
+              style={{
+                cursor: "pointer", // Cursor de mano
+                transition: "background 0.3s", // Transición suave para el cambio de color
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "#007A24")
+              } // Cambio de color al pasar el mouse
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background = "#00942C")
+              } // Restaurar color
+            >
               &gt;
             </button>
           </div>
