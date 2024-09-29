@@ -18,9 +18,9 @@ function Footer() {
           className="relative z-10 flex flex-col h-full px-4"
           style={{
             backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundSize: "100% 143.058%",
+            // backgroundSize: "100% 143.058%",
             backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundRepeat: "repeat",
           }}
         >
           {/* Nuevo contenedor con margen */}
@@ -154,7 +154,7 @@ function Footer() {
           {/* Línea centrada */}
           <div
             style={{
-              width: "1307px",
+              width: "100%",
               height: "1px",
               background: "#000",
               margin: "40px auto 20px", // Centrar la línea
