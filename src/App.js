@@ -16,6 +16,12 @@ import Header from "./components/Projects/Header"; // Importa tu nuevo component
 import ProyectosEnMarcha from "./components/Projects/ProyectosEnMarcha";
 // Contact
 import ContactoForm from "./components/Contact/ContactoForm";
+// Sobre Nosotrs
+import SobreNosotros from "./components/About/SobreNosotros";
+import SobreNosotrosArbol from "./components/About/SobreNosotrosArbol";
+import SobreNosotrosVideo from "./components/About/SobreNosotrsVideo";
+import SobreNosotrosValores from "./components/About/SobreNosotrosValores";
+import SobreNosotrosNuestraHistoria from "./components/About/SobreNosotrosNuestraHistoria";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -54,17 +60,31 @@ function App() {
             element={
               <>
                 <Header />
-               <ProyectosEnMarcha />
+                <ProyectosEnMarcha />
                 <Footer />
               </>
             }
           />
-                    <Route
+          <Route
             path="/contact"
             element={
               <>
                 <Header />
                 <ContactoForm />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header />
+                <SobreNosotros />
+                <SobreNosotrosArbol />
+                <SobreNosotrosVideo />
+                <SobreNosotrosValores />
+                <SobreNosotrosNuestraHistoria />
                 <Footer />
               </>
             }

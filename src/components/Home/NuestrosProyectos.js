@@ -100,7 +100,7 @@ function Servicios() {
             <div className="flex gap-[160px]">
               {/* Tarjeta 1 */}
               <div
-                className="transition-transform duration-300"
+                className="transition-transform duration-500"
                 style={{ transform: `translateX(${cardPositions[0]}px)` }}
               >
                 <div
@@ -229,7 +229,7 @@ function Servicios() {
               </div>
               {/* Tarjeta 2 */}
               <div
-                className="transition-transform duration-300"
+                className="transition-transform duration-500"
                 style={{ transform: `translateX(${cardPositions[1] - 569}px)` }}
               >
                 <div
@@ -358,7 +358,7 @@ function Servicios() {
               </div>
               {/* Tarjeta 3 */}
               <div
-                className="transition-transform duration-300"
+                className="transition-transform duration-500"
                 style={{
                   transform: `translateX(${cardPositions[2] - 1139}px)`,
                 }}
