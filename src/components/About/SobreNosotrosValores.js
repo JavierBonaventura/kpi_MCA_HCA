@@ -320,6 +320,8 @@ function SobreNosotrosValores() {
       }}
     />
 
+
+
     <div
       className="absolute inset-0 flex flex-col justify-center items-center"
       style={{ width: "100%", margin: "0 auto", textAlign: "center" }}

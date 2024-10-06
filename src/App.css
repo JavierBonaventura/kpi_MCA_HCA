@@ -13,6 +13,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Fira Code";
+  src: url("./fonts/Fira_Code/FiraCode-Regular.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
 
 .my-float {
   margin-top: 16px;

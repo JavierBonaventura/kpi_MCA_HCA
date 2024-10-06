@@ -69,6 +69,7 @@ function Header_Home() {
             { text: "ABOUT US", to: "/about" },
             { text: "PROYECTOS", to: "/projects" },
             { text: "IMPACTO", to: "/impact" },
+            { text: "SERVICIOS", to: "/services" },
             { text: "CONTACTO", to: "/contact" }
           ].map((item, index) => (
             <Link
@@ -104,7 +105,7 @@ function Header_Home() {
           <div
             className="absolute"
             style={{
-              left: `${(1119 / 1440) * 100}%`,
+              left: `85vw`,
               top: "34px",
               display: "flex",
               alignItems: "center",
