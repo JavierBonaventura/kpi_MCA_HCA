@@ -234,12 +234,12 @@ function ContactoForm() {
                 }}
               >
                 <button
+                  className="bg-[#000] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#292929] hover:-translate-y-0.5"
                   style={{
                     width: "227.846px",
                     height: "50px",
                     flexShrink: 0,
                     borderRadius: "5px",
-                    background: "#000",
                     color: "#FFF",
                     textAlign: "center",
                     fontFamily: "Fira Sans",
@@ -247,6 +247,7 @@ function ContactoForm() {
                     fontWeight: "500",
                     letterSpacing: "4px",
                     textTransform: "uppercase",
+                    zIndex: 20
                   }}
                 >
                   Enviar

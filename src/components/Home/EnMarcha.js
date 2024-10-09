@@ -57,14 +57,9 @@ function EnMarcha() {
           >
             {/* Primer botón - "Email" */}
             <button
-              className="w-[245.25px] h-[50px] rounded-[5px] bg-[#00942C] flex justify-center items-center z-30"
-              style={{
-                flexShrink: 0,
-                cursor: "pointer",
-                transition: "background 0.3s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#007A24")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#00942C")}
+              className="w-[245.25px] h-[50px] rounded-[5px] bg-[#00942C] flex justify-center items-center z-30  cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5" 
+
+             
             >
               <span
                 style={{
@@ -82,20 +77,7 @@ function EnMarcha() {
 
             {/* Segundo botón - "011 xxx xxxx" */}
             <button
-              className="w-[245.25px] h-[50px] rounded-[5px] border border-[#00942C] bg-[#FFF] flex justify-center items-center"
-              style={{
-                flexShrink: 0,
-                cursor: "pointer", // Cursor de mano
-                transition: "background 0.3s, color 0.3s", // Transición suave para el cambio de color
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#D1D1D1"; // Nuevo color de fondo al pasar el mouse
-                e.currentTarget.style.color = "#00942C"; // Cambiar color del texto a verde
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#FFF"; // Restaurar fondo
-                e.currentTarget.style.color = "#00942C"; // Restaurar color del texto
-              }}
+              className="w-[245.25px] h-[50px] rounded-[5px] border border-[#00942C] bg-[#FFF] flex justify-center items-center cursor-pointer transition-transform duration-500 ease-out hover:bg-[#D1D1D1] hover:-translate-y-0.5"
             >
               <span
                 style={{

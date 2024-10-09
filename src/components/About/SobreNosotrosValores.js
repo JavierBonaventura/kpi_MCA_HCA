@@ -341,25 +341,15 @@ function SobreNosotrosValores() {
       </div>
 
       <button
-        className="mt-6 flex justify-center items-center"
+        className="mt-6 flex justify-center items-center bg-white cursor-pointer transition-transform duration-500 ease-out hover:bg-[#D1D1D1] hover:-translate-y-0.5"
         style={{
           width: "245.25px",
           height: "50px",
           flexShrink: 0,
           borderRadius: "5px",
           border: "1px solid #00942C",
-          backgroundColor: "#FFF",
-          cursor: "pointer", // Cursor de mano
-          transition: "background 0.3s, color 0.3s", // Transición suave para el cambio de color
         }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.background = "#D1D1D1"; // Nuevo color de fondo al pasar el mouse
-          e.currentTarget.style.color = "#00942C"; // Cambiar color del texto a verde
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.background = "#FFF"; // Restaurar fondo
-          e.currentTarget.style.color = "#00942C"; // Restaurar color del texto
-        }}
+       
       >
         <span
           style={{

@@ -216,10 +216,7 @@ function Imapcto() {
               </div>
             </div>
 
-
-
             {/* segunda tarjeta */}
-
 
             <div
               className="flex mt-[40px] mx-auto"
@@ -231,9 +228,6 @@ function Imapcto() {
               }}
             >
               {/* Columna izquierda */}
-             
-
-
 
               <div className="mr-4" style={{ width: "468.214px" }}>
                 <div
@@ -265,9 +259,11 @@ function Imapcto() {
                   className="mt-8"
                 >
                   <p>
-                  Es nuestro fin de aportar al crecimiento económico en la zona y en el país, creando operaciones con un alto valor agregado y un potencial importante de exportación así contribuyendo a la apertura del país al resto del mundo.
+                    Es nuestro fin de aportar al crecimiento económico en la
+                    zona y en el país, creando operaciones con un alto valor
+                    agregado y un potencial importante de exportación así
+                    contribuyendo a la apertura del país al resto del mundo.
                   </p>
-                
                 </div>
               </div>
 
@@ -314,16 +310,11 @@ function Imapcto() {
                   }}
                 />
               </div>
-            
-            
-            
             </div>
 
+            {/* tercera tarjeta */}
 
-{/* tercera tarjeta */}
-
-
-<div
+            <div
               className="flex mt-[40px] mx-auto"
               style={{
                 width: "1074px",
@@ -389,7 +380,7 @@ function Imapcto() {
                     fontSize: "40px",
                     fontWeight: "700",
                     lineHeight: "50px",
-                   textAlign: "right"
+                    textAlign: "right",
                   }}
                 >
                   Social
@@ -404,28 +395,22 @@ function Imapcto() {
                     fontSize: "18px",
                     fontWeight: "400",
                     lineHeight: "28px",
-                     textAlign: "right"
+                    textAlign: "right",
                   }}
                   className="mt-8"
                 >
                   <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec nisl augue, finibus sed magna varius, egestas varius
+                    ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec nisl augue, finibus sed magna varius, egestas varius
+                    ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec nisl augue, finibus sed magna varius, egestas varius
+                    ex.
                   </p>
-                  
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-            
 
             {/* Contenido adicional, botones, etc. */}
             <div
@@ -448,24 +433,13 @@ function Imapcto() {
                 </div>
 
                 <button
-                  className="mt-6 flex justify-center items-center"
+                  className="mt-6 flex justify-center items-center bg-white cursor-pointer transition-transform duration-500 ease-out hover:bg-[#D1D1D1] hover:-translate-y-0.5"
                   style={{
                     width: "245.25px",
                     height: "50px",
                     flexShrink: 0,
                     borderRadius: "5px",
                     border: "1px solid #00942C",
-                    backgroundColor: "#FFF",
-                    cursor: "pointer",
-                    transition: "background 0.3s, color 0.3s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#D1D1D1";
-                    e.currentTarget.style.color = "#00942C";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "#FFF";
-                    e.currentTarget.style.color = "#00942C";
                   }}
                 >
                   <span

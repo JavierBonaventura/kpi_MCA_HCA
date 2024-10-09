@@ -62,17 +62,8 @@ function Historias() {
             {/* Botón de navegación izquierda */}
             <button
               onClick={prevCard}
-              className="absolute left-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10"
-              style={{
-                cursor: "pointer", // Cursor de mano
-                transition: "background 0.3s", // Transición suave para el cambio de color
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "#007A24")
-              } // Cambio de color al pasar el mouse
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "#00942C")
-              } // Restaurar color
+              className="absolute left-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10 cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform "
+
             >
               &lt;
             </button>
@@ -173,17 +164,8 @@ function Historias() {
             {/* Botón de navegación derecha */}
             <button
               onClick={nextCard}
-              className="absolute right-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10"
-              style={{
-                cursor: "pointer", // Cursor de mano
-                transition: "background 0.3s", // Transición suave para el cambio de color
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "#007A24")
-              } // Cambio de color al pasar el mouse
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "#00942C")
-              } // Restaurar color
+              className="absolute right-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10 cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform "
+ 
             >
               &gt;
             </button>

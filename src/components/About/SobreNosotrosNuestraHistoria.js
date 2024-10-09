@@ -56,12 +56,12 @@ function SobreNosotrosNuestraHistoria() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum erat nec commodo imperdiet. Duis libero nisi, mollis quis urna ornare, feugiat egestas nunc.
                 </p>
 
-                <button
+                <button className="bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5"
                   style={{
                     width: "245.25px",
                     height: "50px",
                     borderRadius: "5px",
-                    background: "#00942C",
+                   
                     marginTop: "50px",
                     display: 'flex',
                     justifyContent: 'center',

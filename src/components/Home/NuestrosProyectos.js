@@ -79,22 +79,15 @@ function Servicios() {
           {/* Contenedor para los botones y las tarjetas */}
           <div className="flex items-center justify-center mt-[50px] relative">
             {/* Botón de navegación izquierda */}
-            <button
-              onClick={handleLeftClick}
-              className="absolute left-[450px] mt-64 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-20"
-              style={{
-                cursor: "pointer", // Cursor de mano
-                transition: "background 0.3s", // Transición suave para el cambio de color
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "#007A24")
-              } // Cambio de color al pasar el mouse
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "#00942C")
-              } // Restaurar color
-            >
-              &lt;
-            </button>
+            <button 
+  onClick={handleLeftClick}
+  className="absolute left-[450px] w-[40px] h-[40px] flex items-center justify-center rounded-full text-white z-20 bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform"
+>
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.86213 1.54581C9.5431 1.21738 9.02661 1.21738 8.70839 1.54581L1.96137 8.50935C1.32331 9.16705 1.32331 10.234 1.96137 10.8917L8.75735 17.9066C9.07312 18.2317 9.58308 18.2359 9.90293 17.9151C10.2293 17.5875 10.2334 17.0477 9.91191 16.715L3.69198 10.2963C3.37295 9.96707 3.37295 9.434 3.69198 9.10473L9.86213 2.73657C10.1812 2.40814 10.1812 1.87508 9.86213 1.54581Z" fill="white"/>
+</svg>
+</button>
+
 
             {/* Contenedor para las tarjetas */}
             <div className="flex gap-[160px]">
@@ -187,28 +180,19 @@ function Servicios() {
 
                 {/* Botón */}
                 <div
+                  className="bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform translate-x-[-50%]"
                   style={{
                     width: "217px",
                     height: "50px",
                     flexShrink: 0,
                     borderRadius: "5px",
-                    background: "#00942C",
                     position: "absolute",
                     bottom: "30px",
                     left: "50%",
-                    transform: "translateX(-50%)",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    cursor: "pointer", // Cursor de mano
-                    transition: "background 0.3s", // Transición suave para el cambio de color
                   }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.background = "#007A24")
-                  } // Cambio de color al pasar el mouse
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.background = "#00942C")
-                  } // Restaurar color
                 >
                   <div
                     style={{
@@ -316,28 +300,19 @@ function Servicios() {
 
                 {/* Botón */}
                 <div
+                  className="bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform translate-x-[-50%]"
                   style={{
                     width: "217px",
                     height: "50px",
                     flexShrink: 0,
                     borderRadius: "5px",
-                    background: "#00942C",
                     position: "absolute",
                     bottom: "30px",
                     left: "50%",
-                    transform: "translateX(-50%)",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    cursor: "pointer", // Cursor de mano
-                    transition: "background 0.3s", // Transición suave para el cambio de color
                   }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.background = "#007A24")
-                  } // Cambio de color al pasar el mouse
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.background = "#00942C")
-                  } // Restaurar color
                 >
                   <div
                     style={{
@@ -447,28 +422,19 @@ function Servicios() {
 
                 {/* Botón */}
                 <div
+                  className="bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform translate-x-[-50%]"
                   style={{
                     width: "217px",
                     height: "50px",
                     flexShrink: 0,
                     borderRadius: "5px",
-                    background: "#00942C",
                     position: "absolute",
                     bottom: "30px",
                     left: "50%",
-                    transform: "translateX(-50%)",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    cursor: "pointer", // Cursor de mano
-                    transition: "background 0.3s", // Transición suave para el cambio de color
                   }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.background = "#007A24")
-                  } // Cambio de color al pasar el mouse
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.background = "#00942C")
-                  } // Restaurar color
                 >
                   <div
                     style={{
@@ -492,19 +458,12 @@ function Servicios() {
             {/* Botón de navegación derecha */}
             <button
               onClick={handleRightClick}
-              className="absolute right-[450px] mt-64 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-20"
-              style={{
-                cursor: "pointer", // Cursor de mano
-                transition: "background 0.3s", // Transición suave para el cambio de color
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "#007A24")
-              } // Cambio de color al pasar el mouse
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "#00942C")
-              } // Restaurar color
+              className="absolute right-[450px] w-[40px] h-[40px] flex items-center justify-center rounded-full text-white z-20 bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform "
+
             >
-              &gt;
+      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.66033 17.9067C1.97936 18.2351 2.49585 18.2351 2.81407 17.9067L9.56109 10.9432C10.1992 10.2855 10.1992 9.21849 9.56109 8.56079L2.76511 1.54588C2.44934 1.22082 1.93938 1.21661 1.61953 1.53746C1.29315 1.86505 1.28907 2.40485 1.61055 2.73749L7.83048 9.15617C8.14951 9.48545 8.14951 10.0185 7.83048 10.3478L1.66033 16.7159C1.34129 17.0444 1.34129 17.5774 1.66033 17.9067Z" fill="white"/>
+</svg>
             </button>
           </div>
         </div>

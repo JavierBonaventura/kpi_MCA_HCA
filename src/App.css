@@ -49,8 +49,36 @@
   padding: 0.75rem 2.5rem;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .btn-custom {
     padding: 0.5rem 2.5rem;
   }
+} */
+
+/* codigo para efectos de botones */
+
+/* boton verde */
+.custom-button-verde {
+  background-color: #16a34a; 
+  cursor: pointer;
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out; 
+  border-radius: 5px;
+}
+
+.custom-button-verde:hover {
+  background-color: #15803d;
+  transform: translateY(-0.20rem); 
+}
+
+/* boton blanco */
+.custom-button-blanco {
+  background-color: #FFF; 
+  cursor: pointer;
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out; 
+  border-radius: 5px;
+}
+
+.custom-button-blanco:hover {
+  background-color: #D1D1D1;
+  transform: translateY(-0.20rem); 
 }

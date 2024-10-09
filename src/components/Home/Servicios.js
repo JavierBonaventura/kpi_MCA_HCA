@@ -139,21 +139,18 @@ function Header_Home() {
 
               {/* Botón debajo del texto */}
               <button
+                className="bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform translate-x-[-50%]"
                 style={{
                   width: "217px",
                   height: "50px",
                   borderRadius: "5px",
-                  background: "#00942C",
                   position: "absolute",
-                  top: "370px", // Ajuste para que el botón esté debajo del texto
+                  top: "370px",
                   left: "50%",
-                  transform: "translateX(-50%)", // Centrado horizontalmente
                   display: "flex",
                   justifyContent: "center",
-                  alignItems: "center", // Para centrar verticalmente el texto dentro del botón
+                  alignItems: "center",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#007A24")} // Cambio de color al pasar el mouse
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#00942C")} // Restaurar color
               >
                 <span
                   style={{
@@ -166,7 +163,6 @@ function Header_Home() {
                     letterSpacing: "4px",
                     textTransform: "uppercase",
                   }}
-                  
                 >
                   VER MAS
                 </span>
@@ -190,8 +186,8 @@ function Header_Home() {
                 alt="Recuadro dos"
                 className="absolute top-[-30px] left-1/2 transform -translate-x-1/2"
               />
-                {/* Texto debajo de la imagen */}
-                <div
+              {/* Texto debajo de la imagen */}
+              <div
                 style={{
                   color: "#464646",
                   textAlign: "center",
@@ -251,21 +247,18 @@ function Header_Home() {
 
               {/* Botón debajo del texto */}
               <button
+                className="bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform translate-x-[-50%]"
                 style={{
                   width: "217px",
                   height: "50px",
                   borderRadius: "5px",
-                  background: "#00942C",
                   position: "absolute",
-                  top: "370px", // Ajuste para que el botón esté debajo del texto
+                  top: "370px",
                   left: "50%",
-                  transform: "translateX(-50%)", // Centrado horizontalmente
                   display: "flex",
                   justifyContent: "center",
-                  alignItems: "center", // Para centrar verticalmente el texto dentro del botón
+                  alignItems: "center",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#007A24")} // Cambio de color al pasar el mouse
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#00942C")} // Restaurar color
               >
                 <span
                   style={{

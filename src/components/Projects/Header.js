@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importar Link
-import fondoHome from "../../images/fondo-home.png";
 import fondoTopBar from "../../images/topbar-fondo.png";
 import logoGarabi from "../../images/logo-garabi.svg";
 import logoInstagram from "../../images/logoInstagram.svg";
@@ -57,7 +56,7 @@ function Header() {
           className="absolute"
           style={{
             left: `${(421 / 1440) * 100}%`,
-            top: "40px",
+            top: "35px",
             display: "inline-flex",
             alignItems: "center",
             gap: "24px",
@@ -129,14 +128,7 @@ function Header() {
                 (e.currentTarget.style.transform = "scale(1)")
               } // Vuelve al tamaño original
             />
-            <div
-              style={{
-                width: "0.5px",
-                height: "28.343px",
-                backgroundColor: "#00942C",
-                margin: "0 10px",
-              }}
-            />
+            
             <img
               src={logoInstagram}
               alt="Instagram"
