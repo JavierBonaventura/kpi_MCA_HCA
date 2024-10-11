@@ -7,7 +7,10 @@ function SobreNosotrosVideo() {
       <img 
         src={videoSobreNosotros} 
         alt="Sobre Nosotros" 
-        className="object-cover w-full h-full" 
+        className="object-cover w-full h-full " 
+        style={{
+       zIndex: "10"
+        }}
       />
     </div>
   );
