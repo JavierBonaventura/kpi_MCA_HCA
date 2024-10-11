@@ -3,7 +3,7 @@ import videoSobreNosotros from "../../images/videoSobreNosotros.png"; // Si lo n
 
 function SobreNosotrosVideo() {
   return (
-    <div className="flex justify-center items-center h-[55vw] w-full">
+    <div className="flex justify-center items-center h-[842px] w-full">
       <img 
         src={videoSobreNosotros} 
         alt="Sobre Nosotros" 

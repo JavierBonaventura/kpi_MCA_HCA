@@ -25,7 +25,7 @@ function SobreNosotrosArbol() {
           <div
             className="flex flex-col items-center justify-center"
             style={{
-              marginTop: "-50px",
+              marginTop: "-26px",
               
             }}
           >
@@ -121,51 +121,9 @@ function SobreNosotrosArbol() {
                   top: "16%",
                 }}
               ></div>
-                            <h1
-                className="absolute right-[-9vw] transform -translate-y-1/2 translate-x-1/2 z-20 pb-2"
-                style={{
-                  color: "#000",
-                  fontFeatureSettings: "'liga' off, 'clig' off",
-                  fontFamily: "Fira Sans, sans-serif", // Asegúrate de que Fira Sans esté disponible
-                  fontSize: "3vw",
-                  fontStyle: "normal",
-                  fontWeight: 500,
-                  top: "65%", // Ajusta esta posición para mover el texto hacia arriba o hacia abajo
-                }}
-              >
-                Misión
-              </h1>
-
-                            <p
-                className="absolute right-[-5vw]  transform -translate-y-1/2 translate-x-1/2 z-20 pb-2 text-right"
-                style={{
-                  color: "#000",
-                  fontSize: "1.25vw", // tamaño de la fuente proporcional al viewport
-                  lineHeight: "2vw", // el line-height también es responsive
-                  width: "18vw", // el ancho del párrafo ajustado al viewport
-                  fontFeatureSettings: "'liga' off, 'clig' off",
-                  top: "82%", // Ajusta la posición para que quede alineado bajo "Trayectoria"
-                }}
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                interdum erat nec commodo imperdiet. Duis libero nisi, mollis
-                quis urna ornare, feugiat egestas nunc.
-              </p>
-
-              {/* Línea a la derecha */}
-              <div
-                className="absolute right-[-13.5vw] w-[31.5vw] h-[0.4vw] bg-[#00942C]  transform -translate-y-1/2 mt-4"
-                style={{
-                  top: "66%",
-                }}
-              ></div>
+                         
             {/* Linea debajo del árbol */}
-<div
-  className="absolute w-[60vw] h-[1px] bg-[#000] left-1/2 transform -translate-x-1/2"
-  style={{
-    top: "100%",
-  }}
-></div>
+
 
 
             </div>

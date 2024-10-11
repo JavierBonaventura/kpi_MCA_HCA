@@ -16,7 +16,7 @@ function SobreNosotros() {
         <img
           src={imagenCurvaSobreNosotros}
           alt="Curva"
-          className="absolute top-0 left-0 w-full h-auto z-20 max-h-[850px]"
+          className="absolute top-0 left-0 w-full h-auto z-20 max-h-[900px]"
           style={{
             mixBlendMode: "normal",
             top: "30px",

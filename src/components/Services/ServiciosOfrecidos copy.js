@@ -7,34 +7,12 @@ import arbolesProyectos from "../../images/arboles-proyectos.png";
 function ServiciosOfrecidos() {
   // Cálculo del margen izquierdo en porcentaje
   const leftPercentageLogo = (184 / 1440) * 100;
-  
-  // Estado para el índice del tab seleccionado
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null); // Estado para el índice del hover
 
   const servicios = [
     "Asesoramiento productivo",
     "Asesoramiento integral",
     "Desarrollo de producto",
-  ];
-
-  // Contenido para cada servicio (puedes modificar el contenido para cada servicio aquí)
-  const contenidoServicios = [
-    {
-      titulo: "Asesoramiento productivo",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. ",
-      imagen: tarjetaServicios,
-    },
-    {
-      titulo: "Asesoramiento integral",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. ",
-      imagen: tarjetaServicios,
-    },
-    {
-      titulo: "Desarrollo de producto",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl augue, finibus sed magna varius, egestas varius ex. ",
-      imagen: tarjetaServicios,
-    },
   ];
 
   return (
@@ -52,7 +30,7 @@ function ServiciosOfrecidos() {
           }}
         />
         <div
-          className="relative z-10 flex flex-col h-full"
+          className="relative z-10 flex flex-col h-full "
           style={{
             backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
             backgroundPosition: "0px 0px",
@@ -113,29 +91,14 @@ function ServiciosOfrecidos() {
                   fontWeight: "700",
                   lineHeight: "50px",
                   position: "relative",
+                  transition: "color 0.3s ease", // Efecto de suavizado para el color
                   cursor: "pointer",
                 }}
-                // Cambiamos el tab seleccionado al hacer clic
-                onClick={() => setSelectedIndex(index)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 {servicio}
-                {(selectedIndex === index) && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "-20px",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      width: "361.768px",
-                      height: "5px",
-                      background:
-                        "linear-gradient(0deg, #00942C 0%, #00942C 100%), #00942C",
-                    }}
-                  />
-                )}
-                            {hoveredIndex === index && (
+                {hoveredIndex === index && (
                   <div
                     style={{
                       position: "absolute",
@@ -200,7 +163,7 @@ function ServiciosOfrecidos() {
               />
             </div>
 
-            {/* Sección de dos columnas dinámicas */}
+            {/* Sección de dos columnas */}
             <div
               className="flex mt-24 mx-auto"
               style={{
@@ -210,7 +173,7 @@ function ServiciosOfrecidos() {
                 zIndex: 10,
               }}
             >
-              {/* Columna izquierda: título y descripción según la selección */}
+              {/* Columna izquierda */}
               <div className="mr-4" style={{ width: "468.214px" }}>
                 <div
                   style={{
@@ -218,13 +181,14 @@ function ServiciosOfrecidos() {
                     height: "32px",
                     flexShrink: 0,
                     color: "#000",
+                    fontFeatureSettings: "'liga' off, 'clig' off",
                     fontFamily: "Fira Sans",
                     fontSize: "24px",
                     fontWeight: "600",
                     lineHeight: "32px",
                   }}
                 >
-                  {contenidoServicios[selectedIndex].titulo}
+                  Lorem ipsum dolor sit amet.
                 </div>
                 <div
                   style={{
@@ -239,15 +203,20 @@ function ServiciosOfrecidos() {
                   }}
                   className="mt-8"
                 >
-                  {contenidoServicios[selectedIndex].descripcion}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  nisl augue, finibus sed magna varius, egestas varius ex. Lorem
+                  ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl
+                  augue, finibus sed magna varius, egestas varius ex. Lorem
+                  ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl
+                  augue, finibus sed magna varius, egestas varius ex.
                 </div>
               </div>
 
-              {/* Columna derecha: imagen según la selección */}
+              {/* Columna derecha */}
               <div style={{ width: "528px" }}>
                 <img
-                  src={contenidoServicios[selectedIndex].imagen}
-                  alt="Imagen del Servicio"
+                  src={tarjetaServicios}
+                  alt="Tarjeta Servicios"
                   style={{
                     width: "528px",
                     height: "352px",

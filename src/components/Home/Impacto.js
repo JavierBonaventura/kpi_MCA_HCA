@@ -8,7 +8,7 @@ import medioAmbiente from "../../images/medioAmbiente.png"; // Imagen de fondo
 function Impacto() {
   return (
     <div>
-      <div className="w-full h-[852px] overflow-x-hidden">
+      <div className="w-full h-[852px] ">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
           className="relative z-10 flex flex-col items-center justify-center h-full px-4"
@@ -20,7 +20,7 @@ function Impacto() {
           }}
         >
           <div
-            className="w-[804px] h-[76px] flex-shrink-0 mt-[-50px]"
+            className="w-[804px] h-[76px] flex-shrink-0 mt-[50px]"
             style={{
               color: "#443838",
               fontFamily: "Fira Sans",
@@ -88,7 +88,7 @@ function Impacto() {
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     fontFamily: "Fira Sans",
                     fontSize: "18px",
-                    fontWeight: "400",
+                    fontWeight: "600",
                     lineHeight: "28px",
                   }}
                 >
@@ -132,7 +132,7 @@ function Impacto() {
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     fontFamily: "Fira Sans",
                     fontSize: "22px",
-                    fontWeight: "500",
+                    fontWeight: "600",
                     lineHeight: "32px",
                   }}
                 >
@@ -176,7 +176,7 @@ function Impacto() {
                     fontFeatureSettings: "'liga' off, 'clig' off",
                     fontFamily: "Fira Sans",
                     fontSize: "22px",
-                    fontWeight: "500",
+                    fontWeight: "600",
                     lineHeight: "32px",
                   }}
                 >

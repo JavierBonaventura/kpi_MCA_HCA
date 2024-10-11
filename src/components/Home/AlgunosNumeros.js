@@ -61,13 +61,12 @@ function AlgunosNumeros() {
 
   return (
     <div ref={ref}>
-      <div className="w-full h-[550px]">
+      <div className="w-full h-[500px]">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
           className="relative z-10 flex h-full px-4"
           style={{
             backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px -236.596px",
             backgroundSize: "100% 143.058%",
             backgroundBlendMode: "overlay",
             backgroundRepeat: "no-repeat",
@@ -76,7 +75,7 @@ function AlgunosNumeros() {
           <div
             style={{
               position: "absolute",
-              top: "-170px",
+              top: "-150px",
               left: "50%",
               transform: "translateX(-50%)",
               width: "648px",
@@ -97,7 +96,7 @@ function AlgunosNumeros() {
           <div
             style={{
               position: "absolute",
-              top: "-90px",
+              top: "-70px",
               left: "50%",
               transform: "translateX(-50%)",
               width: "290px",

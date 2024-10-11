@@ -56,7 +56,7 @@ function Header() {
           className="absolute"
           style={{
             left: `${(421 / 1440) * 100}%`,
-            top: "35px",
+            top: "30px",
             display: "inline-flex",
             alignItems: "center",
             gap: "24px",
@@ -104,7 +104,7 @@ function Header() {
           className="absolute"
           style={{
             left: `85vw`,
-            top: "34px",
+            top: "30px",
             display: "flex",
             alignItems: "center",
           }}

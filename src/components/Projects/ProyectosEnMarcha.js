@@ -15,7 +15,7 @@ function ProyectosEnMarcha() {
 
   return (
     <div>
-      <div className="w-full h-[2728px] relative">
+      <div className="w-full h-[2828px] relative">
         {" "}
         {/* Hacemos el contenedor relativo */}
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
@@ -23,7 +23,7 @@ function ProyectosEnMarcha() {
         <img
           src={imagenCurva}
           alt="Curva"
-          className="absolute top-0 left-0 w-full h-auto z-20 max-h-[850px]" // Ajusta el z-index aquí (menor que la tarjeta)
+          className="absolute top-0 left-0 w-full h-auto z-20 max-h-[950px]" // Ajusta el z-index aquí (menor que la tarjeta)
           style={{
             mixBlendMode: "normal", // No aplicar ningún filtro o mezcla
             top: "30px",
@@ -677,7 +677,7 @@ function ProyectosEnMarcha() {
           </div>
         </div>
         {/* Imagen de árboles con texto y botón debajo */}
-        <div className="absolute z-10 w-full" style={{ top: "2040px" }}>
+        <div className="absolute z-10 w-full" style={{ top: "2140px" }}>
           <img
             src={arbolesProyectos}
             alt="Árboles Proyectos"

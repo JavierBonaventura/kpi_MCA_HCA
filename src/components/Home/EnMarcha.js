@@ -7,14 +7,14 @@ function EnMarcha() {
 
   return (
     <div>
-      <div className="w-full h-[852px] relative">
+      <div className="w-full h-[58vw] relative">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
 
         {/* Imagen curva con propiedades ajustadas */}
         <img
           src={imagenCurva}
           alt="Curva"
-          className="absolute top-0 left-0 w-full h-auto z-30 max-h-[850px]" // Asegúrate de que tenga un z-index alto
+          className="absolute top-0 left-0 w-full h-auto z-30 " // Asegúrate de que tenga un z-index alto
           style={{
             mixBlendMode: "normal",
             top: "30px",

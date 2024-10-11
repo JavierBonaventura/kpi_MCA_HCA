@@ -29,6 +29,8 @@ function Desde1976() {
               alignItems: "flex-start", // Alinear elementos al inicio
               position: "relative", // Para el posicionamiento de los elementos dentro
               width: "100%", // Para asegurar que ocupe el espacio disponible
+              marginTop: "30px",
+           
             }}
           >
             {/* Imagen campoDesde a la izquierda */}

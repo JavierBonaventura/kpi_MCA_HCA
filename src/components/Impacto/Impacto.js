@@ -15,7 +15,7 @@ function Imapcto() {
 
   return (
     <div>
-      <div className="w-full h-[2590px] relative">
+      <div className="w-full h-[2740px] relative">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <img
           src={imagenCurvaImpacto}
@@ -24,7 +24,7 @@ function Imapcto() {
           style={{
             mixBlendMode: "normal",
             top: "30px",
-            maxHeight: "590px",
+         
           }}
         />
         <div
@@ -73,7 +73,7 @@ function Imapcto() {
 
           <div className="relative w-full h-full">
             {/* Bloque de fondo que se debe mostrar detrás */}
-            <div className="relative w-full" style={{ top: "1700px" }}>
+            <div className="relative w-full" style={{ top: "1850px" }}>
               {/* Contenedor de la imagen */}
               <div className="absolute z-0 w-full">
                 <img
@@ -110,7 +110,7 @@ function Imapcto() {
             {/* primer tarjeta */}
             {/* Sección de dos columnas */}
             <div
-              className="flex mt-[500px] mx-auto"
+              className="flex mt-[650px] mx-auto"
               style={{
                 width: "1074px",
                 gap: "100px",
