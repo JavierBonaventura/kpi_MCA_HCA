@@ -56,7 +56,7 @@ function Header() {
           className="absolute"
           style={{
             left: `${(421 / 1440) * 100}%`,
-            top: "30px",
+            top: "38px",
             display: "inline-flex",
             alignItems: "center",
             gap: "24px",
@@ -77,7 +77,7 @@ function Header() {
                 color: "#00942C",
                 textAlign: "center",
                 fontFamily: "TT Norms Pro",
-                fontSize: `${fontSize}px`,
+                fontSize: `14px`,
                 fontWeight: 400,
                 letterSpacing: `${letterSpacing}px`,
                 textTransform: "uppercase",
@@ -104,7 +104,7 @@ function Header() {
           className="absolute"
           style={{
             left: `85vw`,
-            top: "30px",
+            top: "36px",
             display: "flex",
             alignItems: "center",
           }}
@@ -114,8 +114,8 @@ function Header() {
               src={logoLinkedin}
               alt="LinkedIn"
               style={{
-                width: "30px",
-                height: "30px",
+                width: "20px",
+                height: "20px",
                 flexShrink: 0,
                 marginRight: "10px",
                 cursor: "pointer", // Cambia el cursor al pasar el mouse
@@ -133,8 +133,8 @@ function Header() {
               src={logoInstagram}
               alt="Instagram"
               style={{
-                width: "26.572px",
-                height: "28.343px",
+                width: "20px",
+                height: "20px",
                 flexShrink: 0,
                 cursor: "pointer", // Cambia el cursor al pasar el mouse
                 transition: "transform 0.2s", // Suaviza el efecto de escala
