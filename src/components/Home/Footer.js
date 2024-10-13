@@ -1,5 +1,6 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 import logoGarabi from "../../images/logo-garabi.svg"; // Importa el logo
 import logoInstagram from "../../images/instagramNegra.png";
 import logoLinkedin from "../../images/linkedinNegra.png";
@@ -17,10 +18,10 @@ function Footer() {
         <div
           className="relative z-10 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            // backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
+            backgroundPosition: 'center',  // Centra la imagen
+            
           }}
         >
           {/* Nuevo contenedor con margen */}

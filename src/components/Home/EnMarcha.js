@@ -1,6 +1,7 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
 import imagenCurva from "../../images/imagenCurva.png"; // Importa la imagen curva
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 function EnMarcha() {
   const leftPercentageLogo = (184 / 1440) * 100;
@@ -15,22 +16,17 @@ function EnMarcha() {
           src={imagenCurva}
           alt="Curva"
           className="absolute top-0 left-0 w-full h-auto z-30 " // Asegúrate de que tenga un z-index alto
-          style={{
-            mixBlendMode: "normal",
-            top: "30px",
-            pointerEvents: "none", // Permitir que el mouse interactúe con elementos debajo
-          }}
+
         />
 
         {/* Contenedor con el fondo y el filtro */}
         <div
           className="relative z-20 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px -300.596px",
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
+            backgroundPosition: 'center',  // Centra la imagen
+            
           }}
         >
           <div

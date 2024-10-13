@@ -1,5 +1,7 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
+
 import recuadroUno from "../../images/recuadroUno.png";
 import recuadroDos from "../../images/recuadroDos.png";
 
@@ -14,11 +16,9 @@ function Header_Home() {
         <div
           className="relative z-10 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`, // Capa verde más sutil
-            backgroundPosition: "0px -300.596px",
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay", // Mezcla la imagen con la capa verde
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  
+            backgroundPosition: 'center',              
           }}
         >
           {/* div para alinear texto e imagenes */}

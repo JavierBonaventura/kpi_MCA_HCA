@@ -1,5 +1,6 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 import imagenCurva from "../../images/imagenCurva.png";
 import tarjeta1Proyectos1 from "../../images/tarjeta1-proyectos.png";
 import tarjeta2Proyectos2 from "../../images/tarjeta2-proyectos.png";
@@ -32,11 +33,9 @@ function ProyectosEnMarcha() {
         <div
           className="relative z-10 flex flex-col h-full px-4" // Cambia z-index aquí para menor prioridad que la tarjeta
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px 0px", // Cambia para que empiece desde el inicio
-            backgroundSize: "852px auto", // Ajusta el tamaño de la imagen a su ancho original
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "repeat", // Hacemos que se repita la imagen
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'contain',  
+            backgroundPosition: 'top center',              
           }}
         >
           {/* Texto "Proyectos activos" */}

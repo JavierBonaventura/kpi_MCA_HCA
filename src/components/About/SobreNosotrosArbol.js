@@ -1,6 +1,7 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
 import arbolCentral from "../../images/arbolCentral.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 function SobreNosotrosArbol() {
   return (
@@ -14,12 +15,9 @@ function SobreNosotrosArbol() {
         <div
           className="relative z-10 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px 0px",
-            backgroundSize: "852px auto",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "repeat",
-            
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  
+            backgroundPosition: 'center',              
           }}
         >
           <div

@@ -3,6 +3,8 @@ import fondoServicios from "../../images/fondoServicios.png";
 import imagenCurvaServicios from "../../images/imagenCurvaServicios.png";
 import tarjetaServicios from "../../images/tarjetaServicios.png";
 import arbolesProyectos from "../../images/arboles-proyectos.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
+
 
 function ServiciosOfrecidos() {
   // Cálculo del margen izquierdo en porcentaje
@@ -54,11 +56,9 @@ function ServiciosOfrecidos() {
         <div
           className="relative z-10 flex flex-col h-full"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px 0px",
-            backgroundSize: "852px auto",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'contain',  
+            backgroundPosition: 'center top',              
           }}
         >
           <div

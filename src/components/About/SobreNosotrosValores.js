@@ -4,6 +4,7 @@ import logoCandado from "../../images/logoCandado.png";
 import logoVision from "../../images/logoVision.png";
 import logoTrayectoria from "../../images/logoTrayectoria.png";
 import arbolesProyectos from "../../images/arboles-proyectos.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 function SobreNosotrosValores() {
   return (
@@ -13,10 +14,9 @@ function SobreNosotrosValores() {
         <div
           className="relative z-10 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  
+            backgroundPosition: 'center',              
           }}
         >
           {/* Título "Valores" centrado a 79px de la parte superior */}
@@ -319,6 +319,8 @@ function SobreNosotrosValores() {
         transformOrigin: "top left", // Asegura que la rotación sea desde la esquina superior izquierda
       }}
     />
+
+    
 
 
 

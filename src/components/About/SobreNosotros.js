@@ -1,6 +1,7 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
 import imagenCurvaSobreNosotros from "../../images/imagenCurvaSobreNosotros.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 function SobreNosotros() {
   // Cálculo del margen izquierdo en porcentaje
@@ -27,11 +28,9 @@ function SobreNosotros() {
         <div
           className="relative z-10 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px 0px",
-            backgroundSize: "852px auto",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  
+            backgroundPosition: 'center',              
           }}
         >
           {/* Título "Sobre nosotros" */}

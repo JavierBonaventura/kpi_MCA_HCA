@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importar Link
 import fondoHome from "../../images/fondo-home.png";
 import fondoTopBar from "../../images/topbar-fondo.png";
+import imagenFondo from "../../images/imagenFondo.jpg";
 import logoGarabi from "../../images/logo-garabi.svg";
 import logoInstagram from "../../images/logoInstagram.svg";
 import logoLinkedin from "../../images/linkedin.png";
@@ -40,7 +41,11 @@ function Header_Home() {
         <div className="absolute inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
           className="relative z-10 flex items-center justify-between h-full px-4"
-          style={{ backgroundImage: `url(${fondoTopBar})` }}
+          style={{
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center top", 
+          }}
         >
           <img
             src={logoGarabi}
@@ -130,7 +135,7 @@ function Header_Home() {
                   (e.currentTarget.style.transform = "scale(1)")
                 } // Vuelve al tamaño original
               />
-     
+
               <img
                 src={logoInstagram}
                 alt="Instagram"

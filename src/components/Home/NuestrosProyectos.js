@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import fondoServicios from "../../images/fondoServicios.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 import gallery1 from "../../images/gallery1.png";
 import gallery2 from "../../images/gallery2.png";
@@ -216,11 +217,10 @@ function Servicios() {
         <div
           className="relative z-10 flex flex-col items-center justify-center h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px -300.596px",
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
+            backgroundPosition: 'center',  // Centra la imagen
+            
           }}
         >
           <div

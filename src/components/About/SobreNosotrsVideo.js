@@ -1,5 +1,6 @@
 import React from "react";
 import videoSobreNosotros from "../../images/videoSobreNosotros.png"; // Si lo necesitas más adelante
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 function SobreNosotrosVideo() {
   return (

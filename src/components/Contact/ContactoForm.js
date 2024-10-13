@@ -1,6 +1,8 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
 import imagenCurvaContacto from "../../images/imagenCurvaContacto.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
+
 
 function ContactoForm() {
   // Cálculo del margen izquierdo en porcentaje
@@ -13,11 +15,9 @@ function ContactoForm() {
         <div
           className="relative z-10 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            // backgroundPosition: "0px -300.596px",
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'contain',  
+            backgroundPosition: 'center top',              
           }}
         >
           {/* Texto "Servicios" con margen superior de 120px */}

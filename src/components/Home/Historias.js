@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import fondoServicios from "../../images/fondoServicios.png";
 import galleryPersona1 from "../../images/galleryPersona1.png"; // Asegúrate de importar la imagen correcta
+import imagenFondo from "../../images/imagenFondo.jpg"
+
 
 function Historias() {
   // Estado para manejar el índice de la tarjeta visible
@@ -51,10 +53,10 @@ function Historias() {
         <div
           className="absolute inset-0 flex flex-col items-center justify-center h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
+            backgroundPosition: 'center',  // Centra la imagen
+            
           }}
         >
           {/* Contenedor para las tarjetas */}

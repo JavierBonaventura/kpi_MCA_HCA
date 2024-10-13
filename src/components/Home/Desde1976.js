@@ -1,5 +1,7 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
+
 import campoDesde from "../../images/campoDesde.png";
 
 function Desde1976() {
@@ -13,11 +15,10 @@ function Desde1976() {
         <div
           className="relative z-10 flex h-full"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`, // Capa verde más sutil
-            backgroundPosition: "0px -300.596px",
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay", // Mezcla la imagen con la capa verde
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
+            backgroundPosition: 'center',  // Centra la imagen
+            
           }}
         >
           {/* Nuevo div contenedor centrado */}

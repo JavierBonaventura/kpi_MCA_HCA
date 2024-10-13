@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import fondoServicios from "../../images/fondoServicios.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 import imagenCirculo1 from "../../images/imagen-circulo-1.png";
 import imagenCirculo2 from "../../images/imagen-circulo-2.png";
 import imagenCirculo3 from "../../images/imagen-circulo-3.png";
@@ -66,10 +67,9 @@ function AlgunosNumeros() {
         <div
           className="relative z-10 flex h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  
+            backgroundPosition: 'center',              
           }}
         >
           <div

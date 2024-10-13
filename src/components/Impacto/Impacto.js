@@ -6,6 +6,7 @@ import tarjetaImpacto2 from "../../images/tarjetaImpacto2.png";
 import tarjetaImpacto3 from "../../images/tarjetaImpacto3.png";
 import botonDerecha from "../../images/botonDerecha.png";
 import botonIzquierda from "../../images/botonIzquierda.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 import arbolesProyectos from "../../images/arboles-proyectos.png";
 
@@ -30,11 +31,9 @@ function Imapcto() {
         <div
           className="relative z-10 flex flex-col h-full "
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundPosition: "0px 0px",
-            backgroundSize: "852px auto",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'contain',  
+            backgroundPosition: 'center top',              
           }}
         >
           <div

@@ -1,5 +1,7 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
+
 import sustentabilidad from "../../images/sustentabilidad.png"; // Imagen de sustentabilidad
 import seguridad from "../../images/seguridad.png"; // Imagen de seguridad
 import comunidad from "../../images/comunidad.png"; // Imagen de comunidad
@@ -13,10 +15,10 @@ function Impacto() {
         <div
           className="relative z-10 flex flex-col items-center justify-center h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
+            backgroundPosition: 'center',  // Centra la imagen
+            
           }}
         >
           <div

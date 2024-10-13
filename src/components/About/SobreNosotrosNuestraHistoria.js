@@ -1,6 +1,7 @@
 import React from "react";
 import fondoServicios from "../../images/fondoServicios.png";
 import logoNuestraHistoria from "../../images/logoNuestraHistoria.png"; // Asegúrate de tener esta imagen importada
+import imagenFondo from "../../images/imagenFondo.jpg"
 
 function SobreNosotrosNuestraHistoria() {
   return (
@@ -10,10 +11,9 @@ function SobreNosotrosNuestraHistoria() {
         <div
           className="relative z-10 flex flex-col h-full px-4"
           style={{
-            backgroundImage: `url(${fondoServicios}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`,
-            backgroundSize: "100% 143.058%",
-            backgroundBlendMode: "overlay",
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${imagenFondo})`,
+            backgroundSize: 'cover',  
+            backgroundPosition: 'center',              
           }}
         >
           {/* Contenedor central con dos columnas */}

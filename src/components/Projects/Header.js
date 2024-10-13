@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Importar Link
 import fondoTopBar from "../../images/topbar-fondo.png";
+import imagenFondo from "../../images/imagenFondo.jpg"
+
 import logoGarabi from "../../images/logo-garabi.svg";
 import logoInstagram from "../../images/logoInstagram.svg";
 import logoLinkedin from "../../images/linkedin.png";
@@ -34,10 +36,9 @@ function Header() {
       <div
         className="relative z-10 flex flex-col h-full px-4"
         style={{
-          backgroundImage: `url(${fondoTopBar}), linear-gradient(rgba(0, 148, 44, 0.08), rgba(0, 148, 44, 0.08))`, // Capa verde más sutil
-          backgroundSize: "100% 143.058%",
-          backgroundBlendMode: "overlay", // Mezcla la imagen con la capa verde
-          backgroundRepeat: "no-repeat",
+          backgroundImage: `url(${imagenFondo})`,
+          backgroundSize: 'cover',  
+                 
         }}
       >
         <img
