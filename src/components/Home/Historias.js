@@ -3,10 +3,9 @@ import fondoServicios from "../../images/fondoServicios.png";
 import galleryPersona1 from "../../images/galleryPersona1.png"; // Asegúrate de importar la imagen correcta
 import imagenFondo from "../../images/imagenFondo.jpg"
 
-
 function Historias() {
   // Estado para manejar el índice de la tarjeta visible
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1); // Inicializa en 1 para mostrar la primera tarjeta correctamente
 
   // Contenido de las tarjetas
   const cards = [
@@ -17,7 +16,41 @@ function Historias() {
       name: "Molly Chambers",
       position: "Owner of CF INVESTMENTS",
     },
-    // Puedes agregar más objetos para otras tarjetas si lo deseas
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
+    {
+      image: galleryPersona1,
+      testimonial:
+        "Testimonials take the spotlight away from the seller, and shine it on the customer. Your customer was once in the shopper’s shoes, debating what product to choose, comparing prices, reading marketing message after marketing message.",
+      name: "Molly Chambers",
+      position: "Owner of CF INVESTMENTS",
+    },
     {
       image: galleryPersona1,
       testimonial:
@@ -34,16 +67,29 @@ function Historias() {
     },
   ];
 
+  // Duplicar las tarjetas para el carrusel infinito
+  const duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
+
   // Función para ir a la tarjeta siguiente
   const nextCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+    setCurrentIndex((prevIndex) => {
+      // Si estamos en la última tarjeta, reiniciamos al primero
+      if (prevIndex === duplicatedCards.length - 1) {
+        return 1; // Regresamos al primer elemento real
+      }
+      return prevIndex + 1;
+    });
   };
 
   // Función para ir a la tarjeta anterior
   const prevCard = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + cards.length) % cards.length
-    );
+    setCurrentIndex((prevIndex) => {
+      // Si estamos en la primera tarjeta (copia), saltamos al final
+      if (prevIndex === 0) {
+        return duplicatedCards.length - 2; // Regresamos al último elemento real
+      }
+      return prevIndex - 1;
+    });
   };
 
   return (
@@ -54,9 +100,8 @@ function Historias() {
           className="absolute inset-0 flex flex-col items-center justify-center h-full px-4"
           style={{
             backgroundImage: `url(${imagenFondo})`,
-            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
-            backgroundPosition: 'center',  // Centra la imagen
-            
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         >
           {/* Contenedor para las tarjetas */}
@@ -65,20 +110,21 @@ function Historias() {
             <button
               onClick={prevCard}
               className="absolute left-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10 cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform "
-
             >
               &lt;
             </button>
 
             {/* Tarjetas */}
             <div className="relative w-[941px] h-[235px] overflow-hidden">
-              {cards.map((card, index) => {
+              {duplicatedCards.map((card, index) => {
                 const translateClass =
                   index === currentIndex
                     ? "translate-x-0"
-                    : index === (currentIndex + 1) % cards.length
+                    : index === (currentIndex + 1) % duplicatedCards.length
                     ? "translate-x-full"
-                    : "-translate-x-full";
+                    : index === (currentIndex - 1 + duplicatedCards.length) % duplicatedCards.length
+                    ? "-translate-x-full"
+                    : "hidden";
 
                 return (
                   <div
@@ -167,7 +213,6 @@ function Historias() {
             <button
               onClick={nextCard}
               className="absolute right-24 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#00942C] text-white z-10 cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5 transform "
- 
             >
               &gt;
             </button>

@@ -10,6 +10,7 @@ import gallery5 from "../../images/gallery2.png";
 
 function Servicios() {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [buttonZIndex, setButtonZIndex] = useState(30); // Estado para controlar el z-index
   const carouselRef = useRef(null);
 
   const cards = [
@@ -173,8 +174,8 @@ function Servicios() {
 
   const handleNext = () => {
     if (isTransitioning) return;
-
     setIsTransitioning(true);
+    animateButtons();
 
     const carousel = carouselRef.current;
     carousel.style.transition = "transform 0.5s ease-in-out";
@@ -184,15 +185,14 @@ function Servicios() {
       carousel.style.transition = "none";
       carousel.style.transform = "translateX(0)";
       carousel.appendChild(carousel.firstChild);
-
       setIsTransitioning(false);
     }, 500);
   };
 
   const handlePrev = () => {
     if (isTransitioning) return;
-
     setIsTransitioning(true);
+    animateButtons();
 
     const carousel = carouselRef.current;
     carousel.style.transition = "none";
@@ -203,11 +203,20 @@ function Servicios() {
     setTimeout(() => {
       carousel.style.transition = "transform 0.5s ease-in-out";
       carousel.style.transform = "translateX(0)";
-
       setTimeout(() => {
         setIsTransitioning(false);
       }, 500);
     }, 10);
+  };
+
+  const animateButtons = () => {
+    // Cambiar el z-index a 10
+    setButtonZIndex(10);
+
+    // Restaurar el z-index a 30 después de 500ms
+    setTimeout(() => {
+      setButtonZIndex(30);
+    }, 500);
   };
 
   return (
@@ -215,7 +224,7 @@ function Servicios() {
       <div className="w-full h-[852px] overflow-hidden relative">
         <div className="inset-0 bg-[#F7FFF1] bg-opacity-100"></div>
         <div
-          className="relative z-10 flex flex-col items-center justify-center h-full px-4"
+          className="relative  flex flex-col items-center justify-center h-full px-4"
           style={{
             backgroundImage: `url(${imagenFondo})`,
             backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
@@ -255,11 +264,15 @@ function Servicios() {
             trabajando hace más de 40 años.
           </div>
           {/* Contenedor para los botones y las tarjetas */}
-          <div className="flex items-center justify-center mt-[50px] relative">
+          <div className="flex items-center justify-center mt-[50px] relative z-10">
             {/* Botón de navegación izquierda */}
             <button
-              className="absolute left-1/2 transform -translate-x-[300px] w-[40px] h-[40px] flex items-center justify-center rounded-full text-white z-20 bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5"
+              className=" absolute left-1/2 transform -translate-x-[300px] w-[40px] h-[40px] flex items-center justify-center rounded-full text-white  bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5"
               onClick={handlePrev}
+              
+              style={{ zIndex: buttonZIndex }}
+              
+
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +293,7 @@ function Servicios() {
             {/* Contenedor para las tarjetas */}
             <div
               ref={carouselRef}
-              className={`flex gap-[160px] transition-transform duration-500 ease-in-out`}
+              className={`flex gap-[160px] transition-transform duration-500 ease-in-out z-20`}
               style={{ transform: `translateX(0px)` }}
             >
               {cards.map((card, index) => (
@@ -296,7 +309,7 @@ function Servicios() {
                 >
                   {/* Imagen de la tarjeta */}
                   <div
-                    className="w-[409.736px] h-[259.258px] rounded-t-[28.132px] bg-[#F7FFF1] absolute top-0 left-0"
+                    className="w-[409.736px] h-[259.258px] rounded-t-[28.132px] bg-[#F7FFF1] absolute top-0 left-0 "
                     style={{
                       backgroundImage: `url(${card.image})`,
                       backgroundSize: "cover",
@@ -382,8 +395,9 @@ function Servicios() {
 
             {/* Botón de navegación derecha */}
             <button
-              className="absolute left-1/2 transform -translate-x-[-260px] w-[40px] h-[40px] flex items-center justify-center rounded-full text-white z-20 bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5"
+              className=" absolute left-1/2 transform -translate-x-[-260px] w-[40px] h-[40px] flex items-center justify-center rounded-full text-white  bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5"
               onClick={handleNext}
+              style={{ zIndex: buttonZIndex }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
