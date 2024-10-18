@@ -16,6 +16,24 @@ function SobreNosotrosNuestraHistoria() {
             backgroundPosition: 'center',              
           }}
         >
+
+<div
+      className="absolute"
+      style={{
+        width: "100px",
+        height: "100vw",
+        transform: "rotate(90deg)", // Mantén la rotación
+        flexShrink: 0,
+        background:
+          "linear-gradient(90deg, rgba(237, 242, 232, 0.00) 0%, #dfe8e0 100%)", // Cambia el degradado a 270 grados
+        top: "84%", // Ajusta según necesites
+        left: "100%", // Ajusta según necesites
+        transformOrigin: "top left", // Asegura que la rotación sea desde la esquina superior izquierda
+      }}
+    />
+
+
+
           {/* Contenedor central con dos columnas */}
           <div
             className="flex justify-center items-center h-full"

@@ -1,5 +1,4 @@
 import React from "react";
-import fondoServicios from "../../images/fondoServicios.png";
 import imagenFondo from "../../images/imagenFondo.jpg"
 
 import sustentabilidad from "../../images/sustentabilidad.png"; // Imagen de sustentabilidad

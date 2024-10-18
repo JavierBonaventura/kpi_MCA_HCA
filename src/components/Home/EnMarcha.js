@@ -1,10 +1,8 @@
 import React from "react";
-import fondoServicios from "../../images/fondoServicios.png";
 import imagenCurva from "../../images/imagenCurva.png"; // Importa la imagen curva
 import imagenFondo from "../../images/imagenFondo.jpg"
 
 function EnMarcha() {
-  const leftPercentageLogo = (184 / 1440) * 100;
 
   return (
     <div>
@@ -33,7 +31,7 @@ function EnMarcha() {
     <div
       className="w-[631px] h-[196px] flex-shrink-0 mt-[120px] z-20"
       style={{
-        marginLeft: `${leftPercentageLogo}%`,
+        marginLeft: `12%`,
         color: "#000",
         fontFamily: "Fira Sans",
         fontSize: "60px",
@@ -49,7 +47,7 @@ function EnMarcha() {
     {/* Botones */}
     <div
       className="flex mt-[20px] gap-4 z-20"
-      style={{ marginLeft: `${leftPercentageLogo}%` }}
+      style={{ marginLeft: `12%` }}
     >
       <button
         className="w-[245.25px] h-[50px] rounded-[5px] bg-[#00942C] flex justify-center items-center cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5"

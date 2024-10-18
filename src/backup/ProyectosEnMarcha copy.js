@@ -29,17 +29,16 @@ function ProyectosEnMarcha() {
             top: "30px",
           }}
         />
-            <div id="verlo"
+            <div
       className="absolute "
       style={{
-        zIndex: "20",
         width: "100px",
         height: "100vw",
         transform: "rotate(90deg)", // Mantén la rotación
         flexShrink: 0,
         background:
           "linear-gradient(90deg, rgba(237, 242, 232, 0.00) 0%, #dfe8e0 100%)", // Cambia el degradado a 270 grados
-        top: "72.5%", // Ajusta según necesites
+        top: "72%", // Ajusta según necesites
         left: "100%", // Ajusta según necesites
         transformOrigin: "top left", // Asegura que la rotación sea desde la esquina superior izquierda
       }}
@@ -47,7 +46,6 @@ function ProyectosEnMarcha() {
         <div
           className="relative z-10 flex flex-col h-full px-4" // Cambia z-index aquí para menor prioridad que la tarjeta
           style={{
-            zIndex: "10",
             backgroundImage: `url(${imagenFondo})`,
             backgroundSize: 'contain',  
             backgroundPosition: 'top center',              

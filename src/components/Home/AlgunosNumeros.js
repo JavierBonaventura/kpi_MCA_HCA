@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import fondoServicios from "../../images/fondoServicios.png";
-import imagenFondo from "../../images/imagenFondo.jpg"
+import imagenFondo from "../../images/imagenFondo.jpg";
 import imagenCirculo1 from "../../images/imagen-circulo-1.png";
 import imagenCirculo2 from "../../images/imagen-circulo-2.png";
 import imagenCirculo3 from "../../images/imagen-circulo-3.png";
@@ -68,8 +67,8 @@ function AlgunosNumeros() {
           className="relative z-10 flex h-full px-4"
           style={{
             backgroundImage: `url(${imagenFondo})`,
-            backgroundSize: 'cover',  
-            backgroundPosition: 'center',              
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
           <div
@@ -143,8 +142,8 @@ function AlgunosNumeros() {
                   height: "198px",
                   borderRadius: "50%",
                   objectFit: "cover",
-                  transition: "transform 0.3s ease", 
-                  cursor: "pointer", 
+                  transition: "transform 0.3s ease",
+                  cursor: "pointer",
                 }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.transform = "scale(1.1)")
@@ -214,8 +213,8 @@ function AlgunosNumeros() {
                   height: "198px",
                   borderRadius: "50%",
                   objectFit: "cover",
-                  transition: "transform 0.3s ease", 
-                  cursor: "pointer", 
+                  transition: "transform 0.3s ease",
+                  cursor: "pointer",
                 }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.transform = "scale(1.1)")
@@ -285,8 +284,8 @@ function AlgunosNumeros() {
                   height: "198px",
                   borderRadius: "50%",
                   objectFit: "cover",
-                  transition: "transform 0.3s ease", 
-                  cursor: "pointer", 
+                  transition: "transform 0.3s ease",
+                  cursor: "pointer",
                 }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.transform = "scale(1.1)")
@@ -355,8 +354,8 @@ function AlgunosNumeros() {
                   width: "198px",
                   height: "198px",
                   borderRadius: "50%",
-                  transition: "transform 0.3s ease", 
-                  cursor: "pointer", 
+                  transition: "transform 0.3s ease",
+                  cursor: "pointer",
                 }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.transform = "scale(1.1)")

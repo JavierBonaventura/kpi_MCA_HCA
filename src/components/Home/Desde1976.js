@@ -1,12 +1,9 @@
 import React from "react";
-import fondoServicios from "../../images/fondoServicios.png";
 import imagenFondo from "../../images/imagenFondo.jpg";
 
 import campoDesde from "../../images/campoDesde.png";
 
 function Desde1976() {
-  // Cálculo del margen izquierdo en porcentaje
-  const leftPercentageLogo = (184 / 1440) * 100;
 
   return (
     <div>

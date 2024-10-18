@@ -7,7 +7,6 @@ import logoLinkedin from "../../images/linkedinNegra.png";
 
 function Footer() {
   // Cálculo del margen izquierdo en porcentaje
-  const leftPercentageLogo = (184 / 1440) * 100;
 
   return (
     <div>
@@ -28,7 +27,7 @@ function Footer() {
           <div
             className="flex justify-between"
             style={{
-              marginLeft: `${leftPercentageLogo}%`,
+              marginLeft: `12%`,
             }}
           >
             {/* Primera columna con el logo y texto */}
@@ -148,7 +147,7 @@ function Footer() {
             {/* Quinta columna */}
             <div
               className="flex flex-col top-20px mt-8"
-              style={{ width: `${leftPercentageLogo}px` }}
+              style={{ width: `12px` }}
             ></div>
           </div>
 

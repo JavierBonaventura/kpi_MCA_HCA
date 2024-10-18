@@ -69,7 +69,8 @@ function App() {
               path="/"
               element={
                 <>
-                  <Header_Home />
+                   <Header />
+                  <Header_Home />               
                   <Servicios />
                   <Desde1976 />
                   <AlgunosNumeros />

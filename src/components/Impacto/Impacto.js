@@ -36,6 +36,21 @@ function Imapcto() {
             backgroundPosition: 'center top',              
           }}
         >
+                                <div id="verlo"
+      className="absolute "
+      style={{
+        zIndex: "9",
+        width: "100px",
+        height: "100vw",
+        transform: "rotate(90deg)", // Mantén la rotación
+        flexShrink: 0,
+        background:
+          "linear-gradient(90deg, rgba(237, 242, 232, 0.00) 0%, #dfe8e0 100%)", // Cambia el degradado a 270 grados
+        top: "71.1%", // Ajusta según necesites
+        left: "100%", // Ajusta según necesites
+        transformOrigin: "top left", // Asegura que la rotación sea desde la esquina superior izquierda
+      }}
+    />
           <div
             className="w-[546px] h-[72px] flex-shrink-0 mt-[40px]"
             style={{

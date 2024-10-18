@@ -1,12 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import fondoServicios from "../../images/fondoServicios.png";
-import imagenFondo from "../../images/imagenFondo.jpg"
+import imagenFondo from "../../images/imagenFondo.jpg";
 
 import gallery1 from "../../images/gallery1.png";
 import gallery2 from "../../images/gallery2.png";
 import gallery3 from "../../images/gallery3.png";
-import gallery4 from "../../images/gallery1.png";
-import gallery5 from "../../images/gallery2.png";
 
 function Servicios() {
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -48,118 +45,6 @@ function Servicios() {
       description:
         "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
       image: gallery2,
-    },
-    {
-      id: 3,
-      title: "Proyecto Biocor.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery3,
-    },
-    {
-      id: 1,
-      title: "Proyecto Ciriaco Agro Alba",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery1,
-    },
-    {
-      id: 2,
-      title: "Proyecto Fideicomiso San Antonio.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery2,
-    },
-    {
-      id: 3,
-      title: "Proyecto Biocor.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery3,
-    },
-    {
-      id: 1,
-      title: "Proyecto Ciriaco Agro Alba",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery1,
-    },
-    {
-      id: 2,
-      title: "Proyecto Fideicomiso San Antonio.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery2,
-    },
-    {
-      id: 3,
-      title: "Proyecto Biocor.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery3,
-    },
-    {
-      id: 1,
-      title: "Proyecto Ciriaco Agro Alba",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery1,
-    },
-    {
-      id: 2,
-      title: "Proyecto Fideicomiso San Antonio.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery2,
-    },
-    {
-      id: 3,
-      title: "Proyecto Biocor.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery3,
-    },
-    {
-      id: 1,
-      title: "Proyecto Ciriaco Agro Alba",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery1,
-    },
-    {
-      id: 2,
-      title: "Proyecto Fideicomiso San Antonio.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery2,
-    },
-    {
-      id: 3,
-      title: "Proyecto Biocor.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery3,
-    },
-    {
-      id: 1,
-      title: "Proyecto Ciriaco Agro Alba",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery1,
-    },
-    {
-      id: 2,
-      title: "Proyecto Fideicomiso San Antonio.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery2,
-    },
-    {
-      id: 3,
-      title: "Proyecto Biocor.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Faucibus urna at sit praesent ornare eu. Vehicula feugiat vel porttitor pretium nisl facilisi. Pellentesque pharetra id placerat.",
-      image: gallery3,
     },
   ];
 
@@ -227,9 +112,8 @@ function Servicios() {
           className="relative  flex flex-col items-center justify-center h-full px-4"
           style={{
             backgroundImage: `url(${imagenFondo})`,
-            backgroundSize: 'cover',  // Asegura que la imagen cubra todo el ancho
-            backgroundPosition: 'center',  // Centra la imagen
-            
+            backgroundSize: "cover", // Asegura que la imagen cubra todo el ancho
+            backgroundPosition: "center", // Centra la imagen
           }}
         >
           <div
@@ -269,10 +153,7 @@ function Servicios() {
             <button
               className=" absolute left-1/2 transform -translate-x-[300px] w-[40px] h-[40px] flex items-center justify-center rounded-full text-white  bg-[#00942C] cursor-pointer transition-transform duration-500 ease-out hover:bg-[#007A24] hover:-translate-y-0.5"
               onClick={handlePrev}
-              
               style={{ zIndex: buttonZIndex }}
-              
-
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
