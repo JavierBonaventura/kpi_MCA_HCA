@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 
-const PipelineDetail = ({
-  riskMatrixData,
-  onBack,
-  riskAnalysis,
-  riskMatrix,
-}) => {
+const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix }) => {
   const [allSegmentsVisible, setAllSegmentsVisible] = useState(true);
   const [riskSegmentsVisible, setRiskSegmentsVisible] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState("");
+  const [selectBackgroundColor, setSelectBackgroundColor] = useState(""); // Nuevo estado
   const [sortConfig, setSortConfig] = useState({
+    
     key: null,
     direction: "ascending",
   });
@@ -38,6 +35,7 @@ const PipelineDetail = ({
   const handlePositionChange = (event) => {
     const selected = event.target.value;
     setSelectedPosition(selected);
+    setSelectBackgroundColor(positionColors[selected] || ""); // Actualiza el color de fondo
   };
 
   const getItemsForSelectedPosition = () => {
@@ -203,6 +201,20 @@ const PipelineDetail = ({
           </linearGradient>
         </defs>
 
+        {/* Añadir el nombre del tramo */}
+
+        <text
+          x="520"
+          y="30"
+          fontSize="20"
+          fill="#333"
+          fontWeight="bold"
+          textAnchor="middle"
+        >
+          {riskAnalysis[0].Name}{" "}
+          {/* Cambia esto si necesitas un nombre diferente */}
+        </text>
+
         <rect
           x="20"
           y="60"
@@ -231,9 +243,13 @@ const PipelineDetail = ({
           stroke="#333"
           strokeWidth="2"
         />
-         {/* Indicaciones de inicio y final */}
-         <text x="00" y="140" fontSize="12" fill="#333" fontWeight="bold">Inicio: {totalStart.toFixed(2)} m</text>
-<text x="1020" y="140" fontSize="12" fill="#333" fontWeight="bold">Final: {totalEnd.toFixed(2)} m</text>
+        {/* Indicaciones de inicio y final */}
+        <text x="00" y="140" fontSize="12" fill="#333" fontWeight="bold">
+          Inicio: {totalStart.toFixed(2)} m
+        </text>
+        <text x="1020" y="140" fontSize="12" fill="#333" fontWeight="bold">
+          Final: {totalEnd.toFixed(2)} m
+        </text>
 
         {segmentsToDisplay.map((item, index) => {
           const startX = (item.Begin - totalStart) * (1000 / totalLength) + 20;
@@ -270,7 +286,8 @@ const PipelineDetail = ({
   id="positionSelect"
   value={selectedPosition}
   onChange={handlePositionChange}
-  className="block w-1/2 p-2 border border-gray-300 rounded" // Cambia w-full a w-1/2 o un ancho deseado
+  style={{ backgroundColor: selectBackgroundColor }} // Cambia el color de fondo
+  className="block w-1/2 p-2 border border-gray-300 rounded"
 >
           <option value="">-- Seleccionar posición --</option>
           {Object.keys(positionColors).map((position) => {
