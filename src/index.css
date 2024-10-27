@@ -74,3 +74,20 @@ code {
 .sombra-menu {
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
+
+
+
+/* main page */
+.loader {
+  border: 8px solid #f3f3f3; /* Color claro */
+  border-top: 8px solid #3498db; /* Color del círculo giratorio */
+  border-radius: 50%;
+  width: 50px; /* Tamaño del loader */
+  height: 50px; /* Tamaño del loader */
+  animation: spin 1s linear infinite; /* Animación de giro */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
