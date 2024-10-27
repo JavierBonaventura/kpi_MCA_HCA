@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix }) => {
-  const [allSegmentsVisible, setAllSegmentsVisible] = useState(true);
+const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatrix }) => {
+  console.log("selectedCellFromMatrix", selectedCellFromMatrix)
+  const [allSegmentsVisible, setAllSegmentsVisible] = useState(false);
   const [riskSegmentsVisible, setRiskSegmentsVisible] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState("");
   const [selectBackgroundColor, setSelectBackgroundColor] = useState(""); // Nuevo estado
@@ -11,6 +12,17 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix }) => {
     direction: "ascending",
   });
 
+
+  useEffect(() => {
+    if (selectedCellFromMatrix) {
+      const { row, col } = selectedCellFromMatrix;
+      const position = `Position ${row + 1}-${col + 1}`; // Cambia el orden aquí
+      setSelectedPosition(position);
+      setSelectBackgroundColor(positionColors[position] || "");
+      setRiskSegmentsVisible(true);
+    }
+  }, [selectedCellFromMatrix]);
+
   const totalStart = Math.min(...riskAnalysis.map((item) => item.Begin));
   const totalEnd = Math.max(...riskAnalysis.map((item) => item.End));
   const totalLength = totalEnd - totalStart;
@@ -18,7 +30,7 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix }) => {
   const [hoveredSection, setHoveredSection] = useState(null);
 
   console.log("en pipeline detail riskAnalysis", riskAnalysis);
-  console.log("Metraje total del ducto:", totalLength);
+  console.log("Metraje total del tramo:", totalLength);
 
   const toggleAllSegmentsVisibility = () => {
     setAllSegmentsVisible((prev) => !prev);
@@ -148,35 +160,42 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix }) => {
 
   return (
     <div className="pipeline-detail-container mt-5">
-      <h2 className="text-2xl font-bold">Detalle del Ducto</h2>
+<h2 className="text-2xl font-bold text-gray-500">
+  Detalle del Tramo:{" "}
+  <span className="text-black">{riskAnalysis[0].Name}</span>
+</h2>
+
       <p className="text-gray-700">
-        Metraje total del ducto: {totalLength.toFixed(2)} metros
+        Metraje total del tramo: {totalLength.toFixed(2)} metros
       </p>
 
-      <button
-        className="mt-5 px-4 py-2 bg-blue-500 text-white rounded"
-        onClick={onBack}
-      >
-        Volver a la Matriz
-      </button>
+      <div className="flex flex-col mt-5 w-auto max-w-md mx-auto ml-4">
+  <button
+    className="px-4 py-2 bg-blue-500 text-white rounded mb-2"
+    onClick={onBack}
+  >
+    Volver a la Matriz
+  </button>
 
-      <button
-        className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
-        onClick={toggleAllSegmentsVisibility}
-      >
-        {allSegmentsVisible
-          ? "Ocultar todos los segmentos"
-          : "Mostrar todos los segmentos"}
-      </button>
+  <button
+    className="px-4 py-2 bg-green-500 text-white rounded"
+    onClick={toggleAllSegmentsVisibility}
+  >
+    {allSegmentsVisible
+      ? "Ocultar todos los segmentos"
+      : "Mostrar todos los segmentos"}
+  </button>
+</div>
 
-      <button
+
+      {/* <button
         className="mt-2 px-4 py-2 bg-yellow-500 text-white rounded"
         onClick={toggleRiskSegmentsVisibility}
       >
         {riskSegmentsVisible
           ? "Ocultar segmentos por riesgo"
           : "Mostrar segmentos por riesgo"}
-      </button>
+      </button> */}
 
       <svg
         width="100%"
@@ -252,30 +271,36 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix }) => {
         </text>
 
         {segmentsToDisplay.map((item, index) => {
-          const startX = (item.Begin - totalStart) * (1000 / totalLength) + 20;
-          const endX = (item.End - totalStart) * (1000 / totalLength) + 20;
-          const isHovered = hoveredSection === index;
+  const startX = (item.Begin - totalStart) * (1000 / totalLength) + 20;
+  const endX = (item.End - totalStart) * (1000 / totalLength) + 20;
+  const isHovered = hoveredSection === index;
 
-          return (
-            <g key={index}>
-              <line
-                x1={endX}
-                y1="60"
-                x2={endX}
-                y2="100"
-                stroke="#333"
-                strokeWidth="2"
-                onMouseEnter={() => setHoveredSection(index)}
-                onMouseLeave={() => setHoveredSection(null)}
-              />
-              {isHovered && (
-                <text x={endX + 10} y="45" fontSize="12" fill="#333">
-                  {`${item.End.toFixed(2)} m Segmento ${index + 1}`}
-                </text>
-              )}
-            </g>
-          );
-        })}
+  return (
+    <g key={index}>
+      <line
+        x1={endX}
+        y1="60"
+        x2={endX}
+        y2="100"
+        stroke="#333"
+        strokeWidth="2"
+        onMouseEnter={() => setHoveredSection(index)}
+        onMouseLeave={() => setHoveredSection(null)}
+      />
+      {isHovered && (
+        <text x={endX + 10} y="45" fontSize="12" fill="#333">
+          {`${item.End.toFixed(2)} m Segmento ${index + 1}`}
+        </text>
+      )}
+      {/* Agrega el triángulo de color sobre el tramo */}
+      <polygon
+  points={`${endX - 10},50 ${endX + 10},50 ${endX},60`}
+  fill={positionColors[selectedPosition] || "gray"} // Color según el riesgo
+/>
+
+    </g>
+  );
+})}
       </svg>
 
       <div className="mt-5">

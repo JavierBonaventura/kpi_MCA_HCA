@@ -4,8 +4,10 @@ import PipelineDetail from "./PipelineDetail"; // Importa el nuevo componente
 
 const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
   const [showPipelineDetail, setShowPipelineDetail] = useState(false);
+  const [selectedCell, setSelectedCell] = useState(null); // Estado para la celda seleccionada
 
-  const handleToggleView = () => {
+  const handleToggleView = (cell) => {
+    setSelectedCell(cell); // Actualiza la celda seleccionada
     setShowPipelineDetail(!showPipelineDetail);
   };
 
@@ -15,6 +17,7 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
         riskMatrix={riskMatrix} // Pasa los datos al componente PipelineDetail
         riskAnalysis ={riskAnalysis} 
         onBack={handleToggleView} // Pasar la función para regresar a RiskMatrix
+        selectedCellFromMatrix={selectedCell} // Pasa la celda seleccionada a PipelineDetail
       />
     );
   }
@@ -78,8 +81,10 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
                 return (
                   <td
                     key={colIndex}
-                    className={`${cellClass} border border-gray-300 p-2 text-center text-white`}
+                    className={`${cellClass} border border-gray-300 p-2 text-center text-white cursor-pointer`}
+                    onClick={() => handleToggleView({ row: rowIndex, col: colIndex, value: cell })}
                   >
+
                     {cell}
                   </td>
                 );
