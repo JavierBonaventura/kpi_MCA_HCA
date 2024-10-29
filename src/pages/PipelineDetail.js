@@ -304,57 +304,75 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
       </svg>
 
       <div className="mt-5">
-        <label htmlFor="positionSelect" className="block mb-2">
-          Selecciona la posición:
-        </label>
-        <select
-  id="positionSelect"
-  value={selectedPosition}
-  onChange={handlePositionChange}
-  style={{ backgroundColor: selectBackgroundColor }} // Cambia el color de fondo
-  className="block w-1/2 p-2 border border-gray-300 rounded"
->
-          <option value="">-- Seleccionar posición --</option>
-          {Object.keys(positionColors).map((position) => {
-            const [posX, posY] = position.split("-");
-            const cofLabels = [
-              "Extreme",
-              "Critical",
-              "Severe",
-              "Serious",
-              "Moderate",
-              "Minor",
-              "Insignificant",
-            ];
-            const fofLabels = [
-              "Almost Impossible",
-              "Rare",
-              "Possible",
-              "Likely",
-              "Very Likely",
-              "Highly Likely",
-              "Almost Certain",
-            ];
+  <label htmlFor="positionSelect" className="block mb-2">
+    Selecciona la posición:
+  </label>
+  <select
+    id="positionSelect"
+    value={selectedPosition}
+    onChange={handlePositionChange}
+    style={{ backgroundColor: selectBackgroundColor }} // Cambia el color de fondo
+    className="block w-1/2 p-2 border border-gray-300 rounded"
+  >
+    <option value="">-- Seleccionar posición --</option>
+    {Object.keys(positionColors).map((position) => {
+      // Extraer solo la parte numérica de la posición
+      const positionNumber = position.replace("Position ", ""); // Remueve el prefijo "Position "
+      const [posX, posY] = positionNumber.split("-").map((n) => parseInt(n, 10)); // Convertir a enteros
 
-            const positionText = `Position ${position} (${
-              riskCount[position] || 0
-            }) - FoF ${fofLabels[posY - 1]} / CoF ${cofLabels[posX - 1]}`;
+      console.log(`Raw Position: ${position}, posX: ${posX}, posY: ${posY}`); // Debug: muestra la posición cruda y sus componentes
 
-            return (
-              <option
-                key={position}
-                value={position}
-                style={{
-                  backgroundColor: positionColors[position],
-                  color: "#fff",
-                }} // Aplicar color de fondo
-              >
-                {positionText}
-              </option>
-            );
-          })}
-        </select>{" "}
-      </div>
+      // Define las etiquetas de CoF y FoF
+      const cofLabels = [
+        "Extreme",
+        "Critical",
+        "Severe",
+        "Serious",
+        "Moderate",
+        "Minor",
+        "Insignificant",
+      ];
+      const fofLabels = [
+        "Almost Impossible",
+        "Rare",
+        "Possible",
+        "Likely",
+        "Very Likely",
+        "Highly Likely",
+        "Almost Certain",
+      ];
+
+      // Asegúrate de que posX y posY están en el rango adecuado
+      const cofIndex = posX - 1; // CoF index should be adjusted for array access
+      const fofIndex = posY - 1; // FoF index should be adjusted for array access
+
+      console.log(`CoF Index: ${cofIndex}, FoF Index: ${fofIndex}`); // Debug: muestra los índices
+
+      // Validar si los índices son válidos
+      const coFLabel = cofIndex >= 0 && cofIndex < cofLabels.length ? cofLabels[cofIndex] : "Invalid CoF";
+      const foFLabel = fofIndex >= 0 && fofIndex < fofLabels.length ? fofLabels[fofIndex] : "Invalid FoF";
+
+      console.log(`CoF Label: ${coFLabel}, FoF Label: ${foFLabel}`); // Debug: muestra las etiquetas
+
+      const positionText = `Position ${position} (${
+        riskCount[position] || 0
+      }) - FoF ${foFLabel} / CoF ${coFLabel}`;
+
+      return (
+        <option
+          key={position}
+          value={position}
+          style={{
+            backgroundColor: positionColors[position],
+            color: "#fff",
+          }} // Aplicar color de fondo
+        >
+          {positionText}
+        </option>
+      );
+    })}
+  </select>
+</div>
 
       <div className="mt-5">
         <h3 className="text-xl font-bold">Elementos Filtrados:</h3>
