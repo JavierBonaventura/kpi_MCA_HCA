@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatrix }) => {
-  console.log("selectedCellFromMatrix", selectedCellFromMatrix)
   const [allSegmentsVisible, setAllSegmentsVisible] = useState(false);
   const [riskSegmentsVisible, setRiskSegmentsVisible] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState("");
@@ -11,7 +10,11 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
     key: null,
     direction: "ascending",
   });
-
+  const isPositionValid = (position) => {
+    // Comprueba si el formato es "Position X-Y"
+    const regex = /^Position \d+-\d+$/;
+    return regex.test(position);
+};
 
   useEffect(() => {
     if (selectedCellFromMatrix) {
@@ -29,8 +32,6 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
 
   const [hoveredSection, setHoveredSection] = useState(null);
 
-  console.log("en pipeline detail riskAnalysis", riskAnalysis);
-  console.log("Metraje total del tramo:", totalLength);
 
   const toggleAllSegmentsVisibility = () => {
     setAllSegmentsVisible((prev) => !prev);
@@ -40,7 +41,7 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
 
   const toggleRiskSegmentsVisibility = () => {
     setRiskSegmentsVisible((prev) => !prev);
-    setSelectedPosition("");
+
     setAllSegmentsVisible(false);
   };
 
@@ -185,18 +186,20 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
       ? "Ocultar todos los segmentos"
       : "Mostrar todos los segmentos"}
   </button>
+  <button
+                className={`mt-2 px-4 py-2 bg-yellow-500 text-white rounded ${!isPositionValid(selectedPosition) ? 'hidden' : ''}`}
+                onClick={toggleRiskSegmentsVisibility}
+            >
+                {riskSegmentsVisible
+                    ? "Ocultar segmentos por riesgo"
+                    : "Mostrar segmentos por riesgo"}
+            </button>
+
+
 </div>
 
 
-      {/* <button
-        className="mt-2 px-4 py-2 bg-yellow-500 text-white rounded"
-        onClick={toggleRiskSegmentsVisibility}
-      >
-        {riskSegmentsVisible
-          ? "Ocultar segmentos por riesgo"
-          : "Mostrar segmentos por riesgo"}
-      </button> */}
-
+    
       <svg
         width="100%"
         height="150"
@@ -320,7 +323,6 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
       const positionNumber = position.replace("Position ", ""); // Remueve el prefijo "Position "
       const [posX, posY] = positionNumber.split("-").map((n) => parseInt(n, 10)); // Convertir a enteros
 
-      console.log(`Raw Position: ${position}, posX: ${posX}, posY: ${posY}`); // Debug: muestra la posición cruda y sus componentes
 
       // Define las etiquetas de CoF y FoF
       const cofLabels = [
@@ -346,13 +348,11 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
       const cofIndex = posX - 1; // CoF index should be adjusted for array access
       const fofIndex = posY - 1; // FoF index should be adjusted for array access
 
-      console.log(`CoF Index: ${cofIndex}, FoF Index: ${fofIndex}`); // Debug: muestra los índices
 
       // Validar si los índices son válidos
       const coFLabel = cofIndex >= 0 && cofIndex < cofLabels.length ? cofLabels[cofIndex] : "Invalid CoF";
       const foFLabel = fofIndex >= 0 && fofIndex < fofLabels.length ? fofLabels[fofIndex] : "Invalid FoF";
 
-      console.log(`CoF Label: ${coFLabel}, FoF Label: ${foFLabel}`); // Debug: muestra las etiquetas
 
       const positionText = `Position ${position} (${
         riskCount[position] || 0

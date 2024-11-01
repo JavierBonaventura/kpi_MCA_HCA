@@ -1,12 +1,11 @@
-// src/hooks/useAssessments.js
-
 import { useState, useEffect } from 'react';
-import { fetchApprovedAssessments, fetchPipelinesByAssessment } from '../services/apiService';
+import { fetchApprovedAssessments, fetchPipelinesByAssessment, fetchAllDucts } from '../services/apiService';
 
 const useAssessments = () => {
   const [approvedAssessments, setApprovedAssessments] = useState([]);
   const [pipelines, setPipelines] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ductoNombres, setDuctoNombres] = useState([]); // Estado para los nombres de todos los ductos
 
   useEffect(() => {
     const loadApprovedAssessments = async () => {
@@ -36,11 +35,22 @@ const useAssessments = () => {
     }
   };
 
+  const getDuctoNombres = async () => { // Cambiado el nombre de la función para mayor claridad
+    try {
+      const ducts = await fetchAllDucts();
+      setDuctoNombres(ducts); // Guardar los nombres de los ductos en el estado
+    } catch (error) {
+      console.error('Error fetching ducts:', error);
+    }
+  };
+
   return {
     approvedAssessments,
     pipelines,
     loading,
     getPipelines,
+    ductoNombres, // Devuelve los nombres de los ductos
+    getDuctoNombres, // Función para obtener los nombres de los ductos
   };
 };
 

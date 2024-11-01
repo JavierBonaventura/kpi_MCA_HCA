@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import BarChart from "./BarChart";
-import PipelineDetail from "./PipelineDetail"; // Importa el nuevo componente
+import PipelineDetail from "./PipelineDetail";
 
 const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
   const [showPipelineDetail, setShowPipelineDetail] = useState(false);
-  const [selectedCell, setSelectedCell] = useState(null); // Estado para la celda seleccionada
+  const [selectedCell, setSelectedCell] = useState(null);
 
-  const handleToggleView = (cell) => {
-    setSelectedCell(cell); // Actualiza la celda seleccionada
-    setShowPipelineDetail(!showPipelineDetail);
-  };
-
-  if (showPipelineDetail) {
-    return (
-      <PipelineDetail
-        riskMatrix={riskMatrix} // Pasa los datos al componente PipelineDetail
-        riskAnalysis ={riskAnalysis} 
-        onBack={handleToggleView} // Pasar la función para regresar a RiskMatrix
-        selectedCellFromMatrix={selectedCell} // Pasa la celda seleccionada a PipelineDetail
-      />
-    );
-  }
+  // Usa useCallback para evitar la recreación de la función
+  const handleToggleView = useCallback((cell) => {
+    setSelectedCell(cell);
+    setShowPipelineDetail((prev) => !prev);
+  }, []);
 
   // Define los intervalos de CoF y FoF
   const intervalsCof = {
@@ -32,6 +22,7 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
     Minor: [4.0e3, 4.0e4],
     Insignificant: [0, 4.0e3],
   };
+
   const intervalsFoF = {
     "Almost Impossible": [0, 1.0e-5],
     Rare: [1.0e-5, 1.0e-4],
@@ -42,8 +33,33 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
     "Almost Certain": [1.0, Infinity],
   };
 
-  const columnSums = Array(Object.keys(intervalsFoF).length).fill(0);
+  // Memorizar columnSums usando useMemo
+  const columnSums = useMemo(() => {
+    const sums = Array(Object.keys(intervalsFoF).length).fill(0);
+    // Recorre matrixData solo si hay datos
+    if (matrixData.length) {
+      matrixData.forEach((row) => {
+        row.forEach((cell, colIndex) => {
+          sums[colIndex] += cell; // Sumar el valor de la celda a la columna
+        });
+      });
+    }
+    return sums;
+  }, [matrixData]); // Solo recalcula si matrixData cambia
 
+  // Si showPipelineDetail es verdadero, retorna el componente PipelineDetail
+  if (showPipelineDetail) {
+    return (
+      <PipelineDetail
+        riskMatrix={riskMatrix}
+        riskAnalysis={riskAnalysis}
+        onBack={handleToggleView}
+        selectedCellFromMatrix={selectedCell}
+      />
+    );
+  }
+
+  // Resto del componente
   return (
     <div className="mt-5">
       <h1 className="text-2xl font-bold">Matriz Riesgo</h1>
@@ -55,7 +71,8 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
             {Object.keys(intervalsFoF).map((foFCategory) => (
               <th key={foFCategory} className="border border-gray-300 p-2">
                 {foFCategory}
-                <br />({formatScientific(intervalsFoF[foFCategory][0])} -{" "}
+                <br />
+                ({formatScientific(intervalsFoF[foFCategory][0])} -{" "}
                 {intervalsFoF[foFCategory][1] === Infinity
                   ? "∞"
                   : formatScientific(intervalsFoF[foFCategory][1])}
@@ -69,7 +86,8 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
             <tr key={rowIndex}>
               <td className="border border-gray-300 p-2">
                 {coFCategory}
-                <br />({formatScientific(intervalsCof[coFCategory][0])} -{" "}
+                <br />
+                ({formatScientific(intervalsCof[coFCategory][0])} -{" "}
                 {intervalsCof[coFCategory][1] === Infinity
                   ? "∞"
                   : formatScientific(intervalsCof[coFCategory][1])}
@@ -77,14 +95,12 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
               </td>
               {matrixData[rowIndex].map((cell, colIndex) => {
                 const cellClass = getCellClass(rowIndex, colIndex);
-                columnSums[colIndex] += cell; // Sumar el valor de la celda a la columna
                 return (
                   <td
                     key={colIndex}
                     className={`${cellClass} border border-gray-300 p-2 text-center text-white cursor-pointer`}
                     onClick={() => handleToggleView({ row: rowIndex, col: colIndex, value: cell })}
                   >
-
                     {cell}
                   </td>
                 );
@@ -192,18 +208,16 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
     if (rowIndex === 6) {
       return colIndex <= 2
         ? "bg-[#28a745]"
-        : colIndex <= 4
+        : colIndex <= 5
         ? "bg-[#ffc107]"
-        : colIndex <= 6
-        ? "bg-[#fd7e14]"
-        : "";
+        : "bg-[#fd7e14]";
     }
     return "";
   }
 
-  // Función para formatear números a notación científica
-  function formatScientific(number) {
-    return number.toExponential(2).replace("+", ""); // Formatear a dos decimales
+  // Función para formatear números en notación científica
+  function formatScientific(value) {
+    return value.toExponential(1);
   }
 };
 

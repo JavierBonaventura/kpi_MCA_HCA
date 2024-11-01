@@ -17,8 +17,12 @@ const intervalsFoF = [
   "Almost Certain"
 ];
 
-const BarChart = ({ columnSums }) => {
-  // Asume que columnSums tiene un tamaño que coincide con la longitud de intervalsFoF
+const BarChart = React.memo(({ columnSums }) => {
+  // Asegúrate de que columnSums tenga la longitud correcta
+  if (columnSums.length !== intervalsFoF.length) {
+    console.warn(`columnSums length (${columnSums.length}) does not match intervalsFoF length (${intervalsFoF.length})`);
+  }
+
   const options = {
     chart: {
       type: 'column',
@@ -27,7 +31,7 @@ const BarChart = ({ columnSums }) => {
       text: 'Total de Riesgo por Categoría',
     },
     xAxis: {
-      categories: intervalsFoF, // Usar los nombres de los intervalos
+      categories: intervalsFoF,
       title: {
         text: 'Categorías',
       },
@@ -37,15 +41,16 @@ const BarChart = ({ columnSums }) => {
       title: {
         text: 'Total',
       },
+      // Se pueden agregar más opciones aquí
     },
     series: [
       {
         name: 'Total',
-        data: columnSums.map(sum => Number(sum)), // Asegúrate de convertir a número
+        data: columnSums.map(sum => (isNaN(sum) ? 0 : Number(sum))), // Manejar NaN
       },
     ],
     accessibility: {
-      enabled: true, // Esto activa las características de accesibilidad
+      enabled: true,
     },
   };
 
@@ -55,6 +60,6 @@ const BarChart = ({ columnSums }) => {
       options={options}
     />
   );
-};
+});
 
 export default BarChart;
