@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RiskAnalysisTable from "./RiskAnalysisTable";
+import PipelineBrief from "./PipelineBrief";
 
 const PipelineDetail = ({
   onBack,
@@ -170,45 +171,49 @@ const PipelineDetail = ({
   return (
     <div className="pipeline-detail-container mt-5">
       <h2 className="text-2xl font-bold text-gray-500">
-        Detalle del {analysisLevel === "tramo" ? "Tramo" : "Ducto"}:{" "}
+    {analysisLevel === "tramo" ? "Tramo" : "Ducto"}:{" "}
         <span className="text-black">
           {analysisLevel === "tramo" ? riskAnalysis[0]?.Name : ductoName}
         </span>
       </h2>
-
       <p className="text-gray-700">
         Metraje total del {analysisLevel === "tramo" ? "tramo" : "ducto"}:{" "}
         {totalLength.toFixed(2)} metros
       </p>
+      <div className="flex mt-5">
+        <div className="flex flex-col w-[25%]">
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded mb-2"
+            onClick={onBack}
+          >
+            Volver a la Matriz
+          </button>
 
-      <div className="flex flex-col mt-5 w-auto max-w-md mx-auto ml-4">
-        <button
-          className="px-4 py-2 bg-blue-500 text-white rounded mb-2"
-          onClick={onBack}
-        >
-          Volver a la Matriz
-        </button>
+          <button
+            className="px-4 py-2 bg-green-500 text-white rounded"
+            onClick={toggleAllSegmentsVisibility}
+          >
+            {allSegmentsVisible
+              ? "Ocultar todos los segmentos"
+              : "Mostrar todos los segmentos"}
+          </button>
+          <button
+            className={`mt-2 px-4 py-2 bg-yellow-500 text-white rounded ${
+              !isPositionValid(selectedPosition) ? "hidden" : ""
+            }`}
+            onClick={toggleRiskSegmentsVisibility}
+          >
+            {riskSegmentsVisible
+              ? "Ocultar segmentos por riesgo"
+              : "Mostrar segmentos por riesgo"}
+          </button>
+        </div>
 
-        <button
-          className="px-4 py-2 bg-green-500 text-white rounded"
-          onClick={toggleAllSegmentsVisibility}
-        >
-          {allSegmentsVisible
-            ? "Ocultar todos los segmentos"
-            : "Mostrar todos los segmentos"}
-        </button>
-        <button
-          className={`mt-2 px-4 py-2 bg-yellow-500 text-white rounded ${
-            !isPositionValid(selectedPosition) ? "hidden" : ""
-          }`}
-          onClick={toggleRiskSegmentsVisibility}
-        >
-          {riskSegmentsVisible
-            ? "Ocultar segmentos por riesgo"
-            : "Mostrar segmentos por riesgo"}
-        </button>
+        {/* Colocar el componente PipelineBrief a la derecha de los botones */}
+        <div className="ml-12">
+          <PipelineBrief riskAnalysis={riskAnalysis} ductoName={ductoName}  analysisLevel={analysisLevel}  totalLength={totalLength}/>
+        </div>
       </div>
-
       <svg
         width="100%"
         height="150"
@@ -315,7 +320,6 @@ const PipelineDetail = ({
           );
         })}
       </svg>
-
       <div className="mt-5">
         <label htmlFor="positionSelect" className="block mb-2">
           Selecciona la posición:
@@ -388,7 +392,6 @@ const PipelineDetail = ({
           })}
         </select>
       </div>
-
       <RiskAnalysisTable
         sortedFilteredRiskAnalysis={sortedFilteredRiskAnalysis}
         sortConfig={sortConfig}
