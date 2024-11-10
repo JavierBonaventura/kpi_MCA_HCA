@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
+import RiskAnalysisTable from "./RiskAnalysisTable";
 
-const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatrix }) => {
+const PipelineDetail = ({
+  onBack,
+  riskAnalysis,
+  riskMatrix,
+  selectedCellFromMatrix,
+  analysisLevel,
+  ductoName,
+}) => {
   const [allSegmentsVisible, setAllSegmentsVisible] = useState(false);
   const [riskSegmentsVisible, setRiskSegmentsVisible] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState("");
   const [selectBackgroundColor, setSelectBackgroundColor] = useState(""); // Nuevo estado
   const [sortConfig, setSortConfig] = useState({
-    
     key: null,
     direction: "ascending",
   });
@@ -14,7 +21,7 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
     // Comprueba si el formato es "Position X-Y"
     const regex = /^Position \d+-\d+$/;
     return regex.test(position);
-};
+  };
 
   useEffect(() => {
     if (selectedCellFromMatrix) {
@@ -26,12 +33,13 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
     }
   }, [selectedCellFromMatrix]);
 
-  const totalStart = Math.min(...riskAnalysis.map((item) => item.Begin));
-  const totalEnd = Math.max(...riskAnalysis.map((item) => item.End));
+  const totalStart = Math.min(
+    ...riskAnalysis.map((item) => item.relativeBegin)
+  );
+  const totalEnd = Math.max(...riskAnalysis.map((item) => item.relativeEnd));
   const totalLength = totalEnd - totalStart;
 
   const [hoveredSection, setHoveredSection] = useState(null);
-
 
   const toggleAllSegmentsVisibility = () => {
     setAllSegmentsVisible((prev) => !prev);
@@ -161,49 +169,50 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
 
   return (
     <div className="pipeline-detail-container mt-5">
-<h2 className="text-2xl font-bold text-gray-500">
-  Detalle del Tramo:{" "}
-  <span className="text-black">{riskAnalysis[0].Name}</span>
-</h2>
+      <h2 className="text-2xl font-bold text-gray-500">
+        Detalle del {analysisLevel === "tramo" ? "Tramo" : "Ducto"}:{" "}
+        <span className="text-black">
+          {analysisLevel === "tramo" ? riskAnalysis[0]?.Name : ductoName}
+        </span>
+      </h2>
 
       <p className="text-gray-700">
-        Metraje total del tramo: {totalLength.toFixed(2)} metros
+        Metraje total del {analysisLevel === "tramo" ? "tramo" : "ducto"}:{" "}
+        {totalLength.toFixed(2)} metros
       </p>
 
       <div className="flex flex-col mt-5 w-auto max-w-md mx-auto ml-4">
-  <button
-    className="px-4 py-2 bg-blue-500 text-white rounded mb-2"
-    onClick={onBack}
-  >
-    Volver a la Matriz
-  </button>
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded mb-2"
+          onClick={onBack}
+        >
+          Volver a la Matriz
+        </button>
 
-  <button
-    className="px-4 py-2 bg-green-500 text-white rounded"
-    onClick={toggleAllSegmentsVisibility}
-  >
-    {allSegmentsVisible
-      ? "Ocultar todos los segmentos"
-      : "Mostrar todos los segmentos"}
-  </button>
-  <button
-                className={`mt-2 px-4 py-2 bg-yellow-500 text-white rounded ${!isPositionValid(selectedPosition) ? 'hidden' : ''}`}
-                onClick={toggleRiskSegmentsVisibility}
-            >
-                {riskSegmentsVisible
-                    ? "Ocultar segmentos por riesgo"
-                    : "Mostrar segmentos por riesgo"}
-            </button>
+        <button
+          className="px-4 py-2 bg-green-500 text-white rounded"
+          onClick={toggleAllSegmentsVisibility}
+        >
+          {allSegmentsVisible
+            ? "Ocultar todos los segmentos"
+            : "Mostrar todos los segmentos"}
+        </button>
+        <button
+          className={`mt-2 px-4 py-2 bg-yellow-500 text-white rounded ${
+            !isPositionValid(selectedPosition) ? "hidden" : ""
+          }`}
+          onClick={toggleRiskSegmentsVisibility}
+        >
+          {riskSegmentsVisible
+            ? "Ocultar segmentos por riesgo"
+            : "Mostrar segmentos por riesgo"}
+        </button>
+      </div>
 
-
-</div>
-
-
-    
       <svg
         width="100%"
         height="150"
-        viewBox="0 0 1040 150"
+        viewBox="0 0 1240 150"
         className="pipeline-svg mt-5"
       >
         <defs>
@@ -233,14 +242,14 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
           fontWeight="bold"
           textAnchor="middle"
         >
-          {riskAnalysis[0].Name}{" "}
+          {analysisLevel === "tramo" ? riskAnalysis[0]?.Name : ductoName}{" "}
           {/* Cambia esto si necesitas un nombre diferente */}
         </text>
 
         <rect
           x="20"
           y="60"
-          width="1000"
+          width="1200"
           height="40"
           fill="url(#pipeGradient)"
           stroke="#333"
@@ -257,7 +266,7 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
           strokeWidth="2"
         />
         <rect
-          x="1020"
+          x="1220"
           y="40"
           width="20"
           height="80"
@@ -269,228 +278,122 @@ const PipelineDetail = ({ onBack, riskAnalysis, riskMatrix, selectedCellFromMatr
         <text x="00" y="140" fontSize="12" fill="#333" fontWeight="bold">
           Inicio: {totalStart.toFixed(2)} m
         </text>
-        <text x="1020" y="140" fontSize="12" fill="#333" fontWeight="bold">
+        <text x="1220" y="140" fontSize="12" fill="#333" fontWeight="bold">
           Final: {totalEnd.toFixed(2)} m
         </text>
 
         {segmentsToDisplay.map((item, index) => {
-  const startX = (item.Begin - totalStart) * (1000 / totalLength) + 20;
-  const endX = (item.End - totalStart) * (1000 / totalLength) + 20;
-  const isHovered = hoveredSection === index;
+          const startX =
+            (item.relativeBegin - totalStart) * (1200 / totalLength) + 20;
+          const endX =
+            (item.relativeEnd - totalStart) * (1200 / totalLength) + 20;
+          const isHovered = hoveredSection === index;
 
-  return (
-    <g key={index}>
-      <line
-        x1={endX}
-        y1="60"
-        x2={endX}
-        y2="100"
-        stroke="#333"
-        strokeWidth="2"
-        onMouseEnter={() => setHoveredSection(index)}
-        onMouseLeave={() => setHoveredSection(null)}
-      />
-      {isHovered && (
-        <text x={endX + 10} y="45" fontSize="12" fill="#333">
-          {`${item.End.toFixed(2)} m Segmento ${index + 1}`}
-        </text>
-      )}
-      {/* Agrega el triángulo de color sobre el tramo */}
-      <polygon
-  points={`${endX - 10},50 ${endX + 10},50 ${endX},60`}
-  fill={positionColors[selectedPosition] || "gray"} // Color según el riesgo
-/>
-
-    </g>
-  );
-})}
+          return (
+            <g key={index}>
+              <line
+                x1={endX}
+                y1="60"
+                x2={endX}
+                y2="100"
+                stroke="#333"
+                strokeWidth="2"
+                onMouseEnter={() => setHoveredSection(index)}
+                onMouseLeave={() => setHoveredSection(null)}
+              />
+              {isHovered && (
+                <text x={endX + 10} y="45" fontSize="12" fill="#333">
+                  {`${item.End.toFixed(2)} m Segmento ${index + 1}`}
+                </text>
+              )}
+              {/* Agrega el triángulo de color sobre el tramo */}
+              <polygon
+                points={`${endX - 10},50 ${endX + 10},50 ${endX},60`}
+                fill={positionColors[selectedPosition] || "gray"} // Color según el riesgo
+              />
+            </g>
+          );
+        })}
       </svg>
 
       <div className="mt-5">
-  <label htmlFor="positionSelect" className="block mb-2">
-    Selecciona la posición:
-  </label>
-  <select
-    id="positionSelect"
-    value={selectedPosition}
-    onChange={handlePositionChange}
-    style={{ backgroundColor: selectBackgroundColor }} // Cambia el color de fondo
-    className="block w-1/2 p-2 border border-gray-300 rounded"
-  >
-    <option value="">-- Seleccionar posición --</option>
-    {Object.keys(positionColors).map((position) => {
-      // Extraer solo la parte numérica de la posición
-      const positionNumber = position.replace("Position ", ""); // Remueve el prefijo "Position "
-      const [posX, posY] = positionNumber.split("-").map((n) => parseInt(n, 10)); // Convertir a enteros
-
-
-      // Define las etiquetas de CoF y FoF
-      const cofLabels = [
-        "Extreme",
-        "Critical",
-        "Severe",
-        "Serious",
-        "Moderate",
-        "Minor",
-        "Insignificant",
-      ];
-      const fofLabels = [
-        "Almost Impossible",
-        "Rare",
-        "Possible",
-        "Likely",
-        "Very Likely",
-        "Highly Likely",
-        "Almost Certain",
-      ];
-
-      // Asegúrate de que posX y posY están en el rango adecuado
-      const cofIndex = posX - 1; // CoF index should be adjusted for array access
-      const fofIndex = posY - 1; // FoF index should be adjusted for array access
-
-
-      // Validar si los índices son válidos
-      const coFLabel = cofIndex >= 0 && cofIndex < cofLabels.length ? cofLabels[cofIndex] : "Invalid CoF";
-      const foFLabel = fofIndex >= 0 && fofIndex < fofLabels.length ? fofLabels[fofIndex] : "Invalid FoF";
-
-
-      const positionText = `Position ${position} (${
-        riskCount[position] || 0
-      }) - FoF ${foFLabel} / CoF ${coFLabel}`;
-
-      return (
-        <option
-          key={position}
-          value={position}
-          style={{
-            backgroundColor: positionColors[position],
-            color: "#fff",
-          }} // Aplicar color de fondo
+        <label htmlFor="positionSelect" className="block mb-2">
+          Selecciona la posición:
+        </label>
+        <select
+          id="positionSelect"
+          value={selectedPosition}
+          onChange={handlePositionChange}
+          style={{ backgroundColor: selectBackgroundColor }} // Cambia el color de fondo
+          className="block w-1/2 p-2 border border-gray-300 rounded"
         >
-          {positionText}
-        </option>
-      );
-    })}
-  </select>
-</div>
+          <option value="">-- Seleccionar posición --</option>
+          {Object.keys(positionColors).map((position) => {
+            // Extraer solo la parte numérica de la posición
+            const positionNumber = position.replace("Position ", ""); // Remueve el prefijo "Position "
+            const [posX, posY] = positionNumber
+              .split("-")
+              .map((n) => parseInt(n, 10)); // Convertir a enteros
 
-      <div className="mt-5">
-        <h3 className="text-xl font-bold">Elementos Filtrados:</h3>
-        <table className="min-w-full border border-gray-300">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("AnalysisItemID")}>
-                  AnalysisItemID{" "}
-                  {sortConfig.key === "AnalysisItemID"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("Begin")}>
-                  Begin{" "}
-                  {sortConfig.key === "Begin"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("End")}>
-                  End{" "}
-                  {sortConfig.key === "End"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("RiskValue")}>
-                  RiskValue{" "}
-                  {sortConfig.key === "RiskValue"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("LoFValue")}>
-                  LoFValue{" "}
-                  {sortConfig.key === "LoFValue"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("CoFValue")}>
-                  CoFValue{" "}
-                  {sortConfig.key === "CoFValue"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("Name")}>
-                  Name{" "}
-                  {sortConfig.key === "Name"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-              <th className="border border-gray-300 px-4 py-2">
-                <button onClick={() => requestSort("Pipeline")}>
-                  Pipeline{" "}
-                  {sortConfig.key === "Pipeline"
-                    ? sortConfig.direction === "ascending"
-                      ? "🔼"
-                      : "🔽"
-                    : ""}
-                </button>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedFilteredRiskAnalysis().map((item, index) => (
-              <tr key={index} className="hover:bg-gray-50">
-                <td className="border border-gray-300 px-4 py-2">
-                  {item.AnalysisItemID}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {item.Begin}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">{item.End}</td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {item.RiskValue}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {item.LoFValue}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {item.CoFValue}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {item.Name}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {item.Pipeline}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+            // Define las etiquetas de CoF y FoF
+            const cofLabels = [
+              "Extreme",
+              "Critical",
+              "Severe",
+              "Serious",
+              "Moderate",
+              "Minor",
+              "Insignificant",
+            ];
+            const fofLabels = [
+              "Almost Impossible",
+              "Rare",
+              "Possible",
+              "Likely",
+              "Very Likely",
+              "Highly Likely",
+              "Almost Certain",
+            ];
+
+            // Asegúrate de que posX y posY están en el rango adecuado
+            const cofIndex = posX - 1; // CoF index should be adjusted for array access
+            const fofIndex = posY - 1; // FoF index should be adjusted for array access
+
+            // Validar si los índices son válidos
+            const coFLabel =
+              cofIndex >= 0 && cofIndex < cofLabels.length
+                ? cofLabels[cofIndex]
+                : "Invalid CoF";
+            const foFLabel =
+              fofIndex >= 0 && fofIndex < fofLabels.length
+                ? fofLabels[fofIndex]
+                : "Invalid FoF";
+
+            const positionText = `Position ${position} (${
+              riskCount[position] || 0
+            }) - FoF ${foFLabel} / CoF ${coFLabel}`;
+
+            return (
+              <option
+                key={position}
+                value={position}
+                style={{
+                  backgroundColor: positionColors[position],
+                  color: "#fff",
+                }} // Aplicar color de fondo
+              >
+                {positionText}
+              </option>
+            );
+          })}
+        </select>
       </div>
+
+      <RiskAnalysisTable
+        sortedFilteredRiskAnalysis={sortedFilteredRiskAnalysis}
+        sortConfig={sortConfig}
+        requestSort={requestSort}
+      />{" "}
     </div>
   );
 };

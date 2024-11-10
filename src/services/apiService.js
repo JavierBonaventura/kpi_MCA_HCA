@@ -91,7 +91,7 @@ export const fetchAllDucts = async () => {
 };
 
 // Función para obtener todos los tramos
-export const fetchAllSegments = async () => {
+export const fetchTramosData = async () => {
   try {
     const response = await fetch('http://localhost:5000/api/tramos');
     if (!response.ok) {

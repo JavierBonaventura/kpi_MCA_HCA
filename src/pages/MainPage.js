@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useAssessments from "../hooks/useApprovedAssessments";
+import useAssessments from "../hooks/useAssessments";
 import useRiskAnalysis from "../hooks/useRiskAnalysis";
 import useRiskMatrix from "../hooks/useRiskMatrix";
 import RiskMatrix from "./RiskMatrix"; 
@@ -14,6 +14,8 @@ const MainPage = () => {
   const [tramosConNombreDeDucto, setTramosConNombreDeDucto] = useState([]);
   const [riskMatrixData, setRiskMatrixData] = useState([]);
   const [message, setMessage] = useState("");
+  const [analysisLevel, setAnalysisLevel] = useState(""); // Nueva variable de estado
+
   
   const { approvedAssessments, pipelines, loading: loadingAssessments, getPipelines, getDuctoNombres, ductoNombres } = useAssessments();
   const { getRiskAnalysis, riskAnalysis, loading: loadingRiskAnalysis } = useRiskAnalysis();
@@ -89,17 +91,27 @@ const MainPage = () => {
   
 
   const handleGenerateMatrix = async () => {
-    if (!selectedTramo) { // 2. Verifica si no hay un tramo seleccionado
-      setMessage("Para generar la matriz se debe seleccionar un tramo."); // Establece el mensaje
-      return; // Sal de la función si no hay un tramo
-    }
-  
-    const selectedTramoObj = tramosConNombreDeDucto.find(tramo => tramo.Name === selectedTramo);
-    if (selectedTramoObj) {
-      await getRiskAnalysis(selectedTramoObj.AnalysisItemID);
+    if (selectedTramo) {
+      // Si hay un tramo seleccionado, obtenemos el análisis de riesgos solo para ese tramo
+      const selectedTramoObj = tramosConNombreDeDucto.find(tramo => tramo.Name === selectedTramo);
+      if (selectedTramoObj) {
+        setAnalysisLevel("tramo");
+        await getRiskAnalysis([selectedTramoObj.AnalysisItemID]); // Se pasa un array con un solo ID
+        setMessage(""); // Limpia el mensaje si se genera la matriz
+      }
+    } else if (selectedDucto) {
+      // Si hay un ducto seleccionado pero no un tramo, obtenemos los tramos del ducto
+      const tramosDelDucto = tramosConNombreDeDucto.filter(tramo => tramo.DuctoName === selectedDucto);
+      // Extraemos los AnalysisItemID de todos los tramos del ducto y los pasamos en un solo array
+      const analysisItemIds = tramosDelDucto.map(tramo => tramo.AnalysisItemID);
+      setAnalysisLevel("ducto")
+      // Llamamos a getRiskAnalysis con el array de todos los IDs
+      await getRiskAnalysis(analysisItemIds);
       setMessage(""); // Limpia el mensaje si se genera la matriz
     }
   };
+  
+  
 
 
   useEffect(() => {
@@ -176,6 +188,8 @@ const MainPage = () => {
                 matrixData={riskMatrixData}
                 riskAnalysis={riskAnalysis}
                 riskMatrix={riskMatrix}
+                analysisLevel={analysisLevel}
+                ductoName={selectedDucto}
               />
             )
           )}

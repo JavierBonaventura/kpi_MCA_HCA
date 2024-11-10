@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import useAssessments from "../hooks/useApprovedAssessments";
 import useRiskAnalysis from "../hooks/useRiskAnalysis";
 import useRiskMatrix from "../hooks/useRiskMatrix";
-import RiskMatrix from "./RiskMatrix"; 
-import Sidebar from "./Sidebar";
-import TopBar from "./TopBar";
+import RiskMatrix from "../pages/RiskMatrix"; 
+import Sidebar from "../pages/Sidebar";
+import TopBar from "../pages/TopBar";
+import SelectsComponent from "../pages/SelectsComponent"; 
 
 const MainPage = () => {
   const [selectedAssessment, setSelectedAssessment] = useState("");
@@ -12,6 +13,7 @@ const MainPage = () => {
   const [selectedTramo, setSelectedTramo] = useState("");
   const [tramosConNombreDeDucto, setTramosConNombreDeDucto] = useState([]);
   const [riskMatrixData, setRiskMatrixData] = useState([]);
+  const [message, setMessage] = useState("");
   
   const { approvedAssessments, pipelines, loading: loadingAssessments, getPipelines, getDuctoNombres, ductoNombres } = useAssessments();
   const { getRiskAnalysis, riskAnalysis, loading: loadingRiskAnalysis } = useRiskAnalysis();
@@ -42,13 +44,24 @@ const MainPage = () => {
     setSelectedTramo(""); 
   };
 
+  // const handleTramoChange = (tramoName) => {
+  //   const selectedTramoData = tramosConNombreDeDucto.find(tramo => tramo.Name === tramoName);
+  //   setSelectedTramo(tramoName);
+  //   if (selectedTramoData) {
+  //     setSelectedDucto(selectedTramoData.DuctoName);
+  //   }
+  // };
+
   const handleTramoChange = (tramoName) => {
     const selectedTramoData = tramosConNombreDeDucto.find(tramo => tramo.Name === tramoName);
     setSelectedTramo(tramoName);
     if (selectedTramoData) {
       setSelectedDucto(selectedTramoData.DuctoName);
     }
+    setMessage(""); // Limpia el mensaje al seleccionar un tramo
   };
+  
+
 
   const filteredTramos = selectedDucto
     ? tramosConNombreDeDucto.filter(tramo => tramo.DuctoName === selectedDucto)
@@ -65,15 +78,29 @@ const MainPage = () => {
     loadDuctoNombres();
   }, [getDuctoNombres]);
 
+  // const handleGenerateMatrix = async () => {
+  //   if (selectedTramo) {  // Asegúrate de usar selectedTramo
+  //     const selectedTramoObj = tramosConNombreDeDucto.find(tramo => tramo.Name === selectedTramo);
+  //     if (selectedTramoObj) {
+  //       await getRiskAnalysis(selectedTramoObj.AnalysisItemID);  // Aquí deberías usar el AnalysisItemID correcto
+  //     }
+  //   }
+  // };
+  
+
   const handleGenerateMatrix = async () => {
-    if (selectedTramo) {  // Asegúrate de usar selectedTramo
-      const selectedTramoObj = tramosConNombreDeDucto.find(tramo => tramo.Name === selectedTramo);
-      if (selectedTramoObj) {
-        await getRiskAnalysis(selectedTramoObj.AnalysisItemID);  // Aquí deberías usar el AnalysisItemID correcto
-      }
+    if (!selectedTramo) { // 2. Verifica si no hay un tramo seleccionado
+      setMessage("Para generar la matriz se debe seleccionar un tramo."); // Establece el mensaje
+      return; // Sal de la función si no hay un tramo
+    }
+  
+    const selectedTramoObj = tramosConNombreDeDucto.find(tramo => tramo.Name === selectedTramo);
+    if (selectedTramoObj) {
+      await getRiskAnalysis(selectedTramoObj.AnalysisItemID);
+      setMessage(""); // Limpia el mensaje si se genera la matriz
     }
   };
-  
+
 
   useEffect(() => {
     if (riskMatrix && riskMatrix.summary) {
@@ -103,6 +130,7 @@ const MainPage = () => {
 
   return (
     <div className="relative min-h-screen bg-gray-100">
+     
       <TopBar />
       <Sidebar />
       <main className="ml-56 mt-20 transition-all duration-300 p-5">
@@ -112,64 +140,17 @@ const MainPage = () => {
             <hr className="border-t border-gray-300 my-3" />
           </header>
 
-          <div className="flex flex-col lg:flex-row gap-6 mb-5 justify-between">
-            <div className="flex flex-col w-full lg:w-1/3">
-              <label htmlFor="assessment-select" className="text-sm font-medium text-gray-700 mb-1">
-                Seleccionar Evaluación:
-              </label>
-              <select
-                id="assessment-select"
-                className="border rounded-md p-2 bg-gray-50 w-full focus:outline-none focus:ring-2 focus:ring-[#265c4f] focus:border-transparent"
-                onChange={(e) => handleAssessmentChange(e.target.value)}
-                value={selectedAssessment}
-              >
-                <option value="">Selecciona un estudio</option>
-                {approvedAssessments.map(assessment => (
-                  <option key={assessment.Assessment_Name} value={assessment.Assessment_Name}>
-                    {assessment.Assessment_Name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex flex-col w-full lg:w-1/3">
-              <label htmlFor="pipeline-select" className="text-sm font-medium text-gray-700 mb-1">
-                Seleccionar Ducto:
-              </label>
-              <select
-                id="pipeline-select"
-                className="border rounded-md p-2 bg-gray-50 w-full focus:outline-none focus:ring-2 focus:ring-[#265c4f] focus:border-transparent"
-                onChange={(e) => handleDuctoChange(e.target.value)}
-                value={selectedDucto}
-              >
-                <option value="">Selecciona un ducto</option>
-                {filteredDuctos.map(ducto => (
-                  <option key={ducto.TB_DuctoID} value={ducto.DuctoName}>
-                    {ducto.DuctoName}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex flex-col w-full lg:w-1/3">
-              <label htmlFor="section-select" className="text-sm font-medium text-gray-700 mb-1">
-                Seleccionar Tramo:
-              </label>
-              <select
-                id="section-select"
-                className="border rounded-md p-2 bg-gray-50 w-full focus:outline-none focus:ring-2 focus:ring-[#265c4f] focus:border-transparent"
-                onChange={(e) => handleTramoChange(e.target.value)}
-                value={selectedTramo}
-              >
-                <option value="">Selecciona un tramo</option>
-                {filteredTramos.map(tramo => (
-                  <option key={tramo.AnalysisItemID} value={tramo.Name}>
-                    {tramo.Name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+          <SelectsComponent
+            selectedAssessment={selectedAssessment}
+            selectedDucto={selectedDucto}
+            selectedTramo={selectedTramo}
+            approvedAssessments={approvedAssessments}
+            filteredDuctos={filteredDuctos}
+            filteredTramos={filteredTramos}
+            handleAssessmentChange={handleAssessmentChange}
+            handleDuctoChange={handleDuctoChange}
+            handleTramoChange={handleTramoChange}
+          />
 
           <div className="flex justify-center mb-5">
             <button
@@ -179,6 +160,11 @@ const MainPage = () => {
               Generar Matriz
             </button>
           </div>
+          {message && (
+  <div className="text-red-500 text-center mb-5">
+    {message}
+  </div>
+)}
 
           {isLoading ? (
             <div className="flex justify-center items-center h-48">

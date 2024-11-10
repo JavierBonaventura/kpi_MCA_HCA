@@ -55,10 +55,10 @@ const PipelineDetail = ({
     0
   );
 
-  console.log("riskAnalysis", riskAnalysis)
+  //console.log("riskAnalysis", riskAnalysis)
 
   const totalLength = totalEnd - totalStart;
-  console.log("totalEnd", totalEnd);
+  //console.log("totalEnd", totalEnd);
 
   const [hoveredSection, setHoveredSection] = useState(null);
 

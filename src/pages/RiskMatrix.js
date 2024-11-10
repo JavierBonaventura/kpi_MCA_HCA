@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from "react";
 import BarChart from "./BarChart";
 import PipelineDetail from "./PipelineDetail";
 
-const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
+const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix, analysisLevel, ductoName  }) => {
   const [showPipelineDetail, setShowPipelineDetail] = useState(false);
   const [selectedCell, setSelectedCell] = useState(null);
 
@@ -55,6 +55,8 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
         riskAnalysis={riskAnalysis}
         onBack={handleToggleView}
         selectedCellFromMatrix={selectedCell}
+        analysisLevel={analysisLevel}
+        ductoName={ductoName} 
       />
     );
   }
@@ -147,11 +149,12 @@ const RiskMatrix = ({ matrixData, riskAnalysis, riskMatrix }) => {
 
       {/* Botón para abrir el detalle del ducto */}
       <button
-        className="mt-5 px-4 py-2 bg-blue-500 text-white rounded"
-        onClick={handleToggleView}
-      >
-        Abrir detalle del ducto
-      </button>
+  className="mt-5 px-4 py-2 bg-blue-500 text-white rounded"
+  onClick={handleToggleView}
+>
+  {analysisLevel === "tramo" ? "Abrir detalle del Tramo" : "Abrir detalle del Ducto"}
+</button>
+
     </div>
   );
 

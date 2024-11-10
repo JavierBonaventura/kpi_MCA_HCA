@@ -55,10 +55,33 @@ const PipelineDetail = ({
     0
   );
 
-  console.log("riskAnalysis", riskAnalysis)
+  // console.log("riskAnalysis", riskAnalysis)
 
-  const totalLength = totalEnd - totalStart;
-  console.log("totalEnd", totalEnd);
+
+
+  // Paso 1: Ordenar segmentos según el número del tramo en TramoName.
+  const orderedRiskAnalysis = riskAnalysis.sort((a, b) => {
+    const tramoA = parseInt(a.TramoName.match(/TRM(\d+)/)[1], 10);
+    const tramoB = parseInt(b.TramoName.match(/TRM(\d+)/)[1], 10);
+    return tramoA - tramoB;
+  });
+
+  // Paso 2: Calcular las posiciones de cada segmento basadas en su longitud acumulada
+  let cumulativeLength = 0;
+  const segmentsWithRelativePosition = orderedRiskAnalysis.map((segment) => {
+    // Asegúrate de que `Begin` y `End` sean números válidos
+    const begin = isNaN(segment.Begin) ? 0 : segment.Begin;
+    const end = isNaN(segment.End) ? 0 : segment.End;
+  
+    const startRelative = cumulativeLength;
+    cumulativeLength += end - begin; // Incrementar el total acumulado
+    const endRelative = cumulativeLength;
+  
+    return { ...segment, BeginRelative: startRelative, EndRelative: endRelative };
+  });
+  
+
+  const totalLength = cumulativeLength;
 
   const [hoveredSection, setHoveredSection] = useState(null);
 
@@ -101,8 +124,10 @@ const PipelineDetail = ({
     riskSegmentsVisible && selectedPosition
       ? filteredRiskAnalysis()
       : allSegmentsVisible
-      ? riskAnalysis
+      ? segmentsWithRelativePosition
       : [];
+
+console.log("segmentsWithRelativePosition", segmentsWithRelativePosition)
 
   const positionColors = {
     "Position 1-1": "orange",
@@ -301,10 +326,10 @@ const PipelineDetail = ({
         </text>
 
         {segmentsToDisplay.map((item, index) => {
-          const startX = (item.Begin - totalStart) * (1200 / totalLength) + 20;
-          const endX = (item.End - totalStart) * (1200 / totalLength) + 20;
+        const startX = !isNaN(item.BeginRelative) ? (item.BeginRelative / totalLength) * 1200 + 20 : 0;
+        const endX = !isNaN(item.EndRelative) ? (item.EndRelative / totalLength) * 1200 + 20 : 0;
+        const isHovered = hoveredSection === index;
 
-          const isHovered = hoveredSection === index;
 
           return (
             <g key={index}>
@@ -319,9 +344,9 @@ const PipelineDetail = ({
                 onMouseLeave={() => setHoveredSection(null)}
               />
               {isHovered && (
-                <text x={endX + 10} y="45" fontSize="12" fill="#333">
-                  {`${item.End.toFixed(2)} m Segmento ${index + 1}`}
-                </text>
+                 <text x={endX + 10} y="45" fontSize="12" fill="#333">
+                {`${item.EndRelative.toFixed(2)} m Segmento ${index + 1}`}
+              </text>
               )}
               {/* Agrega el triángulo de color sobre el tramo */}
               <polygon
