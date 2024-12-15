@@ -51,17 +51,27 @@ const MainPage = () => {
 
   const handleAssessmentChange = (assessmentName) => {
     setSelectedAssessment(assessmentName);
+    setSelectedDucto("");
+    setSelectedTramo("");
     getPipelines(assessmentName);
   };
 
   const handleDuctoChange = (ductoName) => {
     setSelectedDucto(ductoName);
+    setSelectedTramo("");
   };
 
 
 
   const handleTramoChange = (tramoName) => {
+    const selectedTramoData = tramosConNombreDeDucto.find(
+      (tramo) => tramo.Name === tramoName
+    );
     setSelectedTramo(tramoName);
+    if (selectedTramoData) {
+      setSelectedDucto(selectedTramoData.DuctoName);
+    }
+    setMessage(""); // Limpia el mensaje al seleccionar un tramo
   };
 
   const filteredTramos = selectedDucto
@@ -70,20 +80,14 @@ const MainPage = () => {
       )
     : tramosConNombreDeDucto;
 
-  // const filteredDuctos = selectedTramo
-  //   ? ductoNombres.filter(
-  //       (ducto) =>
-  //         ducto.DuctoName ===
-  //         filteredTramos.find((tramo) => tramo.Name === selectedTramo)
-  //           ?.DuctoName
-  //     )
-  //   : ductoNombres;
-
-  const filteredDuctos = ductoNombres;
-
-
-
-
+  const filteredDuctos = selectedTramo
+    ? ductoNombres.filter(
+        (ducto) =>
+          ducto.DuctoName ===
+          filteredTramos.find((tramo) => tramo.Name === selectedTramo)
+            ?.DuctoName
+      )
+    : ductoNombres;
 
   useEffect(() => {
     const loadDuctoNombres = async () => {
