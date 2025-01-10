@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import useAssessments from "../hooks/useAssessments";
+import useAssessments from "../../hooks/useAssessments";
 import {
   fetchAllDucts,
   fetchPipelinesByAssessment,
-} from "../services/apiService";
+} from "../../services/apiService";
 
 const DropdownMenu = () => {
   const { approvedAssessments } = useAssessments();

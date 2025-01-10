@@ -25,7 +25,6 @@ const MainPage = () => {
     ductoNombres,
   } = useAssessments();
 
-console.log("approvedAssessments", approvedAssessments)
 
 
 

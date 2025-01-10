@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import useAssessments from "../hooks/useAssessments";
-import useRiskAnalysis from "../hooks/useRiskAnalysis";
-import useRiskMatrix from "../hooks/useRiskMatrix";
-import RiskMatrix from "./RiskMatrix";
-import Sidebar from "./Sidebar";
-import TopBar from "./TopBar";
-import SelectsComponent from "./SelectsComponent";
+import useAssessments from "../../hooks/useAssessments";
+import useRiskAnalysis from "../../hooks/useRiskAnalysis";
+import useRiskMatrix from "../../hooks/useRiskMatrix";
+import RiskMatrix from "../../pages/RiskMatrix";
+import Sidebar from "../../pages/Sidebar";
+import TopBar from "../../pages/TopBar";
+import SelectsComponent from "../../pages/SelectsComponent";
 
 const MainPage = () => {
   const [selectedAssessment, setSelectedAssessment] = useState("");
