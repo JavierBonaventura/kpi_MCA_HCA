@@ -3,9 +3,11 @@ import useAssessments from "../hooks/useAssessments";
 import useRiskAnalysis from "../hooks/useRiskAnalysis";
 import useRiskMatrix from "../hooks/useRiskMatrix";
 import RiskMatrix from "./RiskMatrix";
+import Sidebar from "./Sidebar";
+import TopBar from "./TopBar";
 import SelectsComponent from "./SelectsComponent";
 
-const MainPage = ({ path }) => {
+const MainPage = () => {
   const [selectedAssessment, setSelectedAssessment] = useState("");
   const [selectedDucto, setSelectedDucto] = useState("");
   const [selectedTramo, setSelectedTramo] = useState("");
@@ -67,6 +69,15 @@ const MainPage = ({ path }) => {
         (tramo) => tramo.DuctoName === selectedDucto
       )
     : tramosConNombreDeDucto;
+
+  // const filteredDuctos = selectedTramo
+  //   ? ductoNombres.filter(
+  //       (ducto) =>
+  //         ducto.DuctoName ===
+  //         filteredTramos.find((tramo) => tramo.Name === selectedTramo)
+  //           ?.DuctoName
+  //     )
+  //   : ductoNombres;
 
   const filteredDuctos = ductoNombres;
 
@@ -171,7 +182,6 @@ const MainPage = ({ path }) => {
             handleAssessmentChange={handleAssessmentChange}
             handleDuctoChange={handleDuctoChange}
             handleTramoChange={handleTramoChange}
-            path={path}
           />
 
           <div className="flex justify-center mb-5">

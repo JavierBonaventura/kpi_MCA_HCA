@@ -7,52 +7,12 @@ const SelectsComponent = ({
   selectedTramo,
   approvedAssessments,
   filteredDuctos,
+  filteredTramos,
   handleAssessmentChange,
   handleDuctoChange,
   handleTramoChange,
-  path,
 }) => {
   const [todosLosPipelines, setTodosLosPipelines] = useState({});
-  const [isPathSet, setIsPathSet] = useState(false);
-  const [pathName, setpathName] = useState();
-
-  // codigo para manejar la seleccion del ducto desde telemetria
-  useEffect(() => {
-    if (path) {
-      handleDuctoChange(path); // Ejecuta manualmente el cambio cuando path tiene contenido
-      setIsPathSet(true);
-      setpathName(path);
-    }
-  }, [path]); // Se ejecutará cada vez que path cambie
-
-  useEffect(() => {
-    if (isPathSet && pathName) {
-      let ductoExists = false;
-
-      Object.keys(todosLosPipelines).forEach((assessmentName) => {
-        todosLosPipelines[assessmentName].forEach((pipeline) => {
-          if (pipeline.DuctoName === pathName) {
-            ductoExists = true;
-          }
-        });
-      });
-
-      console.log("EXISTE EL DUCTO", ductoExists);
-
-      // Si el ducto no existe, mostrar un alert después de 2 segundos
-      if (!ductoExists) {
-        const timer = setTimeout(() => {
-          alert(`El ducto con nombre "${pathName}" no existe en ningun analisis.`);
-        }, 2000);
-
-        // Limpiar el timer cuando el componente se desmonte o el `todosLosPipelines` cambie
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [todosLosPipelines, isPathSet, pathName]);
-
- 
-  
 
   // Función para agregar el nombre del ducto a los pipelines
   const agregarNombreDucto = (todosLosPipelines, filteredDuctos) => {
@@ -136,6 +96,27 @@ const SelectsComponent = ({
         >
           <option value="">Selecciona un estudio</option>
 
+          {/* {selectedDucto && !selectedTramo
+            ? Object.keys(todosLosPipelines)
+                .filter((assessment) =>
+                  todosLosPipelines[assessment].some(
+                    (item) => item.DuctoName === selectedDucto
+                  )
+                )
+                .map((assessment) => (
+                  <option key={assessment} value={assessment}>
+                    {assessment}
+                  </option>
+                ))
+            : approvedAssessments.map((assessment) => (
+                <option
+                  key={assessment.Assessment_Name}
+                  value={assessment.Assessment_Name}
+                >
+                  {assessment.Assessment_Name}
+                </option>
+              ))} */}
+
           {selectedDucto && !selectedTramo
             ? Object.keys(todosLosPipelines)
                 .filter((assessment) =>
@@ -196,7 +177,6 @@ const SelectsComponent = ({
       </div>
 
       {/* Selector de Ducto */}
-
       <div className="flex flex-col w-full lg:w-1/3">
         <label
           htmlFor="pipeline-select"
@@ -204,13 +184,11 @@ const SelectsComponent = ({
         >
           Seleccionar Ducto:
         </label>
-
         <select
           id="pipeline-select"
           className="border rounded-md p-2 bg-gray-50 w-full focus:outline-none focus:ring-2 focus:ring-[#265c4f] focus:border-transparent"
           onChange={(e) => handleDuctoChange(e.target.value)}
-          value={pathName || selectedDucto} // Usa path si existe, o selectedDucto
-          disabled={isPathSet} // Deshabilita si path tiene un valor
+          value={selectedDucto}
         >
           <option value="">Selecciona un ducto</option>
           {selectedAssessment ? (
