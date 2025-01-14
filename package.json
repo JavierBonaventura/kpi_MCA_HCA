@@ -1,5 +1,5 @@
 {
-  "name": "kpireact",
+  "name": "hca_mca",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://10.9.8.15:3000",

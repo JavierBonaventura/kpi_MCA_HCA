@@ -1,203 +1,147 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import useAssessments from "../hooks/useAssessments";
-import useRiskAnalysis from "../hooks/useRiskAnalysis";
-import useRiskMatrix from "../hooks/useRiskMatrix";
-import RiskMatrix from "./RiskMatrix";
-import SelectsComponent from "./SelectsComponent";
-import Swal from "sweetalert2";
+import React from "react";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
-const MainPage = ({ currentPath }) => {
-  const [selectedAssessment, setSelectedAssessment] = useState("");
-  const [selectedDucto, setSelectedDucto] = useState("");
-  const [selectedTramo, setSelectedTramo] = useState("");
-  const [tramosConNombreDeDucto, setTramosConNombreDeDucto] = useState([]);
-  const [riskMatrixData, setRiskMatrixData] = useState([]);
-  const [message, setMessage] = useState("");
-  const [analysisLevel, setAnalysisLevel] = useState("");
-
-  const {
-    approvedAssessments,
-    pipelines,
-    loading: loadingAssessments,
-    getPipelines: fetchPipelines,
-    getDuctoNombres: fetchDuctoNombres,
-    ductoNombres,
-  } = useAssessments();
-
-  const {
-    getRiskAnalysis: fetchRiskAnalysis,
-    riskAnalysis,
-    loading: loadingRiskAnalysis,
-  } = useRiskAnalysis();
-
-  const riskMatrix = useRiskMatrix(riskAnalysis);
-
-  // Memoized functions to avoid unnecessary re-renders
-  const getPipelines = useCallback(fetchPipelines, []);
-  const getDuctoNombres = useCallback(fetchDuctoNombres, []);
-  const getRiskAnalysis = useCallback(fetchRiskAnalysis, []);
-
-  // Combine pipelines and ductoNombres into tramosConNombreDeDucto
-  useEffect(() => {
-    if (pipelines.length > 0 && ductoNombres.length > 0) {
-      const combinedData = pipelines.map((pipeline) => {
-        const ducto = ductoNombres.find(
-          (ducto) => ducto.Pipeline === pipeline.Pipeline
-        );
-        return {
-          ...pipeline,
-          DuctoName: ducto ? ducto.DuctoName : "Ducto no encontrado",
-        };
-      });
-      setTramosConNombreDeDucto(combinedData);
-    }
-  }, [pipelines, ductoNombres]);
-
-  // Load ductoNombres on component mount
-  useEffect(() => {
-    getDuctoNombres();
-  }, [getDuctoNombres]);
-
-  const handleAssessmentChange = useCallback((assessmentName) => {
-    setSelectedAssessment(assessmentName);
-    getPipelines(assessmentName);
-  }, [getPipelines]);
-
-  const handleDuctoChange = useCallback((ductoName) => {
-    setSelectedDucto(ductoName);
-  }, []);
-
-  const handleTramoChange = useCallback((tramoName) => {
-    setSelectedTramo(tramoName);
-  }, []);
-
-  const filteredTramos = useMemo(() => {
-    return selectedDucto
-      ? tramosConNombreDeDucto.filter((tramo) => tramo.DuctoName === selectedDucto)
-      : tramosConNombreDeDucto;
-  }, [selectedDucto, tramosConNombreDeDucto]);
-
-  const filteredDuctos = useMemo(() => ductoNombres, [ductoNombres]);
-
-  const handleGenerateMatrix = async () => {
-    if (!selectedAssessment) {
-      Swal.fire({
-        icon: "warning",
-        title: "Atención",
-        html: `Seleccione algún assessment`,
-        confirmButtonText: "Entendido",
-        customClass: {
-          confirmButton: "swal-custom-button",
-        },
-      });
-      return;
-    }
-
-    if (selectedTramo) {
-      const selectedTramoObj = tramosConNombreDeDucto.find(
-        (tramo) => tramo.Name === selectedTramo
-      );
-      if (selectedTramoObj) {
-        setAnalysisLevel("tramo");
-        await getRiskAnalysis([selectedTramoObj.AnalysisItemID]);
-        setMessage("");
-      }
-    } else if (selectedDucto) {
-      const tramosDelDucto = tramosConNombreDeDucto.filter(
-        (tramo) => tramo.DuctoName === selectedDucto
-      );
-      const analysisItemIds = tramosDelDucto.map((tramo) => tramo.AnalysisItemID);
-      setAnalysisLevel("ducto");
-      await getRiskAnalysis(analysisItemIds);
-      setMessage("");
-    }
+const MainPage = () => {
+  const chartOptions = {
+    chart: {
+      type: "column",
+    },
+    title: {
+      text: "",
+    },
+    xAxis: {
+      categories: [
+        "GSD 42 Divisadero - Est Med Los Ramones",
+        "CSD 42 India Bonita - Divisadero",
+      ],
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: "Length (m)",
+      },
+    },
+    tooltip: {
+      valueSuffix: " m",
+    },
+    series: [
+      {
+        name: "Total",
+        data: [67969.82, 93804.53],
+        color: "#2563EB",
+      },
+      {
+        name: "MCA Length",
+        data: [25333.24, 26982.77],
+        color: "#1E40AF",
+      },
+    ],
+    credits: {
+      enabled: false,
+    },
   };
 
-  useEffect(() => {
-    if (riskMatrix && riskMatrix.summary) {
-      if (
-        riskMatrix.summary.positionCounts &&
-        Array.isArray(riskMatrix.summary.positionCounts) &&
-        riskMatrix.summary.positionCounts.length > 0
-      ) {
-        const matrix = Array.from({ length: 7 }, () => Array(7).fill(0));
-        riskMatrix.summary.positionCounts.forEach((positionCount) => {
-          const position = positionCount.position;
-          const parts = position.split("-");
-          if (parts.length === 2) {
-            const rowIndex =
-              parseInt(parts[0].replace("Position ", "").trim()) - 1;
-            const colIndex = parseInt(parts[1].trim()) - 1;
-            if (
-              !isNaN(rowIndex) &&
-              !isNaN(colIndex) &&
-              rowIndex >= 0 &&
-              rowIndex < 7 &&
-              colIndex >= 0 &&
-              colIndex < 7
-            ) {
-              matrix[rowIndex][colIndex] = positionCount.count;
-            }
-          }
-        });
-        setRiskMatrixData(matrix);
-      }
-    }
-  }, [riskMatrix]);
-
-  const isLoading = loadingAssessments || loadingRiskAnalysis;
-
   return (
-    <div className="relative min-h-screen bg-gray-100">
-      <main className="transition-all duration-300 p-5">
-        <div className="max-w-full bg-white rounded-lg shadow-lg p-5">
-          <header className="text-center mb-5">
-            <h1 className="text-3xl font-bold text-gray-800">KPI de Riesgo</h1>
-            <hr className="border-t border-gray-300 my-3" />
-          </header>
+    <div className="min-h-screen bg-gray-100 text-gray-800">
+      {/* Header */}
+      <header className="bg-white shadow p-6 mb-6">
+        <h1 className="text-3xl font-bold text-gray-700">
+          HCA & MCA Assessments Dashboard
+        </h1>
+        <p className="text-sm text-gray-500">Monitor and evaluate critical metrics.</p>
+      </header>
 
-          <SelectsComponent
-            selectedAssessment={selectedAssessment}
-            selectedDucto={selectedDucto}
-            selectedTramo={selectedTramo}
-            approvedAssessments={approvedAssessments}
-            filteredDuctos={filteredDuctos}
-            filteredTramos={filteredTramos}
-            handleAssessmentChange={handleAssessmentChange}
-            handleDuctoChange={handleDuctoChange}
-            handleTramoChange={handleTramoChange}
-            currentPath={currentPath}
-            setSelectedDucto={setSelectedDucto}
-          />
+      {/* Content Container */}
+      <main className="container mx-auto space-y-8">
+        {/* Overview Cards */}
 
-          <div className="flex justify-center mb-5">
-            <button
-              onClick={handleGenerateMatrix}
-              className="w-full max-w-xs bg-[#265c4f] hover:bg-[#1d463b] text-white py-2 px-4 rounded-lg font-bold transition duration-300 ease-in-out"
-            >
-              Generar Matriz
-            </button>
+        <section className="grid grid-cols-1 md:grid-cols-1 ">
+          <div className="bg-white shadow rounded-lg p-2">
+            <h3 className="text-lg font-semibold text-gray-600 mb-4">Overview</h3>
+            <div className="text-2xl font-bold text-blue-600">172 Segments</div>
           </div>
-          {message && (
-            <div className="text-red-500 text-center mb-5">{message}</div>
-          )}
+        
+        </section>
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white shadow rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-600 mb-4">Overview</h3>
+            <div className="text-2xl font-bold text-blue-600">172 Segments</div>
+            <p className="text-sm text-gray-500">Total sections analyzed</p>
+          </div>
+          <div className="bg-white shadow rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-600 mb-4">Overview</h3>
+            <div className="text-2xl font-bold text-blue-600">172 Segments</div>
+            <p className="text-sm text-gray-500">Total sections analyzed</p>
+          </div>
+          <div className="bg-white shadow rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-600 mb-4">Total Length</h3>
+            <div className="text-2xl font-bold text-green-600">341,774.85 m</div>
+            <p className="text-sm text-gray-500">Combined lengths</p>
+          </div>
+          <div className="bg-white shadow rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-600 mb-4">Critical MCA Length</h3>
+            <div className="text-2xl font-bold text-red-600">112,616.01 m</div>
+            <p className="text-sm text-gray-500">High-risk lengths identified</p>
+          </div>
+        </section>
 
-          {isLoading ? (
-            <div className="flex justify-center items-center h-48">
-              <div className="loader"></div>
-            </div>
-          ) : (
-            riskMatrixData.length > 0 && (
-              <RiskMatrix
-                matrixData={riskMatrixData}
-                riskAnalysis={riskAnalysis}
-                riskMatrix={riskMatrix}
-                analysisLevel={analysisLevel}
-                ductoName={selectedDucto}
-              />
-            )
-          )}
-        </div>
+        {/* Data Table */}
+        <section className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-700 mb-4">Detailed Metrics</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full table-auto text-left">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="py-3 px-6 text-sm font-medium text-gray-500">Name</th>
+                  <th className="py-3 px-6 text-sm font-medium text-gray-500">
+                    Calculated for section
+                  </th>
+                  <th className="py-3 px-6 text-sm font-medium text-gray-500">
+                    Total section
+                  </th>
+                  <th className="py-3 px-6 text-sm font-medium text-gray-500">
+                    Calculated for length
+                  </th>
+                  <th className="py-3 px-6 text-sm font-medium text-gray-500">
+                    Total segments
+                  </th>
+                  <th className="py-3 px-6 text-sm font-medium text-gray-500">
+                    Total MCA length
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-3 px-6 text-gray-700">
+                    GSD 42 Divisadero - Est Med Los Ramones
+                  </td>
+                  <td className="py-3 px-6 text-gray-600">2</td>
+                  <td className="py-3 px-6 text-gray-600">172</td>
+                  <td className="py-3 px-6 text-gray-600">161,774.35</td>
+                  <td className="py-3 px-6 text-gray-600">28</td>
+                  <td className="py-3 px-6 text-gray-600">52,616.01</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-3 px-6 text-gray-700">
+                    CSD 42 India Bonita - Divisadero
+                  </td>
+                  <td className="py-3 px-6 text-gray-600">3</td>
+                  <td className="py-3 px-6 text-gray-600">200</td>
+                  <td className="py-3 px-6 text-gray-600">180,000.50</td>
+                  <td className="py-3 px-6 text-gray-600">30</td>
+                  <td className="py-3 px-6 text-gray-600">60,000.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Chart Section */}
+        <section className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-700 mb-4">Assessment Chart</h2>
+          <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+        </section>
       </main>
     </div>
   );
