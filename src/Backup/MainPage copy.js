@@ -59,8 +59,8 @@ const MainPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       {/* Título principal */}
-      <header className="mb-10 text-center">
-        <h1 className="text-4xl font-extrabold text-gray-800 tracking-tight">
+      <header className="mb-8">
+        <h1 className="text-2xl font-bold text-gray-800">
           HCA and MCA Assessments
         </h1>
       </header>
@@ -76,23 +76,33 @@ const MainPage = () => {
         <div className="overflow-x-auto">
           <table className="table-auto w-full text-left text-gray-700">
             <thead>
-            <tr className="border-b-2 border-gray-400 hover:bg-gray-50">
-            <th className="py-2">Name</th>
-                <th className="py-2 text-center">Calculated for section</th>
-                <th className="py-2 text-center">Total section</th>
-                <th className="py-2 text-center">Calculated for length</th>
-                <th className="py-2 text-center">Total segments</th>
-                <th className="py-2 text-center">Total MCA length</th>
+              <tr className="border-b">
+                <th className="py-2">Name</th>
+                <th className="py-2">Calculated for section</th>
+                <th className="py-2">Total section</th>
+                <th className="py-2">Calculated for length</th>
+                <th className="py-2">Total segments</th>
+                <th className="py-2">Total MCA length</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b hover:bg-gray-50">
-                <td className="py-2">ASSESSMENT</td>
-                <td className="py-2 text-center">2</td>
-                <td className="py-2 text-center">172</td>
-                <td className="py-2 text-center">161,774.35</td>
-                <td className="py-2 text-center">28</td>
-                <td className="py-2 text-center">52,616.01</td>
+              <tr className="border-b">
+                <td className="py-2">
+                  GSD 42 Divisadero - Est Med Los Ramones
+                </td>
+                <td className="py-2">2</td>
+                <td className="py-2">172</td>
+                <td className="py-2">161,774.35</td>
+                <td className="py-2">28</td>
+                <td className="py-2">52,616.01</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-2">CSD 42 India Bonita - Divisadero</td>
+                <td className="py-2">3</td>
+                <td className="py-2">200</td>
+                <td className="py-2">180,000.50</td>
+                <td className="py-2">30</td>
+                <td className="py-2">60,000.00</td>
               </tr>
             </tbody>
           </table>
@@ -111,8 +121,8 @@ const MainPage = () => {
         <div className="overflow-x-auto">
           <table className="table-fixed w-full text-gray-700">
             <thead>
-              <tr className="border-b-2 border-gray-400 hover:bg-gray-50">
-                <th className="py-2 w-1/4 text-center">Linea Name</th>
+              <tr className="border-b">
+                <th className="py-2 w-1/5 text-center">Linea Name</th>
                 <th className="py-2 w-1/5 text-center">
                   Non-HCA and MCA Length (m)
                 </th>
@@ -125,8 +135,8 @@ const MainPage = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b hover:bg-gray-50">
-                <td className="py-2 text-left">
+              <tr className="border-b">
+                <td className="py-2 text-center">
                   GSD 42 Divisadero - Est Med Los Ramones
                 </td>
                 <td className="py-2 text-center">0</td>
@@ -138,7 +148,7 @@ const MainPage = () => {
                 <td className="py-2 text-center">0</td>
               </tr>
               <tr className="border-b">
-                <td className="py-2 text-left">
+                <td className="py-2 text-center">
                   CSD 42 India Bonita - Divisadero
                 </td>
                 <td className="py-2 text-center">0</td>
@@ -150,7 +160,7 @@ const MainPage = () => {
                 <td className="py-2 text-center">0</td>
               </tr>
               <tr className="border-b">
-                <td className="py-2 text-left">Total</td>
+                <td className="py-2 text-center">Total</td>
                 <td className="py-2 text-center">0</td>
                 <td className="py-2 text-center">0</td>
                 <td className="py-2 text-center">0</td>
