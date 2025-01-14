@@ -1,112 +1,115 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import useAssessments from "../hooks/useAssessments";
 import useRiskAnalysis from "../hooks/useRiskAnalysis";
 import useRiskMatrix from "../hooks/useRiskMatrix";
 import RiskMatrix from "./RiskMatrix";
 import SelectsComponent from "./SelectsComponent";
+import Swal from "sweetalert2";
 
-const MainPage = ({ path }) => {
+const MainPage = ({ currentPath }) => {
   const [selectedAssessment, setSelectedAssessment] = useState("");
   const [selectedDucto, setSelectedDucto] = useState("");
   const [selectedTramo, setSelectedTramo] = useState("");
   const [tramosConNombreDeDucto, setTramosConNombreDeDucto] = useState([]);
   const [riskMatrixData, setRiskMatrixData] = useState([]);
   const [message, setMessage] = useState("");
-  const [analysisLevel, setAnalysisLevel] = useState(""); // Nueva variable de estado
+  const [analysisLevel, setAnalysisLevel] = useState("");
 
   const {
     approvedAssessments,
     pipelines,
     loading: loadingAssessments,
-    getPipelines,
-    getDuctoNombres,
+    getPipelines: fetchPipelines,
+    getDuctoNombres: fetchDuctoNombres,
     ductoNombres,
   } = useAssessments();
+
   const {
-    getRiskAnalysis,
+    getRiskAnalysis: fetchRiskAnalysis,
     riskAnalysis,
     loading: loadingRiskAnalysis,
   } = useRiskAnalysis();
+
   const riskMatrix = useRiskMatrix(riskAnalysis);
 
+  // Memoized functions to avoid unnecessary re-renders
+  const getPipelines = useCallback(fetchPipelines, []);
+  const getDuctoNombres = useCallback(fetchDuctoNombres, []);
+  const getRiskAnalysis = useCallback(fetchRiskAnalysis, []);
+
+  // Combine pipelines and ductoNombres into tramosConNombreDeDucto
   useEffect(() => {
-    const combineData = () => {
-      if (pipelines.length > 0 && ductoNombres.length > 0) {
-        const combinedData = pipelines.map((pipeline) => {
-          const ducto = ductoNombres.find(
-            (ducto) => ducto.Pipeline === pipeline.Pipeline
-          );
-          return {
-            ...pipeline,
-            DuctoName: ducto ? ducto.DuctoName : "Ducto no encontrado",
-          };
-        });
-        setTramosConNombreDeDucto(combinedData);
-      }
-    };
-    combineData();
+    if (pipelines.length > 0 && ductoNombres.length > 0) {
+      const combinedData = pipelines.map((pipeline) => {
+        const ducto = ductoNombres.find(
+          (ducto) => ducto.Pipeline === pipeline.Pipeline
+        );
+        return {
+          ...pipeline,
+          DuctoName: ducto ? ducto.DuctoName : "Ducto no encontrado",
+        };
+      });
+      setTramosConNombreDeDucto(combinedData);
+    }
   }, [pipelines, ductoNombres]);
 
-  const handleAssessmentChange = (assessmentName) => {
-    setSelectedAssessment(assessmentName);
-    getPipelines(assessmentName);
-  };
-
-  const handleDuctoChange = (ductoName) => {
-    setSelectedDucto(ductoName);
-  };
-
-
-
-  const handleTramoChange = (tramoName) => {
-    setSelectedTramo(tramoName);
-  };
-
-  const filteredTramos = selectedDucto
-    ? tramosConNombreDeDucto.filter(
-        (tramo) => tramo.DuctoName === selectedDucto
-      )
-    : tramosConNombreDeDucto;
-
-  const filteredDuctos = ductoNombres;
-
-
-
-
-
+  // Load ductoNombres on component mount
   useEffect(() => {
-    const loadDuctoNombres = async () => {
-      await getDuctoNombres();
-    };
-    loadDuctoNombres();
+    getDuctoNombres();
   }, [getDuctoNombres]);
 
+  const handleAssessmentChange = useCallback((assessmentName) => {
+    setSelectedAssessment(assessmentName);
+    getPipelines(assessmentName);
+  }, [getPipelines]);
 
+  const handleDuctoChange = useCallback((ductoName) => {
+    setSelectedDucto(ductoName);
+  }, []);
+
+  const handleTramoChange = useCallback((tramoName) => {
+    setSelectedTramo(tramoName);
+  }, []);
+
+  const filteredTramos = useMemo(() => {
+    return selectedDucto
+      ? tramosConNombreDeDucto.filter((tramo) => tramo.DuctoName === selectedDucto)
+      : tramosConNombreDeDucto;
+  }, [selectedDucto, tramosConNombreDeDucto]);
+
+  const filteredDuctos = useMemo(() => ductoNombres, [ductoNombres]);
 
   const handleGenerateMatrix = async () => {
+    if (!selectedAssessment) {
+      Swal.fire({
+        icon: "warning",
+        title: "Atención",
+        html: `Seleccione algún assessment`,
+        confirmButtonText: "Entendido",
+        customClass: {
+          confirmButton: "swal-custom-button",
+        },
+      });
+      return;
+    }
+
     if (selectedTramo) {
-      // Si hay un tramo seleccionado, obtenemos el análisis de riesgos solo para ese tramo
       const selectedTramoObj = tramosConNombreDeDucto.find(
         (tramo) => tramo.Name === selectedTramo
       );
       if (selectedTramoObj) {
         setAnalysisLevel("tramo");
-        await getRiskAnalysis([selectedTramoObj.AnalysisItemID]); // Se pasa un array con un solo ID
-        setMessage(""); // Limpia el mensaje si se genera la matriz
+        await getRiskAnalysis([selectedTramoObj.AnalysisItemID]);
+        setMessage("");
       }
     } else if (selectedDucto) {
-      // Si hay un ducto seleccionado pero no un tramo, obtenemos los tramos del ducto
       const tramosDelDucto = tramosConNombreDeDucto.filter(
         (tramo) => tramo.DuctoName === selectedDucto
       );
-      // Extraemos los AnalysisItemID de todos los tramos del ducto y los pasamos en un solo array
-      const analysisItemIds = tramosDelDucto.map(
-        (tramo) => tramo.AnalysisItemID
-      );
+      const analysisItemIds = tramosDelDucto.map((tramo) => tramo.AnalysisItemID);
       setAnalysisLevel("ducto");
-      // Llamamos a getRiskAnalysis con el array de todos los IDs
       await getRiskAnalysis(analysisItemIds);
-      setMessage(""); // Limpia el mensaje si se genera la matriz
+      setMessage("");
     }
   };
 
@@ -134,27 +137,19 @@ const MainPage = ({ path }) => {
               colIndex < 7
             ) {
               matrix[rowIndex][colIndex] = positionCount.count;
-            } else {
-              console.warn(
-                `Index out of bounds: Row: ${rowIndex}, Col: ${colIndex}`
-              );
             }
-          } else {
-            console.warn(`Invalid position format: ${position}`);
           }
         });
         setRiskMatrixData(matrix);
       }
     }
-  }, [riskMatrix, riskAnalysis]);
+  }, [riskMatrix]);
 
   const isLoading = loadingAssessments || loadingRiskAnalysis;
 
   return (
     <div className="relative min-h-screen bg-gray-100">
-      {/* <TopBar />
-      <Sidebar /> */}
-      <main className="  transition-all duration-300 p-5">
+      <main className="transition-all duration-300 p-5">
         <div className="max-w-full bg-white rounded-lg shadow-lg p-5">
           <header className="text-center mb-5">
             <h1 className="text-3xl font-bold text-gray-800">KPI de Riesgo</h1>
@@ -171,7 +166,8 @@ const MainPage = ({ path }) => {
             handleAssessmentChange={handleAssessmentChange}
             handleDuctoChange={handleDuctoChange}
             handleTramoChange={handleTramoChange}
-            path={path}
+            currentPath={currentPath}
+            setSelectedDucto={setSelectedDucto}
           />
 
           <div className="flex justify-center mb-5">

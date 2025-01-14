@@ -84,3 +84,13 @@
 }
 
 
+
+
+.swal-custom-popup {
+  background-color: #7066e0 !important; /* Usa !important si otros estilos lo sobrescriben */
+  color: #333; /* Opcional: para el texto */
+}
+.swal-custom-button {
+  background-color: #7066e0; /* Color del botón */
+  color: white;
+}

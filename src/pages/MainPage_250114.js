@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import useAssessments from "../hooks/useAssessments";
 import useRiskAnalysis from "../hooks/useRiskAnalysis";
 import useRiskMatrix from "../hooks/useRiskMatrix";
-import RiskMatrix from "../pages/RiskMatrix";
-import Sidebar from "../pages/Sidebar";
-import TopBar from "../pages/TopBar";
-import SelectsComponent from "../pages/SelectsComponent";
+import RiskMatrix from "./RiskMatrix";
+import Sidebar from "./Sidebar";
+import TopBar from "./TopBar";
+import SelectsComponent from "./SelectsComponent";
+import Swal from "sweetalert2";
 
-const MainPage = () => {
+
+const MainPage = ({ currentPath }) => {
   const [selectedAssessment, setSelectedAssessment] = useState("");
   const [selectedDucto, setSelectedDucto] = useState("");
   const [selectedTramo, setSelectedTramo] = useState("");
@@ -95,6 +97,20 @@ const MainPage = () => {
 
 
   const handleGenerateMatrix = async () => {
+    if (!selectedAssessment) {
+
+ Swal.fire({
+          icon: "warning",
+          title: "Atención",
+          html: `Seleccione algún assessment`,
+          confirmButtonText: "Entendido",
+          customClass: {
+            confirmButton: "swal-custom-button",
+          },
+        });
+
+      return;
+    }
     if (selectedTramo) {
       // Si hay un tramo seleccionado, obtenemos el análisis de riesgos solo para ese tramo
       const selectedTramoObj = tramosConNombreDeDucto.find(
@@ -182,6 +198,8 @@ const MainPage = () => {
             handleAssessmentChange={handleAssessmentChange}
             handleDuctoChange={handleDuctoChange}
             handleTramoChange={handleTramoChange}
+            currentPath={currentPath}
+            setSelectedDucto={setSelectedDucto}
           />
 
           <div className="flex justify-center mb-5">

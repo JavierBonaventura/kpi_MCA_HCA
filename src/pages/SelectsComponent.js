@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchPipelinesByAssessment } from "../services/apiService";
+import Swal from "sweetalert2";
 
 const SelectsComponent = ({
   selectedAssessment,
@@ -7,52 +8,16 @@ const SelectsComponent = ({
   selectedTramo,
   approvedAssessments,
   filteredDuctos,
+  filteredTramos,
   handleAssessmentChange,
   handleDuctoChange,
   handleTramoChange,
-  path,
+  currentPath,
+  setSelectedDucto,
 }) => {
   const [todosLosPipelines, setTodosLosPipelines] = useState({});
-  const [isPathSet, setIsPathSet] = useState(false);
-  const [pathName, setpathName] = useState();
-
-  // codigo para manejar la seleccion del ducto desde telemetria
-  useEffect(() => {
-    if (path) {
-      handleDuctoChange(path); // Ejecuta manualmente el cambio cuando path tiene contenido
-      setIsPathSet(true);
-      setpathName(path);
-    }
-  }, [path]); // Se ejecutará cada vez que path cambie
-
-  useEffect(() => {
-    if (isPathSet && pathName) {
-      let ductoExists = false;
-
-      Object.keys(todosLosPipelines).forEach((assessmentName) => {
-        todosLosPipelines[assessmentName].forEach((pipeline) => {
-          if (pipeline.DuctoName === pathName) {
-            ductoExists = true;
-          }
-        });
-      });
-
-      console.log("EXISTE EL DUCTO", ductoExists);
-
-      // Si el ducto no existe, mostrar un alert después de 2 segundos
-      if (!ductoExists) {
-        const timer = setTimeout(() => {
-          alert(`El ducto con nombre "${pathName}" no existe en ningun analisis.`);
-        }, 2000);
-
-        // Limpiar el timer cuando el componente se desmonte o el `todosLosPipelines` cambie
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [todosLosPipelines, isPathSet, pathName]);
-
- 
-  
+  const [datosRecibidos, setDatosRecibidos] = useState(false);
+  const [isDuctoDisabled, setIsDuctoDisabled] = useState(false);
 
   // Función para agregar el nombre del ducto a los pipelines
   const agregarNombreDucto = (todosLosPipelines, filteredDuctos) => {
@@ -115,8 +80,62 @@ const SelectsComponent = ({
 
   // useEffect para ejecutar el console.log solo cuando todosLosPipelines cambie
   useEffect(() => {
-    console.log("todosLosPipelines", todosLosPipelines);
+    //    console.log("todosLosPipelines", todosLosPipelines);
   }, [todosLosPipelines]); // Este useEffect solo se ejecutará cuando todosLosPipelines cambie
+
+  ///////////////////////////////////////////////////////////////
+
+  let cleanedPath = "";
+  if (currentPath) {
+    cleanedPath = currentPath.startsWith("/")
+      ? currentPath.slice(1)
+      : currentPath;
+  }
+
+  useEffect(() => {
+    if (!cleanedPath) return;
+    if (
+      Object.keys(todosLosPipelines).length > 0 &&
+      !datosRecibidos &&
+      Object.values(todosLosPipelines).some((pipeline) =>
+        pipeline.some((item) => item.hasOwnProperty("DuctoName"))
+      )
+    ) {
+      setDatosRecibidos(true);
+      //  console.log("llegaron los datos");
+
+      // Recorre todos los pipelines y busca un DuctoName que coincida con cleanedPath
+      const found = Object.values(todosLosPipelines)
+        .flat() // Aplana todos los elementos de los pipelines en un solo array
+        .find(
+          (item) =>
+            item.hasOwnProperty("DuctoName") && item.DuctoName === cleanedPath
+        );
+
+      if (found) {
+        console.log(
+          `Se encontró el DuctoName que coincide con cleanedPath: ${found.DuctoName}`
+        );
+        setSelectedDucto(cleanedPath);
+        setIsDuctoDisabled(true);
+        // Aquí puedes agregar más lógica si es necesario.
+      } else {
+        console.log(
+          `No se encontró ningún DuctoName que coincida con cleanedPath: ${cleanedPath}`
+        );
+
+        Swal.fire({
+          icon: "warning",
+          title: "Atención",
+          html: `No se encontró el Ducto <b>${cleanedPath}</b> en ningún assessment`,
+          confirmButtonText: "Entendido",
+          customClass: {
+            confirmButton: "swal-custom-button",
+          },
+        });
+      }
+    }
+  }, [todosLosPipelines, datosRecibidos, cleanedPath]); // Agregar cleanedPath a las dependencias
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 mb-5 justify-between">
@@ -196,7 +215,6 @@ const SelectsComponent = ({
       </div>
 
       {/* Selector de Ducto */}
-
       <div className="flex flex-col w-full lg:w-1/3">
         <label
           htmlFor="pipeline-select"
@@ -204,13 +222,12 @@ const SelectsComponent = ({
         >
           Seleccionar Ducto:
         </label>
-
         <select
           id="pipeline-select"
           className="border rounded-md p-2 bg-gray-50 w-full focus:outline-none focus:ring-2 focus:ring-[#265c4f] focus:border-transparent"
           onChange={(e) => handleDuctoChange(e.target.value)}
-          value={pathName || selectedDucto} // Usa path si existe, o selectedDucto
-          disabled={isPathSet} // Deshabilita si path tiene un valor
+          value={selectedDucto}
+          disabled={isDuctoDisabled}
         >
           <option value="">Selecciona un ducto</option>
           {selectedAssessment ? (

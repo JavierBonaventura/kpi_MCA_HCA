@@ -1,34 +1,34 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import MainPage from "./pages/MainPage";
 
 function App() {
-  // Componente para manejar la selección del ducto por medio de la ruta
-  const Wrapper = () => {
-    const location = useLocation(); // Obtén la ubicación actual
-    const navigate = useNavigate(); // Para redirigir al usuario
-    const fullPath = location.pathname; // Obtén el pathname (nombre del ducto después del puerto)
-
-    useEffect(() => {
-      if (fullPath !== "/") {
-        navigate("/"); // Redirige a la raíz si el pathname no es "/"
-      }
-    }, [fullPath, navigate]);
-
-    return <MainPage path={fullPath === "/" ? "" : fullPath.slice(1)} />;
-  };
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/*"
-          element={<Wrapper />}
-        />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          {/* Ruta principal */}
+          <Route path="/" element={<MainPage />} />
+
+          {/* Ruta comodín para manejar rutas inexistentes */}
+          <Route path="*" element={<RouteLogger />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
+}
+
+// Componente para manejar rutas y guardar la ubicación
+function RouteLogger() {
+  const location = useLocation();
+
+  // Guardar la ruta en una variable
+  const currentPath = location.pathname;
+  console.log("Ruta actual:", currentPath);
+
+  // Redirigir a la página principal (opcional)
+  return <MainPage currentPath={currentPath} />;
 }
 
 export default App;
